@@ -27,6 +27,7 @@ const AsideNav = () => {
             font-weight: 600;
             font-size: 16px;
             color: #424242;
+            margin-top:0;
           }
        `}</style>
     </div>

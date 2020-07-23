@@ -17,6 +17,7 @@ const AsideNavItem = ({text}) => {
              display:flex;
              align-items:center;
              justify-content:space-between;
+             background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%), #FFFFFF;
            }
 
            .aside-nav__item:after{

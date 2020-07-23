@@ -3,6 +3,7 @@ import Header from "../components/header/header";
 import MainNav from "../components/mainNav/mainNav";
 import AsideNav from "../components/asideNav/asideNav";
 import Slider from "../components/slider/slider";
+import Advantages from "../components/advantages/advantages";
 
 export default function Index(){
   return(
@@ -24,6 +25,7 @@ export default function Index(){
             </div>
             <div className="main-right">
                 <Slider />
+                <Advantages />
             </div>
         </div>
 

@@ -14,13 +14,14 @@ const MainNavBtn = ({width, margin, text}) => {
          .main-nav__btn{
            height:100%;
            width:${width};
-           margin-right:${margin || "1px"};
+           margin-right:${margin || "2px"};
            background: linear-gradient(180deg, #1974C2 0%, #1B6EB7 100%);
            display:flex;
            align-items:center;
            justify-content:space-between;
            cursor:pointer;
            transition:1s;
+
          }
 
          .main-nav__text{
