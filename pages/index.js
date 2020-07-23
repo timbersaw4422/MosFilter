@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Header from "../components/header";
+import MainNav from "../components/mainNav";
 
 export default function Index(){
   return(
@@ -13,6 +14,7 @@ export default function Index(){
         </Head>
 
         <Header />
+        <MainNav />
 
 
     </div>

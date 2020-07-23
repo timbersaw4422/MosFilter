@@ -24,6 +24,7 @@ const InputSearch = () => {
            padding-left:4.8rem;
            position:relative;
            z-index:1;
+           outline:none;
          }
 
          img{
