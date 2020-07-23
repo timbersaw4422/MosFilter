@@ -1,6 +1,8 @@
 import Head from "next/head";
-import Header from "../components/header";
-import MainNav from "../components/mainNav";
+import Header from "../components/header/header";
+import MainNav from "../components/mainNav/mainNav";
+import AsideNav from "../components/asideNav/asideNav";
+import Slider from "../components/slider/slider";
 
 export default function Index(){
   return(
@@ -16,7 +18,35 @@ export default function Index(){
         <Header />
         <MainNav />
 
+        <div className="main-block">
+            <div className="main-left">
+                <AsideNav />
+            </div>
+            <div className="main-right">
+                <Slider />
+            </div>
+        </div>
 
+
+
+
+
+
+
+        <style jsx>{`
+          .main-block{
+            display:flex;
+            justify-content:space-between;
+          }
+
+          .main-left{
+            width:20%;
+          }
+
+          .main-right{
+            width:78%;
+          }
+        `}</style>
     </div>
   )
 }

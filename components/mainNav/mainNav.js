@@ -2,7 +2,7 @@ import MainNavBtn from "./mainNavBtn";
 
 const MainNav = () => {
   return(
-    <div className="main-nav">
+    <section className="main-nav">
        <MainNavBtn width="20%" text="Каталог"/>
        <MainNavBtn width="16%" text="Компания"/>
        <MainNavBtn width="13%" text="Услуги"/>
@@ -39,10 +39,8 @@ const MainNav = () => {
            right:0;
            transform:translateX(calc(100% + 1px));
          }
-
-
        `}</style>
-    </div>
+    </section>
   )
 }
 
