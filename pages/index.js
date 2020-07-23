@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Header from "../components/header";
 
 export default function Index(){
   return(
@@ -8,9 +9,12 @@ export default function Index(){
           <title>Мос - фильтр | Главная</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
         </Head>
 
-        <h1>HELLO NEXT JS</h1>
+        <Header />
+
+
     </div>
   )
 }

@@ -1,0 +1,29 @@
+.content-wrapper{
+  width:95%;
+  margin:0 auto;
+  max-width:1200px;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+html{
+  font-size:10px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Geometria Medium';
+  src: url('./public/fonts/Geometria-Medium.eot');
+  src: url('./public/fonts/Geometria-Medium.eot?#iefix') format('embedded-opentype'),
+  url('./public/fonts/Geometria-Medium.woff') format('woff'),
+  url('./public/fonts/Geometria-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* font-family: 'Geometria Medium'; */
