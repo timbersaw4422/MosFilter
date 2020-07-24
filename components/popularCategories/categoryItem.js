@@ -1,4 +1,4 @@
-const CategoryItem = ({text, bg}) => {
+const CategoryItem = ({text, bg, margin}) => {
   return(
     <div className="categoty__item">
       <h3 className="category__text">{text}</h3>
@@ -15,6 +15,7 @@ const CategoryItem = ({text, bg}) => {
            border-radius: 0.5rem;
            background:url(${bg}) center / cover;
            cursor:pointer;
+           margin-bottom:${margin || 0};
          }
 
          .category__text{

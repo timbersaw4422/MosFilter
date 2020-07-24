@@ -9,6 +9,7 @@ import WorkTime from "../components/worktime";
 import PopularCategories from "../components/popularCategories/popularCategories";
 import Posts from "../components/posts";
 import TopGoods from "../components/topgoods/topgoods";
+import Subscribe from "../components/subscribe";
 
 export default function Index(){
   return(
@@ -54,7 +55,7 @@ export default function Index(){
 
         <section className="content-block">
             <div className="content-left">
-
+                <Subscribe />
             </div>
             <div className="content-right">
                 <TopGoods />

@@ -6,8 +6,8 @@ const PopularCategories = () => {
     <div className="categories">
       <h2 className="cartegories__title">Популярные категории</h2>
       <div className="categories-wrapper">
-         <CategoryItem style={{marginBottom:"1.3rem"}} text="Установка систем обратного осмоса" bg="./img/category1.png"/>
-         <CategoryItem style={{marginBottom:"1.3rem"}} text="Замена картриджей " bg="./img/category2.png"/>
+         <CategoryItem margin="1.3rem" text="Установка систем обратного осмоса" bg="./img/category1.png"/>
+         <CategoryItem margin="1.3rem" text="Замена картриджей " bg="./img/category2.png"/>
          <CategoryItem text="Установка проточных фильтров" bg="./img/category3.png"/>
          <CategoryItem text="Ремонт фильтров и систем обратного осмоса" bg="./img/category4.png"/>
       </div>
