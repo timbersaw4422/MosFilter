@@ -98,14 +98,16 @@ const Calculator = () => {
           justify-content:center;
           width:15rem;
           height:3.5rem;
-          border: 2px solid #007FCC;
-          border-radius: 5px;
+          background: linear-gradient(180deg, #6089F3 0%, #191792 100%);
+          box-shadow: 0px 4px 10px rgba(62, 83, 197, 0.51);
+          border-radius: 0.5rem;
+          color: #FFFFFF;
         }
 
         .calculator__price{
           font-weight: bold;
           font-size: 16px;
-          color: #007FCC;
+          color: #4862D2;
         }
 
       `}</style>

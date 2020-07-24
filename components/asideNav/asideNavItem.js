@@ -25,7 +25,7 @@ const AsideNavItem = ({text}) => {
              position:absolute;
              height:100%;
              width:0.5rem;
-             background: #1971BD;;
+             background: #4862D2;
              opacity:0;
              transition:0.3s;
              top:0;

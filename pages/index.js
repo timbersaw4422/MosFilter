@@ -5,6 +5,10 @@ import AsideNav from "../components/asideNav/asideNav";
 import Slider from "../components/slider/slider";
 import Advantages from "../components/advantages/advantages";
 import Calculator from "../components/calculator/calculator";
+import WorkTime from "../components/worktime";
+import PopularCategories from "../components/popularCategories/popularCategories";
+import Posts from "../components/posts";
+import TopGoods from "../components/topgoods/topgoods";
 
 export default function Index(){
   return(
@@ -31,11 +35,29 @@ export default function Index(){
         </section>
 
         <section className="content-block">
+            <div className="content-left with-border with-margin with-padding">
+                <WorkTime />
+            </div>
+            <div className="content-right">
+                <Calculator />
+            </div>
+        </section>
+
+        <section className="content-block">
+            <div className="content-left with-border with-margin with-padding">
+                <Posts />
+            </div>
+            <div className="content-right">
+                <PopularCategories />
+            </div>
+        </section>
+
+        <section className="content-block">
             <div className="content-left">
 
             </div>
             <div className="content-right">
-                <Calculator />
+                <TopGoods />
             </div>
         </section>
 
@@ -59,6 +81,15 @@ export default function Index(){
           .content-right{
             width:78%;
           }
+
+          .with-border{
+            border-right:1px solid #E3E3E3;
+          }
+
+          .with-margin{
+            margin-top:7.8rem;
+          }
+
         `}</style>
     </div>
   )

@@ -46,7 +46,7 @@ const Slider = () => {
             </div>
             <img src="img/slider/arrow-right.png" alt="arrow-right"
                  className="slider__arrow slider__arrow-right"
-                 onClick={() => arrowClickHandler(1)}/> />
+                 onClick={() => arrowClickHandler(1)}/> 
         </div>
    </div>
 
