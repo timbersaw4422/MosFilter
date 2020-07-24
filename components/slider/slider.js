@@ -21,6 +21,8 @@ const Slider = () => {
 
   return(
     <>
+    <h2 className="slider__caption">Акции месяца</h2>
+
     <div className="slider-wrapper">
       <div className="slider__track">
         {sliderItems.map((item,id) => <SliderItem
@@ -31,7 +33,6 @@ const Slider = () => {
     </div>
 
     <div className="slider__bottom">
-        <p className="slider__show-all-btn">Показать все акции</p>
         <div className="slider__nav">
             <img src="img/slider/arrow-left.png" alt="arrow-left"
                  className="slider__arrow slider__arrow-left"
@@ -56,11 +57,18 @@ const Slider = () => {
       .slider-wrapper{
         border: 1px solid #E7E7E7;
         position:relative;
-        height:35rem;
-        margin-top:3.7rem;
+        height:36rem;
+        margin-top:1.5rem;
         position:relative;
         margin-bottom:2rem;
         overflow:hidden;
+      }
+
+      .slider__caption{
+        margin-top:0;
+        font-weight: 600;
+        font-size: 16px;
+        color: #424242;
       }
 
       .slider__show-all-btn{
@@ -81,7 +89,7 @@ const Slider = () => {
       .slider__bottom{
         display:flex;
         align-items:center;
-        justify-content:space-between;
+        justify-content:center;
         position:relative;
       }
 

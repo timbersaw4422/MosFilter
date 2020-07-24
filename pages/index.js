@@ -4,6 +4,7 @@ import MainNav from "../components/mainNav/mainNav";
 import AsideNav from "../components/asideNav/asideNav";
 import Slider from "../components/slider/slider";
 import Advantages from "../components/advantages/advantages";
+import Calculator from "../components/calculator/calculator";
 
 export default function Index(){
   return(
@@ -19,15 +20,24 @@ export default function Index(){
         <Header />
         <MainNav />
 
-        <div className="main-block">
-            <div className="main-left">
+        <section className="content-block">
+            <div className="content-left">
                 <AsideNav />
             </div>
-            <div className="main-right">
+            <div className="content-right">
                 <Slider />
                 <Advantages />
             </div>
-        </div>
+        </section>
+
+        <section className="content-block">
+            <div className="content-left">
+
+            </div>
+            <div className="content-right">
+                <Calculator />
+            </div>
+        </section>
 
 
 
@@ -36,16 +46,17 @@ export default function Index(){
 
 
         <style jsx>{`
-          .main-block{
+          .content-block{
             display:flex;
             justify-content:space-between;
+            margin-bottom:5rem;
           }
 
-          .main-left{
+          .content-left{
             width:20%;
           }
 
-          .main-right{
+          .content-right{
             width:78%;
           }
         `}</style>
