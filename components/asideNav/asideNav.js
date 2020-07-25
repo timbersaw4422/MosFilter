@@ -3,18 +3,18 @@ import AsideNavItem from "./asideNavItem";
 const AsideNav = () => {
 
   const asideNavItems = [
-    {id:1, text:"Atoll"},
-    {id:2, text:"Гейзер"},
-    {id:3, text:"Аквафор"},
-    {id:4, text:"Platinum Wasser"},
-    {id:5, text:"Барьер"},
-    {id:6, text:"Другие марки"}
+    {id:1, text:"Atoll", link:"/categories/atoll"},
+    {id:2, text:"Гейзер",link:"/categories/geizer"},
+    {id:3, text:"Аквафор", link:"/categories/aquaphor"},
+    {id:4, text:"Platinum Wasser", link:"/categories/platinum-wasser"},
+    {id:5, text:"Барьер", link:"/categories/barier"},
+    {id:6, text:"Другие марки", link:"/categories/others"}
   ]
 
   return(
     <div className="aside-nav">
        <h3 className="aside-nav__caption">Марка фильтра</h3>
-       {asideNavItems.map(item => <AsideNavItem key = {item.id} text={item.text}/>)}
+       {asideNavItems.map(item => <AsideNavItem key = {item.id} text={item.text} link={item.link}/>)}
 
 
 

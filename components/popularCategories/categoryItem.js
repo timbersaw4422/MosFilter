@@ -23,6 +23,7 @@ const CategoryItem = ({text, bg, margin}) => {
            left:2rem;
            bottom:2rem;
            height:4rem;
+           width:75%;
            margin-top:0;
            margin-bottom:0;
            background: #5171DF;

@@ -7,7 +7,7 @@ const Good = (props) =>{
       <p className="category-title">{props.categoryTitle}</p>
       <h4 className="good__title">{props.goodTitle}</h4>
       <div className="good__on-stock">
-         <img src="./img/checkMark.png" alt="checkMark" className="on-stock-status"/>
+         <img src="/img/checkMark.png" alt="checkMark" className="on-stock-status"/>
          <span className="on-stock-title">Есть в наличии</span>
       </div>
       <p className="good__price">{props.price}&nbsp;₽</p>

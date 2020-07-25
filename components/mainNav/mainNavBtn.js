@@ -1,6 +1,9 @@
-const MainNavBtn = ({width, margin, text}) => {
+import Link from "next/link";
+
+const MainNavBtn = ({width, margin, text, link}) => {
   return(
-      <div className="main-nav__btn">
+      <Link href={link}>
+      <a className="main-nav__btn">
       <p className="main-nav__text">
          {text}
       </p>
@@ -17,6 +20,7 @@ const MainNavBtn = ({width, margin, text}) => {
            cursor:pointer;
            transition:1s;
            position:relative;
+           text-decoration:none;
          }
 
          .main-nav__btn:after{
@@ -52,7 +56,8 @@ const MainNavBtn = ({width, margin, text}) => {
            }
          }
       `}</style>
-    </div>
+    </a>
+    </Link>
   )
 }
 

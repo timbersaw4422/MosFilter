@@ -2,7 +2,7 @@ const InputSearch = () => {
   return (
     <div className="input-search">
        <input type="text" placeholder="Поиск по сайту"/>
-       <img src="img/search-icon.png" alt="search-icon" />
+       <img src="/img/search-icon.png" alt="search-icon" />
 
 
 

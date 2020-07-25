@@ -86,7 +86,7 @@ const Footer = () => {
       <div className="footer__manufactory">
         <div className="footer__manufactory-inner">
             <p>2020 © Все права защищены. «Мос — фильтр» Магазин фильров для воды. </p>
-            <img src="./img/manufactory-logo.png" alt="manufactory"/>
+            <img src="/img/manufactory-logo.png" alt="manufactory"/>
         </div>
       </div>
 

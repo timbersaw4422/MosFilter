@@ -3,10 +3,10 @@ const Brands = () =>{
 
   return(
     <div className="brands">
-      <img src="./img/brands/brand1.png" alt="auafor" className="brand-item"/>
-      <img src="./img/brands/brand2.png" alt="atoll" className="brand-item"/>
-      <img src="./img/brands/brand3.png" alt="geizer" className="brand-item"/>
-      <img src="./img/brands/brand4.png" alt="barier" className="brand-item"/>
+      <img src="/img/brands/brand1.png" alt="auafor" className="brand-item"/>
+      <img src="/img/brands/brand2.png" alt="atoll" className="brand-item"/>
+      <img src="/img/brands/brand3.png" alt="geizer" className="brand-item"/>
+      <img src="/img/brands/brand4.png" alt="barier" className="brand-item"/>
 
 
       <style jsx>{`

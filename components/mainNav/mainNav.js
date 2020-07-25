@@ -3,12 +3,12 @@ import MainNavBtn from "./mainNavBtn";
 const MainNav = () => {
   return(
     <section className="main-nav">
-       <MainNavBtn width="16%" text="Главная"/>
-       <MainNavBtn width="16%" text="Компания"/>
-       <MainNavBtn width="16%" text="Услуги"/>
-       <MainNavBtn width="16%" text="Для бизнеса"/>
-       <MainNavBtn width="16%" text="Оплата и доставка"/>
-       <MainNavBtn width="16%" text="Контакты" margin="none"/>
+       <MainNavBtn width="16%" text="Главная" link="/"/>
+       <MainNavBtn width="16%" text="Компания" link="/"/>
+       <MainNavBtn width="16%" text="Услуги" link="/"/>
+       <MainNavBtn width="16%" text="Для бизнеса" link="/"/>
+       <MainNavBtn width="16%" text="Оплата и доставка" link="/"/>
+       <MainNavBtn width="16%" text="Контакты" margin="none" link="/"/>
 
 
        <style jsx>{`

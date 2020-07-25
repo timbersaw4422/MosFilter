@@ -7,9 +7,9 @@ const Slider = () => {
   const [activeSlide, setActiveSlide] = useState(1);
 
   const sliderItems = [
-    {id:0, background:"img/slider/slide1.png"},
-    {id:1, background:"img/slider/slide1.png"},
-    {id:2, background:"img/slider/slide1.png"}
+    {id:0, background:"/img/slider/slide1.png"},
+    {id:1, background:"/img/slider/slide1.png"},
+    {id:2, background:"/img/slider/slide1.png"}
   ];
 
   const arrowClickHandler = to => {
@@ -23,16 +23,16 @@ const Slider = () => {
     <h2 className="slider__caption">Акции месяца</h2>
 
     <div className="slider-wrapper">
-      <div src="img/slider/arrow-left.png" alt="arrow-left"
+      <div
            className="slider__arrow slider__arrow-left"
            onClick={() => arrowClickHandler(-1)}>
-           <img src="img/slider/arrow-left.png" alt="arrow-left"/>
+           <img src="/img/slider/arrow-left.png" alt="arrow-left"/>
       </div>
 
-      <div src="img/slider/arrow-right.png" alt="arrow-right"
+      <div 
            className="slider__arrow slider__arrow-right"
            onClick={() => arrowClickHandler(1)}>
-           <img src="img/slider/arrow-right.png" alt="arrow-left"/>
+           <img src="/img/slider/arrow-right.png" alt="arrow-left"/>
       </div>
 
 
