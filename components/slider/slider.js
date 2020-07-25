@@ -16,7 +16,6 @@ const Slider = () => {
     if (activeSlide === sliderItems.length-1 && to === 1) setActiveSlide(0);
     else if (activeSlide === 0 && to === -1) setActiveSlide(sliderItems.length-1);
     else setActiveSlide(activeSlide + to);
-
   }
 
   return(
@@ -24,6 +23,19 @@ const Slider = () => {
     <h2 className="slider__caption">Акции месяца</h2>
 
     <div className="slider-wrapper">
+      <div src="img/slider/arrow-left.png" alt="arrow-left"
+           className="slider__arrow slider__arrow-left"
+           onClick={() => arrowClickHandler(-1)}>
+           <img src="img/slider/arrow-left.png" alt="arrow-left"/>
+      </div>
+
+      <div src="img/slider/arrow-right.png" alt="arrow-right"
+           className="slider__arrow slider__arrow-right"
+           onClick={() => arrowClickHandler(1)}>
+           <img src="img/slider/arrow-right.png" alt="arrow-left"/>
+      </div>
+
+
       <div className="slider__track">
         {sliderItems.map((item,id) => <SliderItem
                   key={item.id}
@@ -34,9 +46,6 @@ const Slider = () => {
 
     <div className="slider__bottom">
         <div className="slider__nav">
-            <img src="img/slider/arrow-left.png" alt="arrow-left"
-                 className="slider__arrow slider__arrow-left"
-                 onClick={() => arrowClickHandler(-1)}/>
             <div className="slider__points">
                {sliderItems.map(item => <SliderPoint
                    id={item.id}
@@ -44,9 +53,6 @@ const Slider = () => {
                    setActiveSlide = {setActiveSlide}
                    activeSlide={activeSlide}/>)}
             </div>
-            <img src="img/slider/arrow-right.png" alt="arrow-right"
-                 className="slider__arrow slider__arrow-right"
-                 onClick={() => arrowClickHandler(1)}/> 
         </div>
    </div>
 
@@ -84,6 +90,7 @@ const Slider = () => {
         position:relative;
         transform:translateX(-${activeSlide}00%);
         transition:0.5s;
+        z-index:1;
       }
 
       .slider__bottom{
@@ -110,14 +117,25 @@ const Slider = () => {
 
       .slider__arrow{
         cursor:pointer;
+        position:absolute;
+        z-index:10;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width:5rem;
+        height:5rem;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        top:15.5rem;
       }
 
       .slider__arrow-left{
-        margin-right:2rem;
+        left:4rem;
       }
 
       .slider__arrow-right{
-        margin-left:2rem;
+        right:4rem;
       }
 
       .slider__points{

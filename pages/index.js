@@ -9,11 +9,17 @@ import WorkTime from "../components/worktime";
 import PopularCategories from "../components/popularCategories/popularCategories";
 import Posts from "../components/posts";
 import TopGoods from "../components/topgoods/topgoods";
-import Subscribe from "../components/subscribe";
+import Subscribe from "../components/subscribe/subscribe";
+import ReviewsSmall from "../components/reviewsSmall";
+import AboutSmall from "../components/aboutSmall";
+import Brands from "../components/brands";
+import WhatsApp from "../components/whatsApp";
+import Footer from "../components/footer/footer";
 
 export default function Index(){
   return(
-    <div className="content-wrapper">
+    <>
+     <div className="content-wrapper">
 
         <Head>
           <title>Мос - фильтр | Главная</title>
@@ -56,13 +62,22 @@ export default function Index(){
         <section className="content-block">
             <div className="content-left">
                 <Subscribe />
+                <ReviewsSmall />
             </div>
             <div className="content-right">
                 <TopGoods />
             </div>
         </section>
 
-
+        <section className="content-block">
+            <div className="content-left">
+                <WhatsApp />
+            </div>
+            <div className="content-right">
+                <AboutSmall />
+                <Brands />
+            </div>
+        </section>
 
 
 
@@ -92,6 +107,10 @@ export default function Index(){
           }
 
         `}</style>
+
     </div>
+
+    <Footer />
+   </>
   )
 }

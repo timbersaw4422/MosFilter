@@ -25,7 +25,8 @@ const CategoryItem = ({text, bg, margin}) => {
            height:4rem;
            margin-top:0;
            margin-bottom:0;
-           background: rgba(26, 112, 188, 0.8);
+           background: #5171DF;
+           box-shadow: 0px 4px 10px rgba(45, 82, 214, 0.41);
            border-radius: 0.3rem;
            display:flex;
            align-items:center;

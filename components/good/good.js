@@ -23,11 +23,13 @@ const Good = (props) =>{
            padding:2rem 1rem 1rem 1rem;
            text-align:center;
            margin-bottom:1.3rem;
+           cursor:pointer;
          }
 
          .good__img{
            width:auto;
            height:12rem;
+           margin-bottom:2rem;
          }
 
          .category-title{
@@ -51,7 +53,7 @@ const Good = (props) =>{
            display:flex;
            justify-content:center;
            align-items:center;
-           margin-bottom:3rem;
+           margin-bottom:4rem;
          }
 
          .on-stock-title{

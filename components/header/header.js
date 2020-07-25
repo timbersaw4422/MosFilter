@@ -7,7 +7,7 @@ const Header = () => {
   return(
     <section className="header">
 
-       <Logo />
+       <Logo color="#424242" fill="#0F4C81"/>
 
        <InputSearch />
 
