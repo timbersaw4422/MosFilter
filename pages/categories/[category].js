@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import WhatsApp from "../../components/whatsApp";
 import Path from "../../components/path";
 import Categories from "../../components/categories/categories";
+import AboutBrand from "../../components/aboutBrands/aboutBrand";
 
 export default function Category(){
 
@@ -37,13 +38,23 @@ export default function Category(){
             <div className="content-right">
                 <Path category={category}/>
                 <Categories title={category}/>
+                <Advantages />
+                <div className="horizontal-shape"></div>
+            </div>
+        </section>
 
+        <section className="content-block">
+            <div className="content-left">
+            </div>
+            <div className="content-right">
+                <AboutBrand category={category}/>
             </div>
         </section>
 
 
 
         <style jsx>{`
+
           .content-block{
             display:flex;
             justify-content:space-between;
@@ -64,6 +75,13 @@ export default function Category(){
 
           .with-margin{
             margin-top:7.8rem;
+          }
+
+          .horizontal-shape{
+            background: #F0F0F0;
+            width:100%;
+            height:1px;
+            margin-top:7rem;
           }
 
         `}</style>

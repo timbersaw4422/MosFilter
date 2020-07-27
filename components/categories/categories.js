@@ -1,7 +1,16 @@
 import CategoryItem from "../popularCategories/categoryItem";
 
 const Categories = ({title}) => {
-
+  let caption;
+  switch(title) {
+    case "Atoll": caption = "Атолл";break;
+    case "Geizer": caption = "Гейзер";break;
+    case "Aquaphor": caption = "Аквафор";break;
+    case "Platinum-wasser": caption = "Platinum-wasser";break;
+    case "Barier": caption = "Барьер";break;
+    case "Others": caption = "Другие марки";break;
+    default:break;
+  }
   const text = "Фильтры " + title;
 
   const categories = [
@@ -13,20 +22,17 @@ const Categories = ({title}) => {
   ]
 
   if (title === "Atoll" || title === "Geizer") {
-    for (let category of categories){
-      if (category.key === 1 && title==="Atoll") category.bg = `img/categories/atoll.png`;
-      if (category.key === 1 && title==="Geizer") category.bg = `img/categories/geizer.png`;
-    }
+    categories[0].bg = `/img/categories/${title}.png`;
   } else {
     categories.splice(0, 1);
+    if (title === "Others") categories.splice(0, 1);
   }
-
 
 
 
   return(
     <div className="categories">
-       <h2 className="category__title">Категории товаров {title}</h2>
+       <h2 className="category__title">Категории товаров {caption}</h2>
        <div className="category-items">
            {categories.map(item => <CategoryItem key={item.key} text={item.text} margin={item.margin} bg={item.bg}/>)}
        </div>
