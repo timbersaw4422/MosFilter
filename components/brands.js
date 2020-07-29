@@ -17,6 +17,7 @@ const Brands = () =>{
            display:flex;
            justify-content:space-around;
            align-items:center;
+           margin-bottom:3rem;
          }
 
          img{

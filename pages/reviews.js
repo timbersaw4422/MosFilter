@@ -31,6 +31,8 @@ export default function Reviews(){
             <div className="content-right">
                 <Path  category="reviews"/>
                 <AllReviews />
+                <div className="horizontal-shape"></div>
+                <Brands />
             </div>
         </section>
 
@@ -60,6 +62,13 @@ export default function Reviews(){
 
           .with-margin{
             margin-top:7.8rem;
+          }
+
+          .horizontal-shape{
+            background: #F0F0F0;
+            width:100%;
+            height:1px;
+            margin-top:9rem;
           }
 
         `}</style>

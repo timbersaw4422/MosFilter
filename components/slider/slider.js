@@ -9,7 +9,8 @@ const Slider = () => {
   const sliderItems = [
     {id:0, background:"/img/slider/slide1.png"},
     {id:1, background:"/img/slider/slide1.png"},
-    {id:2, background:"/img/slider/slide1.png"}
+    {id:2, background:"/img/slider/slide1.png"},
+    {id:3, background:"/img/slider/slide1.png"}
   ];
 
   const arrowClickHandler = to => {
@@ -29,7 +30,7 @@ const Slider = () => {
            <img src="/img/slider/arrow-left.png" alt="arrow-left"/>
       </div>
 
-      <div 
+      <div
            className="slider__arrow slider__arrow-right"
            onClick={() => arrowClickHandler(1)}>
            <img src="/img/slider/arrow-right.png" alt="arrow-left"/>

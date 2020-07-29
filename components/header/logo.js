@@ -9,14 +9,16 @@ const Logo = ({color, fill, marginTop}) => {
              fontSize:"30px",
              margin:"0 0",
              fontSize:"26px",
-             color:color
+             color:color,
+             letterSpacing:"1px"
            }}>MOS - FILTER</h2>
            <h1 style={{
              fontSize:"9px",
              textTransform:"uppercase",
              marginTop:"0px",
              fontSize:"8px",
-             color:color
+             color:color,
+             marginTop:"-3px"
            }}>Интернет-магазин фильтров для воды</h1>
         </div>
         <svg width="26" height="30" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
