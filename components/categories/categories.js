@@ -11,7 +11,7 @@ const Categories = ({title}) => {
     case "Others": caption = "Другие марки";break;
     default:break;
   }
-  const text = "Фильтры " + title;
+  const text = "Фильтры " + caption;
 
   const categories = [
     {key:1, text:text , bg:"/img/categories/atoll.png", margin:"1.5rem"},

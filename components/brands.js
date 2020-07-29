@@ -18,6 +18,10 @@ const Brands = () =>{
            justify-content:space-around;
            align-items:center;
          }
+
+         img{
+           cursor:pointer;
+         }
       `}</style>
     </div>
   )

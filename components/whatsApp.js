@@ -1,4 +1,4 @@
-const WhatsApp = () =>{
+const WhatsApp = ({marginTop}) =>{
 
 
   return(
@@ -8,7 +8,7 @@ const WhatsApp = () =>{
 
       <style jsx>{`
         .whatsapp{
-          margin-top:3rem;
+          margin-top:${marginTop};
         }
         .whatsapp__title{
           font-weight: 600;

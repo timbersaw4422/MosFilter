@@ -9,9 +9,11 @@ const Path = ({category}) => {
     case "Platinum-wasser": caption = "Platinum-wasser";break;
     case "Barier": caption = "Барьер";break;
     case "Others": caption = "Другие марки";break;
+    case "about": caption = "О компании";break;
+    case "reviews": caption = "Отзывы";break;
     default:break;
   }
-  
+
   return(
     <p className="path">
        <Link href="/"><a className="active">Главная </a></Link>

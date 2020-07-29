@@ -2,7 +2,19 @@ import Logo from "../header/logo";
 
 const AboutBrand = ({category}) => {
 
+  let caption;
+  switch(category) {
+    case "Atoll": caption = "Атолл";break;
+    case "Geizer": caption = "Гейзер";break;
+    case "Aquaphor": caption = "Аквафор";break;
+    case "Platinum-wasser": caption = "Platinum-wasser";break;
+    case "Barier": caption = "Барьер";break;
+    case "Others": caption = "Другие марки";break;
+    default:break;
+  }
+
   let logoImg = ""; let text="";
+
   let links= [
     {key:1, text:"Фильтры"},
     {key:2, text:"Картриджи"},
@@ -99,7 +111,7 @@ const AboutBrand = ({category}) => {
            </div>
 
            <div className="about-brand__right">
-               <h3 className="about-brand__title without-margin-top">Фильтры и картриджи {category}</h3>
+               <h3 className="about-brand__title without-margin-top">Фильтры и картриджи {caption}</h3>
                <div className="about-brand__text">{text}</div>
            </div>
        </div>
@@ -114,7 +126,7 @@ const AboutBrand = ({category}) => {
 
             <div className="about-brand__right">
                 {!isOthers
-                  ?  <h2 className="about-brand__title">Купить картриджи и фильтры {category}</h2>
+                  ?  <h2 className="about-brand__title">Купить картриджи и фильтры {caption}</h2>
                   :  <h2 className="about-brand__title">Купить картриджи для фильтров воды</h2>
                 }
                 {!isOthers

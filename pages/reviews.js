@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "../components/header/header";
 import MainNav from "../components/mainNav/mainNav";
 import AsideNav from "../components/asideNav/asideNav";
-import Slider from "../components/slider/slider";
+
 import Advantages from "../components/advantages/advantages";
 import Calculator from "../components/calculator/calculator";
 import WorkTime from "../components/worktime";
@@ -16,13 +16,13 @@ import Brands from "../components/brands";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 
-export default function Index(){
+export default function Reviews(){
   return(
     <>
      <div className="content-wrapper">
 
         <Head>
-          <title>Мос - фильтр | Главная</title>
+          <title>Мос - фильтр | Отзывы</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -34,50 +34,13 @@ export default function Index(){
         <section className="content-block">
             <div className="content-left">
                 <AsideNav />
+                <WhatsApp marginTop="6rem"/>
             </div>
             <div className="content-right">
-                <Slider />
-                <Advantages />
+
             </div>
         </section>
 
-        <section className="content-block">
-            <div className="content-left with-border with-margin with-padding">
-                <WorkTime />
-            </div>
-            <div className="content-right">
-                <Calculator />
-            </div>
-        </section>
-
-        <section className="content-block">
-            <div className="content-left with-border with-margin with-padding">
-                <Posts />
-            </div>
-            <div className="content-right">
-                <PopularCategories />
-            </div>
-        </section>
-
-        <section className="content-block">
-            <div className="content-left">
-                <Subscribe />
-                <ReviewsSmall />
-            </div>
-            <div className="content-right">
-                <TopGoods />
-            </div>
-        </section>
-
-        <section className="content-block">
-            <div className="content-left">
-                <WhatsApp marginTop="3rem"/>
-            </div>
-            <div className="content-right">
-                <AboutSmall />
-                <Brands />
-            </div>
-        </section>
 
 
 
