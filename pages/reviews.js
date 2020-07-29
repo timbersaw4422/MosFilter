@@ -2,19 +2,11 @@ import Head from "next/head";
 import Header from "../components/header/header";
 import MainNav from "../components/mainNav/mainNav";
 import AsideNav from "../components/asideNav/asideNav";
-
-import Advantages from "../components/advantages/advantages";
-import Calculator from "../components/calculator/calculator";
-import WorkTime from "../components/worktime";
-import PopularCategories from "../components/popularCategories/popularCategories";
-import Posts from "../components/posts";
-import TopGoods from "../components/topgoods/topgoods";
-import Subscribe from "../components/subscribe/subscribe";
-import ReviewsSmall from "../components/reviewsSmall";
-import AboutSmall from "../components/aboutSmall";
 import Brands from "../components/brands";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
+import Path from "../components/path";
+import AllReviews from "../components/reviews/allReviews";
 
 export default function Reviews(){
   return(
@@ -37,7 +29,8 @@ export default function Reviews(){
                 <WhatsApp marginTop="6rem"/>
             </div>
             <div className="content-right">
-
+                <Path  category="reviews"/>
+                <AllReviews />
             </div>
         </section>
 

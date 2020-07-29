@@ -13,7 +13,7 @@ const AsideNav = () => {
 
   return(
     <div className="aside-nav">
-       <h3 className="aside-nav__caption">Марка фильтра</h3>
+       <h3 className="aside-nav__caption">Бренды</h3>
        {asideNavItems.map(item => <AsideNavItem key = {item.id} text={item.text} link={item.link}/>)}
 
 
