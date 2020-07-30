@@ -34,7 +34,7 @@ const About = () => {
            <p className="about__paragraph"><span className="blue">7. </span> Гарантия на работу и на продукцию — 1 год</p>
 
            <h3 style={{marginTop:"6rem", fontSize:"20px"}} className="about__title">Последние отзывы</h3>
-           
+
        </div>
        <div className="about__right">
            <svg width="121" height="141" viewBox="0 0 121 141" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,14 +47,17 @@ const About = () => {
                 fontSize:"30px",
                 margin:"0 0",
                 fontSize:"26px",
-                color:"#424242"
+                color:"#424242",
+                fontFamily:'Geometria Medium',
+                letterSpacing:"1px"
               }}>MOS - FILTER</h2>
               <h2 style={{
                 fontSize:"9px",
                 textTransform:"uppercase",
                 marginTop:"0px",
                 fontSize:"8px",
-                color:"#424242"
+                color:"#424242",
+                fontFamily:'Geometria Medium'
               }}>Интернет-магазин фильтров для воды</h2>
            </div>
        </div>

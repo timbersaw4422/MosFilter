@@ -2,11 +2,12 @@ import Head from "next/head";
 import Header from "../components/header/header";
 import MainNav from "../components/mainNav/mainNav";
 import AsideNav from "../components/asideNav/asideNav";
-import Brands from "../components/brands";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Path from "../components/path";
-import AllReviews from "../components/reviews/allReviews";
+import ForBusiness from "../components/forbusiness/forbusiness";
+
+
 
 export default function forBusiness(){
   return(
@@ -29,10 +30,8 @@ export default function forBusiness(){
                 <WhatsApp marginTop="6rem"/>
             </div>
             <div className="content-right">
-                <Path  category="reviews"/>
-                <AllReviews />
-                <div className="horizontal-shape"></div>
-                <Brands />
+                <Path  category="forbusiness"/>
+                <ForBusiness />
             </div>
         </section>
 

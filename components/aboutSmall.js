@@ -12,14 +12,17 @@ const AboutSmall = () => {
              fontSize:"30px",
              margin:"0 0",
              fontSize:"26px",
-             color:"#424242"
+             color:"#424242",
+             fontFamily:'Geometria Medium',
+             letterSpacing:"1px"
            }}>MOS - FILTER</h2>
            <h2 style={{
              fontSize:"9px",
              textTransform:"uppercase",
              marginTop:"0px",
              fontSize:"8px",
-             color:"#424242"
+             color:"#424242",
+             fontFamily:'Geometria Medium'
            }}>Интернет-магазин фильтров для воды</h2>
         </div>
       </div>

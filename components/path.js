@@ -11,6 +11,7 @@ const Path = ({category}) => {
     case "Others": caption = "Другие марки";break;
     case "about": caption = "О компании";break;
     case "reviews": caption = "Отзывы";break;
+    case "forbusiness": caption = "Для бизнеса";break;
     default:break;
   }
 
