@@ -34,4 +34,15 @@ html{
   font-style: normal;
 }
 
+.slick-active {
+  outline: none;
+}
+.slick-slide:focus {
+  outline: none;
+}
+.slide{
+  outline:none;
+  border:1px solid red;
+  
+}
 /* font-family: 'Geometria Medium'; */

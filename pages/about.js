@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "../components/header/header";
 import MainNav from "../components/mainNav/mainNav";
 import AsideNav from "../components/asideNav/asideNav";
-import Brands from "../components/brands";
+import BrandSlider from "../components/brandSlider/brandsSlider";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Path from "../components/path";
@@ -21,6 +21,7 @@ export default function About(){
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         </Head>
 
         <Header />
@@ -37,7 +38,7 @@ export default function About(){
                 <Last2Rewiews />
                 <h2 className="about__brands">Бренды</h2>
                 <div className="horizontal-shape"></div>
-                <Brands />
+                <BrandSlider />
             </div>
         </section>
 

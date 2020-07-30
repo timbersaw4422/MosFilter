@@ -7,6 +7,7 @@ import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Path from "../components/path";
 import AllReviews from "../components/reviews/allReviews";
+import BrandSlider from "../components/brandSlider/brandsSlider";
 
 export default function Reviews(){
   return(
@@ -18,6 +19,7 @@ export default function Reviews(){
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         </Head>
 
         <Header />
@@ -32,7 +34,7 @@ export default function Reviews(){
                 <Path  category="reviews"/>
                 <AllReviews />
                 <div className="horizontal-shape"></div>
-                <Brands />
+                <BrandSlider />
             </div>
         </section>
 

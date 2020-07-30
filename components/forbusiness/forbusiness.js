@@ -121,6 +121,7 @@ const ForBusiness = () => {
        <div className="horizontal-shape" style= {{marginTop:"6.4rem"}}></div>
 
        <h3 className="business__subtitle">Отзывы корпоративных клиентов</h3>
+       
 
 
        <style jsx>{`

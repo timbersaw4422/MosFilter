@@ -12,9 +12,10 @@ import TopGoods from "../components/topgoods/topgoods";
 import Subscribe from "../components/subscribe/subscribe";
 import ReviewsSmall from "../components/reviewsSmall";
 import AboutSmall from "../components/aboutSmall";
-import Brands from "../components/brands";
+import BrandSlider from "../components/brandSlider/brandsSlider";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
+
 
 export default function Index(){
   return(
@@ -26,6 +27,7 @@ export default function Index(){
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         </Head>
 
         <Header />
@@ -75,7 +77,7 @@ export default function Index(){
             </div>
             <div className="content-right">
                 <AboutSmall />
-                <Brands />
+                <BrandSlider />
             </div>
         </section>
 
