@@ -9,7 +9,7 @@ const AsideNav = () => {
          {id:2, text:"Замена картриджей", link:"/replacement/atoll"},
          {id:3, text:"Ремонт фильтра", link:"/repair/atoll"},
          {id:4, text:"Фильтры для воды", link:"/filters/atoll"},
-         {id:4, text:"Установка фильтра", link:"/installation/atoll"}
+         {id:5, text:"Установка фильтра", link:"/installation/atoll"}
       ]
     },
     {id:2, text:"Гейзер",link:"/categories/geizer",
@@ -18,7 +18,7 @@ const AsideNav = () => {
          {id:2, text:"Замена картриджей", link:"/replacement/geizer"},
          {id:3, text:"Ремонт фильтра", link:"/repair/geizer"},
          {id:4, text:"Фильтры для воды", link:"/filters/geizer"},
-         {id:4, text:"Установка фильтра", link:"/installation/geizer"}
+         {id:5, text:"Установка фильтра", link:"/installation/geizer"}
       ]
     },
     {id:3, text:"Аквафор", link:"/categories/aquaphor",
@@ -66,7 +66,7 @@ const AsideNav = () => {
             position:relative;
             z-index:100;
            }
-           
+
           .aside-nav__caption{
             font-weight: 600;
             font-size: 16px;
