@@ -1,3 +1,5 @@
+import ReviewItem from "../reviews/reviewItem";
+
 const ForBusiness = () => {
   return(
     <div className="business">
@@ -121,7 +123,23 @@ const ForBusiness = () => {
        <div className="horizontal-shape" style= {{marginTop:"6.4rem"}}></div>
 
        <h3 className="business__subtitle">Отзывы корпоративных клиентов</h3>
-       
+       <div className="business__reviews">
+           <ReviewItem
+           photo = "/img/reviews/review1.png"
+           title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
+           text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
+           <ReviewItem
+           photo = "/img/reviews/review1.png"
+           title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
+           text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
+       </div>
+       <div className="horizontal-shape" style= {{marginTop:"6rem"}}></div>
+
+       <h3 className="business__subtitle">Наши клиенты</h3>
+
+
+
+
 
 
        <style jsx>{`
@@ -249,6 +267,11 @@ const ForBusiness = () => {
           .blue{
             color: #4862D2;
             font-weight:bold;
+          }
+
+          .business__reviews{
+            display:flex;
+            justify-content:space-between;
           }
        `}</style>
     </div>

@@ -6,6 +6,8 @@ import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Path from "../components/path";
 import ForBusiness from "../components/forbusiness/forbusiness";
+import BrandSlider from "../components/brandSlider/brandsSlider";
+import Contacts from "../components/contacts/contacts";
 
 export default function forBusiness(){
   return(
@@ -14,9 +16,11 @@ export default function forBusiness(){
 
         <Head>
           <title>Мос - фильтр | Для бизнеса</title>
+          <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
-          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />      
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         </Head>
 
         <Header />
@@ -30,6 +34,9 @@ export default function forBusiness(){
             <div className="content-right">
                 <Path  category="forbusiness"/>
                 <ForBusiness />
+                <BrandSlider />
+                <div className="horizontal-shape"></div>
+                <Contacts />
             </div>
         </section>
 
@@ -65,7 +72,7 @@ export default function forBusiness(){
             background: #F0F0F0;
             width:100%;
             height:1px;
-            margin-top:9rem;
+            margin-top:8rem;
           }
 
         `}</style>
