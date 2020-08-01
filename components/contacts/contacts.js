@@ -1,4 +1,4 @@
-import YandexMap from "../googleMap";
+import YandexMap from "../yandexMap";
 
 const Contacts = () => {
   return(
