@@ -50,6 +50,7 @@ const Contacts = () => {
              <form className="contacts-form">
                <div className="contact-form__content">
                       <h3 className="contacts-form__title">Получите консультацию специалистов Мос — Фильтр</h3>
+                      <div className="contacts-form__shape"></div>
                       <p className="contact-form__subtitle">Заполните и отправьте форму, наш специалист свяжется с
                       вами в течение 10 минут, и ответит на все ваши вопросы. </p>
                       <input type="text" placeholder="Ваше имя"
@@ -157,18 +158,14 @@ const Contacts = () => {
           font-size: 18px;
           line-height: 25px;
           color: #424242;
-          padding-bottom:4rem;
+          margin-bottom:4rem;
           position:relative;
         }
 
-        .contacts-form__title:after{
-          content:"";
-          position:absolute;
+        .contacts-form__shape{
           height:1px;
           width:100%;
           background:#f1f1f1;
-          bottom:0;
-          left:0;
           transform:scaleX(2);
         }
 

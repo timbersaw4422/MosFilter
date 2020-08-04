@@ -7,7 +7,7 @@ import Advantages from "../components/advantages/advantages";
 import Calculator from "../components/calculator/calculator";
 import WorkTime from "../components/worktime";
 import PopularCategories from "../components/popularCategories/popularCategories";
-import Posts from "../components/posts";
+import Posts from "../components/posts/smallPosts";
 import TopGoods from "../components/topgoods/topgoods";
 import Subscribe from "../components/subscribe/subscribe";
 import ReviewsSmall from "../components/reviewsSmall";

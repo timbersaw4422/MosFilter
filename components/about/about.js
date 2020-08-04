@@ -49,7 +49,8 @@ const About = () => {
                 fontSize:"26px",
                 color:"#424242",
                 fontFamily:'Geometria Medium',
-                letterSpacing:"1px"
+                letterSpacing:"1px",
+                marginTop:"2.7rem"
               }}>MOS - FILTER</h2>
               <h2 style={{
                 fontSize:"9px",

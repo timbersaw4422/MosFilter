@@ -13,6 +13,8 @@ const Path = ({category}) => {
     case "reviews": caption = "Отзывы";break;
     case "forbusiness": caption = "Для бизнеса";break;
     case "payment": caption = "Оплата и доставка";break;
+    case "posts": caption = "Статьи";break;
+    case "contacts": caption = "Контакты";break;
     default:break;
   }
 

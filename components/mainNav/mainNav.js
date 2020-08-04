@@ -8,8 +8,8 @@ const MainNav = () => {
        <MainNavBtn width="14%" text="Отзывы" link="/reviews"/>
        <MainNavBtn width="14%" text="Для бизнеса" link="/forbusiness"/>
        <MainNavBtn width="14%" text="Оплата и доставка" link="/payment"/>
-       <MainNavBtn width="14%" text="Статьи" link="/"/>
-       <MainNavBtn width="14%" text="Контакты" margin="none" link="/"/>
+       <MainNavBtn width="14%" text="Статьи" link="/posts"/>
+       <MainNavBtn width="14%" text="Контакты" margin="none" link="/contacts"/>
 
 
        <style jsx>{`
