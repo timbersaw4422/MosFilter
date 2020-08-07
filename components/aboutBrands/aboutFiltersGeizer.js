@@ -1,4 +1,4 @@
-import Logo from "../header/logo";
+import Logo from "../header/logoWithoutH1";
 import Link from "next/link";
 
 const AboutFiltersGeizer = () => {

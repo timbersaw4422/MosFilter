@@ -40,6 +40,7 @@ const AsideNavSublinks = ({sublinks, dispalaySubLinks}) => {
              height:6rem;
              border-right: 1px solid #F3EFEF;
              border-bottom: 1px solid #F3EFEF;
+             font-size: 11px;
            }
 
            .aside-nav__sublink:nth-child(3n){
