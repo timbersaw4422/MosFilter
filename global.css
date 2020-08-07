@@ -60,4 +60,8 @@ html{
   cursor:pointer;
 }
 
+.catalog .good:nth-child(3n){
+  margin-right:0;
+}
+
 /* font-family: 'Geometria Medium'; */

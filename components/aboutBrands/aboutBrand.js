@@ -1,6 +1,10 @@
 import Logo from "../header/logo";
+import Link from "next/link";
 
 const AboutBrand = ({category}) => {
+
+  let categoryToLowerCase = "";
+  if (category) categoryToLowerCase = category.charAt(0).toLowerCase() + category.substr(1);
 
   let caption;
   switch(category) {
@@ -16,11 +20,11 @@ const AboutBrand = ({category}) => {
   let logoImg = ""; let text="";
 
   let links= [
-    {key:1, text:"Фильтры"},
-    {key:2, text:"Картриджи"},
-    {key:3, text:"Замена картриджей"},
-    {key:4, text:"Установка фильтра"},
-    {key:5, text:"Ремонт фильтра"}
+    {id:1, text:"Комплекты картриджей", link:`/cartridges/${categoryToLowerCase}`},
+    {id:2, text:"Замена картриджей", link:`/replacement/${categoryToLowerCase}`},
+    {id:3, text:"Ремонт фильтра", link:`/repair/${categoryToLowerCase}`},
+    {id:4, text:"Фильтры для воды", link:`/filters/${categoryToLowerCase}`},
+    {id:5, text:"Установка фильтра", link:`/installation/${categoryToLowerCase}`}
   ];
 
   switch (category){
@@ -119,7 +123,7 @@ const AboutBrand = ({category}) => {
        null
      }
 
-      <div className="about-brand flex-end">
+      <div className="about-brand flex-end with-margin-top">
             <div className="about-brand__left">
                <Logo color="#424242" fill="#0F4C81"/>
             </div>
@@ -143,7 +147,7 @@ const AboutBrand = ({category}) => {
       <div className="horizontal-shape"></div>
 
       <div className="about-brands__links">
-        {links.map(link => <a href="" key={link.key} className="about-brands__link">{link.text}</a>)}
+        {links.map(link => <Link key={link.id} href={link.link}><a className="about-brands__link">{link.text}</a></Link>)}
       </div>
 
 
@@ -203,6 +207,8 @@ const AboutBrand = ({category}) => {
           color: #ADADAD;
           text-decoration:none;
         }
+
+        .with-margin-top{margin-top:6rem;}
 
       `}</style>
     </>

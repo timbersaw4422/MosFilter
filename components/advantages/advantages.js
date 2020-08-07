@@ -1,4 +1,4 @@
-const Advantages = () => {
+const Advantages = ({marginTop}) => {
   return(
     <div className="advantages">
         <div className="advantages__item">
@@ -22,7 +22,7 @@ const Advantages = () => {
 
         <style jsx>{`
           .advantages{
-            margin-top:10rem;
+            margin-top:${marginTop || "10rem"};
             display:flex;
             align-items:center;
             justify-content:space-around;

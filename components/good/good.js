@@ -19,10 +19,9 @@ const Good = (props) =>{
            background: #FFFFFF;
            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.13);
            border-radius: 0.5rem;
-           margin-right:${props.marginRight};
+           margin:${props.margin};
            padding:2rem 1rem 1rem 1rem;
            text-align:center;
-           margin-bottom:1.3rem;
            cursor:pointer;
          }
 
