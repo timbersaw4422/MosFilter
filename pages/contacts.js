@@ -15,7 +15,7 @@ export default function contactsPage(){
      <div className="content-wrapper">
 
         <Head>
-          <title>Мос - фильтр | Для бизнеса</title>
+          <title>Мос - фильтр | Контакты</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />

@@ -1,19 +1,20 @@
 import Head from "next/head";
-import Header from "../components/header/header";
-import MainNav from "../components/mainNav/mainNav";
-import AsideNav from "../components/asideNav/asideNav";
-import WhatsApp from "../components/whatsApp";
-import Footer from "../components/footer/footer";
-import Path from "../components/path";
-import Posts from "../components/posts/posts";
+import Header from "../../components/header/header";
+import MainNav from "../../components/mainNav/mainNav";
+import AsideNav from "../../components/asideNav/asideNav";
+import WhatsApp from "../../components/whatsApp";
+import Footer from "../../components/footer/footer";
+import PostPath from "../../components/posts/postPath";
+import CartrigdeReplacement from "../../components/posts/cartridgeReplacement";
 
-export default function postsPage(){
+
+export default function cartridgesReplace(){
   return(
     <>
      <div className="content-wrapper">
 
         <Head>
-          <title>Мос - фильтр | Статьи</title>
+          <title>Мос - фильтр | Как часто менять картриджи?</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
@@ -30,8 +31,8 @@ export default function postsPage(){
                 <WhatsApp marginTop="6rem"/>
             </div>
             <div className="content-right">
-                <Path  category="posts"/>
-                <Posts />
+                <PostPath category="cartridgeReplacement" />
+                <CartrigdeReplacement />
 
             </div>
         </section>

@@ -58,6 +58,7 @@ html{
   color: #FFFFFF;
   border:none;
   cursor:pointer;
+  text-decoration:none;
 }
 
 .catalog .good:nth-child(3n){

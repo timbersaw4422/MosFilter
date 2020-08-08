@@ -22,7 +22,7 @@ const Categories = ({title}) => {
   ]
 
   if (title === "Atoll" || title === "Geizer") {
-    categories[0].bg = `/img/categories/${title}.png`;
+    categories[0].bg = title === "Atoll" ? `/img/categories/atoll.png` : `/img/categories/geizer.png`
   } else {
     categories.splice(0, 1);
     if (title === "Others") categories.splice(0, 1);

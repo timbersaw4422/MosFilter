@@ -6,38 +6,24 @@ const PostItems = () => {
 
       <div className="post-item">
          <div className="post-item__row">
-            <img src="/img/posts/post1.png" alt="" className="post-item__img"/>
+            <div className="post-item__img">
+                <img src="/img/posts/howToChooseFilter/1.png" alt=""/>
+            </div>
             <p className="post-item__title">Как правильно выбрать фильтр для воды в городскую квартриру</p>
         </div>
-        <p className="post-item__text">Сегодня в каждой второй московской квартире установлен бытовой фильтр для очистки воды, а значит...</p>
-        <Link href="posts/42"><a className="post-item__btn">Читать статью</a></Link>
+        <p className="post-item__text">Столкнувшись с проблемой качества московской водопроводной воды, люди задаются вопросом ...</p>
+        <Link href="/posts/howToChooseFilter"><a className="post-item__btn">Читать статью</a></Link>
       </div>
 
       <div className="post-item">
          <div className="post-item__row">
-            <img src="/img/posts/post1.png" alt="" className="post-item__img"/>
-            <p className="post-item__title">Как правильно выбрать фильтр для воды в городскую квартриру</p>
+             <div className="post-item__img">
+                 <img src="/img/posts/cartridgesReplacement/1.png" alt=""/>
+             </div>
+            <p className="post-item__title">Как часто менять картриджи?</p>
         </div>
-        <p className="post-item__text">Сегодня в каждой второй московской квартире установлен бытовой фильтр для очистки воды, а значит...</p>
-        <Link href="posts/42"><a className="post-item__btn">Читать статью</a></Link>
-      </div>
-
-      <div className="post-item">
-         <div className="post-item__row">
-            <img src="/img/posts/post1.png" alt="" className="post-item__img"/>
-            <p className="post-item__title">Как правильно выбрать фильтр для воды в городскую квартриру</p>
-        </div>
-        <p className="post-item__text">Сегодня в каждой второй московской квартире установлен бытовой фильтр для очистки воды, а значит...</p>
-        <Link href="posts/42"><a className="post-item__btn">Читать статью</a></Link>
-      </div>
-
-      <div className="post-item">
-         <div className="post-item__row">
-            <img src="/img/posts/post1.png" alt="" className="post-item__img"/>
-            <p className="post-item__title">Как правильно выбрать фильтр для воды в городскую квартриру</p>
-        </div>
-        <p className="post-item__text">Сегодня в каждой второй московской квартире установлен бытовой фильтр для очистки воды, а значит...</p>
-        <Link href="posts/42"><a className="post-item__btn">Читать статью</a></Link>
+        <p className="post-item__text">Не важно какой марки у вас фильтр (Аквафор, Атолл, Гейзер, любой другой) рано или поздно приходится менять картриджи...</p>
+        <Link href="/posts/cartridgeReplacement"><a className="post-item__btn">Читать статью</a></Link>
       </div>
 
 
@@ -73,6 +59,7 @@ const PostItems = () => {
           font-size: 14px;
           line-height: 19px;
           color: #424242;
+          width:70%;
         }
 
         .post-item__text{
@@ -85,6 +72,17 @@ const PostItems = () => {
         .post-item__btn{
           color:#424242;
           font-size:12px;
+        }
+
+        .post-item__img{
+          width:8rem;
+          height:8rem;
+          border-radius:50%;
+          display:flex;
+          align-items:center;
+          justify-content:Center;
+          position:relative;
+          overflow:hidden;
         }
       `}</style>
     </div>
