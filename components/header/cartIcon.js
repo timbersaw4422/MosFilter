@@ -1,3 +1,6 @@
+import {getCartCount} from "../../utils/utils";
+import cookieCutter from 'cookie-cutter';
+
 const CartIcon = () => {
 
   const cartCount = 0;
@@ -9,7 +12,7 @@ const CartIcon = () => {
         </svg>
 
 
-       {cartCount ? <div className="cart-icon__count">{cartCount}</div> : null}
+      {cartCount ? <div className="cart-icon__count">{cartCount}</div> : null}
 
 
       <style jsx>{`

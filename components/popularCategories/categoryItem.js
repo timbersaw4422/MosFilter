@@ -1,5 +1,8 @@
-const CategoryItem = ({text, bg, margin}) => {
+import Link from "next/link";
+
+const CategoryItem = ({text, bg, margin, link}) => {
   return(
+    <Link href={link}>
     <div className="categoty__item">
       <h3 className="category__text">{text}</h3>
 
@@ -40,6 +43,7 @@ const CategoryItem = ({text, bg, margin}) => {
          }
       `}</style>
     </div>
+    </Link>
   )
 }
 

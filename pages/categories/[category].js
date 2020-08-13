@@ -37,8 +37,8 @@ export default function Category(){
                 <WhatsApp marginTop="6rem"/>
             </div>
             <div className="content-right">
-                <Path category={category}/>
-                <Categories title={category}/>
+                {category ? <Path category={category}/>: null}
+                {category ? <Categories title={category}/> : null}
                 <Advantages />
                 <div className="horizontal-shape"></div>
             </div>
@@ -48,7 +48,7 @@ export default function Category(){
             <div className="content-left">
             </div>
             <div className="content-right">
-                <AboutBrand category={category}/>
+                {category ? <AboutBrand category={category}/>: null}
             </div>
         </section>
 

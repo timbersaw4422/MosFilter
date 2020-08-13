@@ -29,5 +29,5 @@ export function setGoodToLocalStorage(id, count){
 
 export function getCartCount(){
   const goods = JSON.parse(localStorage.getItem("goods"));
-  return goods.length;
+  return goods.length || 0;
 }
