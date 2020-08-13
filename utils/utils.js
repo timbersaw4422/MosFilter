@@ -1,33 +1,45 @@
-export function setGoodToLocalStorage(id, count){
+export function setGoodsCookie(id, count){
+  const cookieArr = document.cookie.split(";");
 
-  if(!localStorage.getItem("goods")){
-    const good = {id, count}
-    localStorage.setItem("goods", JSON.stringify([good]));
-  }
+  let isCookieAlreadyExists = false;
+  let isGoodAlreadyExists = false;
 
-  else {
+  for (let item of cookieArr){
+    if (item.indexOf('goods') + 1) {
+      item = item.replace("goods=", "");
+      isCookieAlreadyExists = true;
+      const cookie = JSON.parse(item);
+      for (let i of cookie){
+        if (i.id === id ) {
+          i.count+=count;
+          isGoodAlreadyExists=true;
+          document.cookie = `goods=${JSON.stringify(cookie)}`;
+        }
+      }
 
-    const good = {id, count}
-    const allGoods = JSON.parse(localStorage.getItem("goods"));
-    let isGoodAlreadyInCart = false;
-
-    for (let item of allGoods){
-      if (item.id === good.id) {
-        item.count += good.count;
-        isGoodAlreadyInCart=true;
+      if (!isGoodAlreadyExists){
+        cookie.push({id, count});
+        document.cookie = `goods=${JSON.stringify(cookie)}`;
       }
     }
-
-    if (!isGoodAlreadyInCart) {
-      allGoods.push(good);
-    }
-
-    localStorage.setItem("goods", JSON.stringify(allGoods));
   }
+
+  if (!isCookieAlreadyExists) {
+    const good = JSON.stringify([{id, count}]);
+    document.cookie = `goods=${good}`;
+  }
+
 }
 
 
 export function getCartCount(){
-  const goods = JSON.parse(localStorage.getItem("goods"));
-  return goods.length || 0;
+  const cookieArr = document.cookie.split(";");
+  for (let item of cookieArr){
+    if (item.indexOf('goods') + 1) {
+      item = item.replace("goods=", "");
+      const cookie = JSON.parse(item);
+      return cookie.length;
+    }
+  }
+  return 0;  
 }

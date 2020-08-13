@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {setGoodToLocalStorage} from "../../utils/utils";
+import {setGoodsCookie} from "../../utils/utils";
 
 const GoodMain = ({good}) => {
 
@@ -60,7 +60,7 @@ const GoodMain = ({good}) => {
                 </div>
               </div>
 
-              <div className="good-main__in-cart-btn btn-blue" onClick={() => setGoodToLocalStorage(good.id, goodCount)}>В корзину</div>
+              <div className="good-main__in-cart-btn btn-blue" onClick={() => setGoodsCookie(good.id, goodCount)}>В корзину</div>
 
               <div className="good-main__one-click-btn one-click-btn">Купить в 1 клик</div>
            </div>

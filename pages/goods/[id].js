@@ -7,6 +7,7 @@ import Footer from "../../components/footer/footer";
 import GoodPath from "../../components/good/goodPath";
 import GoodMain from "../../components/good/goodMain";
 import GoodBottom from "../../components/good/goodsBottom";
+import cookies from 'next-cookies';
 
 export async function getServerSideProps(ctx) {
   const id = +ctx.params.id;

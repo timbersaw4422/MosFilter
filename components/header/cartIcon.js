@@ -1,9 +1,8 @@
 import {getCartCount} from "../../utils/utils";
-import cookieCutter from 'cookie-cutter';
+
 
 const CartIcon = () => {
-
-  const cartCount = 0;
+  let cartCount = 0;
 
   return(
     <div className="cart-icon">
