@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 const Good = (props) =>{
 
 
   return(
+    <Link href="/goods/[id]" as={`/goods/${props.id}`}>
     <div className="good">
       <img src={props.img} alt="" className="good__img"/>
       <p className="category-title">{props.categoryTitle}</p>
@@ -67,6 +70,7 @@ const Good = (props) =>{
 
       `}</style>
     </div>
+    </Link>
   )
 }
 
