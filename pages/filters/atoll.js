@@ -11,7 +11,7 @@ import AboutFiltersAtoll from "../../components/aboutBrands/aboutFiltersAtoll";
 
 
 export async function getServerSideProps(context) {
-  const res = await fetch("https://mosfilt.firebaseio.com/goods/filters/atoll.json");
+  const res = await fetch('https://mosfilt.firebaseio.com/goods.json?orderBy="categoryId"&equalTo=0');
   const data = await res.json();
   return {
     props: {data}
@@ -46,7 +46,7 @@ export default function filtersAtoll({data}){
                      /
                      <Link href="/categories/[category]" as="/categories/atoll"><a className="active"> Atoll </a></Link>
                      /
-                     Фильтры для воды 
+                     Фильтры для воды
                  </div>
                  <h2 className="filters__title">Фильтры для воды Atoll</h2>
 
