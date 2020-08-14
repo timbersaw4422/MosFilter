@@ -1,10 +1,14 @@
-import Link from "next/link";
+import Router from "next/router";
 
 const CategoryItem = ({text, bg, margin, link}) => {
+
+  const clickHandler = () => {
+    Router.push(link);
+  }
+
   return(
-    <Link href={link}>
-    <a className="categoty__item">
-      <span className="category__text">{text}</span>
+    <div className="categoty__item" onClick = {clickHandler}>
+      <h3 className="category__text">{text}</h3>
 
 
       <style jsx>{`
@@ -42,8 +46,8 @@ const CategoryItem = ({text, bg, margin, link}) => {
            color: #FFF;
          }
       `}</style>
-    </a>
-    </Link>
+    </div>
+
   )
 }
 
