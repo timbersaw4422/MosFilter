@@ -4,31 +4,41 @@ import MainNav from "../components/mainNav/mainNav";
 import AsideNav from "../components/asideNav/asideNav";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
+import CartMain from "../components/cart/cartMain";
+import EmptyCart from "../components/cart/emptyCart";
 import Link from "next/link";
 import cookies from 'next-cookies';
+import {useState} from "react";
 
 export async function getServerSideProps(ctx) {
   // const id = +ctx.params.id;
   // const res = await fetch(`https://mosfilt.firebaseio.com/goods/${id}.json`);
   // const good = await res.json();
 
-  const { goods } = cookies(ctx);
+  let { goods } = cookies(ctx);
+  if (!goods) goods = [];
   console.log(goods)
   return {
-    props: {a:1}
+    props: {goods}
   }
 }
 
-export default function cartPage({a}){
+export default function cartPage({goods}){
 
-  console.log(a)
+  const [cartCount, setCartCount] = useState(goods.length);
+
+  let countSuffix;
+  if (cartCount === 1) countSuffix = "товар";
+  else if (cartCount >=2 && cartCount <=4) countSuffix = "товара";
+  else countSuffix = "товаров";
+
 
   return(
     <>
      <div className="content-wrapper">
 
         <Head>
-          <title>Мос - фильтр | О компании</title>
+          <title>Мос - фильтр | Корзина</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
@@ -48,10 +58,18 @@ export default function cartPage({a}){
                 <div className="path-cart">
                   <Link href="/"><a className="active">Главная / </a></Link> Корзина
                 </div>
-                <div className="cart-flex">
-                   <p className="cart-flex__info">В корзине ЧЛЕН товаров</p>
-                   <div className="cart-flex__clear-btn">Очистить корзину</div>
-                </div>
+
+                {goods.length
+                  ? <>
+                      <div className="cart-flex">
+                         <p className="cart-flex__info">В корзине {cartCount} {countSuffix}</p>
+                         <div className="cart-flex__clear-btn">Очистить корзину</div>
+                      </div>
+                      <CartMain />
+                    </>
+                  : <EmptyCart />
+                }
+
 
             </div>
         </section>

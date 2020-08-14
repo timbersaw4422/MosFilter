@@ -65,4 +65,8 @@ html{
   margin-right:0;
 }
 
+.cart-main .cart-item:first-child{
+  border-top:1px solid #D9D9D9;
+}
+
 /* font-family: 'Geometria Medium'; */

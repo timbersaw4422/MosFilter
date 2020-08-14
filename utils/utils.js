@@ -19,7 +19,6 @@ export function setGoodsCookie(id, count){
 
     if (!isGoodAlreadyInCart) goods.push({id, count});
 
-    console.log(goods);
     Cookies.set('goods', goods, { expires: 1 });
   }
 

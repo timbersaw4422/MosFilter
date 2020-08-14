@@ -27,7 +27,7 @@ export default function Goods({good}){
      <div className="content-wrapper">
 
         <Head>
-          <title>Мос - фильтр | О компании</title>
+          <title>Мос - фильтр | {good.title}</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
