@@ -1,45 +1,26 @@
+import Cookies from "js-cookie";
+
+
 export function setGoodsCookie(id, count){
-  const cookieArr = document.cookie.split(";");
+  const isCookieExists = Cookies.get('goods') ? true : false;
 
-  let isCookieAlreadyExists = false;
-  let isGoodAlreadyExists = false;
+  if (!isCookieExists) Cookies.set('goods', [{id,count}] , { expires: 1 });
 
-  for (let item of cookieArr){
-    if (item.indexOf('goods') + 1) {
-      item = item.replace("goods=", "");
-      isCookieAlreadyExists = true;
-      const cookie = JSON.parse(item);
-      for (let i of cookie){
-        if (i.id === id ) {
-          i.count+=count;
-          isGoodAlreadyExists=true;
-          document.cookie = `goods=${JSON.stringify(cookie)}`;
-        }
-      }
+  else {
+    let isGoodAlreadyInCart = false;
+    const goods = JSON.parse(Cookies.get('goods'));
 
-      if (!isGoodAlreadyExists){
-        cookie.push({id, count});
-        document.cookie = `goods=${JSON.stringify(cookie)}`;
+    for (let good of goods){
+      if (good.id === id) {
+        good.count += count;
+        isGoodAlreadyInCart = true;
       }
     }
+
+    if (!isGoodAlreadyInCart) goods.push({id, count});
+
+    console.log(goods);
+    Cookies.set('goods', goods, { expires: 1 });
   }
 
-  if (!isCookieAlreadyExists) {
-    const good = JSON.stringify([{id, count}]);
-    document.cookie = `goods=${good}`;
-  }
-
-}
-
-
-export function getCartCount(){
-  const cookieArr = document.cookie.split(";");
-  for (let item of cookieArr){
-    if (item.indexOf('goods') + 1) {
-      item = item.replace("goods=", "");
-      const cookie = JSON.parse(item);
-      return cookie.length;
-    }
-  }
-  return 0;  
 }
