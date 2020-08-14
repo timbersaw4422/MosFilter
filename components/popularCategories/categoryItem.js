@@ -3,8 +3,8 @@ import Link from "next/link";
 const CategoryItem = ({text, bg, margin, link}) => {
   return(
     <Link href={link}>
-    <div className="categoty__item">
-      <h3 className="category__text">{text}</h3>
+    <a className="categoty__item">
+      <span className="category__text">{text}</span>
 
 
       <style jsx>{`
@@ -42,7 +42,7 @@ const CategoryItem = ({text, bg, margin, link}) => {
            color: #FFF;
          }
       `}</style>
-    </div>
+    </a>
     </Link>
   )
 }
