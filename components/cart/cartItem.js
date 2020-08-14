@@ -1,14 +1,14 @@
-const CartItem = () => {
+const CartItem = ({good}) => {
   return(
     <>
       <div className="cart-item">
 
         <div className="cart-item__img">
-             <img src="/img/goods/201.png" alt=""/>
+             <img src={good.img} alt={good.title}/>
         </div>
         <div className="cart-item__title-and-subtitle">
-             <p className="cart-item__title">Комплект картриджей для </p>
-             <p className="cart-item__title">Atoll A-550 e</p>
+             <p className="cart-item__title">{good.subtitle} </p>
+             <p className="cart-item__title">{good.title}</p>
         </div>
         <div className="cart-item__plus-minus">
            <div className="cart-item__plus-minus-wrapper">

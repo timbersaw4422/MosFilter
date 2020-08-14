@@ -1,6 +1,6 @@
 import CartItem from "./cartItem";
 
-const CartMain = () => {
+const CartMain = ({goodsFullInfo}) => {
   return(
     <>
       <div className="cart-main">
@@ -12,9 +12,7 @@ const CartMain = () => {
          </div>
 
          <div className="cart-body">
-            <CartItem />
-            <CartItem />
-            <CartItem />
+            {goodsFullInfo.map(good => <CartItem key={good.id} good={good}/>)}
          </div>
 
          <div className="cart-bottom">

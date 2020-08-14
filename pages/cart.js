@@ -10,20 +10,33 @@ import Link from "next/link";
 import cookies from 'next-cookies';
 import {useState} from "react";
 
-export async function getServerSideProps(ctx) {
-  // const id = +ctx.params.id;
-  // const res = await fetch(`https://mosfilt.firebaseio.com/goods/${id}.json`);
-  // const good = await res.json();
 
+export async function getServerSideProps(ctx) {
   let { goods } = cookies(ctx);
+  const promises=[];
+
   if (!goods) goods = [];
-  console.log(goods)
+  else {
+    for (let good of goods){
+      promises.push(fetch(`https://mosfilt.firebaseio.com/goods/${good.id}.json`));
+    }
+  }
+
+  const responses = await Promise.all(promises);
+  const goodsFullInfo = await Promise.all(responses.map(r => r.json()));
+  /////надо соединить массив из базы с массивом из куки
+
   return {
-    props: {goods}
+    props: {goods, goodsFullInfo}
   }
 }
 
-export default function cartPage({goods}){
+
+
+
+export default function cartPage({goods, goodsFullInfo}){
+  console.log(goods)
+  console.log(goodsFullInfo)
 
   const [cartCount, setCartCount] = useState(goods.length);
 
@@ -43,7 +56,7 @@ export default function cartPage({goods}){
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+          <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         </Head>
 
         <Header />
@@ -65,7 +78,7 @@ export default function cartPage({goods}){
                          <p className="cart-flex__info">В корзине {cartCount} {countSuffix}</p>
                          <div className="cart-flex__clear-btn">Очистить корзину</div>
                       </div>
-                      <CartMain />
+                      <CartMain goodsFullInfo = {goodsFullInfo}/>
                     </>
                   : <EmptyCart />
                 }
