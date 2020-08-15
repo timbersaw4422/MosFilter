@@ -6,6 +6,7 @@ import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import CartMain from "../components/cart/cartMain";
 import EmptyCart from "../components/cart/emptyCart";
+import CartTop from "../components/cart/cartTop";
 import Link from "next/link";
 import cookies from 'next-cookies';
 import {useState} from "react";
@@ -24,19 +25,18 @@ export async function getServerSideProps(ctx) {
 
   const responses = await Promise.all(promises);
   const goodsFullInfo = await Promise.all(responses.map(r => r.json()));
-  /////надо соединить массив из базы с массивом из куки
+  await goodsFullInfo.map((item,index) => goodsFullInfo[index].count = goods[index].count);
 
   return {
-    props: {goods, goodsFullInfo}
+    props: {goods:goodsFullInfo}
   }
 }
 
 
 
 
-export default function cartPage({goods, goodsFullInfo}){
+export default function cartPage({goods}){
   console.log(goods)
-  console.log(goodsFullInfo)
 
   const [cartCount, setCartCount] = useState(goods.length);
 
@@ -72,13 +72,10 @@ export default function cartPage({goods, goodsFullInfo}){
                   <Link href="/"><a className="active">Главная / </a></Link> Корзина
                 </div>
 
-                {goods.length
+                {cartCount
                   ? <>
-                      <div className="cart-flex">
-                         <p className="cart-flex__info">В корзине {cartCount} {countSuffix}</p>
-                         <div className="cart-flex__clear-btn">Очистить корзину</div>
-                      </div>
-                      <CartMain goodsFullInfo = {goodsFullInfo}/>
+                      <CartTop cartCount = {cartCount} countSuffix = {countSuffix} setCartCount={setCartCount}/>
+                      <CartMain goods = {goods} setCartCount={setCartCount}/>
                     </>
                   : <EmptyCart />
                 }
@@ -135,38 +132,6 @@ export default function cartPage({goods, goodsFullInfo}){
             text-decoration:none;
           }
 
-          .cart-flex{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            margin-top:1rem;
-          }
-
-          .cart-flex__info{
-            height:5rem;
-            background: #F5F5F5;
-            font-weight: 600;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            color: #424242;
-            padding-left:1.7rem;
-            flex-grow:1;
-          }
-
-          .cart-flex__clear-btn{
-            margin-left:1.5rem;
-            width:20rem;
-            height:5rem;
-            border: 1px solid #4862D2;
-            display: flex;
-            align-items: center;
-            justify-content:center;
-            font-weight: 600;
-            font-size: 15px;
-            color: #424242;
-            cursor:pointer;
-          }
         `}</style>
 
     </div>

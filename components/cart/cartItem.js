@@ -1,4 +1,4 @@
-const CartItem = ({good}) => {
+const CartItem = ({good, onPlusCLick, onMinusClick, onRemoveItem}) => {
   return(
     <>
       <div className="cart-item">
@@ -12,21 +12,21 @@ const CartItem = ({good}) => {
         </div>
         <div className="cart-item__plus-minus">
            <div className="cart-item__plus-minus-wrapper">
-              <div className="cart-item__minus-btn">
+              <div className="cart-item__minus-btn" onClick={() => onMinusClick(good.id)}>
                     <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <line y1="1" x2="10" y2="1" stroke="#9C9C9C" strokeWidth="2"/>
                     </svg>
               </div>
-              <div className="cart-item__count">1</div>
-              <div className="cart-item__plus-btn">
+              <div className="cart-item__count">{good.count}</div>
+              <div className="cart-item__plus-btn" onClick = {() => onPlusCLick(good.id)}>
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 5H10M5 0L5 10" stroke="#9C9C9C" strokeWidth="2"/>
                 </svg>
               </div>
             </div>
         </div>
-        <p className="cart-item__price">1570 ₽</p>
-        <div className="cart-item__cross">
+        <p className="cart-item__price">{good.count*good.price} ₽</p>
+        <div className="cart-item__cross" onClick = {() => onRemoveItem(good.id)}>
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.75 1.32138L6.67863 0.25L4 2.92863L1.32138 0.25L0.25 1.32138L2.92863 4L0.25 6.67863L1.32138 7.75L4 5.07137L6.67863 7.75L7.75 6.67863L5.07137 4L7.75 1.32138Z" fill="#4862D2"/>
             </svg>

@@ -1,6 +1,49 @@
 import CartItem from "./cartItem";
+import {useState} from "react";
+import {setCookieByCartPlusMinus, setCookieByRemoveItem} from "../../utils/utils";
 
-const CartMain = ({goodsFullInfo}) => {
+const CartMain = ({goods, setCartCount}) => {
+
+  const [stateGoods, setStateGoods] = useState(goods);
+  let sum = 0;
+  for (let good of stateGoods){
+    sum += good.price*good.count;
+  }
+
+  const onPlusCLick = (id) => {
+    const newGoods = stateGoods.map(good => {
+      if (good.id === id){
+        good.count++;
+        setCookieByCartPlusMinus(good.id, 1);
+      }
+      return good;
+    });
+    setStateGoods(newGoods);
+  }
+
+  const onMinusClick = (id) => {
+    const newGoods = stateGoods.map(good => {
+      if (good.id === id && good.count>1) {
+        good.count--;
+        setCookieByCartPlusMinus(good.id, -1);
+      }
+      return good;
+    });
+    setStateGoods(newGoods);
+  }
+
+  const onRemoveItem = (id) => {
+    const newGoods = stateGoods.filter(good => good.id !== id);
+    setCookieByRemoveItem(id);
+    setStateGoods(newGoods);
+    setCartCount(newGoods.length);
+  }
+
+  const onCLearCart = () => {
+    setStateGoods([]);
+    setCartCount(0);
+  }
+
   return(
     <>
       <div className="cart-main">
@@ -12,11 +55,17 @@ const CartMain = ({goodsFullInfo}) => {
          </div>
 
          <div className="cart-body">
-            {goodsFullInfo.map(good => <CartItem key={good.id} good={good}/>)}
+            {stateGoods.map(good => <CartItem
+              key={good.id}
+              good={good}
+              onPlusCLick = {onPlusCLick}
+              onMinusClick = {onMinusClick}
+              onRemoveItem = {onRemoveItem}
+              />)}
          </div>
 
          <div className="cart-bottom">
-            <p className="cart-sum">Итого: 1488 ₽</p>
+            <p className="cart-sum">Итого: {sum} ₽</p>
             <a className="cart-send-btn btn-blue">Оформить заказ</a>
          </div>
 
