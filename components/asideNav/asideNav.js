@@ -24,7 +24,7 @@ const AsideNav = () => {
     {id:3, text:"Аквафор", link:"/categories/aquaphor",
     subLinks:[
          {id:2, text:"Комплекты картриджей", link:"/cartridges/aquaphor"},
-         {id:3, text:"Замена картриджей", link:"/replacement/geizer"},
+         {id:3, text:"Замена картриджей", link:"/replacement/aquaphor"},
          {id:4, text:"Ремонт фильтра", link:"/repair/aquaphor"},
          {id:5, text:"Установка фильтра", link:"/installation/aquaphor"}
       ]

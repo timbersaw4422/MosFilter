@@ -1,4 +1,5 @@
 import ReviewItem from "./reviewItem";
+import Link from "next/link";
 
 const Last2Reviews = () => {
   return(
@@ -14,7 +15,7 @@ const Last2Reviews = () => {
            text = "Спасибо огромное мастеру Ивану за отличную работу по замене картриджей фильтра, за его внимательное отношение к клиентам! С уважением, Шевченко Наталья Геннадьевна."/>
     </div>
 
-    <a className="all-reviews-link" href="">Смотреть все отзывы</a>
+    <Link href="/reviews"><a className="all-reviews-link">Смотреть все отзывы</a></Link>
 
     <style jsx>{`
       .last-2-reviews{
