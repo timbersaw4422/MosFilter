@@ -21,6 +21,7 @@ const MainNavBtn = ({width, margin, text, link}) => {
            transition:1s;
            position:relative;
            text-decoration:none;
+           border-radius: 1rem;
          }
 
          .main-nav__btn:after{
@@ -54,6 +55,14 @@ const MainNavBtn = ({width, margin, text, link}) => {
            .main-nav__btn:hover .main-nav__text{
              color: #282EA5;
            }
+         }
+
+         .main-nav__btn:active{
+           background: linear-gradient(180deg, #191792 0%, #6089F3 100%), #FFFFFF;
+         }
+
+         .main-nav__btn:active .main-nav__text{
+           color:#fff;
          }
       `}</style>
     </a>

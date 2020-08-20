@@ -1,7 +1,7 @@
 import Logo from "../header/logoWithoutH1";
 import Link from "next/link";
 
-const AboutFiltersAtoll = () => {
+const AboutCartridgesGeizer = () => {
 
   let links= [
     {id:1, text:"Комплекты картриджей", link:"/cartridges/atoll"},
@@ -12,22 +12,20 @@ const AboutFiltersAtoll = () => {
   ];
 
   return(
-    <div className="about-filters-atoll">
+    <div className="about-cartridges-geizer">
 
         <div className="about-brand">
             <div className="about-brand__left">
-               <img src="/img/logos/atoll.png" alt="atoll-logo" className="about-brand-logo"/>
+               <img src="/img/logos/geizer.png" alt="atoll-logo" className="about-brand-logo"/>
             </div>
 
             <div className="about-brand__right">
-                <h3 className="about-brand__title without-margin-top">Покупка фильтра Atoll</h3>
-                <p className="about-brand__text">Покупка фильтра для воды — это неотъемлемая часть жизни в большом городе.
-                Накипь на бытовых приборах, плюс непригодная в употребление водопроводная вода ставят перед жителями мегаполисов
-                вопрос о покупке бытового фильтра. И в этом вопросе, фильтры Atoll — идеальный выбор.  </p>
-                <p className="about-brand__text">1. Фильтры Atoll честно входят в тройку самых покупаемых фильтров в России.
-                 Клиенты ценят данную марку за непревзойдённую надёжнось и качество получаемой воды.  </p>
-                 <p className="about-brand__text">2. Данные фильтры производятся в России, а значит в наличии всегда
-                 имеются комплектующие и расходники.  </p>
+                <h3 className="about-brand__title without-margin-top">Покупка картриджей Гейзер</h3>
+                <p className="about-brand__text">Покупка готового набора сменных картриджей для фильтров Гейзер значительно упрощает вам жизнь.
+                Во-первых, комплект содержит все необходимые фильтрующие элементы. Во-вторых, вы можете быть уверены в качестве продукции.
+                Оригинальные картриджи Гейзер от официального производителя гарантируют бесперебойную работу вашей домашней системы очистки воды.</p>
+                <p className="about-brand__text">В наборе фильтров есть всё для их самостоятельной замены: подробная инструкция по
+                обслуживанию и специальный инструмент. </p>
             </div>
         </div>
 
@@ -37,10 +35,10 @@ const AboutFiltersAtoll = () => {
               </div>
 
               <div className="about-brand__right with-margin-top">
-                  <h2 className="about-brand__title">Купить фильтр Atoll в Москве</h2>
-                  <p className="about-brand__text">Интернет-магазин фильтров для воды «Mos—filter»  является официальным дилером фильтров Атолл.
-                  В нашем ассортименте вы найдёте все существующие на данным момент комплекты картриджей Atoll, по цене от производителя с быстрой
-                  доставкой по Москве и МО.</p>
+                  <h2 className="about-brand__title">Купить картриджи Гейзер</h2>
+                  <p className="about-brand__text">Интернет-магазин фильтров для воды «Mos—filter» - является официальным дилером фильтров Гейзер.
+                  В нашем ассортименте вы найдёте все существующие на данным момент комплекты картриджей Гейзер, по цене от производителя с
+                  быстрой доставкой по Москве и МО..</p>
               </div>
         </div>
 
@@ -53,6 +51,10 @@ const AboutFiltersAtoll = () => {
           .about-brand{
             display:flex;
             align-items:center;
+          }
+
+          .about-cartridges-atoll{
+            margin-top:7rem;
           }
 
           .about-brand__left{
@@ -116,4 +118,4 @@ const AboutFiltersAtoll = () => {
   )
 }
 
-export default AboutFiltersAtoll;
+export default AboutCartridgesGeizer;

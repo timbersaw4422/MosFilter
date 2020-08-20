@@ -1,14 +1,13 @@
 import Logo from "../header/logoWithoutH1";
 import Link from "next/link";
 
-const AboutCartridgesAtoll = () => {
+const AboutCartridgesAquaphor = () => {
 
   let links= [
-    {id:1, text:"Комплекты картриджей", link:"/cartridges/atoll"},
-    {id:2, text:"Замена картриджей", link:"/replacement/atoll"},
-    {id:3, text:"Ремонт фильтра", link:"/repair/atoll"},
-    {id:4, text:"Фильтры для воды", link:"/filters/atoll"},
-    {id:5, text:"Установка фильтра", link:"/installation/atoll"}
+    {id:1, text:"Комплекты картриджей", link:"/cartridges/aquaphor"},
+    {id:2, text:"Замена картриджей", link:"/replacement/aquaphor"},
+    {id:3, text:"Ремонт фильтра", link:"/repair/aquaphor"},
+    {id:5, text:"Установка фильтра", link:"/installation/aquaphor"}
   ];
 
   return(
@@ -16,14 +15,14 @@ const AboutCartridgesAtoll = () => {
 
         <div className="about-brand">
             <div className="about-brand__left">
-               <img src="/img/logos/atoll.png" alt="atoll-logo" className="about-brand-logo"/>
+               <img src="/img/logos/aquaphor.png" alt="aquaphor-logo" className="about-brand-logo"/>
             </div>
 
             <div className="about-brand__right">
-                <h3 className="about-brand__title without-margin-top">Покупка картриджей Atoll</h3>
-                <p className="about-brand__text">Покупка готового набора сменных картриджей для фильтров Atoll значительно упрощает вам жизнь.
+                <h3 className="about-brand__title without-margin-top">Покупка картриджей Аквафор</h3>
+                <p className="about-brand__text">Покупка готового набора сменных картриджей для фильтров Аквафор значительно упрощает вам жизнь.
                 Во-первых, комплект содержит все необходимые фильтрующие элементы. Во-вторых, вы можете быть уверены в качестве продукции.
-                Оригинальные картриджи Atoll от официального производителя гарантируют бесперебойную работу вашей домашней системы очистки воды.</p>
+                Оригинальные картриджи Аквафор от официального производителя гарантируют бесперебойную работу вашей домашней системы очистки воды.</p>
                 <p className="about-brand__text">В наборе фильтров есть всё для их самостоятельной замены: подробная инструкция по
                 обслуживанию и специальный инструмент. </p>
             </div>
@@ -35,9 +34,9 @@ const AboutCartridgesAtoll = () => {
               </div>
 
               <div className="about-brand__right with-margin-top">
-                  <h2 className="about-brand__title">Купить картриджи Atoll</h2>
-                  <p className="about-brand__text">Интернет-магазин фильтров для воды «Mos—filter» - является официальным дилером фильтров Атолл.
-                  В нашем ассортименте вы найдёте все существующие на данным момент комплекты картриджей Atoll, по цене от производителя с
+                  <h2 className="about-brand__title">Купить картриджи Аквафор</h2>
+                  <p className="about-brand__text">Интернет-магазин фильтров для воды «Mos—filter» - является официальным дилером фильтров Аквафор.
+                  В нашем ассортименте вы найдёте все существующие на данным момент комплекты картриджей Аквафор, по цене от производителя с
                   быстрой доставкой по Москве и МО..</p>
               </div>
         </div>
@@ -118,4 +117,4 @@ const AboutCartridgesAtoll = () => {
   )
 }
 
-export default AboutCartridgesAtoll;
+export default AboutCartridgesAquaphor;

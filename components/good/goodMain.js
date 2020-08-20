@@ -139,7 +139,7 @@ const GoodMain = ({good}) => {
 
           .good-main__title-and-logo{
             display:flex;
-            align-items:center;
+            align-items:start;
             justify-content:space-between;
           }
 
@@ -153,7 +153,7 @@ const GoodMain = ({good}) => {
           }
 
           .good-main__logo{
-            height:5rem;
+            width:6rem;
           }
 
           .good-main__articul{

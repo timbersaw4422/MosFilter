@@ -1,29 +1,28 @@
 import Logo from "../header/logoWithoutH1";
 import Link from "next/link";
 
-const AboutCartridgesAtoll = () => {
+const AboutCartridgesPlatinumWasser = () => {
 
   let links= [
-    {id:1, text:"Комплекты картриджей", link:"/cartridges/atoll"},
-    {id:2, text:"Замена картриджей", link:"/replacement/atoll"},
-    {id:3, text:"Ремонт фильтра", link:"/repair/atoll"},
-    {id:4, text:"Фильтры для воды", link:"/filters/atoll"},
-    {id:5, text:"Установка фильтра", link:"/installation/atoll"}
+    {id:1, text:"Комплекты картриджей", link:"/cartridges/platinum-wasser"},
+    {id:2, text:"Замена картриджей", link:"/replacement/platinum-wasser"},
+    {id:3, text:"Ремонт фильтра", link:"/repair/platinum-wasser"},
+    {id:5, text:"Установка фильтра", link:"/installation/platinum-wasser"}
   ];
 
   return(
-    <div className="about-cartridges-atoll">
+    <div className="about-cartridges-platinum-wasser">
 
         <div className="about-brand">
             <div className="about-brand__left">
-               <img src="/img/logos/atoll.png" alt="atoll-logo" className="about-brand-logo"/>
+               <img src="/img/logos/platinum-wasser.png" alt="platinum-wasser-logo" className="about-brand-logo"/>
             </div>
 
             <div className="about-brand__right">
-                <h3 className="about-brand__title without-margin-top">Покупка картриджей Atoll</h3>
-                <p className="about-brand__text">Покупка готового набора сменных картриджей для фильтров Atoll значительно упрощает вам жизнь.
+                <h3 className="about-brand__title without-margin-top">Покупка картриджей Platinum-wasser</h3>
+                <p className="about-brand__text">Покупка готового набора сменных картриджей для фильтров Platinum-wasser значительно упрощает вам жизнь.
                 Во-первых, комплект содержит все необходимые фильтрующие элементы. Во-вторых, вы можете быть уверены в качестве продукции.
-                Оригинальные картриджи Atoll от официального производителя гарантируют бесперебойную работу вашей домашней системы очистки воды.</p>
+                Оригинальные картриджи Platinum-wasser от официального производителя гарантируют бесперебойную работу вашей домашней системы очистки воды.</p>
                 <p className="about-brand__text">В наборе фильтров есть всё для их самостоятельной замены: подробная инструкция по
                 обслуживанию и специальный инструмент. </p>
             </div>
@@ -36,8 +35,8 @@ const AboutCartridgesAtoll = () => {
 
               <div className="about-brand__right with-margin-top">
                   <h2 className="about-brand__title">Купить картриджи Atoll</h2>
-                  <p className="about-brand__text">Интернет-магазин фильтров для воды «Mos—filter» - является официальным дилером фильтров Атолл.
-                  В нашем ассортименте вы найдёте все существующие на данным момент комплекты картриджей Atoll, по цене от производителя с
+                  <p className="about-brand__text">Интернет-магазин фильтров для воды «Mos—filter» - является официальным дилером фильтров Platinum-wasser.
+                  В нашем ассортименте вы найдёте все существующие на данным момент комплекты картриджей Platinum-wasser, по цене от производителя с
                   быстрой доставкой по Москве и МО..</p>
               </div>
         </div>
@@ -118,4 +117,4 @@ const AboutCartridgesAtoll = () => {
   )
 }
 
-export default AboutCartridgesAtoll;
+export default AboutCartridgesPlatinumWasser;

@@ -8,26 +8,26 @@ import WhatsApp from "../../components/whatsApp";
 import Link from "next/link";
 import Catalog from "../../components/catalog/catalog";
 import Calculator from "../../components/calculator/calculator";
-import AboutCartridgesGeizer from "../../components/aboutBrands/aboutCartridgesGeizer";
+import AboutCartridgesAquaphor from "../../components/aboutBrands/AboutCartridgesAquaphor";
 
 
 
 export async function getServerSideProps(context) {
-  const res = await fetch('https://mosfilt.firebaseio.com/goods.json?orderBy="categoryId"&equalTo=3');
+  const res = await fetch('https://mosfilt.firebaseio.com/goods.json?orderBy="categoryId"&equalTo=4');
   const data = await res.json();
   return {
     props: {data}
   }
 }
 
-export default function cartridgesGeizer({data}){
+export default function cartridgesAquaphor({data}){
 
   return(
     <>
      <div className="content-wrapper">
 
         <Head>
-          <title>Мос - фильтр | Картриджи Гейзер</title>
+          <title>Мос - фильтр | Картриджи Аквафор</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
@@ -46,18 +46,18 @@ export default function cartridgesGeizer({data}){
                  <div className="path2">
                      <Link href="/"><a className="active">Главная </a></Link>
                      /
-                     <Link href="/categories/[category]" as="/categories/geizer"><a className="active"> Гейзер </a></Link>
+                     <Link href="/categories/[category]" as="/categories/aquaphor"><a className="active"> Аквафор </a></Link>
                      /
                      Комплекты картриджей
                  </div>
-                 <h2 className="filters__title">Комплекты картриджей Гейзер</h2>
+                 <h2 className="filters__title">Комплекты картриджей Аквафор</h2>
 
                  <Catalog goods={data} />
                  <div className="placeholder"></div>
                  <Calculator />
                  <Advantages />
-                 <div className="horizontal-shape" style={{marginBottom:"5rem"}}></div>
-                 <AboutCartridgesGeizer />
+                 <div className="horizontal-shape"></div>
+                 <AboutCartridgesAquaphor />
 
             </div>
         </section>

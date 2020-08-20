@@ -1,6 +1,7 @@
 import LogoSvg from "../header/logoSvg";
 import SubscribeInput from "../subscribe/subscribeInput";
 import Logo from "../header/logo";
+import Link from "next/link";
 
 const Footer = () => {
   return(
@@ -46,12 +47,12 @@ const Footer = () => {
          <div className="footer__about">
              <div className="footer__info-block">
                <p className="footer__title">Компания</p>
-               <a href="#" className="footer__text footer-link">О компании</a>
-               <a href="#" className="footer__text footer-link">Отзывы</a>
-               <a href="#" className="footer__text footer-link">Для бизнеса</a>
-               <a href="#" className="footer__text footer-link">Оплата и доставка</a>
-               <a href="#" className="footer__text footer-link">Статьи</a>
-               <a href="#" className="footer__text footer-link">Контакты</a>
+               <Link href="/about"><a className="footer__text footer-link">О компании</a></Link>
+               <Link href="/reviews"><a className="footer__text footer-link">Отзывы</a></Link>
+               <Link href="/forbusiness"><a className="footer__text footer-link">Для бизнеса</a></Link>
+               <Link href="/payment"><a className="footer__text footer-link">Оплата и доставка</a></Link>
+               <Link href="/posts"><a className="footer__text footer-link">Статьи</a></Link>
+               <Link href="/contacts"><a className="footer__text footer-link">Контакты</a></Link>
              </div>
              <div className="footer__info-block">
                <p className="footer__title">Задать вопрос</p>
@@ -61,12 +62,12 @@ const Footer = () => {
          <div className="footer__brands">
              <div className="footer__info-block">
                <p className="footer__title">Бренды</p>
-               <a href="#" className="footer__text footer-link">Atoll</a>
-               <a href="#" className="footer__text footer-link">Аквафор</a>
-               <a href="#" className="footer__text footer-link">Гейзер</a>
-               <a href="#" className="footer__text footer-link">Барьер</a>
-               <a href="#" className="footer__text footer-link">Platinum Wasser</a>
-               <a href="#" className="footer__text footer-link">Другие</a>
+               <Link href="/categories/[category]" as="/categories/atoll"><a className="footer__text footer-link">Atoll</a></Link>
+               <Link href="/categories/[category]" as="/categories/aquaphor"><a className="footer__text footer-link">Аквафор</a></Link>
+               <Link href="/categories/[category]" as="/categories/geizer"><a className="footer__text footer-link">Гейзер</a></Link>
+               <Link href="/categories/[category]" as="/categories/barier"><a className="footer__text footer-link">Барьер</a></Link>
+               <Link href="/categories/[category]" as="/categories/platinum-wasser"><a className="footer__text footer-link">Platinum Wasser</a></Link>
+               <Link href="/categories/[category]" as="/categories/others"><a className="footer__text footer-link">Другие</a></Link>
              </div>
          </div>
          <div className="footer__services">
