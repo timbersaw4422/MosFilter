@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default function cartridgesAtoll({data}){
+export default function cartridgesWasser({data}){
 
   return(
     <>
