@@ -8,7 +8,7 @@ import WhatsApp from "../../components/whatsApp";
 import Link from "next/link";
 import Catalog from "../../components/catalog/catalog";
 import Calculator from "../../components/calculator/calculator";
-import AboutCartridgesAquaphor from "../../components/aboutBrands/AboutCartridgesAquaphor";
+import AboutCartridgesAquaphor from "../../components/aboutBrands/aboutBrandboutCartridgesAquaphor";
 
 
 
