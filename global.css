@@ -69,4 +69,8 @@ html{
   border-top:1px solid #D9D9D9;
 }
 
+.opacity-0{
+  opacity:0;
+}
+
 /* font-family: 'Geometria Medium'; */

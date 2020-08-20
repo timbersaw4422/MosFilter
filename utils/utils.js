@@ -43,3 +43,7 @@ export function setCookieByRemoveItem(id){
 export function clearCookie(){
   Cookies.set('goods', [], { expires: 1 });
 }
+
+export function getGoodsCookies(){
+  return JSON.parse(Cookies.get('goods'));
+}

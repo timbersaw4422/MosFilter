@@ -5,6 +5,7 @@ const CartTop = ({cartCount, countSuffix, setCartCount}) => {
   const clearCartHandler = () => {
     clearCookie();
     setCartCount(0);
+    document.querySelector(".cart-icon__count").style.opacity = "0";
   }
 
   return(

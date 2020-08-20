@@ -1,6 +1,6 @@
 import CartItem from "./cartItem";
 import {useState} from "react";
-import {setCookieByCartPlusMinus, setCookieByRemoveItem} from "../../utils/utils";
+import {setCookieByCartPlusMinus, setCookieByRemoveItem, getGoodsCookies} from "../../utils/utils";
 
 const CartMain = ({goods, setCartCount}) => {
 
@@ -37,11 +37,8 @@ const CartMain = ({goods, setCartCount}) => {
     setCookieByRemoveItem(id);
     setStateGoods(newGoods);
     setCartCount(newGoods.length);
-  }
-
-  const onCLearCart = () => {
-    setStateGoods([]);
-    setCartCount(0);
+    if (getGoodsCookies().length) document.querySelector(".cart-icon__count").innerText = getGoodsCookies().length;
+    else document.querySelector(".cart-icon__count").style.opacity = "0";
   }
 
   return(

@@ -36,7 +36,6 @@ export async function getServerSideProps(ctx) {
 
 
 export default function cartPage({goods}){
-  console.log(goods)
 
   const [cartCount, setCartCount] = useState(goods.length);
 

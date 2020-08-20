@@ -73,9 +73,9 @@ const Footer = () => {
          <div className="footer__services">
              <div className="footer__info-block">
                <p className="footer__title">Услуги</p>
-               <a href="#" className="footer__text footer-link">Замена картриджей</a>
-               <a href="#" className="footer__text footer-link">Установка фильтров</a>
-               <a href="#" className="footer__text footer-link">Ремонт и диагностика фильтров</a>
+               <Link href="/replacement/others"><a className="footer__text footer-link">Замена картриджей</a></Link>
+               <Link href="/installation/others"><a className="footer__text footer-link">Установка фильтров</a></Link>
+               <Link href="/repair/others"><a className="footer__text footer-link">Ремонт и диагностика фильтров</a></Link>
              </div>
              <div className="footer__info-block">
                <p className="footer__title">Подписаться на новости</p>

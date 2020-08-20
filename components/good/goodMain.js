@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {setGoodsCookie} from "../../utils/utils";
+import {setGoodsCookie, getGoodsCookies} from "../../utils/utils";
 
 const GoodMain = ({good}) => {
 
@@ -11,7 +11,14 @@ const GoodMain = ({good}) => {
   }
 
   let garanty="год";
-  if (good.garanty >=2 ) garanty ="года"
+  if (good.garanty >=2 ) garanty ="года";
+
+  const addBtnHandler = () => {
+    setGoodsCookie(good.id, goodCount);
+    const cartCount = document.querySelector(".cart-icon__count");
+    cartCount.style.opacity = "1";
+    cartCount.innerText = getGoodsCookies().length;
+  }
 
   return(
     <>
@@ -60,7 +67,7 @@ const GoodMain = ({good}) => {
                 </div>
               </div>
 
-              <div className="good-main__in-cart-btn btn-blue" onClick={() => setGoodsCookie(good.id, goodCount)}>В корзину</div>
+              <div className="good-main__in-cart-btn btn-blue" onClick={addBtnHandler}>В корзину</div>
 
               <div className="good-main__one-click-btn one-click-btn">Купить в 1 клик</div>
            </div>
