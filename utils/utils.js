@@ -45,5 +45,7 @@ export function clearCookie(){
 }
 
 export function getGoodsCookies(){
+  if (Cookies.get('goods')) return JSON.parse(Cookies.get('goods')) ;
+  Cookies.set('goods', [], { expires: 1 });
   return JSON.parse(Cookies.get('goods'));
 }
