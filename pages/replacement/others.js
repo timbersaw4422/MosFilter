@@ -46,7 +46,7 @@ export default function replacementOthers(){
                 <div className="d-flex">
                   <div className="flex-left">
                       <img src="/img/categories/ra1.png" alt=""/>
-                      <h2 className="service-title">Замена картриджей Atoll</h2>
+                      <h2 className="service-title">Замена картриджей </h2>
                       <p className="service-text"><span className="with-bold">Компания «Мос—Фильтр» занимается профессиональной заменой
                       картриджей </span> на любых моделях фильтров. Являясь официальным диллером компания предоставляет всем своим клиентам настоящую
                       <span className="with-bold"> годовую гарантию </span>как на продукцию(картриджи), так и на проведённые работы. </p>

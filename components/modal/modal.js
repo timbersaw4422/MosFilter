@@ -55,7 +55,7 @@ const Modal = (props) => {
           position:relative;
           overflow-y:scroll;
           width:110%;
-          padding-right:10%;
+          padding-right:7%;
           overflow-y:scroll;
           overflow-x:hidden;
         }

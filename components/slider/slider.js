@@ -1,16 +1,17 @@
 import SliderItem from "./sliderItem";
 import {useState} from "react";
 import SliderPoint from "./sliderPoint";
+import StockModal from "../modal/stockModal";
 
 const Slider = () => {
 
   const [activeSlide, setActiveSlide] = useState(1);
 
   const sliderItems = [
-    {id:0, background:"/img/slider/slide1.png"},
-    {id:1, background:"/img/slider/slide1.png"},
-    {id:2, background:"/img/slider/slide1.png"},
-    {id:3, background:"/img/slider/slide1.png"}
+    {id:0, background:"/img/slider/slide1.png", title:"Atoll A550 | 575 STD"},
+    {id:1, background:"/img/slider/slide1.png", title:"Atoll A550 | 575 STD"},
+    {id:2, background:"/img/slider/slide1.png", title:"Atoll A550 | 575 STD"},
+    {id:3, background:"/img/slider/slide1.png", title:"Atoll A550 | 575 STD"}
   ];
 
   const arrowClickHandler = to => {
@@ -19,8 +20,14 @@ const Slider = () => {
     else setActiveSlide(activeSlide + to);
   }
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
+
   return(
     <>
+
+    {isModalOpen ? <StockModal modalOpen = {setModalOpen} title={modalTitle}/> : null}
+
     <h2 className="slider__caption">Акции месяца</h2>
 
     <div className="slider-wrapper">
@@ -41,6 +48,9 @@ const Slider = () => {
         {sliderItems.map((item,id) => <SliderItem
                   key={item.id}
                   background={item.background}
+                  title = {item.title}
+                  setModalOpen = {setModalOpen}
+                  setModalTitle = {setModalTitle}
                   transform={id}/>)}
       </div>
     </div>
