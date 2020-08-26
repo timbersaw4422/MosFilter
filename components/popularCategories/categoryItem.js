@@ -1,10 +1,13 @@
 import Router from "next/router";
 
-const CategoryItem = ({text, bg, margin, link}) => {
+const CategoryItem = ({text, bg, margin, link, bgStyle}) => {
 
   const clickHandler = () => {
     Router.push(link);
   }
+
+  let backgroundStyle = `url(${bg}) center / cover`;
+  if (bgStyle) backgroundStyle = `url(${bg}) ${bgStyle}`;
 
   return(
     <div className="categoty__item" onClick = {clickHandler}>
@@ -20,7 +23,7 @@ const CategoryItem = ({text, bg, margin, link}) => {
            box-sizing: border-box;
            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.13);
            border-radius: 0.5rem;
-           background:url(${bg}) center / cover;
+           background:${backgroundStyle};
            cursor:pointer;
            margin-bottom:${margin || 0};
          }
