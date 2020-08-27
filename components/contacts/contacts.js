@@ -253,8 +253,9 @@ const Contacts = () => {
         }
 
         .submit-btn:before, .submit-btn:after{
-          content:"";
+          content:open-quote;
           position:absolute;
+          color:transparent;
           top:0;
           left:0;
           right:0;

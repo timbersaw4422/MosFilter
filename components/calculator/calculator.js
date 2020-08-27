@@ -1,6 +1,31 @@
 import CalculatorChoise from "./calculatorChoise";
 
 const Calculator = () => {
+
+  const calculatorChoises = [
+    {id:1, title: "Выберите марку вашего фильтра", placeholder:"Atoll",
+    options:[
+      {id:1, text:"Atoll"},{id:2, text:"Гейзер"},{id:3, text:"Барьер"},{id:4, text:"Аквафор"},
+      {id:5, text:"Platinum-wasser"},{id:6, text:"Затрудняюсь ответить"}
+    ]
+    },
+    {id:2, title: "Замена картриджей", placeholder:"Меняю самостоятельно",
+    options:[
+      {id:1, text:"Меняю самостоятельно"},{id:2, text:"Меняет мастер"}
+    ]
+    },
+    {id:3, title: "Выберите модель вашего фильтра", placeholder:"Проточный фильтр",
+    options:[
+      {id:1, text:"Проточный фильтр"},{id:2, text:"Обратный осмос"}
+    ]
+    },
+    {id:4, title: "Местоположение",  placeholder:"В пределах МКАД",
+    options:[
+      {id:1, text:"В пределах МКАД"},{id:2, text:"За пределами МКАД"}
+    ]
+    }
+  ];
+
   return(
     <div className="calculator">
       <h2 className="calculator__caption">Онлайн-калькулятор расчёта стоимости замены картриджей</h2>
@@ -10,10 +35,13 @@ const Calculator = () => {
          <div className="calculator__shape"></div>
          <div className="calculator__main">
             <div className="calculator__left">
-               <CalculatorChoise />
-               <CalculatorChoise />
-               <CalculatorChoise />
-               <CalculatorChoise />
+               {calculatorChoises.map(item => <CalculatorChoise
+                 title = {item.title}
+                 key = {item.id}
+                 placeholder= {item.placeholder}
+                 options={item.options}
+                 />) }
+
             </div>
 
             <div className="calculator__right">
@@ -22,7 +50,9 @@ const Calculator = () => {
                 <p className="calculator__option"><span>Замена картриджей: </span> Самостоятельно</p>
                 <p className="calculator__option"><span>Местоположение: </span> В перделах МКАД</p>
                 <p className="calculator__option"><span>Стоимость: </span> <span className="calculator__price">1450 ₽</span></p>
-                <div className="calculator__btn">Оформить заказ</div>
+                <div className="call-btn">
+                   <span>Оформить заказ</span>
+                </div>
             </div>
          </div>
 
@@ -126,6 +156,65 @@ const Calculator = () => {
           bottom:0;
           right:0;
           opacity:0.03;
+        }
+
+        .call-btn{
+           width:15.3rem;
+           height:3.5rem;
+           display:flex;
+           align-items:center;
+           justify-content:center;
+           font-weight: 600;
+           transition:0.3s;
+           position:relative;
+           cursor:pointer;
+           margin-top:2.6rem;
+        }
+
+        .call-btn:before, .call-btn:after{
+          content:"";
+          position:absolute;
+          top:0;
+          left:0;
+          right:0;
+          bottom:0;
+          z-index:0;
+          border-radius: 0.5rem;
+          box-shadow: 0px 4px 10px rgba(45, 82, 214, 0.41);
+          transition:0.3s;
+        }
+
+        .call-btn:after{
+          opacity:1;
+          background: linear-gradient(180deg, #6089F3 0%, #191792 100%);
+        }
+
+        .call-btn:before{
+          opacity:0;
+          background: linear-gradient(180deg, #191792 0%, #6089F3 100%);
+          border: 2px solid #2B54BE;
+        }
+
+        .call-btn span{
+          position:relative;
+          z-index:1;
+          font-weight: 600;
+          font-size: 12px;
+          color: #FFFFFF;
+        }
+
+        .call-btn:active :before{
+          background: linear-gradient(180deg, #191792 -32.22%, #6089F3 100%);
+          box-shadow:none;
+        }
+
+        @media (hover:hover){
+          .call-btn:hover:after{
+            opacity:0;
+          }
+          .call-btn:hover:before{
+            opacity:1;
+          }
         }
 
       `}</style>
