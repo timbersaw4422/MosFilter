@@ -5,8 +5,8 @@ import {useState} from "react";
 const Calculator = () => {
 
   const [option1, setOption1] = useState("Atoll");
-  const [option2, setOption2] = useState("Проточный фильтр");
-  const [option3, setOption3] = useState("Меняю самостоятельно");
+  const [option2, setOption2] = useState("Меняю самостоятельно");
+  const [option3, setOption3] = useState("Проточный фильтр");
   const [option4, setOption4] = useState("В пределах МКАД");
 
   const calculatorChoises = [
@@ -56,20 +56,20 @@ const Calculator = () => {
 
             <div className="calculator__right">
                 <p className="calculator__option"><span>Марка фильтра: </span> {option1}</p>
-                <p className="calculator__option"><span>Тип фильтра: </span> {option2}</p>
-                <p className="calculator__option"><span>Замена картриджей: </span> {option3}</p>
+                <p className="calculator__option"><span>Тип фильтра: </span> {option3}</p>
+                <p className="calculator__option"><span>Замена картриджей: </span> {option2}</p>
                 <p className="calculator__option"><span>Местоположение: </span> {option4}</p>
                 <p className="calculator__option"><span>Стоимость: </span> <span className="calculator__price">1450 ₽</span></p>
                 <div className="call-btn" onClick = {() => setModalOpen(!isModalOpen)}>
                    <span>Оформить заказ </span>
                 </div>
                 {isModalOpen ? <ChangeCartridgeModal
-                  modalOpen = {setModalOpen}
-                  option1={option1}
-                  option2={option2}
-                  option3={option3}
-                  option4={option4}
-                  /> : null}
+                   modalOpen = {setModalOpen}
+                   option1 = {option1}
+                   option2 = {option3}
+                   option3 = {option2}
+                   option4 = {option4}
+                   /> : null}
             </div>
          </div>
 
