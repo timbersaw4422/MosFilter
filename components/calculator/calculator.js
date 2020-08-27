@@ -1,5 +1,5 @@
 import CalculatorChoise from "./calculatorChoise";
-import ChangeCartridgeModal from "../modal/ChangeCartridgeModal";
+import ChangeCartridgeModal from "../modal/changeCartridgeModal";
 import {useState} from "react";
 
 const Calculator = () => {
