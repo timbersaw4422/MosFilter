@@ -9,6 +9,10 @@ const FreeCallModal = ({modalOpen}) => {
     if (checked) setChecked(false); else setChecked(true);
   }
 
+  const modalClickHandler = e => {
+    e.stopPropagation();
+  }
+
   return(
     <Modal modalOpen = {modalOpen} >
       <form className="contacts-form" style= {{marginTop:0}}>
@@ -29,7 +33,9 @@ const FreeCallModal = ({modalOpen}) => {
                <input type="text" placeholder="Контактный телефон"
                className="contact-form__input contact-form__phone"
                style={{marginBottom:"5rem"}}/>
-               <input style={{marginBottom:"3.6rem"}}type="submit" className="contacts-form__submit-btn btn-blue" value="Отправить заявку"/>
+               <div className="offer-btn" onClick = {modalClickHandler}>
+                  <span>Отправить заявку</span>
+               </div>
                <div className="privacy-policy">
                  <input type="checkbox" className="privacy-policy__checkbox" checked={checked} onChange= {checkboxHandler}/>
                  <p className="privacy-policy__text">Даю свою разрешение на  обработку персональных данных согласно
@@ -132,6 +138,69 @@ const FreeCallModal = ({modalOpen}) => {
         .contact-form__content{
           position:relative;
           z-index:10;
+        }
+
+        .offer-btn{
+           width:100%;
+           height:4.5rem;
+           display:flex;
+           align-items:center;
+           justify-content:center;
+           font-weight: 600;
+           transition:0.3s;
+           position:relative;
+           cursor:pointer;
+           margin-bottom:2rem;
+        }
+
+        .offer-btn:before, .offer-btn:after{
+          content:"";
+          position:absolute;
+          top:0;
+          left:0;
+          right:0;
+          bottom:0;
+          z-index:0;
+          border-radius: 1rem;
+          box-shadow: 0px 4px 10px rgba(45, 82, 214, 0.41);
+          transition:0.3s;
+        }
+
+        .offer-btn:after{
+          opacity:1;
+          background: linear-gradient(180deg, #6089F3 0%, #191792 100%);
+        }
+
+        .offer-btn:before{
+          opacity:0;
+          background: linear-gradient(180deg, #191792 0%, #6089F3 100%);
+          border: 2px solid #2B54BE;
+        }
+
+        .offer-btn span{
+          position:relative;
+          z-index:1;
+          font-weight: 600;
+          font-size: 14px;
+          color: #FFFFFF;
+        }
+
+        .offer-btn:active :before{
+          background: linear-gradient(180deg, #191792 -32.22%, #6089F3 100%);
+          box-shadow:none;
+        }
+
+        .with-margin{
+          margin-bottom:4rem;
+        }
+
+        @media (hover:hover){
+          .offer-btn:hover:after{
+            opacity:0;
+          }
+          .offer-btn:hover:before{
+            opacity:1;
+          }
         }
       `}</style>
     </Modal>

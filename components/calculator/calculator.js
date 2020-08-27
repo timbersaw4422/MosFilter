@@ -1,30 +1,39 @@
 import CalculatorChoise from "./calculatorChoise";
+import ChangeCartridgeModal from "../modal/ChangeCartridgeModal";
+import {useState} from "react";
 
 const Calculator = () => {
 
+  const [option1, setOption1] = useState("Atoll");
+  const [option2, setOption2] = useState("Проточный фильтр");
+  const [option3, setOption3] = useState("Меняю самостоятельно");
+  const [option4, setOption4] = useState("В пределах МКАД");
+
   const calculatorChoises = [
-    {id:1, title: "Выберите марку вашего фильтра", placeholder:"Atoll",
+    {id:1, title: "Выберите марку вашего фильтра", placeholder:"Atoll", setOption:setOption1,
     options:[
       {id:1, text:"Atoll"},{id:2, text:"Гейзер"},{id:3, text:"Барьер"},{id:4, text:"Аквафор"},
       {id:5, text:"Platinum-wasser"},{id:6, text:"Затрудняюсь ответить"}
     ]
     },
-    {id:2, title: "Замена картриджей", placeholder:"Меняю самостоятельно",
+    {id:2, title: "Замена картриджей", placeholder:"Меняю самостоятельно", setOption:setOption2,
     options:[
       {id:1, text:"Меняю самостоятельно"},{id:2, text:"Меняет мастер"}
     ]
     },
-    {id:3, title: "Выберите модель вашего фильтра", placeholder:"Проточный фильтр",
+    {id:3, title: "Выберите модель вашего фильтра", placeholder:"Проточный фильтр", setOption:setOption3,
     options:[
       {id:1, text:"Проточный фильтр"},{id:2, text:"Обратный осмос"}
     ]
     },
-    {id:4, title: "Местоположение",  placeholder:"В пределах МКАД",
+    {id:4, title: "Местоположение",  placeholder:"В пределах МКАД", setOption:setOption4,
     options:[
       {id:1, text:"В пределах МКАД"},{id:2, text:"За пределами МКАД"}
     ]
     }
   ];
+
+  const [isModalOpen, setModalOpen] = useState(false);
 
   return(
     <div className="calculator">
@@ -40,19 +49,27 @@ const Calculator = () => {
                  key = {item.id}
                  placeholder= {item.placeholder}
                  options={item.options}
+                 setOption = {item.setOption}
                  />) }
 
             </div>
 
             <div className="calculator__right">
-                <p className="calculator__option"><span>Марка фильтра: </span> Atoll</p>
-                <p className="calculator__option"><span>Тип фильтра: </span> Проточный фильтр</p>
-                <p className="calculator__option"><span>Замена картриджей: </span> Самостоятельно</p>
-                <p className="calculator__option"><span>Местоположение: </span> В перделах МКАД</p>
+                <p className="calculator__option"><span>Марка фильтра: </span> {option1}</p>
+                <p className="calculator__option"><span>Тип фильтра: </span> {option2}</p>
+                <p className="calculator__option"><span>Замена картриджей: </span> {option3}</p>
+                <p className="calculator__option"><span>Местоположение: </span> {option4}</p>
                 <p className="calculator__option"><span>Стоимость: </span> <span className="calculator__price">1450 ₽</span></p>
-                <div className="call-btn">
-                   <span>Оформить заказ</span>
+                <div className="call-btn" onClick = {() => setModalOpen(!isModalOpen)}>
+                   <span>Оформить заказ </span>
                 </div>
+                {isModalOpen ? <ChangeCartridgeModal
+                  modalOpen = {setModalOpen}
+                  option1={option1}
+                  option2={option2}
+                  option3={option3}
+                  option4={option4}
+                  /> : null}
             </div>
          </div>
 
@@ -123,7 +140,7 @@ const Calculator = () => {
           margin-bottom:1.7rem;
           font-weight: normal;
           font-size: 12px;
-          line-height: 16px;
+          line-height: 20px;
           color: #424242;
         }
 

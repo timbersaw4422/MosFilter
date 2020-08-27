@@ -1,9 +1,11 @@
+import ChoiseOption from "./option";
 import {useState} from "react";
 
-const CalculatorChoise = ({title, placeholder, options}) => {
+const CalculatorChoise = ({title, placeholder, options, setOption}) => {
 
   const [dropDownValue, setDropDownValue] = useState("");
   const [isDropDownOpen, setDropDownOpen] = useState(false);
+  const [activeId, setActiveId] = useState(1);
 
   const arrowRotate = isDropDownOpen ? 180 : 0;
   const scaleOptions = isDropDownOpen ? 1 : 0;
@@ -14,7 +16,7 @@ const CalculatorChoise = ({title, placeholder, options}) => {
 
   const optionClickHandler = (text, id) => {
     setDropDownValue(text);
-    console.log(id)
+    setActiveId(id);
   }
 
   return(
@@ -27,14 +29,16 @@ const CalculatorChoise = ({title, placeholder, options}) => {
           </svg>
 
           <div className="choise__options">
-             {options.map(o =>
-               <div
-                 key= {o.id}
-                 className="choise__option"
-                 onClick = {() => optionClickHandler(o.text, o.id)}
-                 >{o.text}
-               </div>)
-             }
+
+             {options.map(o => <ChoiseOption
+               key={o.id}
+               id = {o.id}
+               text={o.text}
+               changeHandler={optionClickHandler}
+               activeId={activeId}
+               setOption= {setOption}
+               />)}
+
           </div>
 
         </div>
@@ -93,24 +97,9 @@ const CalculatorChoise = ({title, placeholder, options}) => {
             bordeb-bottom:none;
           }
 
-          .choise__option{
-            display:flex;
-            align-items:center;
-            padding-left:1.4rem;
-            font-size: 12px;
-            line-height: 16px;
-            color: #424242;
-          }
-
           svg{
             transform:rotate(${arrowRotate}deg);
             transition:0.3s;
-          }
-
-          @media(hover:hover){
-            .choise__option:hover{
-              color: #4862D2;
-            }
           }
 
         `}</style>

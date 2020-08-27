@@ -1,7 +1,7 @@
 import Modal from "./modal";
 import {useState} from "react";
 
-const StockModal = ({modalOpen, title}) => {
+const ChangeCartridgeModal = ({modalOpen, option1, option2, option3, option4}) => {
 
   const [checked, setChecked] = useState(true);
 
@@ -23,10 +23,12 @@ const StockModal = ({modalOpen, title}) => {
           </div>
 
           <div className="form-inner">
-               <h3 className="contacts-form__title">Участие в акции <br /> {title}</h3>
+               <h3 className="contacts-form__title">Оформление заказа</h3>
                <div className="contacts-form__shape"></div>
-               <p className="contact-form__subtitle">Заполните и отправьте форму, наш специалист свяжется с
-               вами в течение 10 минут, и ответит на все ваши вопросы. </p>
+               <p className="contact-form__subtitle"><span className="bold">Марка фильтра: </span> {option1}</p>
+               <p className="contact-form__subtitle"><span className="bold">Модель фильтра: </span>{option2} </p>
+               <p className="contact-form__subtitle"><span className="bold">Местоположение:  </span>{option3}</p>
+               <p className="contact-form__subtitle with-margin"><span className="bold">Услуга замены:  </span>{option4}</p>
                <input type="text" placeholder="Ваше имя"
                className="contact-form__input contact-form__name"
                style={{marginBottom:"2rem"}}/>
@@ -47,7 +49,7 @@ const StockModal = ({modalOpen, title}) => {
 
       <style jsx>{`
         .contacts-form{
-          padding:1.5rem 6rem 4rem 6rem;
+          padding:3.5rem 6rem 4rem 6rem;
           position:relative;
         }
 
@@ -71,22 +73,15 @@ const StockModal = ({modalOpen, title}) => {
           color: #424242;
           margin-bottom:3rem;
           position:relative;
-          text-align:center;
-        }
-
-        .contacts-form__shape{
-          height:1px;
-          width:100%;
-          background:#f1f1f1;
-          transform:scaleX(2);
         }
 
         .contact-form__subtitle{
-          margin-top:3rem;
-          font-size: 14px;
+          margin-top:1rem;
+          font-size: 12px;
           line-height: 19px;
           color: #424242;
-          margin-bottom:4rem;
+          margin-bottom:1.5rem;
+          font-weight:400;
         }
 
         .contact-form__input{
@@ -138,6 +133,10 @@ const StockModal = ({modalOpen, title}) => {
         .contact-form__content{
           position:relative;
           z-index:10;
+        }
+
+        .bold{
+          font-weight:600;
         }
 
         .offer-btn{
@@ -202,9 +201,10 @@ const StockModal = ({modalOpen, title}) => {
             opacity:1;
           }
         }
+
       `}</style>
     </Modal>
   )
 }
 
-export default StockModal;
+export default ChangeCartridgeModal;
