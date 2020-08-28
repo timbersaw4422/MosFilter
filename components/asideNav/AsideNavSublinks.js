@@ -41,10 +41,18 @@ const AsideNavSublinks = ({sublinks, dispalaySubLinks}) => {
              border-right: 1px solid #F3EFEF;
              border-bottom: 1px solid #F3EFEF;
              font-size: 11px;
+             transition:0.5s;
+             font-weight:600;
            }
 
            .aside-nav__sublink:nth-child(3n){
              border-right:none;
+           }
+
+           @media(hover:hover){
+             .aside-nav__sublink:hover{
+               color: #4862D2;
+             }
            }
         `}</style>
     </div>
