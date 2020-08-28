@@ -146,6 +146,7 @@ const Footer = () => {
         }
         .footer-link{
           margin:1.4rem 0;
+          transition:0.3s;
         }
         .with-img{
           display:flex;
@@ -177,6 +178,12 @@ const Footer = () => {
           font-weight: 600;
           font-size: 14px;
           color: #E1E1E1;
+        }
+
+        @media(hover:hover){
+          .footer-link:hover{
+            color:#fff;
+          }
         }
       `}</style>
     </div>

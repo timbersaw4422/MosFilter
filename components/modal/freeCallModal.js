@@ -14,7 +14,7 @@ const FreeCallModal = ({modalOpen}) => {
   }
 
   return(
-    <Modal modalOpen = {modalOpen} >
+    <Modal modalOpen = {modalOpen}>
       <form className="contacts-form" style= {{marginTop:0}}>
           <div className="modal-cross" onClick = {() => modalOpen(false)}>
               <svg width="15" height="15" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
