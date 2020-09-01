@@ -54,8 +54,8 @@ export default function installationtAtoll(){
                        Являясь официальным диллером компания предоставляет всем своим клиентам настоящую
                       <span className="with-bold"> гарантию на 2 года </span>как на продукцию(фильтры), так и на проведённые работы. </p>
                       <div className="service-btns">
-                        <div className="service-btn service-btn1">Заказать услугу</div>
-                        <div className="service-btn service-btn2">Задать вопрос специалисту</div>
+                        <div className="service-btn service-btn1"><span>Заказать услугу</span></div>
+                        <div className="service-btn service-btn2"><span>Задать вопрос специалисту</span></div>
                       </div>
                       <p className="service-border-text">Бесплатный выезд мастера в пределах МКАД </p>
                       <p className="service-subtitle">Что входит в перечень услуги</p>
@@ -77,8 +77,8 @@ export default function installationtAtoll(){
                       <p className="price-block__title">Средняя цена по Москве</p>
                       <p className="price-block__subtitle">Стоимость услуги у нас</p>
                       <div className="service-btns">
-                        <div className="service-btn service-btn1">Заказать услугу</div>
-                        <div className="service-btn service-btn2">Задать вопрос специалисту</div>
+                        <div className="service-btn service-btn1"><span>Заказать услугу</span></div>
+                        <div className="service-btn service-btn2"><span>Задать вопрос специалисту</span></div>
                       </div>
                   </div>
                   <div className="price-block__right">

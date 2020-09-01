@@ -77,4 +77,37 @@ html{
   transition:0.5s;
 }
 
+.service-btn{
+  position:relative;
+}
+
+.service-btn:after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  z-index:0;
+  opacity:0;
+  transition:0.3s;
+  background: #4862D2;
+}
+
+.service-btn span{
+  position:relative;
+  z-index:1;
+  transition:0.3s;
+}
+
+@media (hover:hover){
+
+  .service-btn:hover:after{
+    opacity:1;
+  }
+  .service-btn:hover span{
+    color:#fff;
+  }
+}
+
 /* font-family: 'Geometria Medium'; */

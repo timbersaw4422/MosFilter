@@ -14,10 +14,11 @@
     "next-cookies": "^2.0.3",
     "nextjs-progressbar": "0.0.5",
     "react": "16.13.1",
+    "react-alert": "^7.0.2",
+    "react-alert-template-basic": "^1.0.0",
     "react-dom": "16.13.1",
     "react-modal": "^3.11.2",
     "react-slick": "^0.27.1",
-    "react-transition-group": "^4.4.1",
     "react-yandex-maps": "^4.4.0"
   }
 }

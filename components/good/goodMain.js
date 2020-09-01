@@ -1,7 +1,10 @@
 import {useState} from "react";
 import {setGoodsCookie, getGoodsCookies} from "../../utils/utils";
+import { useAlert } from 'react-alert'
 
 const GoodMain = ({good}) => {
+
+  const alert = useAlert();
 
   const [goodCount, setGoodCount] = useState(1);
 
@@ -13,11 +16,16 @@ const GoodMain = ({good}) => {
   let garanty="год";
   if (good.garanty >=2 ) garanty ="года";
 
+  const [disabledButton, setDisabledButton] = useState(false);
+
   const addBtnHandler = () => {
     setGoodsCookie(good.id, goodCount);
     const cartCount = document.querySelector(".cart-icon__count");
     cartCount.style.opacity = "1";
     cartCount.innerText = getGoodsCookies().length;
+    alert.show('Товар добавлен в корзину!');
+    setDisabledButton(true);
+    setTimeout(() => setDisabledButton(false), 1000);
   }
 
   return(
@@ -68,11 +76,11 @@ const GoodMain = ({good}) => {
               </div>
 
 
-              <div className="call-btn good-main__in-cart-btn" onClick = {addBtnHandler}>
+              <button className="call-btn good-main__in-cart-btn" disabled = {disabledButton} onClick = {addBtnHandler}>
                  <span>В корзину</span>
-              </div>
+              </button>
 
-              <div className="good-main__one-click-btn one-click-btn">Купить в 1 клик</div>
+              <div className="good-main__one-click-btn one-click-btn"><span>Купить в 1 клик</span></div>
            </div>
 
            <div className="horizontal-shape" style={{marginTop:"3rem", marginBottom:"3.4rem"}}></div>
@@ -265,6 +273,7 @@ const GoodMain = ({good}) => {
             color: #424242;
             cursor:pointer;
             width:37%;
+            position:relative;
           }
 
           .good-main__masters{
@@ -307,6 +316,13 @@ const GoodMain = ({good}) => {
              color: #FFFFFF;
              font-weight:normal;
              width:30%;
+             outline:none;
+             border:none;
+          }
+
+          .call-btn:disabled{
+            opacity:0.5;
+            pointer-events:none;
           }
 
           .call-btn:before, .call-btn:after{
@@ -347,12 +363,38 @@ const GoodMain = ({good}) => {
             box-shadow:none;
           }
 
+          .one-click-btn:after{
+            content:"";
+            position:absolute;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+            z-index:0;
+            opacity:0;
+            transition:0.3s;
+            background: #4862D2;
+          }
+
+          .one-click-btn span{
+            position:relative;
+            z-index:1;
+            transition:0.3s;
+          }
+
           @media (hover:hover){
             .call-btn:hover:after{
               opacity:0;
             }
             .call-btn:hover:before{
               opacity:1;
+            }
+
+            .one-click-btn:hover:after{
+              opacity:1;
+            }
+            .one-click-btn:hover span{
+              color:#fff;
             }
           }
       `}</style>

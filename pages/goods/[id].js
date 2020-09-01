@@ -8,6 +8,8 @@ import GoodPath from "../../components/good/goodPath";
 import GoodMain from "../../components/good/goodMain";
 import GoodBottom from "../../components/good/goodsBottom";
 import cookies from 'next-cookies';
+import { positions, Provider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
 
 export async function getServerSideProps(ctx) {
   const id = +ctx.params.id;
@@ -21,6 +23,11 @@ export async function getServerSideProps(ctx) {
 
 export default function Goods({good}){
 
+  const options = {
+    timeout: 3000,
+    position: positions.BOTTOM_RIGHT,
+    type:"success"
+  };
 
   return(
     <>
@@ -38,21 +45,24 @@ export default function Goods({good}){
         <Header />
         <MainNav />
 
-        <section className="content-block">
-            <div className="content-left">
-                <AsideNav />
-                <WhatsApp marginTop="6rem"/>
-            </div>
-            <div className="content-right">
-                <GoodPath categoryName={good.categoryName}
-                          categoryId={good.categoryId}
-                          goodTitle={good.title}
-                          goodSubtitle={good.subtitle}/>
 
-                <GoodMain good={good}/>
-                <GoodBottom good={good} />
-            </div>
-        </section>
+
+          <section className="content-block">
+              <div className="content-left">
+                  <AsideNav />
+                  <WhatsApp marginTop="6rem"/>
+              </div>
+              <div className="content-right">
+                  <GoodPath categoryName={good.categoryName}
+                            categoryId={good.categoryId}
+                            goodTitle={good.title}
+                            goodSubtitle={good.subtitle}/>
+                  <Provider template={AlertTemplate} {...options}>
+                    <GoodMain good={good}/>
+                  </Provider>
+                  <GoodBottom good={good} />
+              </div>
+          </section>
 
 
 
