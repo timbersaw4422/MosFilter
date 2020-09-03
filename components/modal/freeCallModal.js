@@ -15,6 +15,8 @@ const FreeCallModal = ({modalOpen}) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
+  const inputName = useRef(null);
+  const inputPhone = useRef(null);
   const sendBtn = useRef(null);
 
   const [isSuccess, setSuccess] = useState(false);
@@ -27,8 +29,10 @@ const FreeCallModal = ({modalOpen}) => {
 
   const sendHandler = e => {
     e.stopPropagation();
-    if (name.length <1 || phone.length!==12) {
-      alert.show('Введите корректные данные');
+    if (name.length <1 || inputPhone.current.value.length < 16) {
+      alert.show('Корректно заполните все поля');
+      if (inputName.current.value.length < 2) inputName.current.style.border="1px solid tomato";
+      if (inputPhone.current.value.length < 16) inputPhone.current.parentNode.style.border = "1px solid tomato";
     }
     else {
       sendBtn.current.style.opacity = "0.5";
@@ -58,20 +62,33 @@ const FreeCallModal = ({modalOpen}) => {
                      вами в течение 10 минут, и ответит на все ваши вопросы. </p>
                      <p className="input-label">Ваше имя</p>
                      <input
+                        ref={inputName}
                         type="text"
                         className="contact-form__input contact-form__name"
                         style={{marginBottom:"2rem"}}
-                        onChange= {e => setName(e.target.value)}
+                        onChange= {e => {
+                          setName(e.target.value);
+                          if (inputName.current.value.length < 2) inputName.current.style.border="1px solid tomato";
+                          else inputName.current.style.border="1px solid green";
+                        }}
                         value = {name}
                      />
 
                      <p className="input-label">Ваш нормер телефона</p>
                      <PhoneInput
+                          ref = {inputPhone}
                           value={phone}
                           onChange={setPhone}
                           maxLength="16"
                           international
                           defaultCountry="RU"
+                          onChange = {
+                            () => {
+                              if (inputPhone.current.value.length <= 2 ) inputPhone.current.value = "+7";
+                              if (inputPhone.current.value.length < 16) inputPhone.current.parentNode.style.border = "1px solid tomato";
+                              else inputPhone.current.parentNode.style.border = "1px solid green";
+                            }
+                          }
                      />
 
                      <div className="offer-btn" ref = {sendBtn} onClick = {sendHandler}>
