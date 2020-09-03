@@ -2,6 +2,7 @@ import Modal from "./modal";
 import {useState, useRef} from "react";
 import {sendMail} from "../../utils/mail";
 import PhoneInput from 'react-phone-number-input';
+import { useAlert } from 'react-alert';
 
 const StockModal = ({modalOpen, title}) => {
 
@@ -22,14 +23,21 @@ const StockModal = ({modalOpen, title}) => {
                     <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Ваши данные успешно<br/>отправленны!</p>
                   </div>;
 
+  const alert = useAlert();
+
   const sendHandler = e => {
     e.stopPropagation();
-    sendBtn.current.style.opacity = "0.5";
-    sendBtn.current.style.pointerEvents = "none";
-    sendMail({name,phone,stock:title, modal:2}).then(data => {
-      if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
-      setSuccess(true);
-    })
+    if (name.length <1 || phone.length!==12) {
+      alert.show('Введите корректные данные');
+    }
+    else{
+      sendBtn.current.style.opacity = "0.5";
+      sendBtn.current.style.pointerEvents = "none";
+      sendMail({name,phone,stock:title, modal:2}).then(data => {
+        if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
+        setSuccess(true);
+      })
+    }
   }
 
   return(
@@ -47,20 +55,21 @@ const StockModal = ({modalOpen, title}) => {
                      <div className="contacts-form__shape"></div>
                      <p className="contact-form__subtitle">Заполните и отправьте форму, наш специалист свяжется с
                      вами в течение 10 минут, и ответит на все ваши вопросы. </p>
+                     <p className="input-label">Ваше имя</p>
                      <input
                         type="text"
-                        placeholder="Ваше имя"
                         className="contact-form__input contact-form__name"
                         style={{marginBottom:"2rem"}}
                         onChange= {e => setName(e.target.value)}
                         value = {name}
                      />
-
+                     <p className="input-label">Ваш нормер телефона</p>
                      <PhoneInput
-                          placeholder="Ваш номер телефона"
                           value={phone}
                           onChange={setPhone}
-                          displayInitialValueAsLocalNumber
+                          maxLength="16"
+                          international
+                          defaultCountry="RU"
                      />
 
                      <div className="offer-btn" ref = {sendBtn} onClick = {sendHandler}>
@@ -86,6 +95,13 @@ const StockModal = ({modalOpen, title}) => {
           align-items:center;
           justify-content:center;
           height:100%;
+        }
+
+        .input-label{
+          margin-top:0;
+          margin-bottom:0.5rem;
+          color:#424242;
+          font-size:12px;
         }
 
         .form-inner{

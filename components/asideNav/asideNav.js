@@ -64,7 +64,7 @@ const AsideNav = () => {
        <style jsx>{`
            .aside-nav{
             position:relative;
-            z-index:100;
+            z-index:99;
            }
 
           .aside-nav__caption{

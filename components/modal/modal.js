@@ -36,7 +36,7 @@ const Modal = (props) => {
       <style jsx>{`
         .modal-overlay{
           position:fixed;
-          z-index:1000;
+          z-index:100;
           top:0;
           left:0;
           right:0;
@@ -49,7 +49,7 @@ const Modal = (props) => {
 
         .modal{
           position:fixed;
-          z-index:1001;
+          z-index:101;
           width:100%;
           max-width:430px;
           height:57rem;

@@ -2,9 +2,10 @@ import Modal from "./modal";
 import {useState, useRef} from "react";
 import {sendMail} from "../../utils/mail";
 import PhoneInput from 'react-phone-number-input';
+import { useAlert } from 'react-alert';
 
 const ChangeCartridgeModal = ({modalOpen, option1, option2, option3, option4}) => {
-  
+
   const [checked, setChecked] = useState(true);
 
   const checkboxHandler = () => {
@@ -22,14 +23,22 @@ const ChangeCartridgeModal = ({modalOpen, option1, option2, option3, option4}) =
                     <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Ваши данные успешно<br/>отправленны!</p>
                   </div>;
 
+  const alert = useAlert();
+
   const sendHandler = e => {
     e.stopPropagation();
-    sendBtn.current.style.opacity = "0.5";
-    sendBtn.current.style.pointerEvents = "none";
-    sendMail({name,phone,modal:3, data:[option1, option2, option3, option4]}).then(data => {
-      if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
-      setSuccess(true);
-    })
+    if (name.length <1 || phone.length!==12) {
+      alert.show('Введите корректные данные');
+    }
+    else{
+      sendBtn.current.style.opacity = "0.5";
+      sendBtn.current.style.pointerEvents = "none";
+      sendMail({name,phone,modal:3, data:[option1, option2, option3, option4]}).then(data => {
+        if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
+        setSuccess(true);
+      })
+    }
+
   }
 
   return(
@@ -52,20 +61,22 @@ const ChangeCartridgeModal = ({modalOpen, option1, option2, option3, option4}) =
                      <p className="contact-form__subtitle"><span className="bold">Модель фильтра: </span>{option2} </p>
                      <p className="contact-form__subtitle"><span className="bold">Услуга замены: </span>{option3} </p>
                        <p className="contact-form__subtitle with-margin"><span className="bold">Местоположение:  </span>{option4}</p>
+                     <p className="input-label">Ваше имя</p>
                      <input
                         type="text"
-                        placeholder="Ваше имя"
                         className="contact-form__input contact-form__name"
                         style={{marginBottom:"2rem"}}
                         onChange= {e => setName(e.target.value)}
                         value = {name}
                      />
 
+                     <p className="input-label">Ваш нормер телефона</p>
                      <PhoneInput
-                          placeholder="Ваш номер телефона"
                           value={phone}
                           onChange={setPhone}
-                          displayInitialValueAsLocalNumber
+                          maxLength="16"
+                          international
+                          defaultCountry="RU"
                      />
 
                      <div className="offer-btn" ref = {sendBtn} onClick = {sendHandler}>
@@ -91,6 +102,13 @@ const ChangeCartridgeModal = ({modalOpen, option1, option2, option3, option4}) =
           align-items:center;
           justify-content:center;
           height:100%;
+        }
+
+        .input-label{
+          margin-top:0;
+          margin-bottom:0.5rem;
+          color:#424242;
+          font-size:12px;
         }
 
         .form-inner{
