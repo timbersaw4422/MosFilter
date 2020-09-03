@@ -85,6 +85,7 @@ const StockModal = ({modalOpen, title}) => {
                                 if (inputPhone.current.value.length <= 2 ) inputPhone.current.value = "+7";
                                 if (inputPhone.current.value.length < 16) inputPhone.current.parentNode.style.border = "1px solid tomato";
                                 else inputPhone.current.parentNode.style.border = "1px solid green";
+                                setPhone(inputPhone.current.value);
                               }
                             }
                        />

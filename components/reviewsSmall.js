@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ReviewsSmall = () => {
   return(
     <div className="reviews-small">
@@ -13,7 +15,7 @@ const ReviewsSmall = () => {
         <p className="item__text">Всё понравилось, оперативно, чисто. Буду советовать друзьям</p>
         <p className="item__read-btn">Читать полностью</p>
       </div>
-      <p className="read-all-reviews-btn">Читать все отзывы</p>
+      <p className="read-all-reviews-btn"><Link href="/reviews"><a>Читать все отзывы</a></Link></p>
 
       <style jsx>{`
         .reviews-small{
@@ -24,6 +26,7 @@ const ReviewsSmall = () => {
           font-weight: 600;
           font-size: 16px;
           color: #424242;
+          margin-top:3.5rem;
         }
 
         .reviews-small__item{
@@ -54,6 +57,10 @@ const ReviewsSmall = () => {
 
         .read-all-reviews-btn{
           margin-top:3rem;
+        }
+
+        .read-all-reviews-btn a{
+          color: #424242;
         }
       `}</style>
     </div>
