@@ -8,7 +8,7 @@ const Slider = () => {
   const [activeSlide, setActiveSlide] = useState(1);
 
   const sliderItems = [
-    {id:0, background:"/img/slider/slide1.png", title:"Atoll A550 | 575 STD"},
+    {id:0, background:"/img/slider/slide1.png", title:"Замена картриджей на фильтрах Atoll A550 | 575 STD"},
     {id:1, background:"/img/slider/slide1.png", title:"Atoll A550 | 575 STD"},
     {id:2, background:"/img/slider/slide1.png", title:"Atoll A550 | 575 STD"},
     {id:3, background:"/img/slider/slide1.png", title:"Atoll A550 | 575 STD"}

@@ -7,7 +7,6 @@ const Modal = (props) => {
     setTimeout (() => {
       document.querySelector(".modal").style.opacity="1";
       document.querySelector(".modal").style.transform="translateY(0)";
-      console.log("open");
     } , 100);
   },[])
 

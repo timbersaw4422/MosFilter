@@ -1,16 +1,35 @@
 import Modal from "./modal";
-import {useState} from "react";
+import {useState, useRef} from "react";
+import {sendMail} from "../../utils/mail";
+import PhoneInput from 'react-phone-number-input';
 
 const ChangeCartridgeModal = ({modalOpen, option1, option2, option3, option4}) => {
-
+  
   const [checked, setChecked] = useState(true);
 
   const checkboxHandler = () => {
     if (checked) setChecked(false); else setChecked(true);
   }
 
-  const modalClickHandler = e => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const sendBtn = useRef(null);
+
+  const [isSuccess, setSuccess] = useState(false);
+  const message = <div>
+                    <p style = {{textAlign:"center", color:"#424242", fontWeight:"bold", fontSize:"18px"}}>Спасибо!</p>
+                    <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Ваши данные успешно<br/>отправленны!</p>
+                  </div>;
+
+  const sendHandler = e => {
     e.stopPropagation();
+    sendBtn.current.style.opacity = "0.5";
+    sendBtn.current.style.pointerEvents = "none";
+    sendMail({name,phone,modal:3, data:[option1, option2, option3, option4]}).then(data => {
+      if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
+      setSuccess(true);
+    })
   }
 
   return(
@@ -22,28 +41,45 @@ const ChangeCartridgeModal = ({modalOpen, option1, option2, option3, option4}) =
               </svg>
           </div>
 
-          <div className="form-inner">
-               <h3 className="contacts-form__title">Оформление заказа</h3>
-               <div className="contacts-form__shape"></div>
-               <p className="contact-form__subtitle"><span className="bold">Марка фильтра: </span> {option1}</p>
-               <p className="contact-form__subtitle"><span className="bold">Модель фильтра: </span>{option2} </p>
-               <p className="contact-form__subtitle"><span className="bold">Местоположение:  </span>{option3}</p>
-               <p className="contact-form__subtitle with-margin"><span className="bold">Услуга замены:  </span>{option4}</p>
-               <input type="text" placeholder="Ваше имя"
-               className="contact-form__input contact-form__name"
-               style={{marginBottom:"2rem"}}/>
-               <input type="text" placeholder="Контактный телефон"
-               className="contact-form__input contact-form__phone"
-               style={{marginBottom:"5rem"}}/>
-               <div className="offer-btn" onClick = {modalClickHandler}>
-                  <span>Отправить заявку</span>
-               </div>
-               <div className="privacy-policy">
-                 <input type="checkbox" className="privacy-policy__checkbox" checked={checked} onChange= {checkboxHandler}/>
-                 <p className="privacy-policy__text">Даю свою разрешение на  обработку персональных данных согласно
-                      <span> политике конфиденциальности</span></p>
-               </div>
-          </div>
+
+
+
+          {!isSuccess
+              ? <div className="form-inner">
+                     <h3 className="contacts-form__title">Оформление заказа</h3>
+                     <div className="contacts-form__shape"></div>
+                     <p className="contact-form__subtitle"><span className="bold">Марка фильтра: </span> {option1}</p>
+                     <p className="contact-form__subtitle"><span className="bold">Модель фильтра: </span>{option2} </p>
+                     <p className="contact-form__subtitle"><span className="bold">Услуга замены: </span>{option3} </p>
+                       <p className="contact-form__subtitle with-margin"><span className="bold">Местоположение:  </span>{option4}</p>
+                     <input
+                        type="text"
+                        placeholder="Ваше имя"
+                        className="contact-form__input contact-form__name"
+                        style={{marginBottom:"2rem"}}
+                        onChange= {e => setName(e.target.value)}
+                        value = {name}
+                     />
+
+                     <PhoneInput
+                          placeholder="Ваш номер телефона"
+                          value={phone}
+                          onChange={setPhone}
+                          displayInitialValueAsLocalNumber
+                     />
+
+                     <div className="offer-btn" ref = {sendBtn} onClick = {sendHandler}>
+                        <span>Отправить заявку</span>
+                     </div>
+                     <div className="privacy-policy">
+                       <input type="checkbox" className="privacy-policy__checkbox" checked={checked} onChange= {checkboxHandler}/>
+                       <p className="privacy-policy__text">Даю свою разрешение на  обработку персональных данных согласно
+                            <span> политике конфиденциальности</span></p>
+                     </div>
+                  </div>
+            :
+                  message
+          }
 
       </form>
 
@@ -51,6 +87,10 @@ const ChangeCartridgeModal = ({modalOpen, option1, option2, option3, option4}) =
         .contacts-form{
           padding:3.5rem 6rem 4rem 6rem;
           position:relative;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          height:100%;
         }
 
         .form-inner{

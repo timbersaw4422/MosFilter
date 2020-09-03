@@ -26,6 +26,7 @@ const CategoryItem = ({text, bg, margin, link, bgStyle}) => {
            background:${backgroundStyle};
            cursor:pointer;
            margin-bottom:${margin || 0};
+           transition:0.2s;
          }
 
          .category__text{
@@ -47,6 +48,16 @@ const CategoryItem = ({text, bg, margin, link, bgStyle}) => {
            font-size: 13px;
            line-height: 18px;
            color: #FFF;
+           transition:0.2s;
+         }
+
+         @media(hover:hover){
+           .categoty__item:hover .category__text{
+             transform:translateY(-5px);
+           }
+           .categoty__item:hover{
+             opacity:0.8;
+           }
          }
       `}</style>
     </div>

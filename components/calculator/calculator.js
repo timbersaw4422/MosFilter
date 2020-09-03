@@ -5,8 +5,8 @@ import {useState} from "react";
 const Calculator = () => {
 
   const [option1, setOption1] = useState("Atoll");
-  const [option2, setOption2] = useState("Меняю самостоятельно");
-  const [option3, setOption3] = useState("Проточный фильтр");
+  const [option2, setOption2] = useState("Проточный фильтр");
+  const [option3, setOption3] = useState("Меняю самостоятельно");
   const [option4, setOption4] = useState("В пределах МКАД");
 
   const calculatorChoises = [
@@ -16,14 +16,14 @@ const Calculator = () => {
       {id:5, text:"Platinum-wasser"},{id:6, text:"Затрудняюсь ответить"}
     ]
     },
-    {id:2, title: "Замена картриджей", placeholder:"Меняю самостоятельно", setOption:setOption2,
-    options:[
-      {id:1, text:"Меняю самостоятельно"},{id:2, text:"Меняет мастер"}
-    ]
-    },
-    {id:3, title: "Выберите модель вашего фильтра", placeholder:"Проточный фильтр", setOption:setOption3,
+    {id:2, title: "Выберите модель вашего фильтра", placeholder:"Проточный фильтр", setOption:setOption2,
     options:[
       {id:1, text:"Проточный фильтр"},{id:2, text:"Обратный осмос"}
+    ]
+    },
+    {id:3, title: "Замена картриджей", placeholder:"Меняю самостоятельно", setOption:setOption3,
+    options:[
+      {id:1, text:"Меняю самостоятельно"},{id:2, text:"Меняет мастер"}
     ]
     },
     {id:4, title: "Местоположение",  placeholder:"В пределах МКАД", setOption:setOption4,
@@ -56,8 +56,8 @@ const Calculator = () => {
 
             <div className="calculator__right">
                 <p className="calculator__option"><span>Марка фильтра: </span> {option1}</p>
-                <p className="calculator__option"><span>Тип фильтра: </span> {option3}</p>
-                <p className="calculator__option"><span>Замена картриджей: </span> {option2}</p>
+                <p className="calculator__option"><span>Тип фильтра: </span> {option2}</p>
+                <p className="calculator__option"><span>Замена картриджей: </span> {option3}</p>
                 <p className="calculator__option"><span>Местоположение: </span> {option4}</p>
                 <p className="calculator__option"><span>Стоимость: </span> <span className="calculator__price">1450 ₽</span></p>
                 <div className="call-btn" onClick = {() => setModalOpen(!isModalOpen)}>
@@ -66,8 +66,8 @@ const Calculator = () => {
                 {isModalOpen ? <ChangeCartridgeModal
                    modalOpen = {setModalOpen}
                    option1 = {option1}
-                   option2 = {option3}
-                   option3 = {option2}
+                   option2 = {option2}
+                   option3 = {option3}
                    option4 = {option4}
                    /> : null}
             </div>

@@ -84,20 +84,46 @@ html{
 .service-btn:after{
   content:"";
   position:absolute;
-  top:0;
-  right:0;
-  left:0;
-  bottom:0;
+  top:-1px;
+  right:-1px;
+  left:-1px;
+  bottom:-1px;
   z-index:0;
   opacity:0;
   transition:0.3s;
   background: #4862D2;
+  border-radius: 0.3rem;
 }
 
 .service-btn span{
   position:relative;
   z-index:1;
   transition:0.3s;
+}
+
+.PhoneInput{
+  background: #FFFFFF;
+  border: 1px solid #DFDEDE;
+  border-radius: 1rem;
+  width:100%;
+  font-size: 14px;
+  color: #919191;
+  height:4.7rem;
+  outline:none;
+  padding: 0 2.3rem;
+  margin-bottom:4rem;
+}
+
+.PhoneInputInput{
+  font-size: 14px;
+  color: #919191;
+  border:none;
+  outline:none;
+}
+
+.PhoneInputInput::placeholder {
+    color: #919191;
+    font-size: 14px;
 }
 
 @media (hover:hover){

@@ -1,10 +1,13 @@
 const WhatsApp = ({marginTop}) =>{
 
+  const clickHandler = () => {
+    window.open("https://wa.me/79325306046", "_blank");
+  }
 
   return(
     <div className="whatsapp">
       <h4 className="whatsapp__title">Задайте свой вопрос в WhatsApp</h4>
-      <div className="call-btn">
+      <div className="call-btn" onClick = {clickHandler}>
          <span>Написать</span>
       </div>
 

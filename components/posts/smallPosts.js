@@ -1,16 +1,15 @@
+import Link from "next/link";
+
 const Posts = () => {
   return(
     <div className="posts">
        <h2 className="posts__title">Полезные статьи</h2>
        <p className="posts__date">08.11.2019</p>
-       <p className="posts-title with-margin-bottom">Как выбрать фильтр в квартиру</p>
+       <p className="posts-title with-margin-bottom"><Link href="/posts/howToChooseFilter"><a>Как выбрать фильтр в квартиру</a></Link></p>
        <p className="posts__date">19.01.2020</p>
-       <p className="posts-title with-margin-bottom">Перимущества системы обратного осмоса</p>
-       <p className="posts__date">15.05.2020</p>
-       <p className="posts-title with-margin-bottom">Из чего складывается цена на картриджи?</p>
-       <p className="posts__date">22.03.2020</p>
-       <p className="posts-title with-margin-bottom">Сроки замены картриджей в Москве?</p>
-       <p className="posts-title">Смотреть все статьи</p>
+       <p className="posts-title with-margin-bottom"><Link href="/posts/cartridgeReplacement"><a>Как часто менять картриджи?</a></Link></p>
+
+       <p className="posts-title with-margin-top"><Link href="/posts"><a>Смотреть все статьи</a></Link></p>
 
 
        <style jsx>{`
@@ -28,14 +27,16 @@ const Posts = () => {
          .posts-title{
             font-size: 12px;
             line-height: 16px;
-            color: #424242;
             position:relative;
             padding-right:3rem;
             font-size: 12px;
             line-height: 16px;
-            text-decoration-line: underline;
+          }
+
+          .posts-title a {
             color: #424242;
             cursor:pointer;
+            text-decoration-line: underline;
           }
 
           .posts__date{
@@ -46,6 +47,10 @@ const Posts = () => {
 
           .with-margin-bottom{
             margin-bottom:3rem;
+          }
+
+          .with-margin-top{
+            margin-top:7rem;
           }
 
        `}</style>
