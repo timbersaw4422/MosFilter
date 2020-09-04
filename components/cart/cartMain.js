@@ -1,8 +1,11 @@
 import CartItem from "./cartItem";
 import {useState} from "react";
 import {setCookieByCartPlusMinus, setCookieByRemoveItem, getGoodsCookies} from "../../utils/utils";
+import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 
 const CartMain = ({goods, setCartCount}) => {
+
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const [stateGoods, setStateGoods] = useState(goods);
   let sum = 0;
@@ -63,10 +66,19 @@ const CartMain = ({goods, setCartCount}) => {
 
          <div className="cart-bottom">
             <p className="cart-sum">Итого: {sum} ₽</p>
-            <div className="call-btn">
+            <div className="call-btn" onClick = {() => setModalOpen(true)}>
                <span>Оформить заказ</span>
             </div>
          </div>
+
+         {isModalOpen ?
+           <ModalWithAlertProvider
+                             setModalOpen={setModalOpen}
+                             title = "Оформление заказа"
+                             modalType = {5}
+                             data={stateGoods}
+                          />
+            : null}
 
 
       </div>

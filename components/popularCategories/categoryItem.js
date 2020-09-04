@@ -3,7 +3,7 @@ import Router from "next/router";
 const CategoryItem = ({text, bg, margin, link, bgStyle}) => {
 
   const clickHandler = () => {
-    Router.push(link);
+    Router.push(link).then(() => window.scrollTo (0, 0));
   }
 
   let backgroundStyle = `url(${bg}) center / cover`;

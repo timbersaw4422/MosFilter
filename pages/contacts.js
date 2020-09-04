@@ -8,8 +8,8 @@ import Path from "../components/path";
 import ContactsTop from "../components/contacts/contactsTop";
 import Contacts from "../components/contacts/contacts";
 
-
 export default function contactsPage(){
+
   return(
     <>
      <div className="content-wrapper">
@@ -26,17 +26,21 @@ export default function contactsPage(){
         <Header />
         <MainNav />
 
-        <section className="content-block">
-            <div className="content-left">
-                <AsideNav />
-                <WhatsApp marginTop="6rem"/>
-            </div>
-            <div className="content-right">
-                <Path  category="contacts"/>
-                <ContactsTop />
-                <Contacts />
-            </div>
-        </section>
+          <section className="content-block">
+              <div className="content-left">
+                  <AsideNav />
+                  <WhatsApp marginTop="6rem"/>
+              </div>
+
+              <div className="content-right">
+                  <Path  category="contacts"/>
+                  <ContactsTop />
+
+                  <Contacts />
+
+              </div>
+          </section>
+
 
 
 

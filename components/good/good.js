@@ -1,12 +1,10 @@
-import {useRouter} from "next/router";
+import Router from "next/router";
 import {useState} from "react";
 
 const Good = (props) =>{
 
-  const router = useRouter();
-
   const clickHandler = () => {
-    router.push("/goods/[id]", `/goods/${props.id}`);
+    Router.push("/goods/[id]", `/goods/${props.id}`).then(() => window.scrollTo (0, 0));
   }
 
   const [zIndex, setZIndex] = useState(0);

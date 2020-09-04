@@ -1,24 +1,19 @@
-import FreeCallModal from "../modal/freeCallModal";
+import ModalWrapper from "../modal/modalWrapper.js";
 import {useState} from "react";
-import AlertTemplate from "react-alert-template-basic";
-import { positions, Provider } from "react-alert";
+import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 
 const CallBtn = () => {
 
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const options = {
-    timeout: 3000,
-    position: positions.BOTTOM_CENTER,
-    type:"error"
-  };
-
   return(
     <>
-      {isModalOpen ? <Provider template={AlertTemplate} {...options}>
-                          <FreeCallModal modalOpen = {setModalOpen} />
-                     </Provider>
-                          : null}
+      {isModalOpen ? <ModalWithAlertProvider
+                        setModalOpen={setModalOpen}
+                        title = "Заказать обратный звонок"
+                        modalType = {1}
+                     />
+                     : null}
 
       <div className="call-btn" onClick = {() => setModalOpen(true)}>
          <span>Бесплатный звонок</span>

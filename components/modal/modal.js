@@ -52,7 +52,7 @@ const Modal = (props) => {
           z-index:101;
           width:100%;
           max-width:430px;
-          height:57rem;
+          height:${props.height || "57rem"};
           max-height:100vh;
           background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%), #FFFFFF;
           box-shadow: 4px 4px 10px rgba(45, 82, 214, 0.1);
@@ -68,7 +68,7 @@ const Modal = (props) => {
           position:relative;
           overflow-y:scroll;
           width:110%;
-          padding-right:7%;
+          padding-right:6%;
           overflow-y:scroll;
           overflow-x:hidden;
         }

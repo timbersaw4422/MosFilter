@@ -4,7 +4,30 @@ import {sendMail} from "../../utils/mail";
 import PhoneInput from 'react-phone-number-input';
 import { useAlert } from 'react-alert';
 
-const FreeCallModal = ({modalOpen}) => {
+const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data}) => {
+
+  let payload;
+
+  switch (modalType){
+    case 1:break;
+    case 2:{
+      payload=subtitle;
+      break;
+    }
+    case 3:{
+      payload=data;
+      break;
+    }
+    case 4:{
+      payload=data;
+      break;
+    }
+    case 5:{
+      payload=data;
+      break;
+    }
+    default:break;
+  }
 
   const [checked, setChecked] = useState(true);
 
@@ -37,7 +60,9 @@ const FreeCallModal = ({modalOpen}) => {
     else {
       sendBtn.current.style.opacity = "0.5";
       sendBtn.current.style.pointerEvents = "none";
-      sendMail({name,phone,modal:1}).then(data => {
+      sendMail(
+        {name,phone,modal:modalType, payload}
+      ).then(data => {
         if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
         setSuccess(true);
       })
@@ -45,7 +70,8 @@ const FreeCallModal = ({modalOpen}) => {
   }
 
   return(
-    <Modal modalOpen = {modalOpen}>
+    <>
+    <Modal modalOpen = {modalOpen} height={height}>
       <form className="contacts-form" style= {{marginTop:0}}>
           <div className="modal-cross" onClick = {() => modalOpen(false)}>
               <svg width="15" height="15" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +82,8 @@ const FreeCallModal = ({modalOpen}) => {
 
           {!isSuccess
               ? <div className="form-inner">
-                     <h3 className="contacts-form__title">Заказать бесплатный звонок</h3>
+                     <h3 className="contacts-form__title">{title}</h3>
+                     {subtitle ? <h3 className="contacts-form__title">{subtitle}</h3> : null}
                      <div className="contacts-form__shape"></div>
                      <p className="contact-form__subtitle">Заполните и отправьте форму, наш специалист свяжется с
                      вами в течение 10 минут, и ответит на все ваши вопросы. </p>
@@ -104,13 +131,15 @@ const FreeCallModal = ({modalOpen}) => {
             :
                   message
           }
-
-
       </form>
+      </Modal>
+
+
+
 
       <style jsx>{`
         .contacts-form{
-          padding:4rem 6rem 4rem 6rem;
+          padding:2rem 6rem 4rem 6rem;
           position:relative;
           display:flex;
           align-items:center;
@@ -133,7 +162,7 @@ const FreeCallModal = ({modalOpen}) => {
         .modal-cross{
           position:absolute;
           top:25px;
-          right:25px;
+          right:35px;
           cursor:pointer;
           opacity:0.63;
         }
@@ -143,7 +172,7 @@ const FreeCallModal = ({modalOpen}) => {
           font-size: 18px;
           line-height: 25px;
           color: #424242;
-          margin-bottom:3rem;
+          margin-bottom:2rem;
           position:relative;
           text-align:center;
         }
@@ -277,8 +306,8 @@ const FreeCallModal = ({modalOpen}) => {
           }
         }
       `}</style>
-    </Modal>
+    </>
   )
 }
 
-export default FreeCallModal;
+export default ModalWrapper;

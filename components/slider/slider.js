@@ -1,19 +1,12 @@
 import SliderItem from "./sliderItem";
 import {useState} from "react";
 import SliderPoint from "./sliderPoint";
-import StockModal from "../modal/stockModal";
-import { positions, Provider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
+import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
+
 
 const Slider = () => {
 
   const [activeSlide, setActiveSlide] = useState(1);
-
-  const options = {
-    timeout: 3000,
-    position: positions.BOTTOM_CENTER,
-    type:"error"
-  };
 
   const sliderItems = [
     {id:0, background:"/img/slider/slide1.png", title:"Замена картриджей на фильтрах Atoll A550 | 575 STD"},
@@ -34,11 +27,14 @@ const Slider = () => {
   return(
     <>
 
-    {isModalOpen ?
-        <Provider template={AlertTemplate} {...options}>
-          <StockModal modalOpen = {setModalOpen} title={modalTitle}/>
-        </Provider>
-      : null}
+    {isModalOpen ? <ModalWithAlertProvider
+                      setModalOpen={setModalOpen}
+                      title = "Участие в акции"
+                      subtitle = {sliderItems[activeSlide].title}
+                      modalType = {2}
+                      height="62rem"
+                   />
+                   : null}
 
     <h2 className="slider__caption">Акции месяца</h2>
 

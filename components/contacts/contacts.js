@@ -1,6 +1,47 @@
 import YandexMap from "../yandexMap";
+import {useState, useRef} from "react";
+import {sendMail} from "../../utils/mail";
+import PhoneInput from 'react-phone-number-input';
 
 const Contacts = () => {
+
+  const [checked, setChecked] = useState(true);
+
+  const checkboxHandler = () => {
+    if (checked) setChecked(false); else setChecked(true);
+  }
+
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const inputName = useRef(null);
+  const inputPhone = useRef(null);
+  const sendBtn = useRef(null);
+
+  const [isSuccess, setSuccess] = useState(false);
+
+  const message = <div>
+                    <p style = {{textAlign:"center", color:"#424242", fontWeight:"bold", fontSize:"18px"}}>Спасибо!</p>
+                    <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Ваши данные успешно<br/>отправленны!</p>
+                  </div>;
+
+  const sendHandler = e => {
+                    e.stopPropagation();
+                    if (name.length <1 || inputPhone.current.value.length < 16) {
+                      console.log('Корректно заполните все поля');
+                      if (inputName.current.value.length < 2) inputName.current.style.border="1px solid tomato";
+                      if (inputPhone.current.value.length < 16) inputPhone.current.parentNode.style.border = "1px solid tomato";
+                    }
+                    else {
+                      sendBtn.current.style.opacity = "0.5";
+                      sendBtn.current.style.pointerEvents = "none";
+                      sendMail({name,phone,modal:1}).then(data => {
+                        if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
+                        setSuccess(true);
+                      })
+                    }
+  }
+
+
   return(
     <div className="contacts">
       <div className="contacts-flex">
@@ -48,26 +89,51 @@ const Contacts = () => {
 
           <div className="contacts-flex__right">
              <form className="contacts-form">
+             {!isSuccess ?
                <div className="contact-form__content">
                       <h3 className="contacts-form__title">Получите консультацию специалистов Мос — Фильтр</h3>
                       <div className="contacts-form__shape"></div>
                       <p className="contact-form__subtitle">Заполните и отправьте форму, наш специалист свяжется с
                       вами в течение 10 минут, и ответит на все ваши вопросы. </p>
-                      <input type="text" placeholder="Ваше имя"
-                      className="contact-form__input contact-form__name"
-                      style={{marginBottom:"2rem"}}/>
-                      <input type="text" placeholder="Контактный телефон"
-                      className="contact-form__input contact-form__phone"
-                      style={{marginBottom:"5rem"}}/>
-                      <div className="submit-btn">
+                      <input
+                         ref={inputName}
+                         type="text"
+                         className="contact-form__input contact-form__name"
+                         style={{marginBottom:"2rem"}}
+                         onChange= {e => {
+                           setName(e.target.value);
+                           if (inputName.current.value.length < 2) inputName.current.style.border="1px solid tomato";
+                           else inputName.current.style.border="1px solid green";
+                         }}
+                         value = {name}
+                      />
+                      <PhoneInput
+                           ref = {inputPhone}
+                           value={phone}
+                           onChange={setPhone}
+                           maxLength="16"
+                           international
+                           defaultCountry="RU"
+                           style={{marginBottom:"6rem"}}
+                           onChange = {
+                             () => {
+                               if (inputPhone.current.value.length <= 2 ) inputPhone.current.value = "+7";
+                               if (inputPhone.current.value.length < 16) inputPhone.current.parentNode.style.border = "1px solid tomato";
+                               else inputPhone.current.parentNode.style.border = "1px solid green";
+                               setPhone(inputPhone.current.value);
+                             }
+                           }/>
+                      <div className="submit-btn" ref = {sendBtn} onClick = {sendHandler}>
                          <span>Написать</span>
                       </div>
                       <div className="privacy-policy">
-                        <input type="checkbox" className="privacy-policy__checkbox"/>
+                        <input type="checkbox" className="privacy-policy__checkbox" checked={checked} onChange= {checkboxHandler} />
                         <p className="privacy-policy__text">Даю свою разрешение на  обработку персональных данных согласно
                              <span> политике конфиденциальности</span></p>
                       </div>
                 </div>
+                : message
+              }
                 <div className="contact-form__bg">
                     <svg width="361" height="451" viewBox="0 0 361 451" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M215.83 8.03929C211.022 12.7743 208.328 19.1404 208.328 25.7707C208.328 32.4011 211.022 38.7672 215.83 43.5022L362.8 185.354C387.381 209.188 404.356 239.333 411.706 272.206C419.057 305.078 416.474 339.297 404.265 370.794C392.056 402.292 370.734 429.744 342.833 449.888C314.933 470.032 281.627 482.021 246.873 484.43C212.12 486.839 177.381 479.567 146.784 463.478C116.188 447.388 91.02 423.159 74.273 393.668C57.526 364.178 49.9034 330.667 52.3114 297.118C54.7194 263.569 67.0569 231.392 87.857 204.412L125.849 239.634C108.576 265.543 101.785 296.681 106.771 327.112C111.757 357.544 128.172 385.14 152.886 404.64C177.6 424.14 208.884 434.18 240.776 432.846C272.667 431.512 302.934 418.898 325.808 397.408C337.922 385.793 347.536 371.98 354.097 356.764C360.657 341.549 364.035 325.231 364.035 308.75C364.035 292.27 360.657 275.952 354.097 260.736C347.536 245.52 337.922 231.708 325.808 220.093L252.323 149.167C249.91 146.839 247.046 144.992 243.894 143.731C240.742 142.471 237.364 141.823 233.952 141.823C230.54 141.823 227.161 142.471 224.009 143.731C220.857 144.992 217.993 146.839 215.581 149.167C213.168 151.496 211.254 154.26 209.949 157.302C208.643 160.345 207.971 163.606 207.971 166.899C207.971 170.192 208.643 173.452 209.949 176.495C211.254 179.537 213.168 182.302 215.581 184.63L289.065 255.556C302.905 269.814 310.457 288.707 310.127 308.242C309.797 327.777 301.61 346.422 287.297 360.238C272.983 374.053 253.665 381.954 233.425 382.273C213.185 382.592 193.611 375.302 178.838 361.945C164.292 347.8 156.129 328.679 156.129 308.75C156.129 288.821 164.292 269.7 178.838 255.556C181.375 253.297 183.4 250.555 184.785 247.503C186.17 244.452 186.885 241.156 186.885 237.824C186.885 234.493 186.17 231.197 184.785 228.146C183.4 225.094 181.375 222.352 178.838 220.093L105.353 149.167C102.98 146.829 100.138 144.982 97.0012 143.738C93.8644 142.493 90.4982 141.878 87.1072 141.93C80.2052 141.948 73.5777 144.542 68.6109 149.167C35.8673 180.737 13.5609 220.971 4.51362 264.779C-4.53362 308.588 0.0849429 354.002 17.7849 395.276C35.4848 436.551 65.4709 471.831 103.949 496.653C142.428 521.475 187.67 534.725 233.952 534.725C280.234 534.725 325.476 521.475 363.954 496.653C402.433 471.831 432.418 436.551 450.118 395.276C467.818 354.002 472.437 308.588 463.39 264.779C454.342 220.971 432.036 180.737 399.292 149.167L252.573 8.03929C247.667 3.39803 241.071 0.79834 234.202 0.79834C227.332 0.79834 220.736 3.39803 215.83 8.03929Z" fill="#0F4C81"/>
@@ -153,6 +219,10 @@ const Contacts = () => {
           text-align: center;
           position:relative;
           overflow:hidden;
+          height:67rem;
+          display:flex;
+          align-items:center;
+          justify-content:center;
         }
 
         .contacts-form__title{

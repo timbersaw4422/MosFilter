@@ -1,16 +1,8 @@
 import CalculatorChoise from "./calculatorChoise";
-import ChangeCartridgeModal from "../modal/changeCartridgeModal";
+import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 import {useState} from "react";
-import { positions, Provider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
 
 const Calculator = () => {
-
-  const options = {
-    timeout: 3000,
-    position: positions.BOTTOM_CENTER,
-    type:"error"
-  };
 
   const [option1, setOption1] = useState("Atoll");
   const [option2, setOption2] = useState("Проточный фильтр");
@@ -72,15 +64,12 @@ const Calculator = () => {
                    <span>Оформить заказ </span>
                 </div>
                 {isModalOpen ?
-                  <Provider template={AlertTemplate} {...options}>
-                      <ChangeCartridgeModal
-                       modalOpen = {setModalOpen}
-                       option1 = {option1}
-                       option2 = {option2}
-                       option3 = {option3}
-                       option4 = {option4}
-                       /> 
-                   </Provider>
+                  <ModalWithAlertProvider
+                                    setModalOpen={setModalOpen}
+                                    title = "Оформление заказа"
+                                    modalType = {3}
+                                    data={[option1, option2, option3, option4]}
+                                 />
                    : null}
             </div>
          </div>

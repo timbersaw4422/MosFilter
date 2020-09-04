@@ -1,8 +1,11 @@
 import {useState} from "react";
 import {setGoodsCookie, getGoodsCookies} from "../../utils/utils";
-import { useAlert } from 'react-alert'
+import { useAlert } from 'react-alert';
+import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 
 const GoodMain = ({good}) => {
+
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const alert = useAlert();
 
@@ -80,7 +83,18 @@ const GoodMain = ({good}) => {
                  <span>В корзину</span>
               </button>
 
-              <div className="good-main__one-click-btn one-click-btn"><span>Купить в 1 клик</span></div>
+              <div className="good-main__one-click-btn one-click-btn" onClick={() => setModalOpen(true)}><span>Купить в 1 клик</span></div>
+              {isModalOpen ?
+                <ModalWithAlertProvider
+                                  setModalOpen={setModalOpen}
+                                  title = "Оформление заказа"
+                                  modalType = {4}
+                                  data = {[
+                                    good.subtitle + " " + good.title  + ". Количество: "  + goodCount,
+                                    "Общая стоимость: " + goodCount*good.price + " руб."
+                                  ]}
+                               />
+                 : null}
            </div>
 
            <div className="horizontal-shape" style={{marginTop:"3rem", marginBottom:"3.4rem"}}></div>
@@ -366,14 +380,15 @@ const GoodMain = ({good}) => {
           .one-click-btn:after{
             content:"";
             position:absolute;
-            top:0;
-            right:0;
-            left:0;
-            bottom:0;
+            top:-1px;
+            right:-1px;
+            left:-1px;
+            bottom:-1px;
             z-index:0;
             opacity:0;
             transition:0.3s;
             background: #4862D2;
+            border-radius:0.5rem;
           }
 
           .one-click-btn span{

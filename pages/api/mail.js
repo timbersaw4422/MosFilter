@@ -33,7 +33,7 @@ export default async function handler(req, res) {
       to: address,
       subject: 'Участие в акции',
       text: `${body.name} - Участие в акции.
-      ${body.stock}.
+      ${body.payload}.
       Номер телефона: ${body.phone}`
     });
   }
@@ -44,10 +44,40 @@ export default async function handler(req, res) {
       to: address,
       subject: 'Услуга замены картриджей',
       text: `${body.name} - Замена картриджей.
-      Марка фильтра: ${body.data[0]}.
-      Модель фильтра: ${body.data[1]}.
-      Услуга замены: ${body.data[2]}.
-      Местоположение: ${body.data[3]}.
+      Марка фильтра: ${body.payload[0]}.
+      Модель фильтра: ${body.payload[1]}.
+      Услуга замены: ${body.payload[2]}.
+      Местоположение: ${body.payload[3]}.
+      Номер телефона: ${body.phone}`
+    });
+  }
+
+  if (body.modal === 4) {
+    result = await transporter.sendMail({
+      from: 'Mos-filter <mos.filter.shop@gmail.com>',
+      to: address,
+      subject: 'Заказ в один клик',
+      text: `${body.name} - Заказ в один клик.
+      ${body.payload[0]}.
+      ${body.payload[1]}
+      Номер телефона: ${body.phone}`
+    });
+  }
+
+  if (body.modal === 5) {
+    let sum = 0;
+    const strings = body.payload.map(item => {
+      sum += item.price*item.count;
+      return `${item.subtitle} ${item.title}. Количество: ${item.count}.`
+    });
+
+    result = await transporter.sendMail({
+      from: 'Mos-filter <mos.filter.shop@gmail.com>',
+      to: address,
+      subject: 'Заказ из корзины',
+      text: `${body.name} - Заказ из корзины.
+      ${strings.join(" ")}
+      Общая стоимость: ${sum} руб.
       Номер телефона: ${body.phone}`
     });
   }
