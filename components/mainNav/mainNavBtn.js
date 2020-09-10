@@ -1,6 +1,17 @@
 import Link from "next/link";
 
-const MainNavBtn = ({width, margin, text, link}) => {
+const MainNavBtn = ({width, margin, text, link, activeLink}) => {
+
+  const background = activeLink === text
+      ? "linear-gradient(180deg, #191792 0%, #6089F3 100%), #FFFFFF;"
+      : "#transparent";
+  const textColor = activeLink === text
+      ? "#fff"
+      : "#424242";
+  const border = activeLink === text
+      ? "#4862D2"
+      : "none";
+
   return(
       <Link href={link}>
       <a className="main-nav__btn">
@@ -22,6 +33,8 @@ const MainNavBtn = ({width, margin, text, link}) => {
            position:relative;
            text-decoration:none;
            border-radius: 1rem;
+           background:${background};
+           border:${border};
          }
 
          .main-nav__btn:after{
@@ -41,7 +54,7 @@ const MainNavBtn = ({width, margin, text, link}) => {
          .main-nav__text{
            font-weight: 600;
            font-size: 15px;
-           color: #424242;
+           color: ${textColor};
          }
 
          svg{

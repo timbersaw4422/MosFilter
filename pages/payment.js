@@ -23,7 +23,7 @@ export default function AboutPayment(){
         </Head>
 
         <Header />
-        <MainNav />
+        <MainNav activeLink={"Оплата и доставка"}/>
 
         <section className="content-block">
             <div className="content-left">

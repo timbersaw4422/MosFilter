@@ -22,7 +22,7 @@ export default function postsPage(){
         </Head>
 
         <Header />
-        <MainNav />
+        <MainNav activeLink={"Статьи"}/>
 
         <section className="content-block">
             <div className="content-left">

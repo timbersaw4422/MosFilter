@@ -26,7 +26,7 @@ export default function About(){
         </Head>
 
         <Header />
-        <MainNav />
+        <MainNav activeLink={"О компании"}/>
 
         <section className="content-block">
             <div className="content-left">

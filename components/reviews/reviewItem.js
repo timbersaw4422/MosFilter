@@ -1,14 +1,19 @@
-const ReviewItem = ({photo, title, text}) => {
-  return(
-    <div className="review-item">
-       <div className="review-item__photo-and-title">
-           <img src={photo} alt="review"/>
-           <p className="review-item__title">{title}</p>
-       </div>
-       <div className="review-item__text">{text}</div>
-       <div className="review-item__btn">Смотреть скриншот</div>
+import {useState} from "react";
 
- 
+const ReviewItem = ({photo, title, text, setModalOpen}) => {
+
+  return(
+    <>
+        <div className="review-item">
+
+           <div className="review-item__photo-and-title">
+               <img src={photo} alt="review"/>
+               <p className="review-item__title">{title}</p>
+           </div>
+           <div className="review-item__text">{text}</div>
+           <div className="review-item__btn" onClick={() => setModalOpen(true)}>Смотреть скриншот</div>
+        </div>
+
 
        <style jsx>{`
          .review-item{
@@ -58,7 +63,7 @@ const ReviewItem = ({photo, title, text}) => {
             cursor:pointer;
           }
        `}</style>
-    </div>
+    </>
   )
 }
 

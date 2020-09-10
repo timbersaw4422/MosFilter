@@ -32,7 +32,7 @@ export default function Index(){
         </Head>
 
         <Header />
-        <MainNav />
+        <MainNav activeLink={"Главная"}/>
 
         <section className="content-block">
             <div className="content-left">

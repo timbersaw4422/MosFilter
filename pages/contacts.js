@@ -24,7 +24,7 @@ export default function contactsPage(){
         </Head>
 
         <Header />
-        <MainNav />
+        <MainNav activeLink={"Контакты"}/>
 
           <section className="content-block">
               <div className="content-left">

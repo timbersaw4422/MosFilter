@@ -24,7 +24,7 @@ export default function Reviews(){
         </Head>
 
         <Header />
-        <MainNav />
+        <MainNav activeLink={"Отзывы"}/>
 
         <section className="content-block">
             <div className="content-left">

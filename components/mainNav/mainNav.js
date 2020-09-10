@@ -1,15 +1,15 @@
 import MainNavBtn from "./mainNavBtn";
 
-const MainNav = () => {
+const MainNav = ({activeLink}) => {
   return(
     <section className="main-nav">
-       <MainNavBtn width="14%" text="Главная" link="/"/>
-       <MainNavBtn width="14%" text="О компании" link="/about"/>
-       <MainNavBtn width="14%" text="Отзывы" link="/reviews"/>
-       <MainNavBtn width="14%" text="Для бизнеса" link="/forbusiness"/>
-       <MainNavBtn width="14%" text="Оплата и доставка" link="/payment"/>
-       <MainNavBtn width="14%" text="Статьи" link="/posts"/>
-       <MainNavBtn width="14%" text="Контакты" margin="none" link="/contacts"/>
+       <MainNavBtn activeLink = {activeLink} width="14%" text="Главная" link="/"/>
+       <MainNavBtn activeLink = {activeLink} width="14%" text="О компании" link="/about"/>
+       <MainNavBtn activeLink = {activeLink} width="14%" text="Отзывы" link="/reviews"/>
+       <MainNavBtn activeLink = {activeLink} width="14%" text="Для бизнеса" link="/forbusiness"/>
+       <MainNavBtn activeLink = {activeLink} width="14%" text="Оплата и доставка" link="/payment"/>
+       <MainNavBtn activeLink = {activeLink} width="14%" text="Статьи" link="/posts"/>
+       <MainNavBtn activeLink = {activeLink} width="14%" text="Контакты" margin="none" link="/contacts"/>
 
 
        <style jsx>{`

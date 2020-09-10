@@ -24,7 +24,7 @@ export default function forBusiness(){
         </Head>
 
         <Header />
-        <MainNav />
+        <MainNav activeLink={"Для бизнеса"}/>
 
         <section className="content-block">
             <div className="content-left">

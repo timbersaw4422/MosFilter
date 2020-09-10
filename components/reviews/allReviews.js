@@ -1,10 +1,12 @@
 import ReviewItem from "./reviewItem";
 import {useState} from "react";
 import ReviewsSliderPoint from "./reviews-slider-point";
+import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 
 const AllReviews = () => {
 
   const [activePage, setActivePage] = useState(0);
+  const [isModalOpen, setModalOpen] = useState(0);
   let translate="translateX(0)";
 
   if (activePage === 1) translate = "translateX(calc(-25% - 2rem))";
@@ -18,6 +20,15 @@ const AllReviews = () => {
 
   return(
     <div className="all-reviews">
+
+      {isModalOpen ? <ModalWithAlertProvider
+                        setModalOpen={setModalOpen}
+                        title = "Заказать обратный звонок"
+                        modalType = {6}
+                        img="/img/reviews/screen1.png"
+                     />
+                     : null}
+
        <h2 className="all-reviews__title">«Мос — фильтр»  |  Последние отзывы</h2>
        <p className="all-reviews__text">За 8 лет своей деятельности мы помогли десяткам тысяч людей по всей в Москве.
        Большинство клиентов остаются с нами по сей день. Вы можете убедиться в этом прочитав их честные отзывы. </p>
@@ -26,81 +37,84 @@ const AllReviews = () => {
          <div className="all-reviews-track">
              <div className="all-reviews__page">
                  <ReviewItem
+                 setModalOpen={setModalOpen}
                  photo = "/img/reviews/review1.png"
                  title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
                  text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
                   <ReviewItem
+                  setModalOpen={setModalOpen}
                   photo = "/img/reviews/review2.png"
                   title = "Шевченко Наталья | Замена картриджей на фильтре Аквафор Осмо-50"
                   text = "Спасибо огромное мастеру Ивану за отличную работу по замене картриджей фильтра, за его внимательное отношение к клиентам! С уважением, Шевченко Наталья Геннадьевна."/>
                   <ReviewItem
+                  setModalOpen={setModalOpen}
                   photo = "/img/reviews/review3.png"
                   title = "Татьяна | Покупка и установка осмоса Atoll A-450 Compact"
                   text = "Спасибо огромное за установку фильтра. Вы настоящий профессионал своего дела. Мне пришлось столкнуться с множеством сантехников и нечестных фирм, которые..."/>
                   <ReviewItem
+                  setModalOpen={setModalOpen}
                   photo = "/img/reviews/review4.png"
                   title = "Ольга | Замена картриджей на фильтре Аквафор Морион DWM-101"
                   text = "Я довольна Вашей работой! Спасибо! Вас рекомендую своим знакомым. Вода — это жизнь!"/>
                   <ReviewItem
+                  setModalOpen={setModalOpen}
                   photo = "/img/reviews/review5.png"
                   title = "Светлана | Покупка и установка фильтра Atoll A-550 STD"
                   text = "Спасибо большое мастер довольно быстро всё починил исправил поменял и объяснил. Очень довольны. Будем обращаться в Вашу фирму и дальше."/>
                   <ReviewItem
+                  setModalOpen={setModalOpen}
                   photo = "/img/reviews/review4.png"
                   title = "Ирина | Замена картриджей на фильтре Аквафор Кристалл ЭКО "
                   text = "Ваня, спасибо за всё! Менять фильтры будем только у вас"/>
              </div>
              <div className="all-reviews__page">
                  <ReviewItem
-                 photo = "/img/reviews/review1.png"
-                 title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
-                 text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
+                 setModalOpen={setModalOpen}
+                 photo = "/img/reviews/review5.png"
+                 title = "Ольга | Установка фильтра Аквафор Морион DWM-101s"
+                 text = "Хочется поблагодарить Ивана за установку фильтра, теперь пьём чистую воду! Всё было сделано быстро и профессионально! Спасибо, рекомендую!"/>
                   <ReviewItem
-                  photo = "/img/reviews/review2.png"
-                  title = "Шевченко Наталья | Замена картриджей на фильтре Аквафор Осмо-50"
-                  text = "Спасибо огромное мастеру Ивану за отличную работу по замене картриджей фильтра, за его внимательное отношение к клиентам! С уважением, Шевченко Наталья Геннадьевна."/>
+                  setModalOpen={setModalOpen}
+                  photo = "/img/reviews/review8.png"
+                  title = "Евгения | Замена фильтров на осмосе Гейзер Престиж"
+                  text = "Здравствуйте! Мастером очень довольна, уже не в первый раз он нам меняет фильтр, никаких нареканий. Приехал по договорённости, без опозданий, всё оперативно и ..."/>
                   <ReviewItem
-                  photo = "/img/reviews/review3.png"
-                  title = "Татьяна | Покупка и установка осмоса Atoll A-450 Compact"
-                  text = "Спасибо огромное за установку фильтра. Вы настоящий профессионал своего дела. Мне пришлось столкнуться с множеством сантехников и нечестных фирм, которые..."/>
+                  setModalOpen={setModalOpen}
+                  photo = "/img/reviews/review9.png"
+                  title = "Елена Викторона | Установка системы обратного осмоса Atoll A-550 Патриот"
+                  text = "Здравствуйте. Всё прошло быстро и безболезненно, как врач и обещал. Мы с моим краником и фильтрами остались довольны. Будем рады Вас видеть, через пол года, как мастер и говорил."/>
                   <ReviewItem
-                  photo = "/img/reviews/review4.png"
-                  title = "Ольга | Замена картриджей на фильтре Аквафор Морион DWM-101"
-                  text = "Я довольна Вашей работой! Спасибо! Вас рекомендую своим знакомым. Вода — это жизнь!"/>
+                  setModalOpen={setModalOpen}
+                  photo = "/img/reviews/review10.png"
+                  title = "Наталья | Установка системы обратного осмоса Atoll A-450 Compact"
+                  text = "Мне всё понравилось, получилось быстро и качественно. Приятно, что взяли надо мной шефство и готовы напоминать о замене..."/>
                   <ReviewItem
-                  photo = "/img/reviews/review5.png"
-                  title = "Светлана | Покупка и установка фильтра Atoll A-550 STD"
-                  text = "Спасибо большое мастер довольно быстро всё починил исправил поменял и объяснил. Очень довольны. Будем обращаться в Вашу фирму и дальше."/>
+                  setModalOpen={setModalOpen}
+                  photo = "/img/reviews/review11.png"
+                  title = "Эльвира | Замена картриджей на фильтре Atoll 550-std"
+                  text = "Работа мастера без нареканий, вода хороша, ничего не течёт разьяснения по промывке фильтры ясные и всё прошло успешно! Спасибо!"/>
                   <ReviewItem
-                  photo = "/img/reviews/review4.png"
-                  title = "Ирина | Замена картриджей на фильтре Аквафор Кристалл ЭКО "
-                  text = "Ваня, спасибо за всё! Менять фильтры будем только у вас"/>
+                  setModalOpen={setModalOpen}
+                  photo = "/img/reviews/review12.png"
+                  title = "Елена | Замена картриджей на фильтре Aquafilter RX5"
+                  text = "Добрый день! Сегодня нам заменили фильтры Аквафор Трио. Всё понравилось, будем обращаться в следующий раз только к вам..."/>
              </div>
              <div className="all-reviews__page">
                  <ReviewItem
-                 photo = "/img/reviews/review1.png"
-                 title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
-                 text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
+                 setModalOpen={setModalOpen}
+                 photo = "/img/reviews/review13.png"
+                 title = "Анатолий| Замена картриджей в фильтре Аквафор Кристалл Осмо"
+                 text = "Заранее были проинформированы о времени приезда. Работа выполнена быстро, качественно. Всем рекомендуем!"/>
                   <ReviewItem
-                  photo = "/img/reviews/review2.png"
-                  title = "Шевченко Наталья | Замена картриджей на фильтре Аквафор Осмо-50"
-                  text = "Спасибо огромное мастеру Ивану за отличную работу по замене картриджей фильтра, за его внимательное отношение к клиентам! С уважением, Шевченко Наталья Геннадьевна."/>
+                  setModalOpen={setModalOpen}
+                  photo = "/img/reviews/review14.png"
+                  title = "Даниил | Установка системы обратного осмоса Atoll A-550 Патриот"
+                  text = "Спасибо, всё отлично:) главное вы есть в вотсапе и приезжаете вовремя:) с фильтром, надеюст тоже всё в порядке"/>
                   <ReviewItem
-                  photo = "/img/reviews/review3.png"
-                  title = "Татьяна | Покупка и установка осмоса Atoll A-450 Compact"
-                  text = "Спасибо огромное за установку фильтра. Вы настоящий профессионал своего дела. Мне пришлось столкнуться с множеством сантехников и нечестных фирм, которые..."/>
-                  <ReviewItem
-                  photo = "/img/reviews/review4.png"
-                  title = "Ольга | Замена картриджей на фильтре Аквафор Морион DWM-101"
-                  text = "Я довольна Вашей работой! Спасибо! Вас рекомендую своим знакомым. Вода — это жизнь!"/>
-                  <ReviewItem
-                  photo = "/img/reviews/review5.png"
-                  title = "Светлана | Покупка и установка фильтра Atoll A-550 STD"
-                  text = "Спасибо большое мастер довольно быстро всё починил исправил поменял и объяснил. Очень довольны. Будем обращаться в Вашу фирму и дальше."/>
-                  <ReviewItem
-                  photo = "/img/reviews/review4.png"
-                  title = "Ирина | Замена картриджей на фильтре Аквафор Кристалл ЭКО "
-                  text = "Ваня, спасибо за всё! Менять фильтры будем только у вас"/>
+                  setModalOpen={setModalOpen}
+                  photo = "/img/reviews/review15.png"
+                  title = "Инна | Покупка картриджей для Аквафор Морион DWM-10"
+                  text = "Добрый вечер, Иван! Да, всё прекрасно! Спасибо на работу."/>
              </div>
 
 
