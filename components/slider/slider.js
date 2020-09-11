@@ -9,10 +9,10 @@ const Slider = () => {
   const [activeSlide, setActiveSlide] = useState(1);
 
   const sliderItems = [
-    {id:0, background:"/img/slider/1.png", title:"Система обратного осмоса + установка Atoll A-550 STD"},
-    {id:1, background:"/img/slider/2.png", title:"Комлект картриджей для фильтров Барьер «Осмо»"},
-    {id:2, background:"/img/slider/3.png", title:"Комлект картриджей для фильтров Гейзер «Престиж»"},
-    {id:3, background:"/img/slider/4.png", title:"Комлект картриджей для фильтров Atoll A-550 | 560 STD"}
+    {id:0, background:"/img/slider/1.jpg", title:"Система обратного осмоса + установка Atoll A-550 STD"},
+    {id:1, background:"/img/slider/4.jpg", title:"Комлект картриджей для фильтров Atoll A-550 | 560 STD"},
+    {id:2, background:"/img/slider/2.jpg", title:"Комлект картриджей для фильтров Барьер «Осмо»"},
+    {id:3, background:"/img/slider/3.jpg", title:"Комлект картриджей для фильтров Гейзер «Престиж»"}
   ];
 
   const arrowClickHandler = to => {
@@ -150,11 +150,11 @@ const Slider = () => {
       }
 
       .slider__arrow-left{
-        left:4rem;
+        left:2rem;
       }
 
       .slider__arrow-right{
-        right:4rem;
+        right:2rem;
       }
 
       .slider__points{

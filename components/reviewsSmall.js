@@ -8,12 +8,12 @@ const ReviewsSmall = () => {
         <p className="item__date">07.02.2020 | Татьяна</p>
         <p className="item__text">Не первый раз обращаюсь к вам. Огромное спасибо за ваш труд! Мастер как всегда приехал
            вовремя, провёл всё работы...</p>
-        <p className="item__read-btn">Читать полностью</p>
+        <p className="item__read-btn"><Link href="/reviews"><a>Читать полностью</a></Link></p>
       </div>
       <div className="reviews-small__item">
         <p className="item__date">28.11.2019 | Сергей</p>
         <p className="item__text">Всё понравилось, оперативно, чисто. Буду советовать друзьям</p>
-        <p className="item__read-btn">Читать полностью</p>
+        <p className="item__read-btn"><Link href="/reviews"><a>Читать полностью</a></Link></p>
       </div>
       <p className="read-all-reviews-btn"><Link href="/reviews"><a>Читать все отзывы</a></Link></p>
 

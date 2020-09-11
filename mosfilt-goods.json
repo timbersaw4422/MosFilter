@@ -12,9 +12,9 @@
       "img" : "/img/goods/1.png",
       "logoImg" : "/img/logos/atoll.png",
       "longDesc" : "Описание",
-      "price" : 15400,
+      "price" : 22500,
       "subtitle" : "Система обратного осмоса",
-      "title" : "Atoll A550 STD BOX"
+      "title" : "Atoll A550 STD BOX Sailboat"
     },
     "2" : {
       "articul" : "crt-a550std",
@@ -28,9 +28,41 @@
       "img" : "/img/goods/2.png",
       "logoImg" : "/img/logos/atoll.png",
       "longDesc" : "Описание",
-      "price" : 6290,
+      "price" : 8300,
       "subtitle" : "Проточный фильтр",
       "title" : "Atoll D-31 STD"
+    },
+    "3" : {
+      "articul" : "crt-a550std",
+      "categoryId" : 0,
+      "categoryName" : "atoll",
+      "characteristics" : "Характеристики",
+      "composition" : "Состав",
+      "desc" : "Описание",
+      "garanty" : 1,
+      "id" : 3,
+      "img" : "/img/goods/3.png",
+      "logoImg" : "/img/logos/atoll.png",
+      "longDesc" : "Описание",
+      "price" : 15950,
+      "subtitle" : "Система обратного осмоса",
+      "title" : "Atoll A-550 STD"
+    },
+    "4" : {
+      "articul" : "crt-a550std",
+      "categoryId" : 0,
+      "categoryName" : "atoll",
+      "characteristics" : "Характеристики",
+      "composition" : "Состав",
+      "desc" : "Описание",
+      "garanty" : 1,
+      "id" : 4,
+      "img" : "/img/goods/4.png",
+      "logoImg" : "/img/logos/atoll.png",
+      "longDesc" : "Описание",
+      "price" : 8500,
+      "subtitle" : "Система обратного осмоса",
+      "title" : "Atoll A-550 «Патриот»"
     },
     "101" : {
       "articul" : "crt-a550std",
@@ -44,7 +76,7 @@
       "img" : "/img/goods/101.png",
       "logoImg" : "/img/logos/geizer.png",
       "longDesc" : "Описание",
-      "price" : 3490,
+      "price" : 5500,
       "subtitle" : "Проточный фильтр",
       "title" : "Гейзер «Био»"
     },
@@ -60,7 +92,7 @@
       "img" : "/img/goods/102.png",
       "logoImg" : "/img/logos/geizer.png",
       "longDesc" : "Описание",
-      "price" : 3490,
+      "price" : 9950,
       "subtitle" : "Система обратного осмоса",
       "title" : "Гейзер «Престиж»"
     },
