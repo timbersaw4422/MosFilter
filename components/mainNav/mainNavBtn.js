@@ -8,9 +8,12 @@ const MainNavBtn = ({width, margin, text, link, activeLink}) => {
   const textColor = activeLink === text
       ? "#fff"
       : "#424242";
-  const border = activeLink === text
-      ? "#4862D2"
-      : "none";
+  const opacityAfter = activeLink === text
+      ? "1"
+      : "0";
+  const hoverText = activeLink === text
+      ? "#fff"
+      : "#282EA5";
 
   return(
       <Link href={link}>
@@ -34,7 +37,6 @@ const MainNavBtn = ({width, margin, text, link, activeLink}) => {
            text-decoration:none;
            border-radius: 1rem;
            background:${background};
-           border:${border};
          }
 
          .main-nav__btn:after{
@@ -47,7 +49,7 @@ const MainNavBtn = ({width, margin, text, link, activeLink}) => {
            border: 2px solid #4862D2;
            box-sizing: border-box;
            border-radius: 1rem;
-           opacity:0;
+           opacity:${opacityAfter};
            transition:0.5s;
          }
 
@@ -66,7 +68,7 @@ const MainNavBtn = ({width, margin, text, link, activeLink}) => {
              opacity:1;
            }
            .main-nav__btn:hover .main-nav__text{
-             color: #282EA5;
+             color: ${hoverText};
            }
          }
 

@@ -1,6 +1,11 @@
 import {useState} from "react";
 
-const ReviewItem = ({photo, title, text, setModalOpen}) => {
+const ReviewItem = ({photo, title, text, setModalOpen, onChoose, screenShot}) => {
+
+  const clickBtnHandler = () => {
+    setModalOpen(true);
+    onChoose(screenShot);
+  }
 
   return(
     <>
@@ -11,7 +16,7 @@ const ReviewItem = ({photo, title, text, setModalOpen}) => {
                <p className="review-item__title">{title}</p>
            </div>
            <div className="review-item__text">{text}</div>
-           <div className="review-item__btn" onClick={() => setModalOpen(true)}>Смотреть скриншот</div>
+           <div className="review-item__btn" onClick={clickBtnHandler}><span>Смотреть скриншот</span></div>
         </div>
 
 
@@ -52,7 +57,6 @@ const ReviewItem = ({photo, title, text, setModalOpen}) => {
             font-weight: 600;
             font-size: 12px;
             line-height: 16px;
-            color: #424242;
             display:flex;
             align-items:center;
             justify-content:center;
@@ -61,6 +65,37 @@ const ReviewItem = ({photo, title, text, setModalOpen}) => {
             border: 2px solid #4862D2;
             border-radius: 2rem;
             cursor:pointer;
+            position:relative;
+          }
+
+          .review-item__btn span{
+            position:relative;
+            z-index:2;
+            color: #424242;
+            transition:0.3s;
+          }
+
+          .review-item__btn:after{
+            content:"";
+            position:absolute;
+            top:-1px;
+            left:-1px;
+            right:-1px;
+            bottom:-1px;
+            background:#4862D2;
+            z-index:1;
+            transition:0.3s;
+            border-radius: 2rem;
+            opacity:0;
+          }
+
+          @media(hover:hover){
+            .review-item__btn:hover:after{
+               opacity:1;
+            }
+            .review-item__btn:hover span{
+               color:#fff;
+            }
           }
        `}</style>
     </>
