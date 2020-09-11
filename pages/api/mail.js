@@ -82,6 +82,20 @@ export default async function handler(req, res) {
     });
   }
 
+  if (body.modal === 7) {
+    result = await transporter.sendMail({
+      from: 'Mos-filter <mos.filter.shop@gmail.com>',
+      to: address,
+      subject: 'Заказ услуги',
+      text: `${body.payload} 
+      Номер телефона: ${body.phone}`
+    });
+  }
+
+  //////modalType 6 это слайдер с отзывами на фронте
+
+
+
   /////////////////
 
   if (result.rejected.length === 0) res.status(200).json({"message":"Сообщение отправлено", status:1});

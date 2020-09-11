@@ -26,6 +26,10 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img}
       payload=data;
       break;
     }
+    case 7:{
+      payload=title;
+      break;
+    }
     default:break;
   }
 

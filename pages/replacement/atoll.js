@@ -6,7 +6,8 @@ import WhatsApp from "../../components/whatsApp";
 import Footer from "../../components/footer/footer";
 import Link from "next/link";
 import Last2Rewiews from "../../components/reviews/last2Reviews";
-
+import ModalWithAlertProvider from "../../components/modal/modalWithAlertProvider";
+import {useState} from "react";
 
 export default function replacementAtoll(){
 
@@ -18,8 +19,18 @@ export default function replacementAtoll(){
     {id:5, text:"Установка фильтра", link:`/installation/atoll`}
   ];
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return(
     <>
+
+    {isModalOpen ? <ModalWithAlertProvider
+                      setModalOpen={setModalOpen}
+                      title = "Заказать услугу замены картриджей Атолл"
+                      modalType = {7}
+                   />
+                   : null}
+
      <div className="content-wrapper">
 
         <Head>
@@ -55,8 +66,8 @@ export default function replacementAtoll(){
                       моделях фильтров марки «Atoll». Являясь официальным диллером компания предоставляет всем своим клиентам настоящую
                       <span className="with-bold"> годовую гарантию </span>как на продукцию(картриджи), так и на проведённые работы. </p>
                       <div className="service-btns">
-                        <div className="service-btn service-btn1"><span>Заказать услугу</span></div>
-                        <div className="service-btn service-btn2"><span>Задать вопрос специалисту</span></div>
+                        <div className="service-btn service-btn1"onClick = {() => setModalOpen(true)}><span>Заказать услугу</span></div>
+                        <div className="service-btn service-btn2"onClick = {() => window.open("https://wa.me/79325306046", "_blank")}><span>Задать вопрос специалисту</span></div>
                       </div>
                       <p className="service-border-text">Предоставляем бесплатную санитарную обработку фильтра </p>
                       <p className="service-subtitle">Что входит в перечень услуги</p>
@@ -78,8 +89,8 @@ export default function replacementAtoll(){
                       <p className="price-block__title">Средняя цена по Москве</p>
                       <p className="price-block__subtitle">Стоимость услуги у нас</p>
                       <div className="service-btns">
-                        <div className="service-btn service-btn1"><span>Заказать услугу</span></div>
-                        <div className="service-btn service-btn2"><span>Задать вопрос специалисту</span></div>
+                        <div className="service-btn service-btn1"onClick = {() => setModalOpen(true)}><span>Заказать услугу</span></div>
+                        <div className="service-btn service-btn2"onClick = {() => window.open("https://wa.me/79325306046", "_blank")}><span>Задать вопрос специалисту</span></div>
                       </div>
                   </div>
                   <div className="price-block__right">
