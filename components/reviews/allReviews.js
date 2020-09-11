@@ -6,7 +6,7 @@ import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 const AllReviews = () => {
 
   const [activePage, setActivePage] = useState(0);
-  const [isModalOpen, setModalOpen] = useState(0);
+  const [isModalOpen, setModalOpen] = useState(false);
   let translate="translateX(0)";
 
   if (activePage === 1) translate = "translateX(calc(-20% - 2rem))";

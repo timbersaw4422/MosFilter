@@ -2,6 +2,7 @@ import {useState} from "react";
 import {setGoodsCookie, getGoodsCookies} from "../../utils/utils";
 import { useAlert } from 'react-alert';
 import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
+import Router from "next/router";
 
 const GoodMain = ({good}) => {
 
@@ -24,12 +25,17 @@ const GoodMain = ({good}) => {
   const addBtnHandler = () => {
     setGoodsCookie(good.id, goodCount);
     const cartCount = document.querySelector(".cart-icon__count");
+    document.querySelector(".cart-icon").style.background = "#4862D2";
+    document.querySelector(".cart-icon svg path").attributes.stroke.nodeValue = "#fff";
+
     cartCount.style.opacity = "1";
     cartCount.innerText = getGoodsCookies().length;
     alert.show('Товар добавлен в корзину!');
     setDisabledButton(true);
-    setTimeout(() => setDisabledButton(false), 1000);
+    setTimeout(() => setBtnToCartVisible(true), 1000);
   }
+
+  const [isBtnToCartVisible, setBtnToCartVisible] = useState(false);
 
   return(
     <>
@@ -78,10 +84,18 @@ const GoodMain = ({good}) => {
                 </div>
               </div>
 
+              {
+                isBtnToCartVisible
+                  ?
+                  <button className="good-main__one-click-btn one-click-btn" onClick = {() => Router.push("/cart").then(() => window.scrollTo (0, 0))}>
+                     <span>Перейти в корзину</span>
+                  </button>
+                  :
+                  <button className="call-btn good-main__in-cart-btn" disabled = {disabledButton} onClick = {addBtnHandler}>
+                     <span>В корзину</span>
+                  </button>
+              }
 
-              <button className="call-btn good-main__in-cart-btn" disabled = {disabledButton} onClick = {addBtnHandler}>
-                 <span>В корзину</span>
-              </button>
 
               <div className="good-main__one-click-btn one-click-btn" onClick={() => setModalOpen(true)}><span>Купить в 1 клик</span></div>
               {isModalOpen ?
@@ -265,17 +279,15 @@ const GoodMain = ({good}) => {
           }
 
           .good-main__in-cart-btn{
-            width:12rem;
             height:4rem;
             border-radius:0.3rem;
             font-size: 13px;
             color: #FFFFFF;
             font-weight:normal;
-            width:30%;
+            width:35%;
           }
 
           .good-main__one-click-btn{
-            width:15rem;
             height:4rem;
             border: 2px solid #4862D2;
             border-radius: 5px;
@@ -286,8 +298,9 @@ const GoodMain = ({good}) => {
             line-height: 18px;
             color: #424242;
             cursor:pointer;
-            width:37%;
+            width:35%;
             position:relative;
+            outline:none;
           }
 
           .good-main__masters{

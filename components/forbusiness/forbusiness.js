@@ -120,19 +120,22 @@ const ForBusiness = () => {
        <p className="about__paragraph"><span className="blue">3.</span> Гибкое ценообразование формирующеся исходя из состава работ</p>
        <p className="about__paragraph"><span className="blue">4. </span>Полную отчётность</p>
        <p className="about__paragraph"><span className="blue">5. </span>Официальную гарантию на продукцию и услуги</p>
-       <div className="horizontal-shape" style= {{marginTop:"6.4rem"}}></div>
+       {
+       //<div className="horizontal-shape" style= {{marginTop:"6.4rem"}}></div>
 
-       <h3 className="business__subtitle">Отзывы корпоративных клиентов</h3>
-       <div className="business__reviews">
-           <ReviewItem
-           photo = "/img/reviews/review1.png"
-           title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
-           text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
-           <ReviewItem
-           photo = "/img/reviews/review1.png"
-           title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
-           text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
-       </div>
+
+       //<h3 className="business__subtitle">Отзывы корпоративных клиентов</h3>
+       // <div className="business__reviews">
+       //     <ReviewItem
+       //     photo = "/img/reviews/review1.png"
+       //     title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
+       //     text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
+       //     <ReviewItem
+       //     photo = "/img/reviews/review1.png"
+       //     title = "Павел | Замена картриджей на фильтре Аквафор Морион DWM-10"
+       //     text = "Спасибо Иван, очень приятно с вами иметь дело) ещё в скором времени обращусь к вам по другой квартире"/>
+       // </div>
+      }
        <div className="horizontal-shape" style= {{marginTop:"6rem"}}></div>
 
        <h3 className="business__subtitle">Наши клиенты</h3>
