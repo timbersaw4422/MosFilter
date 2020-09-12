@@ -41,7 +41,11 @@ const CartMain = ({goods, setCartCount}) => {
     setStateGoods(newGoods);
     setCartCount(newGoods.length);
     if (getGoodsCookies().length) document.querySelector(".cart-icon__count").innerText = getGoodsCookies().length;
-    else document.querySelector(".cart-icon__count").style.opacity = "0";
+    else {
+      document.querySelector(".cart-icon__count").style.opacity = "0";
+      document.querySelector(".cart-icon").style.background = "#fff";
+      document.querySelector(".cart-icon svg path").attributes.stroke.nodeValue = "#4862D2";
+    }
   }
 
   return(

@@ -5,10 +5,14 @@ const GoodBottom = ({good}) => {
   const [activeTab, setActiveTab] = useState(1);
   let html = "";
 
+  const composition = good.composition.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>));
+  const longDesc = good.longDesc.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>));
+  const characteristics = good.characteristics.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>));
+
   switch (activeTab) {
-    case 1 : html=good.longDesc;break;
-    case 2 : html=good.composition;break;
-    case 3 : html=good.characteristics;break;
+    case 1 : html=longDesc;break;
+    case 2 : html=composition;break;
+    case 3 : html=characteristics;break;
     default:break;
   }
 
@@ -20,7 +24,7 @@ const GoodBottom = ({good}) => {
           <div className="good__button" onClick={() => setActiveTab(2)}>Состав комплекта</div>
           <div className="good__button" onClick={() => setActiveTab(3)}>Характеристики</div>
       </div>
-      <div className="good__text-field">{html}</div>
+      <div className="good__text-wrap">{html}</div>
     </div>
 
 
@@ -43,7 +47,7 @@ const GoodBottom = ({good}) => {
           cursor:pointer;
         }
 
-        .good__text-field{
+        .good__text-wrap{
           width:100%;
           padding:4rem;
           border: 1px solid #E3E3E3;

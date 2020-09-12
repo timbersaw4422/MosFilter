@@ -6,6 +6,8 @@ const CartTop = ({cartCount, countSuffix, setCartCount}) => {
     clearCookie();
     setCartCount(0);
     document.querySelector(".cart-icon__count").style.opacity = "0";
+    document.querySelector(".cart-icon").style.background = "#fff";
+    document.querySelector(".cart-icon svg path").attributes.stroke.nodeValue = "#4862D2";
   }
 
   return(

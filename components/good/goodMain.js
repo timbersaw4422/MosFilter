@@ -301,6 +301,7 @@ const GoodMain = ({good}) => {
             width:35%;
             position:relative;
             outline:none;
+            background:none;
           }
 
           .good-main__masters{
