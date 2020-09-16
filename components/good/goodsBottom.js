@@ -5,9 +5,12 @@ const GoodBottom = ({good}) => {
   const [activeTab, setActiveTab] = useState(1);
   let html = "";
 
-  const composition = good.composition.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>));
-  const longDesc = good.longDesc.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>));
-  const characteristics = good.characteristics.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>));
+  const composition = good.composition ? good.composition.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>)) : "";
+  const longDesc = good.longDesc ? good.longDesc.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>)) : "";
+  const characteristics = good.characteristics ? good.characteristics.split("br/").map(str =>  {
+
+    return (<p key = {Math.random()} className="good__text-field">{str}</p>)
+  }) : "";
 
   switch (activeTab) {
     case 1 : html=longDesc;break;
@@ -15,6 +18,8 @@ const GoodBottom = ({good}) => {
     case 3 : html=characteristics;break;
     default:break;
   }
+
+  console.log("render")
 
   return(
     <>

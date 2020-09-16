@@ -15,7 +15,6 @@ class Preloader extends Component{
   }
 
   componentDidMount(){
-    if (!sessionStorage.getItem("isLoadingShowed")) sessionStorage.setItem("isLoadingShowed", true);
     setTimeout(() => {
       document.querySelector(".preloader").style.opacity="0";
     },2500)

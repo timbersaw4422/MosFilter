@@ -13,7 +13,7 @@ import AlertTemplate from "react-alert-template-basic";
 
 export async function getServerSideProps(ctx) {
   const id = +ctx.params.id;
-  const res = await fetch(`https://mosfilt.firebaseio.com/goods/${id}.json`);
+  const res = await fetch(`https://mosfilt.firebaseio.com/fullgoods/${id}.json`);
   const good = await res.json();
 
   return {

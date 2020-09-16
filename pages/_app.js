@@ -14,7 +14,6 @@ export async function getServerSideProps(ctx) {
 }
 
 export default function MyApp({ Component, pageProps, isLoaderShowed }) {
-
   return (
     <>
       {
