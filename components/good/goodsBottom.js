@@ -7,9 +7,15 @@ const GoodBottom = ({good}) => {
 
   const composition = good.composition ? good.composition.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>)) : "";
   const longDesc = good.longDesc ? good.longDesc.split("br/").map(str =>  (<p key = {Math.random()} className="good__text-field">{str}</p>)) : "";
-  const characteristics = good.characteristics ? good.characteristics.split("br/").map(str =>  {
-
-    return (<p key = {Math.random()} className="good__text-field">{str}</p>)
+  const characteristics = good.characteristics ? good.characteristics.split("br/").map(str => {
+    const styles={margin:"1rem 0"};
+    if (str[0] === "b") {
+      str=str.replace("b","");
+      styles.fontWeight="bold";
+      styles.margin="2rem 0";
+      styles.fontSize="16px";
+    }
+    return (<p key = {Math.random()} style={styles} className="good__text-field">{str}</p>)
   }) : "";
 
   switch (activeTab) {
@@ -18,8 +24,6 @@ const GoodBottom = ({good}) => {
     case 3 : html=characteristics;break;
     default:break;
   }
-
-  console.log("render")
 
   return(
     <>
