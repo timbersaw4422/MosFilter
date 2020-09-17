@@ -48,6 +48,10 @@ const ReviewsSmall = () => {
           height:8rem;
         }
 
+        .item__read-btn a{
+          color: #424242;
+        }
+
         .item__read-btn, .read-all-reviews-btn{
           font-size: 12px;
           text-decoration-line: underline;

@@ -1,4 +1,5 @@
 import {useState} from "react";
+import GoodTab from "./GoodTab";
 
 const GoodBottom = ({good}) => {
 
@@ -25,13 +26,15 @@ const GoodBottom = ({good}) => {
     default:break;
   }
 
+
+
   return(
     <>
     <div className="good-bottom">
       <div className="good-nav">
-          <div className="good__button" onClick={() => setActiveTab(1)}>Описание товара</div>
-          <div className="good__button" onClick={() => setActiveTab(2)}>Состав комплекта</div>
-          <div className="good__button" onClick={() => setActiveTab(3)}>Характеристики</div>
+          <GoodTab tab = {1} text ="Описание товара" activeTab={activeTab} setActiveTab={setActiveTab}/>
+          <GoodTab tab = {2} text ="Состав комплекта" activeTab={activeTab} setActiveTab={setActiveTab}/>
+          <GoodTab tab = {3} text ="Характеристики" activeTab={activeTab} setActiveTab={setActiveTab}/>
       </div>
       <div className="good__text-wrap">{html}</div>
     </div>
@@ -41,19 +44,6 @@ const GoodBottom = ({good}) => {
         .good-nav{
           display:flex;
           align-items:center;
-        }
-
-        .good__button{
-          background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%), #FFFFFF;
-          border: 1px solid #E3E3E3;
-          box-sizing: border-box;
-          width:18rem;
-          max-width:33.33%;
-          height:6rem;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          cursor:pointer;
         }
 
         .good__text-wrap{
