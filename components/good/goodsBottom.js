@@ -1,5 +1,5 @@
 import {useState} from "react";
-import GoodTab from "./GoodTab";
+import GoodTab from "./goodTab";
 
 const GoodBottom = ({good}) => {
 
