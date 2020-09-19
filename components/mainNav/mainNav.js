@@ -28,7 +28,11 @@ const MainNav = ({activeLink}) => {
            border-radius: 1rem;
          }
 
-
+         @media screen and (max-width:1200px){
+           .main-nav{
+             display:none;
+           }
+         }
        `}</style>
     </section>
   )

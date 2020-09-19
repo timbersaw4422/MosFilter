@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Posts = () => {
   return(
-    <div className="posts">
+    <div className="small-posts">
        <h2 className="posts__title">Полезные статьи</h2>
        <p className="posts__date">08.11.2019</p>
        <p className="posts-title with-margin-bottom"><Link href="/posts/howToChooseFilter"><a>Как выбрать фильтр в квартиру</a></Link></p>

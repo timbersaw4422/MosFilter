@@ -44,49 +44,6 @@ export default function About(){
         </section>
 
 
-
-
-
-        <style jsx>{`
-          .content-block{
-            display:flex;
-            justify-content:space-between;
-            margin-bottom:5rem;
-          }
-
-          .content-left{
-            width:20%;
-          }
-
-          .content-right{
-            width:78%;
-          }
-
-          .with-border{
-            border-right:1px solid #E3E3E3;
-          }
-
-          .with-margin{
-            margin-top:7.8rem;
-          }
-
-          .about__brands{
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 27px;
-            color: #424242;
-            margin-top:10rem;
-          }
-
-          .horizontal-shape{
-            background: #F0F0F0;
-            width:100%;
-            height:1px;
-            margin-top:3rem;
-          }
-
-        `}</style>
-
     </div>
 
     <Footer />

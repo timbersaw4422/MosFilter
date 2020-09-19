@@ -36,7 +36,7 @@ export default function Index(){
         <MainNav activeLink={"Главная"}/>
 
         <section className="content-block">
-            <div className="content-left">
+            <div className="content-left visible-content">
                 <AsideNav />
             </div>
             <div className="content-right">
@@ -88,27 +88,7 @@ export default function Index(){
 
 
         <style jsx>{`
-          .content-block{
-            display:flex;
-            justify-content:space-between;
-            margin-bottom:5rem;
-          }
 
-          .content-left{
-            width:20%;
-          }
-
-          .content-right{
-            width:78%;
-          }
-
-          .with-border{
-            border-right:1px solid #E3E3E3;
-          }
-
-          .with-margin{
-            margin-top:7.8rem;
-          }
 
         `}</style>
 

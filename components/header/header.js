@@ -1,6 +1,7 @@
 import Logo from "./logo";
 import FreeCallBtn from "./freeCallBtn";
 import CartIсon from "./cartIcon";
+import Burger from "./burger.js";
 
 
 const Header = () => {
@@ -32,7 +33,7 @@ const Header = () => {
 
        <CartIсon />
 
-
+       <Burger />
 
 
        <style jsx>{`
@@ -41,6 +42,7 @@ const Header = () => {
            justify-content:space-between;
            align-items: center;
            padding-top:2.5rem;
+           position:relative;
          }
 
          .header__location, .header__phone{
@@ -59,6 +61,30 @@ const Header = () => {
            height:3.8rem;
            width:1px;
            background:#CCCCCC;;
+         }
+
+         .header:before{
+           content:"";
+           position:absolute;
+           top:0;
+           left:-2.5%;
+           right:-2.5%;
+           bottom:-2rem;
+           box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+           display:none;
+         }
+
+         @media screen and (max-width:1200px){
+           .header__location{
+             display:none;
+           }
+           .header:before{
+             display:block;
+           }
+
+           .header{
+             margin-bottom:5rem;
+           }
          }
       `}</style>
     </section>

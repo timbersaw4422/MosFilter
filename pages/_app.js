@@ -1,10 +1,12 @@
 import NextNprogress from 'nextjs-progressbar';
-import '../global.css';
 import 'react-phone-number-input/style.css';
 import Preloader from "../components/preloader";
 import {Component} from "react";
 import Cookies from "js-cookie";
 import cookies from 'next-cookies';
+
+import '../global.css';
+import "../media.css";
 
 export async function getServerSideProps(ctx) {
   let { isLoaderShowed } = cookies(ctx);

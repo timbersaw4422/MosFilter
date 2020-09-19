@@ -1,0 +1,43 @@
+@media screen and (max-width:1280px){
+  .calculator__choise{
+    width:100%;
+  }
+}
+
+@media screen and (max-width:1200px){
+  .header__vertical__shape{
+    display:none;
+  }
+
+  .header .logo{
+    flex-grow:1;
+  }
+
+  .header__phone, .header .call-btn, .cart-icon{
+    margin-right:3rem;
+  }
+
+  .burger{
+    display:block;
+  }
+
+  .header{
+    margin-bottom:3.5rem;
+  }
+
+  .header:before{
+    display:block;
+  }
+}
+
+@media screen and (max-width:1100px){
+  .content-block{
+    flex-direction: column;
+  }
+  .content-left:not(.visible-content){
+    display:none;
+  }
+  .content-right{
+    width:100%;
+  }
+}

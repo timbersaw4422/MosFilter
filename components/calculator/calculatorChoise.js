@@ -102,6 +102,12 @@ const CalculatorChoise = ({title, placeholder, options, setOption}) => {
             transition:0.3s;
           }
 
+          @media screen and (max-width:1280px){
+            .choise__input{
+              width:100%;
+            }
+          }
+
         `}</style>
     </div>
   )

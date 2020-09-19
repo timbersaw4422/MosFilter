@@ -161,6 +161,7 @@ const Footer = () => {
         .footer__contacts{
           width:25%;
           position:relative;
+          padding-right:1rem;
         }
         .footer__contacts:after{
           position:absolute;
