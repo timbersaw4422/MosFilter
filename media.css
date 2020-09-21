@@ -40,4 +40,26 @@
   .content-right{
     width:100%;
   }
+  .aside-nav__inner{
+    display:flex;
+    margin-bottom:2rem;
+  }
+  .visible-content{
+    width:100%;
+  }
+  .footer__contacts svg{
+    display:none;
+  }
+}
+
+@media screen and (max-width:900px){
+  .footer__contacts:after{
+    display:none;
+  }
+  .footer .logo-svg{
+    display:none;
+  }
+  .aside-nav__inner{
+    flex-wrap:wrap;
+  }
 }

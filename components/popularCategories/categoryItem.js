@@ -59,6 +59,12 @@ const CategoryItem = ({text, bg, margin, link, bgStyle}) => {
              opacity:0.8;
            }
          }
+
+         @media screen and (max-width:600px){
+           .categoty__item{
+             width:100%;
+           }
+         }
       `}</style>
     </div>
 

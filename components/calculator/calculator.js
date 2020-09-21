@@ -59,7 +59,7 @@ const Calculator = () => {
                 <p className="calculator__option"><span>Тип фильтра: </span> {option2}</p>
                 <p className="calculator__option"><span>Замена картриджей: </span> {option3}</p>
                 <p className="calculator__option"><span>Местоположение: </span> {option4}</p>
-                <p className="calculator__option"><span>Стоимость: </span> <span className="calculator__price">1450 ₽</span></p>
+                <p className="calculator__option always-visible"><span>Стоимость: </span> <span className="calculator__price">1450 ₽</span></p>
                 <div className="call-btn" onClick = {() => setModalOpen(!isModalOpen)}>
                    <span>Оформить заказ </span>
                 </div>
@@ -170,7 +170,6 @@ const Calculator = () => {
 
         svg{
           position:absolute;
-          top:0;
           bottom:0;
           right:0;
           opacity:0.03;
@@ -232,6 +231,38 @@ const Calculator = () => {
           }
           .call-btn:hover:before{
             opacity:1;
+          }
+        }
+
+        @media screen and (max-width:800px){
+          .calculator__left{
+            width:50%;
+          }
+          .calculator__right{
+            width:50%;
+          }
+        }
+
+        @media screen and (max-width:500px){
+          .calculator__left{
+            width:100%;
+          }
+          .calculator__right{
+            width:100%;
+            padding-left:0;
+            border-left:none;
+          }
+          .calculator__option:not(.always-visible){
+            display:none;
+          }
+          .calculator__main{
+            flex-direction:column;
+          }
+          .call-btn{
+            width:100%;
+          }
+          .calculator__wrapper{
+            padding:1.8rem 1.8rem 3.8rem 1.8rem;
           }
         }
 

@@ -138,6 +138,12 @@ class Preloader extends Component{
            line-height: 20px;
            color: #424242;
          }
+
+         @media screen and (max-width:900px){
+           .preloader{
+             display:none;
+           }
+         }
       `}</style>
       </>
     )

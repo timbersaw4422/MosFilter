@@ -57,14 +57,15 @@ const AsideNav = () => {
   return(
     <div className="aside-nav">
        <h3 className="aside-nav__caption">Бренды</h3>
+       <div className="aside-nav__inner">
        {asideNavItems.map(item => <AsideNavItem key = {item.id} text={item.text} link={item.link} subLinks={item.subLinks || null}/>)}
-
+       </div>
 
 
        <style jsx>{`
            .aside-nav{
             position:relative;
-            z-index:99;
+            z-index:95;
            }
 
           .aside-nav__caption{

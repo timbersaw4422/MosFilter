@@ -72,6 +72,19 @@ const AboutSmall = () => {
             font-size: 14px;
             color: #333333;
           }
+
+          @media screen and (max-width:600px){
+            .about-small{
+              flex-direction:column-reverse;
+            }
+            .about-small__right{
+              width:100%;
+            }
+            .about-small__left{
+              margin:0 auto;
+              width:auto;
+            }
+          }
         `}</style>
     </div>
   )

@@ -54,6 +54,19 @@ const AsideNavSublinks = ({sublinks, dispalaySubLinks}) => {
                color: #4862D2;
              }
            }
+
+           @media screen and (max-width:1100px){
+             .aside-nav__sublinks{
+               top:100%;
+               left:0;
+               width:100%;
+             }
+             .aside-nav__sublink{
+               width:100%;
+               justify-content:flex-start;
+               padding-left:1rem;
+             }
+           }
         `}</style>
     </div>
   )

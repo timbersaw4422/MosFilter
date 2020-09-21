@@ -185,6 +185,12 @@ const Good = (props) =>{
            }
          }
 
+         @media screen and (max-width:600px){
+           .good{
+             width:48.5%;
+           }
+         }
+
       `}</style>
     </div>
   )

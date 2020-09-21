@@ -29,7 +29,7 @@ export default function About(){
         <MainNav activeLink={"О компании"}/>
 
         <section className="content-block">
-            <div className="content-left">
+            <div className="content-left visible-content">
                 <AsideNav />
                 <WhatsApp marginTop="6rem"/>
             </div>

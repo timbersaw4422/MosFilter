@@ -9,10 +9,14 @@ const Slider = () => {
   const [activeSlide, setActiveSlide] = useState(1);
 
   const sliderItems = [
-    {id:0, background:"/img/slider/1.jpg", title:"Система обратного осмоса + установка Atoll A-550 STD"},
-    {id:1, background:"/img/slider/4.jpg", title:"Комлект картриджей для фильтров Atoll A-550 | 560 STD"},
-    {id:2, background:"/img/slider/2.jpg", title:"Комлект картриджей для фильтров Барьер «Осмо»"},
-    {id:3, background:"/img/slider/3.jpg", title:"Комлект картриджей для фильтров Гейзер «Престиж»"}
+    {id:0, background:"/img/slider/1.jpg", title:"Система обратного осмоса + установка Atoll A-550 STD",
+    background2:"/img/slider/sl1.png"},
+    {id:1, background:"/img/slider/4.jpg", title:"Комлект картриджей для фильтров Atoll A-550 | 560 STD",
+    background2:"/img/slider/sl2.png"},
+    {id:2, background:"/img/slider/2.jpg", title:"Комлект картриджей для фильтров Барьер «Осмо»",
+    background2:"/img/slider/sl3.png"},
+    {id:3, background:"/img/slider/3.jpg", title:"Комлект картриджей для фильтров Гейзер «Престиж»",
+    background2:"/img/slider/sl4.png"}
   ];
 
   const arrowClickHandler = to => {
@@ -39,23 +43,12 @@ const Slider = () => {
     <h2 className="slider__caption">Акции месяца</h2>
 
     <div className="slider-wrapper">
-      <div
-           className="slider__arrow slider__arrow-left"
-           onClick={() => arrowClickHandler(-1)}>
-           <img src="/img/slider/arrow-left.png" alt="arrow-left"/>
-      </div>
-
-      <div
-           className="slider__arrow slider__arrow-right"
-           onClick={() => arrowClickHandler(1)}>
-           <img src="/img/slider/arrow-right.png" alt="arrow-left"/>
-      </div>
-
 
       <div className="slider__track">
         {sliderItems.map((item,id) => <SliderItem
                   key={item.id}
                   background={item.background}
+                  background2={item.background2}
                   title = {item.title}
                   setModalOpen = {setModalOpen}
                   setModalTitle = {setModalTitle}
@@ -64,6 +57,13 @@ const Slider = () => {
     </div>
 
     <div className="slider__bottom">
+
+        <div
+             className="slider__arrow2 slider__arrow-left"
+             onClick={() => arrowClickHandler(-1)}>
+             <img src="/img/slider/arrow-left.png" alt="arrow-left"/>
+        </div>
+
         <div className="slider__nav">
             <div className="slider__points">
                {sliderItems.map(item => <SliderPoint
@@ -73,6 +73,13 @@ const Slider = () => {
                    activeSlide={activeSlide}/>)}
             </div>
         </div>
+
+        <div
+             className="slider__arrow2 slider__arrow-right"
+             onClick={() => arrowClickHandler(1)}>
+             <img src="/img/slider/arrow-right.png" alt="arrow-left"/>
+        </div>
+
    </div>
 
 
@@ -115,7 +122,7 @@ const Slider = () => {
       .slider__bottom{
         display:flex;
         align-items:center;
-        justify-content:center;
+        justify-content:space-between;
         position:relative;
       }
 
@@ -134,10 +141,10 @@ const Slider = () => {
         align-items:center;
       }
 
-      .slider__arrow{
+
+
+      .slider__arrow2{
         cursor:pointer;
-        position:absolute;
-        z-index:10;
         background: #FFFFFF;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         width:5rem;
@@ -145,8 +152,10 @@ const Slider = () => {
         border-radius:50%;
         display:flex;
         align-items:center;
+        z-index:10;
         justify-content:center;
-        top:15.5rem;
+        transform:translateY(-22rem);
+        position:relative;
       }
 
       .slider__arrow-left{
@@ -159,6 +168,13 @@ const Slider = () => {
 
       .slider__points{
         display:flex;
+      }
+
+      @media screen and (max-width:500px){
+        .slider__arrow2{
+          transform:translateY(-2px);
+        }
+
       }
     `}</style>
 

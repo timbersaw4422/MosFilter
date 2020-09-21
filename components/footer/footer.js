@@ -1,6 +1,6 @@
 import LogoSvg from "../header/logoSvg";
 import SubscribeInput from "../subscribe/subscribeInput";
-import Logo from "../header/logo";
+import Logo from "../header/logoWithoutH1";
 import Link from "next/link";
 
 const Footer = () => {
@@ -56,7 +56,9 @@ const Footer = () => {
              </div>
              <div className="footer__info-block">
                <p className="footer__title">Задать вопрос</p>
-               <a href="#" className="footer__text footer-link">WhatsApp</a>
+               <a href="#" className="footer__text footer-link" onClick={() => {
+                 window.open("https://wa.me/79325306046", "_blank");
+               }}>WhatsApp</a>
              </div>
          </div>
          <div className="footer__brands">
@@ -80,13 +82,13 @@ const Footer = () => {
              <div className="footer__info-block">
                <p className="footer__title">Подписаться на новости</p>
                <SubscribeInput />
-               <Logo color="#fff" fill="#4862D2" marginTop="4rem"/>
+               <Logo color="#fff" fill="#4862D2" marginTop="4rem" justifyContent="flex-end"/>
              </div>
          </div>
       </div>
       <div className="footer__manufactory">
         <div className="footer__manufactory-inner">
-            <p>2020 © Все права защищены. «Мос — фильтр» Магазин фильров для воды. </p>
+            <p style={{marginRight:"2rem"}}>2020 © Все права защищены. «Мос — фильтр» Магазин фильров для воды. </p>
             <img src="/img/manufactory-logo.png" alt="manufactory"/>
         </div>
       </div>
@@ -115,6 +117,7 @@ const Footer = () => {
           padding-bottom:7rem;
           position:relative;
           z-index:10;
+          flex-wrap:wrap;
         }
         .footer__manufactory{
           padding:2rem 0;
@@ -184,6 +187,33 @@ const Footer = () => {
         @media(hover:hover){
           .footer-link:hover{
             color:#fff;
+          }
+        }
+
+        @media screen and (max-width:1100px){
+          .footer__contacts span{
+            margin-left:0;
+          }
+        }
+
+        @media screen and (max-width:900px){
+          .footer__contacts:after{
+            display:none;
+          }
+          .footer__contacts, .footer__about, .footer__brand, .footer__services{
+            width:50%;
+          }
+          .footer__about, .footer__services{
+            text-align:right;
+          }
+        }
+
+        @media screen and (max-width:500px){
+          .footer__manufactory-inner p{
+            display:none;
+          }
+          .footer__manufactory-inner img{
+            margin:0 auto;
           }
         }
       `}</style>

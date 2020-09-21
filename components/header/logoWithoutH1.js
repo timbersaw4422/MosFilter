@@ -1,8 +1,10 @@
-const LogoWithoutH1 = ({color, fill, marginTop}) => {
+const LogoWithoutH1 = ({color, fill, marginTop, justifyContent}) => {
+
   return(
     <div className="logo" style={{
       display:"flex",
-      alignItems:"center"
+      alignItems:"center",
+      justifyContent:justifyContent || "flex-start"
     }}>
         <div className="div">
            <h2 style={{

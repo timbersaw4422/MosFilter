@@ -76,6 +76,18 @@ class CartIcon extends Component{
           .opacity-0{
             opacity:0;
           }
+
+          @media screen and (max-width:700px){
+            .cart-icon{
+              position:fixed;
+              bottom:20px;
+              right:10px;
+              z-index:99;
+              width:50px;
+              height:50px;
+              margin-right:0;
+            }
+          }
         `}</style>
       </div>
     )

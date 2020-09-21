@@ -43,7 +43,18 @@ class CustomArrows extends React.Component{
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
       autoplay:true,
-      autoplaySpeed:3000
+      autoplaySpeed:3000,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true
+          }
+        },
+        
+      ]
     };
     return (
       <div className="wrapper" style={{ width:"98%", margin:"0 auto", marginTop:"3rem"}}>

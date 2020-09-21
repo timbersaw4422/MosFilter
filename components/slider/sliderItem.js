@@ -1,4 +1,4 @@
-const SliderItem = ({background, transform, title, setModalOpen, setModalTitle}) => {
+const SliderItem = ({background, transform, title, setModalOpen, setModalTitle, background2}) => {
 
   const clickHandler = () => {
     setModalOpen(true);
@@ -20,6 +20,14 @@ const SliderItem = ({background, transform, title, setModalOpen, setModalTitle})
           background:url(${background}) center / cover;
           transform:translateX(${transform}00%);
           cursor:pointer;
+        }
+
+        @media screen and (max-width:500px){
+          .slider-item{
+            background:url(${background2}) center ;
+            background-repeat:no-repeat;
+          }
+
         }
       `}</style>
     </>

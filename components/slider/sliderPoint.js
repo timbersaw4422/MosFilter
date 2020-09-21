@@ -13,7 +13,7 @@ const SliderPoint = ({id, activeSlide, setActiveSlide}) => {
 
         <style jsx>{`
           .slider__point{
-            background: #DBDBDB;;
+            background: #DBDBDB;
             border-radius:50%;
             width:1.5rem;
             height:1.5rem;
@@ -24,6 +24,13 @@ const SliderPoint = ({id, activeSlide, setActiveSlide}) => {
 
           .slider__point--active{
             background: linear-gradient(180deg, #191792 0%, #6089F3 100%), #FFFFFF;
+          }
+
+          @media screen and (max-width:500px){
+            .slider__point{
+              margin-left:0.5rem;
+              margin-right:0.5rem;
+            }
           }
         `}</style>
       </div>

@@ -27,7 +27,7 @@ export default function contactsPage(){
         <MainNav activeLink={"Контакты"}/>
 
           <section className="content-block">
-              <div className="content-left">
+              <div className="content-left visible-content">
                   <AsideNav />
                   <WhatsApp marginTop="6rem"/>
               </div>

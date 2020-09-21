@@ -26,6 +26,7 @@ const Advantages = ({marginTop}) => {
             display:flex;
             align-items:center;
             justify-content:space-around;
+            flex-wrap:wrap;
           }
 
           .advantages__item{
@@ -41,6 +42,22 @@ const Advantages = ({marginTop}) => {
             color: #333333;
             margin-left:2rem;
           }
+
+          @media screen and (max-width:700px){
+            .advantages__item{
+              width:auto;
+              margin-bottom:2rem;
+            }
+            .advantage__img{
+              width:40px;
+            }
+            .advantages{
+              flex-direction:column;
+            }
+          }
+
+
+
         `}</style>
     </div>
   )
