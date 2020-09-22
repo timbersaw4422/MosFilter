@@ -74,6 +74,8 @@ const HowToChooseFilter = () => {
 
           .post-body__img{
             margin-bottom:6rem;
+            display:block;
+            max-width:100%;
           }
 
           .post-body__title{

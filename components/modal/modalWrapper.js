@@ -178,7 +178,7 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img}
           right:35px;
           cursor:pointer;
           opacity:0.9;
-          z-index:101;
+          z-index:106;
         }
 
         .contacts-form__title{

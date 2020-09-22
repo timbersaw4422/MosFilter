@@ -27,7 +27,7 @@ export default function forBusiness(){
         <MainNav activeLink={"Для бизнеса"}/>
 
         <section className="content-block">
-            <div className="content-left visible-content">
+            <div className="content-left">
                 <AsideNav />
                 <WhatsApp marginTop="6rem"/>
             </div>

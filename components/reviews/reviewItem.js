@@ -44,6 +44,7 @@ const ReviewItem = ({photo, title, text, setModalOpen, onChoose, screenShot}) =>
             font-size: 14px;
             line-height: 19px;
             color: #424242;
+            margin-left:2rem;
           }
 
           .review-item__text{
@@ -95,6 +96,19 @@ const ReviewItem = ({photo, title, text, setModalOpen, onChoose, screenShot}) =>
             }
             .review-item__btn:hover span{
                color:#fff;
+            }
+          }
+
+          @media screen and (max-width:900px){
+            .review-item{
+              width:100%;
+              padding:2rem;
+            }
+          }
+
+          @media screen and (max-width:900px){
+            .review-item__text{
+              height:12rem;
             }
           }
        `}</style>

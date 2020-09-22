@@ -77,7 +77,7 @@ const HowToChooseFilter = () => {
                     buttonText="Подобрать фильтр"
                     link="/"
       />
-      
+
       <div className="horizontal-shape"></div>
       <Link href="/posts"><a className="post-body__back-link">
         <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,6 +103,8 @@ const HowToChooseFilter = () => {
 
           .post-body__img{
             margin-bottom:6rem;
+            display:block;
+            max-width:100%;
           }
 
           .post-body__title{

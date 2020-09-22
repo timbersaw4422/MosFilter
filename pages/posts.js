@@ -25,7 +25,7 @@ export default function postsPage(){
         <MainNav activeLink={"Статьи"}/>
 
         <section className="content-block ">
-            <div className="content-left visible-content">
+            <div className="content-left">
                 <AsideNav />
                 <WhatsApp marginTop="6rem"/>
             </div>

@@ -41,6 +41,19 @@ const CallToAction =({title, text, buttonText, link}) => {
             width:45rem;
             margin-top:-1rem;
           }
+
+          @media screen and (max-width:1000px){
+            .posts-body__call-to-action{
+              flex-direction:column-reverse;
+              align-items:flex-start;
+            }
+            .call-to-action__right{
+              margin-bottom:5rem;
+            }
+            .call-to-action__left{
+              width:100%;
+            }
+          }
        `}</style>
     </div>
   )

@@ -38,6 +38,12 @@ const Path = ({category}) => {
            color: #4862D2;
            text-decoration:none;
          }
+
+         @media screen and (max-width:1100px){
+           .path{
+             margin-top:0;
+           }
+         }
        `}</style>
     </p>
   )

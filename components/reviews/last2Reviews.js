@@ -41,6 +41,7 @@ const Last2Reviews = () => {
       .last-2-reviews{
         display:flex;
         justify-content:space-between;
+        flex-wrap:wrap;
       }
       .all-reviews-link{
         font-size: 16px;
@@ -48,6 +49,7 @@ const Last2Reviews = () => {
         color: #424242;
         float:right;
       }
+
     `}</style>
     </>
   )

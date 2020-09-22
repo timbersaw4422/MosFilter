@@ -1,5 +1,4 @@
 const LogoWithoutH1 = ({color, fill, marginTop, justifyContent}) => {
-
   return(
     <div className="logo" style={{
       display:"flex",

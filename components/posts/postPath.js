@@ -40,6 +40,20 @@ const PostPath = ({category}) => {
             color: #424242;
             text-decoration:none;
           }
+
+          @media screen and (max-width:700px){
+            .post-path{
+              margin-top:0;
+            }
+          }
+
+          @media screen and (max-width:500px){
+            .to-posts{
+              display:none;
+            }
+          }
+
+
        `}</style>
     </p>
   )

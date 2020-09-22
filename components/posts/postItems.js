@@ -60,6 +60,7 @@ const PostItems = () => {
           line-height: 19px;
           color: #424242;
           width:70%;
+          height:5rem;
         }
 
         .post-item__text{
@@ -83,6 +84,24 @@ const PostItems = () => {
           justify-content:Center;
           position:relative;
           overflow:hidden;
+        }
+
+        @media screen and (max-width:800px){
+          .post-item{
+            width:100%;
+            padding:2rem;
+          }
+
+        }
+
+        @media screen and (max-width:400px){
+          .post-item__row{
+            flex-direction:column;
+          }
+          .post-item__title{
+            width:100%;
+            margin:3rem 0 0 0;
+          }
         }
       `}</style>
     </div>

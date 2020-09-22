@@ -62,6 +62,15 @@ const ContactsTop = () => {
           font-size: 14px;
           color: #424242;
         }
+
+        @media screen and (max-width:650px){
+          .contacts-top__right{
+            display:none;
+          }
+          .contacts-top__left{
+            width:100%;
+          }
+        }
       `}</style>
     </div>
   )

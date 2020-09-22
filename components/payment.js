@@ -55,6 +55,7 @@ const Payment = () => {
         .payment{
           display:flex;
           justify-content:space-between;
+          flex-wrap:wrap;
         }
 
         .payment-left{
@@ -102,6 +103,15 @@ const Payment = () => {
         .payment-right{
           text-align:center;
           margin-top:10rem;
+        }
+
+        @media screen and (max-width:900px){
+          .payment{
+            flex-direction:column-reverse;
+          }
+          .payment-left{
+            width:100%;
+          }
         }
       `}</style>
     </div>

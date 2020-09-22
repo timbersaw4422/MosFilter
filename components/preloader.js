@@ -74,6 +74,7 @@ class Preloader extends Component{
            justify-content:center;
            font-family: 'Geometria Medium';
            transition:0.5s;
+           padding:1rem;
          }
 
          .preloader__flex{
@@ -139,10 +140,33 @@ class Preloader extends Component{
            color: #424242;
          }
 
-         @media screen and (max-width:900px){
-           .preloader{
-             display:none;
-           }
+         @media screen and (max-width:700px){
+            .preloader__title{
+              font-size:35px;
+              margin-left:3rem;
+            }
+            .preloader__subtitle{
+              font-size:15px;
+              margin-left:3rem;
+            }
+            .preloader__flex{
+              flex-direction:column-reverse;
+              align-items:center;
+            }
+            svg{
+              margin-bottom:3rem;
+            }
+         }
+
+         @media screen and (max-width:400px){
+            .preloader__title{
+              font-size:24px;
+              margin-left:3rem;
+            }
+            .preloader__subtitle{
+              font-size:11px;
+              margin-left:3.1rem;
+            }
          }
       `}</style>
       </>

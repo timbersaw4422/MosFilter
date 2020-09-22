@@ -39,11 +39,13 @@ const Posts = () => {
             line-height: 19px;
             color: #424242;
             margin-bottom:7rem;
-            width:50%;
+            width:100%;
+            max-width:47rem;
           }
 
           .posts__nav{
             display:flex;
+            align-items:center;
           }
 
           .posts__nav-item{

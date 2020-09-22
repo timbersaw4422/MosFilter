@@ -276,6 +276,21 @@ const ForBusiness = () => {
             display:flex;
             justify-content:space-between;
           }
+
+          @media screen and (max-width:900px){
+            .business-flex{
+              flex-direction:column-reverse;
+            }
+            .business-flex__left{
+              width:100%;
+            }
+            .business-flex__right{
+              margin-bottom:3rem;
+            }
+            .business__card{
+              width:100%;
+            }
+          }
        `}</style>
     </div>
   )

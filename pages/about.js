@@ -10,8 +10,6 @@ import AboutInner from "../components/about/about";
 import Last2Rewiews from "../components/reviews/last2Reviews";
 
 export default function About(){
-
-
   return(
     <>
      <div className="content-wrapper">
@@ -29,7 +27,7 @@ export default function About(){
         <MainNav activeLink={"О компании"}/>
 
         <section className="content-block">
-            <div className="content-left visible-content">
+            <div className="content-left">
                 <AsideNav />
                 <WhatsApp marginTop="6rem"/>
             </div>

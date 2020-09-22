@@ -99,6 +99,12 @@ const WhatsApp = ({marginTop}) =>{
           }
         }
 
+        @media screen and (max-width:1100px){
+          .whatsapp{
+            display:none;
+          }
+        }
+
       `}</style>
     </div>
   )

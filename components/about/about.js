@@ -143,6 +143,24 @@ const About = () => {
           color: #4862D2;
           font-weight:700;
         }
+
+        @media screen and (max-width:700px){
+          .about{
+            flex-direction:column-reverse;
+          }
+          .about__left{
+            width:100%;
+          }
+          .about__right{
+            width:100%;
+          }
+          .about__right{
+            margin-top:3rem;
+          }
+          .about__mission{
+            padding:3rem 1.5rem;
+          }
+        }
     `}</style>
     </>
   )

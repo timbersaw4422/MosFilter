@@ -192,7 +192,8 @@ const AllReviews = () => {
            font-size: 14px;
            line-height: 19px;
            color: #424242;
-           width:65%;
+           width:100%;
+           max-width:60rem;
            margin-bottom:5rem;
          }
 

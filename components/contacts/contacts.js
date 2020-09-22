@@ -48,7 +48,7 @@ const Contacts = () => {
 
           <div className="contacts-flex__left">
             <h4 className="contacts__title">Связаться нами</h4>
-            <p className="contacts__text with-margin">Обратиться за услугами вы можете <br />любым удобным вам способом.</p>
+            <p className="contacts__text with-margin contacts__subtitle">Обратиться за услугами вы можете <br />любым удобным вам способом.</p>
 
             <div className="with-shape-block">
                 <p className="contacts__text" style={{marginTop:0}}><strong>Позвонить по телефону:</strong></p>
@@ -153,6 +153,7 @@ const Contacts = () => {
         .contacts-flex{
           display:flex;
           justify-content:space-between;
+          flex-wrap:wrap;
         }
 
         .contacts-flex__left{
@@ -366,6 +367,22 @@ const Contacts = () => {
           }
           .submit-btn:hover:before{
             opacity:1;
+          }
+        }
+
+        @media screen and (max-width:700px){
+          .contacts-flex__left, .contacts-flex__right{
+            width:100%;
+          }
+          .contacts-form{
+            margin-top:0;
+            margin-bottom:5rem;
+          }
+          .contacts__title{
+            margin:3rem 0 ;
+          }
+          .contacts__subtitle{
+            margin-top:0
           }
         }
 

@@ -68,17 +68,25 @@ const MobileMenu = ({isMenuOpen}) => {
           right:0;
           bottom:0;
           width:320px;
-          z-index:98;
+          z-index:-10;
           background:#fff;
           transform: ${transform};
-          transition:0.5s;
+          transition:0.3s;
           transition-timing-function:ease-in-out;
           overflow-y:scroll;
+          opacity:0;
+        }
+
+        @media screen and (max-width:1200px){
+          .mobile-menu{
+            z-index:98;
+            opacity:1;
+          }
         }
 
         @media screen and (max-width:500px){
           .mobile-menu{
-            width:100vw;
+            width:100vw;            
           }
         }
 
