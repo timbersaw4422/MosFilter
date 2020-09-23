@@ -66,45 +66,6 @@ export default function cartridgesAtoll({data}){
 
 
         <style jsx>{`
-
-          .content-block{
-            display:flex;
-            justify-content:space-between;
-            margin-bottom:5rem;
-          }
-
-          .content-left{
-            width:20%;
-          }
-
-          .content-right{
-            width:78%;
-          }
-
-          .with-border{
-            border-right:1px solid #E3E3E3;
-          }
-
-          .with-margin{
-            margin-top:7.8rem;
-          }
-
-          .horizontal-shape{
-            background: #F0F0F0;
-            width:100%;
-            height:1px;
-            margin-top:7rem;
-          }
-
-          .path2{
-            margin-top:3.7rem;
-            font-size: 12px;
-            line-height: 16px;
-            color: #424242;
-            border-bottom:1px solid #DDDDDD;
-            padding-bottom:1.8rem;
-          }
-
           .active{
             color: #4862D2;
             text-decoration:none;

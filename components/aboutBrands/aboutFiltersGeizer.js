@@ -88,13 +88,6 @@ const AboutFiltersGeizer = () => {
             align-items:flex-end;
           }
 
-          .horizontal-shape{
-            background: #F0F0F0;
-            width:100%;
-            height:1px;
-            margin-top:7rem;
-          }
-
           .about-brands__links{
             display:flex;
             align-items:center;
@@ -109,7 +102,10 @@ const AboutFiltersGeizer = () => {
             font-size: 16px;
             color: #ADADAD;
             text-decoration:none;
+            margin-right:2rem;
           }
+
+          .with-margin-top{margin-top:6rem;}
 
           .with-margin-top{
             margin-top:6rem;
@@ -117,6 +113,32 @@ const AboutFiltersGeizer = () => {
 
           .fw-600{
             font-weight:600;
+          }
+
+          @media screen and (max-width:900px){
+            .about-brand{
+              flex-direction:column-reverse;
+            }
+            .about-brand__right{
+              width:100%;
+              margin-bottom:3rem;
+            }
+            .about-brand__left{
+              width:auto;
+            }
+            .flex-end{
+              align-items:center;
+            }
+          }
+
+          @media screen and (max-width:700px){
+            .about-brands__links{
+              flex-wrap:wrap;
+              justify-content:center;
+            }
+            .about-brands__link{
+              margin-bottom:2rem;
+            }
           }
 
         `}</style>

@@ -84,17 +84,17 @@ export default function installationtOthers(){
 
                 <div className="service-price-block">
                   <div className="price-block__left">
-                      <p className="price-block__title">Средняя цена по Москве</p>
-                      <p className="price-block__subtitle">Стоимость услуги у нас</p>
-                      <div className="service-btns">
-                        <div className="service-btn service-btn1"onClick = {() => setModalOpen(true)}><span>Заказать услугу</span></div>
-                        <div className="service-btn service-btn2"onClick = {() => window.open("https://wa.me/79325306046", "_blank")}><span>Задать вопрос специалисту</span></div>
-                      </div>
+                      <p className="price-block__title service-block-widthness">Средняя цена по Москве</p>
+                      <p className="price-block__title with-line-through">2200 ₽</p>
                   </div>
                   <div className="price-block__right">
-                      <p className="price-block__title with-line-through">2200 ₽</p>
+                      <p className="price-block__subtitle service-block-widthness">Стоимость услуги у нас</p>
                       <p className="price-block__subtitle">1500 ₽ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="price-block__economy">(Экономия - 700 рублей)</span></p>
+                  </div>
+                  <div className="service-btns">
+                    <div className="service-btn service-btn1"onClick = {() => setModalOpen(true)}><span>Заказать услугу</span></div>
+                    <div className="service-btn service-btn2"onClick = {() => window.open("https://wa.me/79325306046", "_blank")}><span>Задать вопрос специалисту</span></div>
                   </div>
                 </div>
 
@@ -114,44 +114,6 @@ export default function installationtOthers(){
 
 
         <style jsx>{`
-          .content-block{
-            display:flex;
-            justify-content:space-between;
-            margin-bottom:5rem;
-          }
-
-          .content-left{
-            width:20%;
-          }
-
-          .content-right{
-            width:78%;
-          }
-
-          .with-border{
-            border-right:1px solid #E3E3E3;
-          }
-
-          .with-margin{
-            margin-top:7.8rem;
-          }
-
-          .horizontal-shape{
-            background: #F0F0F0;
-            width:100%;
-            height:1px;
-            margin-top:8rem;
-          }
-
-          .path2{
-            margin-top:3.7rem;
-            font-size: 12px;
-            line-height: 16px;
-            color: #424242;
-            border-bottom:1px solid #DDDDDD;
-            padding-bottom:1.8rem;
-          }
-
           .active{
             color: #4862D2;
             text-decoration:none;
@@ -271,11 +233,6 @@ export default function installationtOthers(){
             padding:4rem 3.5rem 1.5rem 3.5rem;
           }
 
-          .service-price-block{
-            display:flex;
-
-          }
-
           .price-block__left{
             width:55%;
             margin-right:10%;
@@ -321,6 +278,83 @@ export default function installationtOthers(){
             font-size: 16px;
             color: #ADADAD;
             text-decoration:none;
+            margin-right:2rem;
+          }
+
+          .price-block__left, .price-block__right{
+            display:flex;
+            margin-right:0;
+          }
+
+          .service-block-widthness{
+            width:60%;
+          }
+
+          .flex-right{
+            margin-bottom:2rem;
+          }
+
+          @media screen and (max-width:900px){
+            .about-brand{
+              flex-direction:column-reverse;
+            }
+            .about-brand__right{
+              width:100%;
+              margin-bottom:3rem;
+            }
+            .about-brand__left{
+              width:auto;
+            }
+            .flex-end{
+              align-items:center;
+            }
+            .service-btns{
+              flex-direction:column;
+            }
+            .service-btn1{
+              margin-bottom:2rem;
+            }
+            .service-btn{
+              width:100%;
+            }
+            .d-flex{
+              flex-direction:column-reverse;
+              align-items:center;
+            }
+            .flex-left{
+              width:100%;
+            }
+          }
+
+          @media screen and (max-width:800px){
+            .price-block__left, .price-block__right{
+              flex-direction:column;
+            }
+            .price-block__subtitle{
+              margin-bottom:1rem;
+            }
+            .price-block__left{
+              margin-bottom:2rem;
+            }
+            .service-block-widthness{
+              width:100%;
+            }
+          }
+
+          @media screen and (max-width:700px){
+            .service-links{
+              flex-wrap:wrap;
+              justify-content:center;
+            }
+            .service-link{
+              margin-bottom:2rem;
+            }
+            .service-border-text{
+              padding:3rem;
+            }
+            .service-price-block{
+              padding:1rem;
+            }
           }
 
 
