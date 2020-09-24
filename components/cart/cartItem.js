@@ -86,6 +86,7 @@ const CartItem = ({good, onPlusCLick, onMinusClick, onRemoveItem}) => {
            display:flex;
            align-items:center;
            justify-content:center;
+           z-index:5;
          }
 
          .cart-item__img{

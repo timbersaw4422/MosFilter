@@ -81,6 +81,7 @@ const CartMain = ({goods, setCartCount}) => {
                              title = "Оформление заказа"
                              modalType = {5}
                              data={stateGoods}
+                             setCartCount={setCartCount}
                           />
             : null}
 

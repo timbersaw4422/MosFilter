@@ -2,7 +2,7 @@ import AlertTemplate from "react-alert-template-basic";
 import { positions, Provider } from "react-alert";
 import ModalWrapper from "./modalWrapper";
 
-const ModalWithAlertProvider = ({setModalOpen, title, modalType, height, subtitle, data, img}) => {
+const ModalWithAlertProvider = ({setModalOpen, title, modalType, height, subtitle, data, img, setCartCount}) => {
 
   const options = {
     timeout: 3000,
@@ -20,6 +20,8 @@ const ModalWithAlertProvider = ({setModalOpen, title, modalType, height, subtitl
            subtitle = {subtitle}
            data = {data}
            img={img}
+           setCartCount={setCartCount}
+           setModalOpen={setModalOpen}
         />
     </Provider>
   )

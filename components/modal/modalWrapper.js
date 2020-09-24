@@ -3,8 +3,9 @@ import {useState, useRef} from "react";
 import {sendMail} from "../../utils/mail";
 import PhoneInput from 'react-phone-number-input';
 import { useAlert } from 'react-alert';
+import {clearCookie} from "../../utils/utils";
 
-const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img}) => {
+const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img, setCartCount, setModalOpen}) => {
 
   let payload;
 
@@ -69,6 +70,14 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img}
       ).then(data => {
         if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
         setSuccess(true);
+        if(data.status === 1 && modalType ===5 ) {
+          clearCookie();
+          setCartCount(0);
+          document.querySelector(".cart-icon__count").style.opacity = "0";
+          document.querySelector(".cart-icon").style.background = "#fff";
+          document.querySelector(".cart-icon svg path").attributes.stroke.nodeValue = "#4862D2";
+        }
+        setTimeout(() => setModalOpen(false), 2000);
       })
     }
   }
@@ -84,12 +93,12 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img}
     </div>
 
     {modalType === 6 ?
-          <Modal modalOpen = {modalOpen} height={height}>
+          <Modal modalOpen = {modalOpen} height={height} setModalOpen={setModalOpen}>
               <img src={img} className ="modal-6" alt=""/>
           </Modal>
         :
 
-    <Modal modalOpen = {modalOpen} height={height}>
+    <Modal modalOpen = {modalOpen} height={height} setModalOpen={setModalOpen}>
       <form className="contacts-form" style= {{marginTop:0}}>
 
 
@@ -324,6 +333,20 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img}
             opacity:1;
           }
         }
+
+        @media screen and (max-width:700px){
+          .modal-cross{
+            top:5px;
+            right:5px;
+          }
+        }
+        @media screen and (max-width:500px){
+          .modal-cross{
+            display:none;
+          }
+        }
+
+
       `}</style>
     </>
   )
