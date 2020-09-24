@@ -46,6 +46,12 @@ const GoodTab = ({tab, setActiveTab, text, activeTab}) => {
             opacity:1;
           }
         }
+
+        @media screen and (max-width:600px){
+          .good-tab{
+            font-size:10px;
+          }
+        }
       `}</style>
     </>
   )

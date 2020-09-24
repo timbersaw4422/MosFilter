@@ -42,7 +42,7 @@ const Header = () => {
 
        </section>
 
-       <MobileMenu isMenuOpen={isMenuOpen}/>
+       <MobileMenu isMenuOpen={isMenuOpen} setMenuOpen = {setMenuOpen}/>
 
 
 
@@ -55,6 +55,11 @@ const Header = () => {
            position:relative;
            z-index:99;
            background:#fff;
+         }
+
+         .header__phone{
+           position:relative;
+           z-index:10;
          }
 
          .header__location, .header__phone{
@@ -85,6 +90,7 @@ const Header = () => {
            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
            display:none;
            z-index:0;
+           background:#fff;
          }
 
          @media screen and (max-width:1200px){

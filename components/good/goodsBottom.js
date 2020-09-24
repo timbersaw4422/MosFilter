@@ -54,6 +54,12 @@ const GoodBottom = ({good}) => {
           line-height: 19px;
           color: #000000;
         }
+
+        @media screen and (max-width:600px){
+          .good__text-wrap{
+            padding:1rem;
+          }
+        }
     `}</style>
     </>
   )

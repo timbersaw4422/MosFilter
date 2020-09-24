@@ -51,6 +51,22 @@ const CartTop = ({cartCount, countSuffix, setCartCount}) => {
           color: #424242;
           cursor:pointer;
         }
+
+        @media screen and (max-width:450px){
+          .cart-flex{
+            flex-direction:column;
+            margin-bottom:4rem;
+          }
+          .cart-flex__info, .cart-flex__clear-btn{
+            width:100%;
+            margin-left:0;
+            padding-left:0;
+          }
+          .cart-flex__info{
+            display:flex;
+            justify-content:center;
+          }
+        }
       `}</style>
     </>
   )

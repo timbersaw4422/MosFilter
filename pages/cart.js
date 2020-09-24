@@ -88,27 +88,6 @@ export default function cartPage({goods}){
 
 
         <style jsx>{`
-          .content-block{
-            display:flex;
-            justify-content:space-between;
-            margin-bottom:5rem;
-          }
-
-          .content-left{
-            width:20%;
-          }
-
-          .content-right{
-            width:78%;
-          }
-
-          .with-border{
-            border-right:1px solid #E3E3E3;
-          }
-
-          .with-margin{
-            margin-top:7.8rem;
-          }
 
           .horizontal-shape{
             background: #F0F0F0;
@@ -130,6 +109,13 @@ export default function cartPage({goods}){
             color: #4862D2;
             text-decoration:none;
           }
+
+          @media screen and (max-width:1100px){
+            .path-cart{
+              margin-top:0;
+            }
+          }
+
 
         `}</style>
 

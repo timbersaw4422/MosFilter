@@ -69,28 +69,6 @@ export default function Goods({good}){
 
 
         <style jsx>{`
-          .content-block{
-            display:flex;
-            justify-content:space-between;
-            margin-bottom:5rem;
-          }
-
-          .content-left{
-            width:20%;
-          }
-
-          .content-right{
-            width:78%;
-          }
-
-          .with-border{
-            border-right:1px solid #E3E3E3;
-          }
-
-          .with-margin{
-            margin-top:7.8rem;
-          }
-
           .about__brands{
             font-weight: 600;
             font-size: 20px;
@@ -105,6 +83,7 @@ export default function Goods({good}){
             height:1px;
             margin-top:3rem;
           }
+
 
         `}</style>
 

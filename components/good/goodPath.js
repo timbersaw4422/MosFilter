@@ -52,6 +52,12 @@ const GoodPath = ({categoryName, categoryId, goodTitle, goodSubtitle}) => {
           color: #4862D2;
           text-decoration:none;
         }
+
+        @media screen and (max-width:1100px){
+          .good-path{
+            margin-top:0rem;
+          }
+        }
     `}</style>
     </>
   )

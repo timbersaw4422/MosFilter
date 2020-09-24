@@ -39,6 +39,8 @@ const GoodMain = ({good}) => {
 
   return(
     <>
+      <p className="good-main__articul mobile">Артикул: {good.articul}</p>
+      <p className="good-main__title mobile">{good.subtitle + " " + good.title}</p>
       <div className="good-page__main">
          <div className="good-main__imgs">
              <div className="good-main__big-img">
@@ -55,8 +57,8 @@ const GoodMain = ({good}) => {
              <p className="good-main__title">{good.subtitle + " " + good.title}</p>
              {good.logoImg ? <img src={good.logoImg} alt={good.categoryName} className="good-main__logo"/> : null}
            </div>
-           <p className="good-main__articul">Артикул: {good.articul}</p>
-           <div className="horizontal-shape" style={{marginBottom:"4rem"}}></div>
+           <p className="good-main__articul non-visible">Артикул: {good.articul}</p>
+           <div className="horizontal-shape non-visible" style={{marginBottom:"4rem"}}></div>
            <div className="good-main__long-descrription">{good.desc}</div>
            <div className="horizontal-shape" style={{marginTop:"4rem", marginBottom:"3rem"}}></div>
            <div className="good-main__price-and-garanty">
@@ -87,7 +89,7 @@ const GoodMain = ({good}) => {
               {
                 isBtnToCartVisible
                   ?
-                  <button className="good-main__one-click-btn one-click-btn" onClick = {() => Router.push("/cart").then(() => window.scrollTo (0, 0))}>
+                  <button className="good-main__one-click-btn one-click-btn one-click-btn2" onClick = {() => Router.push("/cart").then(() => window.scrollTo (0, 0))}>
                      <span>Перейти в корзину</span>
                   </button>
                   :
@@ -111,7 +113,7 @@ const GoodMain = ({good}) => {
                  : null}
            </div>
 
-           <div className="horizontal-shape" style={{marginTop:"3rem", marginBottom:"3.4rem"}}></div>
+           <div className="horizontal-shape non-visible" style={{marginTop:"3rem", marginBottom:"3.4rem"}}></div>
 
            <div className="good-main__masters">
              <div className="orange-round"></div>
@@ -250,6 +252,7 @@ const GoodMain = ({good}) => {
             margin-top:4rem;
             display:flex;
             justify-content:space-between;
+            flex-wrap:wrap;
           }
 
           .good-main__plus-minus{
@@ -411,6 +414,10 @@ const GoodMain = ({good}) => {
             transition:0.3s;
           }
 
+          .mobile{
+            display:none;
+          }
+
           @media (hover:hover){
             .call-btn:hover:after{
               opacity:0;
@@ -424,6 +431,63 @@ const GoodMain = ({good}) => {
             }
             .one-click-btn:hover span{
               color:#fff;
+            }
+          }
+
+          @media screen and (max-width:900px){
+            .good-page__main{
+              flex-direction:column;
+              align-items:center;
+            }
+            .good-main__imgs{
+              margin-bottom:3rem;
+              width:100%;
+              max-width:600px;
+            }
+
+            .good-main__big-img img{
+              height:20rem;
+            }
+
+            .good-main__big-img{
+              height:30rem;
+            }
+
+            .good-main__title-and-logo{
+              display:none;
+            }
+
+            .good-main__description{
+              width:100%;
+            }
+            .non-visible{
+              display:none;
+            }
+            .good-main__long-descrription{
+              width:100%;
+              max-width:none;
+            }
+            .good-main__masters{
+              display:none;
+            }
+            .mobile{
+              display:block;
+              width:100%;
+            }
+          }
+
+          @media screen and (max-width:600px){
+            .good-main__one-click-btn{
+              width:100%;
+              margin-top:2rem;
+            }
+
+            .good-main__in-cart-btn, .one-click-btn2{
+              width:calc(100% - 14rem)
+            }
+
+            .one-click-btn2{
+              margin-top:0;
             }
           }
       `}</style>

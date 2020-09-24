@@ -209,6 +209,20 @@ const CartMain = ({goods, setCartCount}) => {
             opacity:1;
           }
         }
+
+        @media screen and (max-width:700px){
+          .cart-header{
+            display:none;
+          }
+        }
+
+        @media screen and (max-width:400px){
+          .cart-bottom{
+            flex-direction:column;
+          }
+        }
+
+
       `}</style>
     </>
   )
