@@ -166,7 +166,6 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img,
           display:flex;
           align-items:center;
           justify-content:center;
-          height:100%;
         }
 
         .input-label{
@@ -342,7 +341,8 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img,
         }
         @media screen and (max-width:500px){
           .modal-cross{
-            display:none;
+            top:5px;
+            right:5px;
           }
         }
 

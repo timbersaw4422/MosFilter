@@ -27,6 +27,25 @@ const Advantages = ({marginTop}) => {
             align-items:center;
             justify-content:space-around;
             flex-wrap:wrap;
+            position:relative;
+          }
+
+          .advantages:before, .advantages:after{
+            content:"";
+            position:absolute;
+            height:1px;
+            width:100%;
+            background: #B4B4B4;
+            left:0;
+            display:none;
+          }
+
+          .advantages:before{
+            top:-3rem;
+          }
+
+          .advantages:after{
+            bottom:-1rem;
           }
 
           .advantages__item{
@@ -53,6 +72,18 @@ const Advantages = ({marginTop}) => {
             }
             .advantages{
               flex-direction:column;
+            }
+            .advantages:before, .advantages:after{
+              display:block;
+            }
+            .advantages{
+              margin-bottom:2rem;
+            }
+          }
+
+          @media screen and (max-width:400px){
+            .advantages{
+              align-items:flex-start;
             }
           }
 

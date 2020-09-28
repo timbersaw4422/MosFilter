@@ -63,8 +63,21 @@ const CategoryItem = ({text, bg, margin, link, bgStyle}) => {
          @media screen and (max-width:600px){
            .categoty__item{
              width:100%;
+             margin-bottom:3rem;
+           }
+
+           .categoty__item{
+             margin-bottom:1.3rem;
+           }
+
+           .category__text{
+             width:90%;
+             left:5%;
+             text-align:Center;
            }
          }
+
+
       `}</style>
     </div>
 

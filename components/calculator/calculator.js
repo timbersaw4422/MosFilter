@@ -40,7 +40,7 @@ const Calculator = () => {
       <h2 className="calculator__caption">Онлайн-калькулятор расчёта стоимости замены картриджей</h2>
 
       <div className="calculator__wrapper">
-         <h3 className="calculator__text">Расчитайте точную стоимость картриджей для вашего фильтра</h3>
+         <h3 className="calculator__text">Расчитайте стоимость картриджей для вашего фильтра</h3>
          <div className="calculator__shape"></div>
          <div className="calculator__main">
             <div className="calculator__left">
@@ -263,6 +263,9 @@ const Calculator = () => {
           }
           .calculator__wrapper{
             padding:1.8rem 1.8rem 3.8rem 1.8rem;
+          }
+          .calculator__caption{
+            display:none;
           }
         }
 

@@ -47,9 +47,6 @@
   .visible-content{
     width:100%;
   }
-  .footer__contacts svg{
-    display:none;
-  }
 }
 
 @media screen and (max-width:900px){

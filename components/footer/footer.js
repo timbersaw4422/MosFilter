@@ -2,8 +2,24 @@ import LogoSvg from "../header/logoSvg";
 import SubscribeInput from "../subscribe/subscribeInput";
 import Logo from "../header/logoWithoutH1";
 import Link from "next/link";
+import $ from "jquery";
+import {useEffect} from "react";
 
 const Footer = () => {
+
+  const footerBlockClickHandler = e => {
+    if (window.innerWidth <=500){
+      $(e.target).next().slideToggle();
+      $(e.target).prev().toggleClass("arrow-reverse");
+    }
+  }
+
+  useEffect(() => {
+    setTimeout(()=>{
+      if (window && window.innerWidth <= 500) $(".mobile-height").next().slideToggle(50);
+    }, 100)
+  } , []);
+
   return(
     <div className="footer">
       <svg className="logo-svg"width="419" height="391" viewBox="0 0 419 391" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -13,8 +29,8 @@ const Footer = () => {
 
       <div className="footer__main">
          <div className="footer__contacts">
-            <div className="footer__info-block">
-              <p className="footer__title">Мы находимся</p>
+            <p className="footer__title">Мы находимся</p>
+            <div className="footer__info-block adaptive-padding">
               <p className="footer__text with-img">
               <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.00002 11.1176C7.39146 11.1176 6.79657 10.9365 6.29057 10.5972C5.78458 10.2578 5.3902 9.77552 5.15731 9.21121C4.92443 8.64691 4.8635 8.02597 4.98222 7.42691C5.10094 6.82785 5.39399 6.27758 5.82431 5.84569C6.25462 5.41379 6.80288 5.11966 7.39974 5.0005C7.99661 4.88134 8.61527 4.9425 9.17751 5.17624C9.73974 5.40998 10.2203 5.80581 10.5584 6.31367C10.8965 6.82152 11.0769 7.4186 11.0769 8.0294C11.076 8.84815 10.7515 9.63308 10.1747 10.212C9.59783 10.791 8.81577 11.1167 8.00002 11.1176V11.1176ZM8.00002 6.17646C7.63489 6.17646 7.27795 6.28513 6.97435 6.48873C6.67075 6.69234 6.43413 6.98173 6.2944 7.32031C6.15467 7.65889 6.11811 8.03145 6.18934 8.39089C6.26057 8.75032 6.4364 9.08049 6.69459 9.33963C6.95278 9.59876 7.28173 9.77524 7.63985 9.84674C7.99797 9.91823 8.36917 9.88154 8.70651 9.74129C9.04385 9.60105 9.33218 9.36355 9.53504 9.05884C9.7379 8.75412 9.84617 8.39588 9.84617 8.0294C9.84568 7.53812 9.65102 7.0671 9.30491 6.71971C8.95879 6.37233 8.4895 6.17695 8.00002 6.17646V6.17646Z" fill="white"/>
@@ -22,13 +38,13 @@ const Footer = () => {
               </svg>
               <span>Россия, г. Москва,<br /> ул Шарикоподшипниковкая 16</span></p>
             </div>
-            <div className="footer__info-block">
-              <p className="footer__title">Телефоны</p>
+            <div className="footer__info-block with-mt-4">
+              <p className="footer__title adaptive-padding-bottom">Телефоны</p>
               <p className="footer__text with-img">
               <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14.7821 8.97138C14.6997 8.38775 14.2573 7.93275 13.6878 7.79713C11.4742 7.26863 10.9193 5.97013 10.8257 4.52988C10.4331 4.4555 9.73478 4.375 8.5494 4.375C7.36401 4.375 6.66567 4.4555 6.27312 4.52988C6.17949 5.97013 5.62459 7.26863 3.41101 7.79713C2.84151 7.93363 2.39914 8.38775 2.31668 8.97138L1.88977 11.9831C1.73945 13.0436 2.50394 14 3.56735 14H13.5314C14.594 14 15.3593 13.0436 15.209 11.9831L14.7821 8.97138ZM8.5494 11.8055C7.35113 11.8055 6.37963 10.8255 6.37963 9.618C6.37963 8.4105 7.35113 7.4305 8.5494 7.4305C9.74767 7.4305 10.7192 8.4105 10.7192 9.618C10.7192 10.8255 9.74681 11.8055 8.5494 11.8055ZM17.0962 3.5C17.0756 2.1875 13.796 0.000875 8.5494 0C3.30192 0.000875 0.0223605 2.1875 0.00260405 3.5C-0.0171524 4.8125 0.0206426 6.5205 2.1801 6.23612C4.70635 5.90275 4.55087 5.00412 4.55087 3.71962C4.55087 2.82362 6.60554 2.6075 8.5494 2.6075C10.4933 2.6075 12.5471 2.82362 12.5479 3.71962C12.5479 5.00412 12.3925 5.90275 14.9187 6.23612C17.0773 6.5205 17.116 4.8125 17.0962 3.5Z" fill="white"/>
               </svg>
-              <span> 8 (495) 744 - 61 - 81</span></p>
+              <span > 8 (495) 744 - 61 - 81</span></p>
               <p className="footer__text with-img">
               <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14.7821 8.97138C14.6997 8.38775 14.2573 7.93275 13.6878 7.79713C11.4742 7.26863 10.9193 5.97013 10.8257 4.52988C10.4331 4.4555 9.73478 4.375 8.5494 4.375C7.36401 4.375 6.66567 4.4555 6.27312 4.52988C6.17949 5.97013 5.62459 7.26863 3.41101 7.79713C2.84151 7.93363 2.39914 8.38775 2.31668 8.97138L1.88977 11.9831C1.73945 13.0436 2.50394 14 3.56735 14H13.5314C14.594 14 15.3593 13.0436 15.209 11.9831L14.7821 8.97138ZM8.5494 11.8055C7.35113 11.8055 6.37963 10.8255 6.37963 9.618C6.37963 8.4105 7.35113 7.4305 8.5494 7.4305C9.74767 7.4305 10.7192 8.4105 10.7192 9.618C10.7192 10.8255 9.74681 11.8055 8.5494 11.8055ZM17.0962 3.5C17.0756 2.1875 13.796 0.000875 8.5494 0C3.30192 0.000875 0.0223605 2.1875 0.00260405 3.5C-0.0171524 4.8125 0.0206426 6.5205 2.1801 6.23612C4.70635 5.90275 4.55087 5.00412 4.55087 3.71962C4.55087 2.82362 6.60554 2.6075 8.5494 2.6075C10.4933 2.6075 12.5471 2.82362 12.5479 3.71962C12.5479 5.00412 12.3925 5.90275 14.9187 6.23612C17.0773 6.5205 17.116 4.8125 17.0962 3.5Z" fill="white"/>
@@ -36,53 +52,69 @@ const Footer = () => {
               <span> 8 (925) 495 - 00 - 04</span></p>
             </div>
             <div className="footer__info-block">
-              <p className="footer__title">По вопросам сотрудничества</p>
+              <p className="footer__title adaptive-padding adaptive-padding-bottom">По вопросам сотрудничества</p>
               <p className="footer__text with-img">
               <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.75788 2.69799C7.82666 2.69799 8.83375 3.15658 9.57179 3.87348V3.8756C9.57179 3.53134 9.81109 3.27091 10.1418 3.27091H10.2258C10.7478 3.27091 10.8523 3.7473 10.8523 3.89762L10.8545 9.24792C10.8182 9.59853 11.2285 9.77977 11.4565 9.5545C12.3424 8.67245 13.4042 5.01553 10.9048 2.89828C8.57388 0.922034 5.44542 1.24851 3.7821 2.35795C2.01422 3.54023 0.88419 6.15165 1.98184 8.60597C3.18055 11.2817 6.60738 12.08 8.64694 11.2839C9.67941 10.8803 10.1554 12.2294 9.08224 12.6711C7.46486 13.3389 2.95744 13.2707 0.852254 9.74208C-0.570014 7.35848 -0.494766 3.16547 3.27899 0.993173C6.16333 -0.669717 9.96903 -0.209002 12.2632 2.10939C14.6606 4.53534 14.5219 9.0743 12.1814 10.8388C11.1214 11.6413 9.54729 10.8608 9.55866 9.69169L9.54685 9.31059C8.80881 10.0182 7.82666 10.4332 6.75788 10.4332C4.64351 10.4332 2.782 8.63095 2.782 6.58653C2.782 4.52009 4.64351 2.69883 6.75788 2.69883V2.69799ZM9.41736 6.43875C9.3373 4.941 8.1889 4.03905 6.80119 4.03905H6.74869C5.14924 4.03905 4.26071 5.25859 4.26071 6.64116C4.26071 8.19141 5.33386 9.17043 6.74213 9.17043C8.31402 9.17043 9.34605 8.05717 9.42129 6.74024L9.41736 6.43875Z" fill="white"/>
               </svg>
-              <span>admin@mosfilter.ru</span></p>
+              <span>info@mos-filter.ru</span></p>
+              <div className="footer__adaptive-show">
+                 <p>Подписаться на новости</p>
+                 <SubscribeInput />
+                 <span>2020 © Все права защищены. «Мос — фильтр» Магазин фильров для воды. </span>
+              </div>
             </div>
          </div>
-         <div className="footer__about">
+
+         <div className="footer__about footer__block">
+             <img className="footer__vector" src="/img/vector.svg" alt=""/>
+             <p className="footer__title mobile-height" onClick={footerBlockClickHandler}>Компания</p>
+
              <div className="footer__info-block">
-               <p className="footer__title">Компания</p>
                <Link href="/about"><a className="footer__text footer-link">О компании</a></Link>
                <Link href="/reviews"><a className="footer__text footer-link">Отзывы</a></Link>
                <Link href="/forbusiness"><a className="footer__text footer-link">Для бизнеса</a></Link>
                <Link href="/payment"><a className="footer__text footer-link">Оплата и доставка</a></Link>
                <Link href="/posts"><a className="footer__text footer-link">Статьи</a></Link>
                <Link href="/contacts"><a className="footer__text footer-link">Контакты</a></Link>
+               <div className="footer__info-block">
+                 <p className="footer__title adaptive-padding">Задать вопрос</p>
+                 <a href="#" className="footer__text footer-link with-pb" onClick={() => {
+                   window.open("https://wa.me/79325306046", "_blank");
+                 }}>WhatsApp</a>
+               </div>
              </div>
-             <div className="footer__info-block">
-               <p className="footer__title">Задать вопрос</p>
-               <a href="#" className="footer__text footer-link" onClick={() => {
-                 window.open("https://wa.me/79325306046", "_blank");
-               }}>WhatsApp</a>
-             </div>
+
          </div>
-         <div className="footer__brands">
+
+         <div className="footer__brands footer__block">
+             <img className="footer__vector" src="/img/vector.svg" alt=""/>
+             <p className="footer__title mobile-height" onClick={footerBlockClickHandler} >Бренды</p>
              <div className="footer__info-block">
-               <p className="footer__title">Бренды</p>
                <Link href="/categories/[category]" as="/categories/atoll"><a className="footer__text footer-link">Atoll</a></Link>
                <Link href="/categories/[category]" as="/categories/aquaphor"><a className="footer__text footer-link">Аквафор</a></Link>
                <Link href="/categories/[category]" as="/categories/geizer"><a className="footer__text footer-link">Гейзер</a></Link>
                <Link href="/categories/[category]" as="/categories/barier"><a className="footer__text footer-link">Барьер</a></Link>
                <Link href="/categories/[category]" as="/categories/platinum-wasser"><a className="footer__text footer-link">Platinum Wasser</a></Link>
-               <Link href="/categories/[category]" as="/categories/others"><a className="footer__text footer-link">Другие</a></Link>
+               <Link href="/categories/[category]" as="/categories/others"><a className="footer__text footer-link with-pb">Другие</a></Link>
              </div>
          </div>
-         <div className="footer__services">
+
+         <div className="footer__services footer__block">
+             <img className="footer__vector" src="/img/vector.svg" alt=""/>
+             <p className="footer__title mobile-height" onClick={footerBlockClickHandler} >Услуги</p>
              <div className="footer__info-block">
-               <p className="footer__title">Услуги</p>
                <Link href="/replacement/others"><a className="footer__text footer-link">Замена картриджей</a></Link>
                <Link href="/installation/others"><a className="footer__text footer-link">Установка фильтров</a></Link>
-               <Link href="/repair/others"><a className="footer__text footer-link">Ремонт и диагностика фильтров</a></Link>
+               <Link href="/repair/others"><a className="footer__text footer-link with-pb">Ремонт и диагностика фильтров</a></Link>
              </div>
              <div className="footer__info-block">
-               <p className="footer__title">Подписаться на новости</p>
-               <SubscribeInput />
-               <Logo color="#fff" fill="#4862D2" marginTop="4rem" justifyContent="flex-end"/>
+               <div className="sub">
+                 <p className="footer__title with-pb">Подписаться на новости</p>
+                 <SubscribeInput />
+                 <Logo color="#fff" fill="#4862D2" marginTop="4rem" justifyContent="flex-end"/>
+               </div>
+
              </div>
          </div>
       </div>
@@ -94,6 +126,41 @@ const Footer = () => {
       </div>
 
       <style jsx>{`
+
+        .footer__adaptive-show{
+          margin-top:4rem;
+          position:relative;
+          padding-top:2rem;
+          display:none;
+        }
+
+        .footer__adaptive-show p {
+          font-weight: bold;
+          font-size: 16px;
+          color: #E8E8E8;
+          margin-bottom:3rem;
+        }
+
+        .footer__adaptive-show span {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 16px;
+          color: #E1E1E1;
+          margin-top:4.5rem;
+          display:block;
+          margin-bottom:3rem;
+        }
+
+        .footer__adaptive-show:before{
+          content:"";
+          position:absolute;
+          height:1px;
+          width:200%;
+          left:-50%;
+          top:0;
+          background:#b0b0b0;
+        }
+
         .logo-svg{
           position:absolute;
           bottom:0;
@@ -106,6 +173,7 @@ const Footer = () => {
           padding:0;
           background: #484848;
           position:relative;
+          overflow:hidden;
         }
         .footer__main{
           display:flex;
@@ -137,7 +205,7 @@ const Footer = () => {
           font-weight: bold;
           font-size: 16px;
           color: #FFFFFF;
-          margin-bottom:3rem;
+          margin-bottom:0;
         }
         .footer__text{
           font-weight: normal;
@@ -158,13 +226,17 @@ const Footer = () => {
         .with-img span {
           margin-left:2.3rem;
         }
+        .with-pb{
+          padding-bottom:2rem;
+        }
         .footer__info-block{
-          margin-top:3rem;
+          padding-top:3rem;
         }
         .footer__contacts{
           width:25%;
           position:relative;
           padding-right:1rem;
+          order:1;
         }
         .footer__contacts:after{
           position:absolute;
@@ -172,17 +244,55 @@ const Footer = () => {
           width:1px;
           height:90%;
           right:0;
-          bottom:0;
+          top:2rem;
           background:#626262;
         }
         .footer__about, .footer__brands, .footer__services{
           width:20%;
         }
+        .footer__about{
+          order:2;
+        }
+        .footer__brands{
+          order:3;
+        }
+        .footer__services{
+          order:4;
+        }
+
         .footer__manufactory p{
           font-weight: 600;
           font-size: 14px;
           color: #E1E1E1;
         }
+
+        .footer__block{
+          position:relative;
+        }
+
+        .footer__vector{
+          position:absolute;
+          right:0;
+          top:2.5rem;
+          transition:0.3s;
+          display:none;
+        }
+
+        .arrow-reverse{
+          transform:rotateX(180deg);
+        }
+
+        .footer__block:after{
+          content:"";
+          position:absolute;
+          height:1px;
+          width:120%;
+          left:-10%;
+          bottom:0;
+          background:#b0b0b0;
+          display:none;
+        }
+
 
         @media(hover:hover){
           .footer-link:hover{
@@ -190,23 +300,22 @@ const Footer = () => {
           }
         }
 
-        @media screen and (max-width:1100px){
-          .footer__contacts span{
-            margin-left:0;
-          }
-        }
-
         @media screen and (max-width:900px){
           .footer__contacts:after{
             display:none;
           }
-          .footer__contacts, .footer__about, .footer__brand, .footer__services{
+          .footer__contacts, .footer__about, .footer__brands, .footer__services{
             width:50%;
           }
           .footer__about, .footer__services{
             text-align:right;
           }
+          .footer__main{
+            padding-top:2rem;
+          }
         }
+
+
 
         @media screen and (max-width:500px){
           .footer__manufactory-inner p{
@@ -215,6 +324,67 @@ const Footer = () => {
           .footer__manufactory-inner img{
             margin:0 auto;
           }
+          .footer__contacts, .footer__about, .footer__brands, .footer__services{
+            width:100%;
+          }
+          .footer__about, .footer__services{
+            text-align:left;
+          }
+          .sub{
+            display:none;
+          }
+          .footer-link{
+            width:auto;
+          }
+          .mobile-height{
+            height:5rem;
+          }
+          .footer__info-block{
+            padding-top:0;
+          }
+          .footer__block:after{
+            display:block;
+          }
+          .footer__block{
+            margin-bottom:1rem;
+          }
+          .footer__main{
+            padding-top:1rem;
+            padding-bottom:2rem;
+          }
+          .footer__adaptive-show{
+            display:block;
+          }
+          .footer__vector{
+            display:block;
+          }
+          .with-mt-4{
+            margin-top:4rem;
+          }
+          .adaptive-padding{
+            padding-top:2rem;
+          }
+          .adaptive-padding-bottom{
+            padding-bottom:2rem;
+          }
+
+
+          .footer__contacts{
+            order:4;
+          }
+          .footer__about{
+            order:1;
+          }
+          .footer__brands{
+            order:1;
+          }
+          .footer__services{
+            order:3;
+          }
+          .footer__main{
+            width:90%;
+          }
+
         }
       `}</style>
     </div>

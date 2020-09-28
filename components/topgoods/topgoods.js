@@ -41,6 +41,13 @@ const TopGoods = () => {
           color: #424242;
         }
 
+        @media screen and (max-width:600px){
+          .title{
+            text-align:Center;
+            margin-bottom:4rem;
+          }
+        }
+
       `}</style>
     </div>
   )

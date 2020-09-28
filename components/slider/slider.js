@@ -170,11 +170,25 @@ const Slider = () => {
         display:flex;
       }
 
+      @media screen and (max-width:1100px){
+        .slider__caption{
+          margin-top:3rem;
+        }
+      }
+
+      @media screen and (max-width:700px){
+        .slider__bottom:after{
+          display:none;
+        }
+      }
+
       @media screen and (max-width:500px){
         .slider__arrow2{
           transform:translateY(-2px);
         }
-
+        .slider-wrapper{
+          border:none;
+        }
       }
     `}</style>
 
