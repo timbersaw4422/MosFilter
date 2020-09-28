@@ -10,7 +10,7 @@ const About = () => {
     <>
     <div className="about">
        <div className="about__left">
-           <h2 className="about__title">«Мос — фильтр»  |  Совершенство воды</h2>
+           <h2 className="about__title ta-center-mobile">«Мос — фильтр»  |  Совершенство воды</h2>
            <p className="about__text"><strong>Компания «Мос—Фильтр» Существует с 2012 года. </strong>Мы начинали свою деятельность как частные мастера по обслуживанию
            фильтров для воды в Москве. За годы работы <strong>мы обслужили более 30 000 квартир</strong> и честно завоевали доверие своих клиентов.
            Работа с людьми «галаза в глаза» дала нам чёткое понимание их потребностей и проблем, которые мы продолжаем решать по сей день. <br/></p>
@@ -168,6 +168,9 @@ const About = () => {
           }
           .about__mission{
             padding:3rem 1.5rem;
+          }
+          .ta-center-mobile{
+            text-align: center;
           }
         }
     `}</style>

@@ -94,6 +94,10 @@ const AboutSmall = () => {
               text-align:center;
               margin-bottom:4rem;
             }
+            .about-small{
+              border-bottom:none;
+              padding-bottom:0;
+            }
           }
         `}</style>
     </div>

@@ -79,6 +79,11 @@ const ContactsTop = () => {
           .contacts-top__left{
             width:100%;
           }
+
+          .contacts-top__title{
+              text-align: center;
+          }
+
         }
       `}</style>
     </div>

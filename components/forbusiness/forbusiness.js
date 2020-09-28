@@ -1,6 +1,11 @@
 import ReviewItem from "../reviews/reviewItem";
+import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
+import {useState} from "react";
 
 const ForBusiness = () => {
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return(
     <div className="business">
        <h2 className="business__title">«Мос — фильтр»  |  Для бизнеса</h2>
@@ -16,6 +21,10 @@ const ForBusiness = () => {
               <p className="about__paragraph with-point">Установка систем обратного осмоса</p>
               <p className="about__paragraph with-point">Любые ремонтные работы</p>
               <p className="about__paragraph with-point">Обслуживание систем водоподготовки</p>
+              <div className="service-btns">
+                <div className="service-btn service-btn1"onClick = {() => setModalOpen(true)}><span>Получить коммерческое предложение</span></div>
+                <div className="service-btn service-btn2"onClick = {() => window.open("https://wa.me/79325306046", "_blank")}><span>Задать вопрос специалисту</span></div>
+              </div>
           </div>
           <div className="business-flex__right">
                 <svg width="121" height="141" viewBox="0 0 121 141" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +52,7 @@ const ForBusiness = () => {
           </div>
        </div>
 
-       <div className="horizontal-shape" style= {{marginTop:"6.4rem"}}></div>
+       <div className="horizontal-shape" style= {{marginTop:"2rem"}}></div>
        <h3 className="business__subtitle">Какому бизнесу подходят наши услуги:</h3>
        <div className="business__cards">
 
@@ -146,6 +155,38 @@ const ForBusiness = () => {
 
 
        <style jsx>{`
+
+         .service-btns{
+           display:flex;
+           justify-content:space-between;
+           margin:4rem 0;
+           flex-wrap:wrap;
+         }
+
+         .service-btn{
+           height:4.5rem;
+           display:flex;
+           align-items:center;
+           justify-content:center;
+           font-weight: 600;
+           font-size: 14px;
+           color: #424242;
+           border: 2px solid #4862D2;
+           border-radius: 0.5rem;
+           cursor:pointer;
+         }
+
+         .service-btn1{
+           width:55%;
+         }
+
+         .service-btn2{
+           width:43%;
+         }
+
+          .business__button{
+            border:1px solid red;
+          }
           .business__title{
             font-weight: 600;
             font-size: 24px;
@@ -289,6 +330,28 @@ const ForBusiness = () => {
             }
             .business__card{
               width:100%;
+            }
+          }
+
+          @media screen and (max-width:600px){
+            .business__title{
+              text-align: center;
+            }
+            .service-btn1{
+              width:100%;
+              margin-bottom:2rem;
+            }
+            .service-btn2{
+              width:100%;
+            }
+            .card__left{
+              width:30%;
+            }
+            .card__right{
+              width:70%;
+            }
+            .card__left img{
+              width:80%;
             }
           }
        `}</style>

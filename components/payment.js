@@ -121,6 +121,9 @@ const Payment = () => {
           .payment-left{
             width:100%;
           }
+          .payment__title{
+            text-align:center;
+          }
         }
       `}</style>
     </div>

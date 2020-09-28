@@ -27,7 +27,6 @@ const Burger = ({isMenuOpen, setMenuOpen}) => {
           z-index:100;
           height:20px;
           width:20px;
-          margin-right:1rem;
         }
 
         .burger-span{

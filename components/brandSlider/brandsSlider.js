@@ -53,10 +53,12 @@ class CustomArrows extends React.Component{
             infinite: true
           }
         },
-        
+
       ]
     };
     return (
+      <>
+      <p className="brands-title">Бренды с которыми мы работаем</p>
       <div className="wrapper" style={{ width:"98%", margin:"0 auto", marginTop:"3rem"}}>
         <Slider {...settings}>
             <img src="/img/brands/brand1.png" alt=""/>
@@ -67,6 +69,25 @@ class CustomArrows extends React.Component{
             <img src="/img/brands/brand6.png" alt=""/>
         </Slider>
       </div>
+
+      <style jsx>{`
+        .brands-title{
+          font-size: 16px;
+          color: #727272;
+          padding-bottom:1.6rem;
+          border-bottom:1px solid #B4B4B4;
+          display:none;
+          text-align:center;
+          margin-top:5rem;
+        }
+
+        @media screen and (max-width:600px){
+          .brands-title{
+            display:block;
+          }
+        }
+      `}</style>
+      </>
     );
   }
 }

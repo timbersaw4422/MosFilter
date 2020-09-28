@@ -16,11 +16,12 @@ const Posts = () => {
        <h2 className="posts__title">«Мос — фильтр»  |  Полезные статьи</h2>
        <p className="posts__subtitle">В этом разделе вы сможете найти полезную информацию,
        а так же советы по установке и обслуживании фильтров. </p>
-       <div className="posts__nav">
-         <p className={postClasses.join(" ")} onClick={() => setActiveCategory("posts")}>Статьи</p>
-         <p className={instructionClasses.join(" ")} onClick={() => setActiveCategory("instructions")}>
-         Инструкции по обслуживанию фильтров</p>
-       </div>
+       { //<div className="posts__nav">
+         //<p className={postClasses.join(" ")} onClick={() => setActiveCategory("posts")}>Статьи</p>
+         //<p className={instructionClasses.join(" ")} onClick={() => setActiveCategory("instructions")}>
+         //Инструкции по обслуживанию фильтров</p>
+       //</div>
+       }
        <PostItems />
 
 
@@ -60,6 +61,14 @@ const Posts = () => {
           .active-category{
             border-bottom:2px solid #4862D2;
           }
+
+          @media screen and (max-width:600px){
+            .posts__title{
+              text-align: center;
+            }
+          }
+
+
 
        `}</style>
     </div>

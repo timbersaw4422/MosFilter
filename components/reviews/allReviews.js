@@ -244,6 +244,13 @@ const AllReviews = () => {
            justify-content:center;
          }
 
+         @media screen and (max-width:600px){
+           .all-reviews__title{
+             text-align: center;
+           }
+         }
+
+
        `}</style>
     </div>
   )

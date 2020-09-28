@@ -35,7 +35,6 @@ export default function About(){
                 <Path  category="about"/>
                 <AboutInner />
                 <Last2Rewiews />
-                <h2 className="about__brands">Бренды</h2>
                 <div className="horizontal-shape"></div>
                 <BrandSlider />
             </div>
