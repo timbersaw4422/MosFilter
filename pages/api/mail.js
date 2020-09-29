@@ -87,7 +87,18 @@ export default async function handler(req, res) {
       from: 'Mos-filter <mos.filter.shop@gmail.com>',
       to: address,
       subject: 'Заказ услуги',
-      text: `${body.payload} 
+      text: `${body.name} - ${body.payload}
+      Номер телефона: ${body.phone}`
+    });
+  }
+
+  if (body.modal === 10) {
+    result = await transporter.sendMail({
+      from: 'Mos-filter <mos.filter.shop@gmail.com>',
+      to: address,
+      subject: 'Запрос коммерческого предложения',
+      text: `${body.name} - Запрос коммерческого предложения
+      Email: ${body.email}
       Номер телефона: ${body.phone}`
     });
   }

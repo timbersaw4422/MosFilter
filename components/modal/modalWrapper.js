@@ -4,13 +4,13 @@ import {sendMail} from "../../utils/mail";
 import PhoneInput from 'react-phone-number-input';
 import { useAlert } from 'react-alert';
 import {clearCookie} from "../../utils/utils";
+import {isEmail} from "../../utils/isEmail";
 
-const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img, setCartCount, setModalOpen}) => {
+const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, subtitle2, data, img, setCartCount, setModalOpen}) => {
 
   let payload;
 
   switch (modalType){
-    case 1:break;
     case 2:{
       payload=subtitle;
       break;
@@ -42,8 +42,10 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img,
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
 
   const inputName = useRef(null);
+  const inputEmail = useRef(null);
   const inputPhone = useRef(null);
   const sendBtn = useRef(null);
 
@@ -57,8 +59,9 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img,
 
   const sendHandler = e => {
     e.stopPropagation();
-    if (name.length <1 || inputPhone.current.value.length < 16) {
+    if (name.length <2 || inputPhone.current.value.length < 16 || ( modalType===10 && !isEmail(inputEmail.current.value))) {
       alert.show('Корректно заполните все поля');
+      if (!isEmail(inputEmail.current.value) && inputEmail) inputEmail.current.style.border="1px solid tomato";
       if (inputName.current.value.length < 2) inputName.current.style.border="1px solid tomato";
       if (inputPhone.current.value.length < 16) inputPhone.current.parentNode.style.border = "1px solid tomato";
     }
@@ -66,7 +69,7 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img,
       sendBtn.current.style.opacity = "0.5";
       sendBtn.current.style.pointerEvents = "none";
       sendMail(
-        {name,phone,modal:modalType, payload}
+        {name, phone, email:email || "", modal:modalType, payload}
       ).then(data => {
         if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
         setSuccess(true);
@@ -107,8 +110,8 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img,
                      <h3 className="contacts-form__title">{title}</h3>
                      {subtitle ? <h3 className="contacts-form__title">{subtitle}</h3> : null}
                      <div className="contacts-form__shape"></div>
-                     <p className="contact-form__subtitle">Заполните и отправьте форму, наш специалист свяжется с
-                     вами в течение 10 минут, и ответит на все ваши вопросы. </p>
+                     <p className="contact-form__subtitle">
+                     {subtitle2 || "Заполните и отправьте форму, наш специалист свяжется с вами в течение 10 минут, и ответит на все ваши вопросы."} </p>
                      <p className="input-label">Ваше имя</p>
                      <input
                         ref={inputName}
@@ -117,11 +120,36 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img,
                         style={{marginBottom:"2rem"}}
                         onChange= {e => {
                           setName(e.target.value);
-                          if (inputName.current.value.length < 2) inputName.current.style.border="1px solid tomato";
-                          else inputName.current.style.border="1px solid green";
+                          if (inputName.current.value.length >= 2) inputName.current.style.border="1px solid green";
+                          else inputName.current.style.border = "1px solid #DFDEDE";
                         }}
                         value = {name}
+                        minLength="2"
+                        required
                      />
+
+                     {modalType===10
+                       ?  <div>
+                             <p className="input-label">Ваш email</p>
+                             <input
+                                ref={inputEmail}
+                                type="email"
+                                className="contact-form__input contact-form__email"
+                                style={{marginBottom:"2rem"}}
+                                onChange= {e => {
+                                  setEmail(e.target.value);
+                                  if (isEmail(inputEmail.current.value)) inputEmail.current.style.border="1px solid green";
+                                  else inputEmail.current.style.border = "1px solid #DFDEDE";
+                                }}
+                                value = {email}
+                                minLength="8"
+                                required
+                             />
+                           </div>
+                        : null
+                     }
+
+
 
                      <p className="input-label">Ваш нормер телефона</p>
                      <PhoneInput
@@ -134,8 +162,8 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, data, img,
                           onChange = {
                             () => {
                               if (inputPhone.current.value.length <= 2 ) inputPhone.current.value = "+7";
-                              if (inputPhone.current.value.length < 16) inputPhone.current.parentNode.style.border = "1px solid tomato";
-                              else inputPhone.current.parentNode.style.border = "1px solid green";
+                              if (inputPhone.current.value.length === 16) inputPhone.current.parentNode.style.border = "1px solid green";
+                              else inputPhone.current.parentNode.style.border = "1px solid #DFDEDE";
                               setPhone(inputPhone.current.value);
                             }
                           }

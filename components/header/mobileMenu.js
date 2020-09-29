@@ -12,8 +12,10 @@ const MobileMenu = ({isMenuOpen, setMenuOpen}) => {
   return(
     <>
       <div className="mobile-menu" onScroll={scrollHandler}>
-         <p className="mobile-menu__paragraph with-mb2">Рассчитайте стоимость ваших картриджей онлайн</p>
-         <div className="mobile-menu__btn btn-blue">Рассчитать</div>
+         {
+         //<p className="mobile-menu__paragraph with-mb2">Рассчитайте стоимость ваших картриджей онлайн</p>
+         //<div className="mobile-menu__btn btn-blue">Рассчитать</div>
+         }
          <p className="mobile-menu__title">Меню сайта</p>
          <p className="mobile-menu__shape"></p>
          <p className="mobile-menu__subtitle">Обслуживаемые марки:</p>

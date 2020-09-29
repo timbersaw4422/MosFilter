@@ -55,6 +55,15 @@ export default function Category(){
     </div>
 
     <Footer />
+
+     <style jsx>{`
+       @media screen and (max-width:700px){
+         .horizontal-shape{
+           display:none;
+         }
+       }
+      `}</style>
+
    </>
   )
 }

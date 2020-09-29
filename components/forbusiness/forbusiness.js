@@ -8,6 +8,15 @@ const ForBusiness = () => {
 
   return(
     <div className="business">
+
+      {isModalOpen ? <ModalWithAlertProvider
+                      setModalOpen={setModalOpen}
+                      title = "Получить коммерческое предложение"
+                      modalType = {10}
+                      subtitle2="Заполните и отправьте форму, в ближайшее время на ваш email будет высланно письмо с коммерческим предложением."
+                   />
+                   : null}
+
        <h2 className="business__title">«Мос — фильтр»  |  Для бизнеса</h2>
 
        <div className="business-flex">
