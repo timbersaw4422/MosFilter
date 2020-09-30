@@ -194,6 +194,7 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, subtitle2,
           display:flex;
           align-items:center;
           justify-content:center;
+          margin-bottom:0;
         }
 
         .input-label{

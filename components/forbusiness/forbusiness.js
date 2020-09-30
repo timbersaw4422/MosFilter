@@ -65,67 +65,94 @@ const ForBusiness = () => {
        <h3 className="business__subtitle">Какому бизнесу подходят наши услуги:</h3>
        <div className="business__cards">
 
-         <div className="business__card">
-           <div className="card__left">
-              <img src="/img/business/business1.png" alt="" className="card__img"/>
+         <div className="business__card business__card1">
+           <div className="card-content">
+               <div className="card__left">
+                  <img src="/img/business/business1.png" alt="" className="card__img"/>
+               </div>
+               <div className="card__right">
+                  <p className="card__title">Бьюти-индустрия</p>
+                  <p className="card__text">• Салоны красоты</p>
+                  <p className="card__text">• Барбершопы</p>
+                  <p className="card__text">• Частные кабинеты</p>
+                  <p className="card__text">• Тату студии</p>
+               </div>
+
            </div>
-           <div className="card__right">
-              <p className="card__title">Бьюти-индустрия</p>
-              <p className="card__text">• Салоны красоты</p>
-              <p className="card__text">• Барбершопы</p>
-              <p className="card__text">• Частные кабинеты</p>
-              <p className="card__text">• Тату студии</p>
+           <div className="call-btn" onClick = {() => setModalOpen(true)}>
+              <span>Получить коммерческое предложение</span>
            </div>
          </div>
 
-         <div className="business__card">
-           <div className="card__left">
-              <img src="/img/business/business2.png" alt="" className="card__img"/>
+         <div className="business__card business__card2">
+           <div className="card-content">
+               <div className="card__left">
+                  <img src="/img/business/business2.png" alt="" className="card__img"/>
+               </div>
+               <div className="card__right">
+                  <p className="card__title">Медицина</p>
+                  <p className="card__text">• Медицинские центры</p>
+                  <p className="card__text">• Медицинские кабинеты</p>
+                  <p className="card__text">• Стоматологии</p>
+                  <p className="card__text">• Студии массажа</p>
+               </div>
            </div>
-           <div className="card__right">
-              <p className="card__title">Медицина</p>
-              <p className="card__text">• Медицинские центры</p>
-              <p className="card__text">• Медицинские кабинеты</p>
-              <p className="card__text">• Стоматологии</p>
-              <p className="card__text">• Студии массажа</p>
-           </div>
-         </div>
-
-         <div className="business__card">
-           <div className="card__left">
-              <img src="/img/business/business3.png" alt="" className="card__img"/>
-           </div>
-           <div className="card__right">
-              <p className="card__title">Общепит</p>
-              <p className="card__text">• Кофешопы</p>
-              <p className="card__text">• Кафе и рестораны</p>
-              <p className="card__text">• Фастфуд</p>
-              <p className="card__text">• Кальянные</p>
+           <div className="call-btn" onClick = {() => setModalOpen(true)}>
+              <span>Получить коммерческое предложение</span>
            </div>
          </div>
 
-         <div className="business__card">
-           <div className="card__left">
-              <img src="/img/business/business4.png" alt="" className="card__img"/>
+         <div className="business__card business__card3">
+           <div className="card-content">
+               <div className="card__left">
+                  <img src="/img/business/business3.png" alt="" className="card__img"/>
+               </div>
+               <div className="card__right">
+                  <p className="card__title">Общепит</p>
+                  <p className="card__text">• Кофешопы</p>
+                  <p className="card__text">• Кафе и рестораны</p>
+                  <p className="card__text">• Фастфуд</p>
+                  <p className="card__text">• Кальянные</p>
+               </div>
            </div>
-           <div className="card__right">
-              <p className="card__title">Торговля и офисы</p>
-              <p className="card__text">• Торговые центры</p>
-              <p className="card__text">• Магазины</p>
-              <p className="card__text">• Офисы</p>
+           <div className="call-btn" onClick = {() => setModalOpen(true)}>
+              <span>Получить коммерческое предложение</span>
            </div>
          </div>
 
-         <div className="business__card">
-           <div className="card__left">
-              <img src="/img/business/business5.png" alt="" className="card__img"/>
+         <div className="business__card business__card4">
+           <div className="card-content">
+               <div className="card__left">
+                  <img src="/img/business/business4.png" alt="" className="card__img"/>
+               </div>
+               <div className="card__right">
+                  <p className="card__title">Торговля и офисы</p>
+                  <p className="card__text">• Торговые центры</p>
+                  <p className="card__text">• Магазины</p>
+                  <p className="card__text">• Офисы</p>
+               </div>
+
            </div>
-           <div className="card__right">
-              <p className="card__title">Спорт и досуг</p>
-              <p className="card__text">• Фитнес-центры</p>
-              <p className="card__text">• Йога-студии</p>
-              <p className="card__text">• Бассейны</p>
-              <p className="card__text">• Спа-спалоны</p>
+           <div className="call-btn" onClick = {() => setModalOpen(true)}>
+              <span>Получить коммерческое предложение</span>
+           </div>
+         </div>
+
+         <div className="business__card business__card5">
+           <div className="card-content">
+               <div className="card__left">
+                  <img src="/img/business/business5.png" alt="" className="card__img"/>
+               </div>
+               <div className="card__right">
+                  <p className="card__title">Спорт и досуг</p>
+                  <p className="card__text">• Фитнес-центры</p>
+                  <p className="card__text">• Йога-студии</p>
+                  <p className="card__text">• Бассейны</p>
+                  <p className="card__text">• Спа-спалоны</p>
+               </div>
+           </div>
+           <div className="call-btn" onClick = {() => setModalOpen(true)}>
+              <span>Получить коммерческое предложение</span>
            </div>
          </div>
 
@@ -210,6 +237,8 @@ const ForBusiness = () => {
             justify-content:space-between;
           }
 
+
+
           .business-flex__left{
             width:65%;
           }
@@ -275,17 +304,16 @@ const ForBusiness = () => {
           }
 
           .business__card{
-            background: #FFFFFF;
-            border: 2px solid #FFFFFF;
-            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.13);
-            border-radius: 0.5rem;
             width:calc(50% - 0.7rem);
             margin-bottom:1.5rem;
+            position:relative;
+            cursor:pointer;
+          }
+
+          .card-content{
             display:flex;
             align-items:center;
             justify-content:space-between;
-            overflow:hidden;
-            position:relative;
           }
 
           .card__right{
@@ -327,6 +355,104 @@ const ForBusiness = () => {
             justify-content:space-between;
           }
 
+          .business__card:after{
+            content:"";
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            position:absolute;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.13);
+            transform-origin:top;
+            transition:0.3s;
+            background:#fff;
+          }
+
+          .call-btn{
+             width:80%;
+             height:4rem;
+             display:flex;
+             align-items:center;
+             justify-content:center;
+             font-weight: 600;
+             transition:0.3s;
+             position:relative;
+             cursor:pointer;
+             position:absolute;
+             bottom:-7rem;
+             left:10%;
+             opacity:0;
+             z-index:0;
+          }
+
+          .call-btn:before, .call-btn:after{
+            content:"";
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index:0;
+            border-radius: 1rem;
+            box-shadow: 0px 4px 10px rgba(45, 82, 214, 0.41);
+            transition:0.3s;
+          }
+
+          .call-btn:after{
+            opacity:1;
+            background: linear-gradient(180deg, #6089F3 0%, #191792 100%);
+          }
+
+          .call-btn:before{
+            opacity:0;
+            background: linear-gradient(180deg, #191792 0%, #6089F3 100%);
+            border: 2px solid #2B54BE;
+          }
+
+          .call-btn span{
+            position:relative;
+            z-index:1;
+            font-weight: 600;
+            font-size: 14px;
+            color: #FFFFFF;
+          }
+
+          .call-btn:active :before{
+            background: linear-gradient(180deg, #191792 -32.22%, #6089F3 100%);
+            box-shadow:none;
+          }
+
+          .business__card1, .business__card2{
+            z-index:10;
+          }
+          .business__card3, .business__card4{
+            z-index:9;
+          }
+          .business__card5{
+            z-index:8;
+          }
+
+          .card-content{
+            position:relative;
+            z-index:2
+          }
+
+          @media(hover:hover){
+            .business__card:hover:after{
+              transform:scaleY(1.5);
+            }
+            .call-btn:hover:after{
+              opacity:0;
+            }
+            .call-btn:hover:before{
+              opacity:1;
+            }
+            .business__card:hover .call-btn{
+              opacity:1;
+              z-index:20;
+            }
+          }
+
           @media screen and (max-width:900px){
             .business-flex{
               flex-direction:column-reverse;
@@ -361,6 +487,13 @@ const ForBusiness = () => {
             }
             .card__left img{
               width:80%;
+              margin-top:-6rem;
+            }
+          }
+
+          @media screen and (max-width:400px){
+            .card__left img{
+              margin-top:-10rem;
             }
           }
        `}</style>

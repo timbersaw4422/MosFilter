@@ -7,10 +7,7 @@ const Logo = ({color, fill, marginTop}) => {
   }
 
   return(
-    <div className="logo" onClick = {clickHandler}style={{
-      display:"flex",
-      alignItems:"center"
-    }}>
+    <div className="logo" onClick = {clickHandler}>
         <div>
            <h2 className="logo__title">MOS - FILTER</h2>
            <h1 className = "logo__subtitle">Картриджи и фильтры для воды</h1>
@@ -28,10 +25,14 @@ const Logo = ({color, fill, marginTop}) => {
             margin-top:${marginTop || 0};
             z-index:50;
             cursor:pointer;
+            display:flex;
+            align-items:center;
           }
           svg{
             margin-left:0.5rem;
           }
+
+
 
           .logo__title{
             margin:0 0;
@@ -56,6 +57,17 @@ const Logo = ({color, fill, marginTop}) => {
             .logo__subtitle{
               position:absolute;
               opacity:0;
+            }
+
+            .logo{
+              flex-direction:row-reverse;
+              flex-grow:1;
+              text-align:left;
+              justify-content:flex-end;
+            }
+            svg{
+              margin-left:0;
+              margin-right:0.5rem;
             }
           }
        `}</style>

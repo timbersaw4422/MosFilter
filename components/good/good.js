@@ -55,7 +55,7 @@ const Good = (props) =>{
 
          .good-content{
            position:relative;
-           z-index:100;
+           z-index:50;
          }
 
          .good-after{
