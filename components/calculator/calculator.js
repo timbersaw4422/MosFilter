@@ -9,6 +9,47 @@ const Calculator = () => {
   const [option3, setOption3] = useState("Меняю самостоятельно");
   const [option4, setOption4] = useState("В пределах МКАД");
 
+  const calculatePrice = () => {
+    let price=0;
+    let type=""
+    if (option2 === "Проточный фильтр") type = 1; else type = 2;
+    switch (option1){
+      case "Atoll":{
+        if (type === 1) price += 1500; else price += 3000; break;
+      }
+      case "Гейзер":{
+        if (type === 1) price += 1200; else price += 3000; break;
+      }
+      case "Аквафор":{
+        if (type === 1) price += 1250; else price += 3800; break;
+      }
+      case "Аквафор":{
+        if (type === 1) price += 1600; else price += 3300; break;
+      }
+      case "Барьер":{
+        if (type === 1) price += 1600; else price += 3300; break;
+      }
+      case "Platinum-wasser":{
+        price += 3200;break;
+      }
+      case "Затрудняюсь ответить":{
+        price += 1200;break;
+      }
+
+      default:break;
+    }
+
+    if (option3 === "Меняет мастер"){
+      price += 1200;
+    } else {
+      if (option4 === "В пределах МКАД") price+=300; else price += 400;
+    }
+
+     return price;
+  }
+
+  const price = calculatePrice();
+
   const calculatorChoises = [
     {id:1, title: "Выберите марку вашего фильтра", placeholder:"Atoll", setOption:setOption1,
     options:[
@@ -59,7 +100,7 @@ const Calculator = () => {
                 <p className="calculator__option"><span>Тип фильтра: </span> {option2}</p>
                 <p className="calculator__option"><span>Замена картриджей: </span> {option3}</p>
                 <p className="calculator__option"><span>Местоположение: </span> {option4}</p>
-                <p className="calculator__option always-visible"><span>Стоимость: </span> <span className="calculator__price">1450 ₽</span></p>
+                <p className="calculator__option always-visible"><span>Стоимость: </span> <span className="calculator__price">{price} ₽</span></p>
                 <div className="call-btn" onClick = {() => setModalOpen(!isModalOpen)}>
                    <span>Оформить заказ </span>
                 </div>

@@ -141,6 +141,13 @@ const Slider = () => {
         align-items:center;
       }
 
+      .slider__arrow-left{
+        left:2rem;
+      }
+      .slider__arrow-right{
+        right:2rem;
+      }
+
 
 
       .slider__arrow2{
@@ -158,13 +165,6 @@ const Slider = () => {
         position:relative;
       }
 
-      .slider__arrow-left{
-        left:2rem;
-      }
-
-      .slider__arrow-right{
-        right:2rem;
-      }
 
       .slider__points{
         display:flex;
@@ -189,7 +189,14 @@ const Slider = () => {
         .slider-wrapper{
           border:none;
         }
+        .slider__arrow-left{
+          left:0;
+        }
+        .slider__arrow-right{
+          right:0;
+        }
       }
+
     `}</style>
 
     </>

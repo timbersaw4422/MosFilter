@@ -24,9 +24,10 @@ const SliderItem = ({background, transform, title, setModalOpen, setModalTitle, 
 
         @media screen and (max-width:500px){
           .slider-item{
-            background:url(${background2}) center ;
+            background:url(${background2}) center;
             background-repeat:no-repeat;
           }
+
 
         }
       `}</style>
