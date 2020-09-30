@@ -40,9 +40,10 @@ const Calculator = () => {
     }
 
     if (option3 === "Меняет мастер"){
-      price += 1200;
-    } else {
-      if (option4 === "В пределах МКАД") price+=300; else price += 400;
+      if (option4 === "В пределах МКАД") price += 1200; else price += 1300;
+    }
+    else {
+      if (option4 === "В пределах МКАД") price += 300; else price += 400;
     }
 
      return price;
@@ -109,7 +110,7 @@ const Calculator = () => {
                                     setModalOpen={setModalOpen}
                                     title = "Оформление заказа"
                                     modalType = {3}
-                                    data={[option1, option2, option3, option4]}
+                                    data={[option1, option2, option3, option4, price]}
                                  />
                    : null}
             </div>
@@ -179,11 +180,11 @@ const Calculator = () => {
 
         .calculator__option{
           margin-top:0;
-          margin-bottom:1.7rem;
           font-weight: normal;
           font-size: 12px;
           line-height: 20px;
           color: #424242;
+          height:4rem;
         }
 
         .calculator__option span{

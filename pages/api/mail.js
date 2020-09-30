@@ -48,6 +48,7 @@ export default async function handler(req, res) {
       Модель фильтра: ${body.payload[1]}.
       Услуга замены: ${body.payload[2]}.
       Местоположение: ${body.payload[3]}.
+      Цена: ${body.payload[4]}.
       Номер телефона: ${body.phone}`
     });
   }
