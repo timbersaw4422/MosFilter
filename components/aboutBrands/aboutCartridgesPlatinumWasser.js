@@ -34,7 +34,7 @@ const AboutCartridgesPlatinumWasser = () => {
               </div>
 
               <div className="about-brand__right with-margin-top">
-                  <h2 className="about-brand__title">Купить картриджи Atoll</h2>
+                  <h2 className="about-brand__title">Купить картриджи Platinum-wasser</h2>
                   <p className="about-brand__text">Интернет-магазин фильтров для воды «Mos—filter» - является официальным дилером фильтров Platinum-wasser.
                   В нашем ассортименте вы найдёте все существующие на данным момент комплекты картриджей Platinum-wasser, по цене от производителя с
                   быстрой доставкой по Москве и МО..</p>
@@ -136,6 +136,15 @@ const AboutCartridgesPlatinumWasser = () => {
             }
             .about-brands__link{
               margin-bottom:2rem;
+            }
+            .about-cartridges-platinum-wasser{
+              margin-top:1rem;
+            }
+            .about-brand__right{
+              margin-top:0;
+            }
+            .about-brands__links{
+              margin-top:4rem;
             }
           }
         `}</style>

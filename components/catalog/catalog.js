@@ -34,6 +34,13 @@ const Catalog = ({goods}) => {
             display:flex;
             flex-wrap:wrap;
           }
+
+          @media screen and (max-width:700px){
+            .catalog{
+              padding-bottom:0;
+              border-bottom:none;
+            }        
+          }
         `}</style>
     </div>
   )

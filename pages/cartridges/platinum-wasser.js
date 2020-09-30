@@ -83,6 +83,17 @@ export default function cartridgesPlatinumWasser({data}){
             height:5rem;
           }
 
+          .horizontal-shape{
+            margin-bottom:9rem;
+          }
+
+          @media screen and (max-width:700px){
+            .horizontal-shape{
+              opacity:0;
+              margin-bottom:0;
+            }
+          }
+
         `}</style>
 
     </div>

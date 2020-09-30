@@ -52,7 +52,7 @@ export default function filtersAtoll({data}){
 
                  <Catalog goods={data} />
                  <Advantages marginTop="7rem"/>
-                 <div className="horizontal-shape" style={{marginBottom:"9rem"}}></div>
+                 <div className="horizontal-shape"></div>
                  <AboutFiltersGeizer />
 
 
@@ -74,6 +74,17 @@ export default function filtersAtoll({data}){
             font-size: 24px;
             color: #424242;
             margin:4rem 0;
+          }
+
+          .horizontal-shape{
+            margin-bottom:9rem;
+          }
+
+          @media screen and (max-width:700px){
+            .horizontal-shape{
+              opacity:0;
+              margin-bottom:3rem;
+            }
           }
 
         `}</style>

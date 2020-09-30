@@ -9,15 +9,21 @@ const Custom404 = () => {
   return(
     <>
       <div className="custom404">
-         <h2 className="custom404__title">Ошибка 404</h2>
-         <p className="custom404__subtitle">Упс! Кажется что-то пошло не так.</p>
-         <p className="custom404__text"> Страница, которую вы запрашиваете, не существует. Возможно она была удалена,
-          или вы набрали неверный адрес. Перейдите на главную страницу и попробуйте найти необходимую вам информацию там.</p>
-          <div className="custom404__btn" onClick={clickHandler}><span>Перейти на главную</span></div>
+         <div className="cotnent-404">
+             <h2 className="custom404__title">Ошибка 404</h2>
+             <p className="custom404__subtitle">Упс! Кажется что-то пошло не так.</p>
+             <p className="custom404__text"> Страница, которую вы запрашиваете, не существует. Возможно она была удалена,
+              или вы набрали неверный адрес. Перейдите на главную страницу и попробуйте найти необходимую вам информацию там.</p>
+              <div className="custom404__btn" onClick={clickHandler}><span>Перейти на главную</span></div>
+          </div>
          <img className="custom404__img" src="/img/custom404.png" alt=""/>
       </div>
 
       <style jsx>{`
+         .cotnent-404{
+           position:relative;
+           z-index:2;
+         }
          .custom404{
            margin-top:8rem;
            position:relative;
@@ -53,6 +59,7 @@ const Custom404 = () => {
             position:absolute;
             right:0;
             bottom:0;
+            z-index:1;
           }
 
           .custom404__btn{
@@ -98,6 +105,19 @@ const Custom404 = () => {
             }
             .custom404__btn:hover span{
                color:#fff;
+            }
+          }
+
+          @media screen and (max-width:1100px){
+            .custom404__img{
+              position:relative;
+              display:block;
+              width:100%;
+              max-width:47rem;
+              margin:2rem auto 0 auto;
+            }
+            .custom404{
+              padding-bottom:0;
             }
           }
       `}</style>

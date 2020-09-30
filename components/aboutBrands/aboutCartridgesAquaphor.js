@@ -137,7 +137,18 @@ const AboutCartridgesAquaphor = () => {
             .about-brands__link{
               margin-bottom:2rem;
             }
+
+            .about-cartridges-aquaphor{
+              margin-top:1rem;
+            }
+            .about-brand__right{
+              margin-top:0;
+            }
+            .about-brands__links{
+              margin-top:4rem;
+            }
           }
+
         `}</style>
     </div>
   )
