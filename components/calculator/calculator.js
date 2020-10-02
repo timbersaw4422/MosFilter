@@ -1,7 +1,6 @@
 import CalculatorChoise from "./calculatorChoise";
 import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 import {useState} from "react";
-import Rouble from "../rouble";
 
 const Calculator = () => {
 
@@ -102,7 +101,7 @@ const Calculator = () => {
                 <p className="calculator__option"><span>Тип фильтра: </span> {option2}</p>
                 <p className="calculator__option"><span>Замена картриджей: </span> {option3}</p>
                 <p className="calculator__option"><span>Местоположение: </span> {option4}</p>
-                <div className="calculator__option always-visible"><span>Стоимость: </span> <span className="calculator__price">{price} <Rouble /></span></div>
+                <div className="calculator__option always-visible"><span>Стоимость: </span> <span className="calculator__price">{price} &#x20bd;</span></div>
                 <div className="call-btn" onClick = {() => setModalOpen(!isModalOpen)}>
                    <span>Оформить заказ </span>
                 </div>

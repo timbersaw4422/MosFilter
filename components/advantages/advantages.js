@@ -81,9 +81,9 @@ const Advantages = ({marginTop}) => {
             }
           }
 
-          @media screen and (max-width:400px){
+          @media screen and (max-width:500px){
             .advantages{
-              align-items:flex-start;
+               align-items:flex-start;
             }
           }
 
