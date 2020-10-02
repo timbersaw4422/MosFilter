@@ -38,6 +38,7 @@ export default function installationtAtoll(){
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Описание страницы сайта." />
+          <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
           <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         </Head>
@@ -87,11 +88,11 @@ export default function installationtAtoll(){
                 <div className="service-price-block">
                   <div className="price-block__left">
                       <p className="price-block__title service-block-widthness">Средняя цена по Москве</p>
-                      <p className="price-block__title with-line-through">1100 ₽</p>
+                      <p className="price-block__title with-line-through">1100 <i style = {{fontSize:"15px"}}className="fas fa-ruble-sign"></i></p>
                   </div>
                   <div className="price-block__right">
                       <p className="price-block__subtitle service-block-widthness">Стоимость услуги у нас</p>
-                      <p className="price-block__subtitle">750 ₽ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <p className="price-block__subtitle">750 <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="price-block__economy">(Экономия - 350 рублей)</span></p>
                   </div>
                   <div className="service-btns">
@@ -286,6 +287,7 @@ export default function installationtAtoll(){
           .price-block__left, .price-block__right{
             display:flex;
             margin-right:0;
+            width:100%;
           }
 
           .service-block-widthness{

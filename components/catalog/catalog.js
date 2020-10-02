@@ -8,7 +8,7 @@ const Catalog = ({goods}) => {
     goodsArray.push(goods[id])
   }
 
-  const goodsToHtml = goodsArray.map(good => {
+  const goodsToHtml = goodsArray.map((good, index) => {
     if (good) return (
         <Good width="30.66%"
               margin="0 4% 3.5rem 0"
@@ -17,6 +17,7 @@ const Catalog = ({goods}) => {
               goodTitle={good.title}
               price = {good.price}
               key={good.id}
+              index = {index}
               id={good.id}/>
     )
   });
@@ -39,7 +40,7 @@ const Catalog = ({goods}) => {
             .catalog{
               padding-bottom:0;
               border-bottom:none;
-            }        
+            }
           }
         `}</style>
     </div>

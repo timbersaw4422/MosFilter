@@ -43,7 +43,7 @@ const CartItem = ({good, onPlusCLick, onMinusClick, onRemoveItem}) => {
 
                 <div className="cart-item__price-title">Стоимость</div>
 
-                <p className="cart-item__price">{good.count*good.price} ₽</p>
+                <p className="cart-item__price">{good.count*good.price} <i style = {{fontSize:"16px"}}className="fas fa-ruble-sign"></i></p>
             </div>
 
           </div>

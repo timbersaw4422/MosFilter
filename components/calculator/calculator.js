@@ -101,7 +101,10 @@ const Calculator = () => {
                 <p className="calculator__option"><span>Тип фильтра: </span> {option2}</p>
                 <p className="calculator__option"><span>Замена картриджей: </span> {option3}</p>
                 <p className="calculator__option"><span>Местоположение: </span> {option4}</p>
-                <div className="calculator__option always-visible"><span>Стоимость: </span> <span className="calculator__price">{price} <i className="fas fa-ruble-sign"></i></span> </div>
+                <div className="calculator__option always-visible">
+                  <span>Стоимость: </span>
+                  <span className="calculator__price">{price} <i style = {{fontSize:"15px"}}className="fas fa-ruble-sign"></i></span>
+                </div>
                 <div className="call-btn" onClick = {() => setModalOpen(!isModalOpen)}>
                    <span>Оформить заказ </span>
                 </div>

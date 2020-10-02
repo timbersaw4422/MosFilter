@@ -7,20 +7,8 @@ const Good = (props) =>{
     Router.push("/goods/[id]", `/goods/${props.id}`).then(() => window.scrollTo (0, 0));
   }
 
-  const [zIndex, setZIndex] = useState(0);
-
-  const mouseEnterHandler = () => {
-     setZIndex(50);
-  }
-
-  const mouseLeaveHandler = () => {
-     setTimeout(() => {
-       setZIndex(0);
-     }, 100);
-  }
-
   return(
-    <div className="good" onClick = {clickHandler} onMouseEnter={mouseEnterHandler} onMouseLeave = {mouseLeaveHandler}>
+    <div className="good" onClick = {clickHandler}>
           <div className="good-content">
               <img src={props.img} alt="" className="good__img"/>
               <p className="category-title">{props.categoryTitle}</p>
@@ -29,7 +17,7 @@ const Good = (props) =>{
                  <img src="/img/checkMark.png" alt="checkMark" className="on-stock-status"/>
                  <span className="on-stock-title">Есть в наличии</span>
               </div>
-              <p className="good__price">{props.price}&nbsp;₽</p>
+              <p className="good__price">{props.price}&nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
           </div>
 
           <div className="go-btn">
@@ -50,7 +38,7 @@ const Good = (props) =>{
            cursor:pointer;
            transition:0.2s;
            position:relative;
-           z-index:${zIndex};
+           z-index:${40 - props.index};
          }
 
          .good-content{
@@ -70,8 +58,8 @@ const Good = (props) =>{
            transition:0.3s;
            transform-origin:top;
            background:#fff;
-           z-index:1;
            overflow:hidden;
+           z-index:${40 - props.index};
          }
 
          .good__img{

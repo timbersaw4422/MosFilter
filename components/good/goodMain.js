@@ -62,7 +62,7 @@ const GoodMain = ({good}) => {
            <div className="good-main__long-descrription">{good.desc}</div>
            <div className="horizontal-shape" style={{marginTop:"4rem", marginBottom:"3rem"}}></div>
            <div className="good-main__price-and-garanty">
-              <p className="good-main__price">{good.price} ₽ / Шт</p>
+              <p className="good-main__price">{good.price} <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i> / Шт</p>
               <p className="good-main__garanty">Гарантия {good.garanty} {garanty}</p>
            </div>
            <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">

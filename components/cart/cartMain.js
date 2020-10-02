@@ -69,7 +69,7 @@ const CartMain = ({goods, setCartCount}) => {
          </div>
 
          <div className="cart-bottom">
-            <p className="cart-sum">Итого: {sum} ₽</p>
+            <p className="cart-sum">Итого: {sum} &nbsp; <i style = {{fontSize:"15px"}}className="fas fa-ruble-sign"></i></p>
             <div className="call-btn" onClick = {() => setModalOpen(true)}>
                <span>Оформить заказ</span>
             </div>
