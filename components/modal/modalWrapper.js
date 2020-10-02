@@ -71,16 +71,18 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, subtitle2,
       sendMail(
         {name, phone, email:email || "", modal:modalType, payload}
       ).then(data => {
-        if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>
+        if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>;
         setSuccess(true);
-        if(data.status === 1 && modalType ===5 ) {
+        setTimeout(() => setModalOpen(false), 2000);
+
+        if(data.status === 1 && modalType ===5 ) setTimeout(() => {
           clearCookie();
           setCartCount(0);
           document.querySelector(".cart-icon__count").style.opacity = "0";
           document.querySelector(".cart-icon").style.background = "#fff";
           document.querySelector(".cart-icon svg path").attributes.stroke.nodeValue = "#4862D2";
-        }
-        setTimeout(() => setModalOpen(false), 2000);
+        } , 2000)
+
       })
     }
   }
