@@ -49,7 +49,7 @@ const Logo = ({color, fill, marginTop}) => {
             letter-spacing:0.8px;
           }
 
-          @media screen and (max-width:400px){
+          @media screen and (max-width:500px){
             .logo__title{
               font-size:14px;
             }

@@ -108,6 +108,13 @@ const CalculatorChoise = ({title, placeholder, options, setOption}) => {
             }
           }
 
+          @media screen and (max-width:500px){
+            .calculator__choise{
+              margin-right:0;
+
+            }
+          }
+
         `}</style>
     </div>
   )
