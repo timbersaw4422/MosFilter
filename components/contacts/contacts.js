@@ -61,7 +61,7 @@ const Contacts = () => {
                   <img src="/img/contacts/telegram.png" alt="telegram"/>
                   <span>Telegram</span>
                 </p>
-                <p className="contacts__p">
+                <p className="contacts__p" onClick = {() => window.open("https://wa.me/79325306046", "_blank")}>
                   <img src="/img/contacts/whatsapp.png" alt="whatsapp"/>
                   <span>WhatsApp</span>
                 </p>
@@ -77,7 +77,7 @@ const Contacts = () => {
 
             <div className="with-shape-block">
                 <p className="contacts__text" style={{marginTop:0}}><strong>Написать на почту:</strong></p>
-                <p className="contacts__text bold" style={{marginBottom:0}}>info@mos-filter.ru1</p>
+                <p className="contacts__text bold" style={{marginBottom:0}}>info@mos-filter.ru</p>
             </div>
 
             <div className="with-shape-block">
@@ -359,6 +359,10 @@ const Contacts = () => {
         .submit-btn:active:before{
           background: linear-gradient(180deg, #191792 -32.22%, #6089F3 100%);
           box-shadow:none;
+        }
+
+        .contacts__p{
+          cursor:pointer;
         }
 
         @media (hover:hover){

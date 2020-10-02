@@ -23,7 +23,7 @@ const ForBusiness = () => {
           <div className="business-flex__left">
               <p className="business__text">Наша компания предлагает <strong>комплексное или частичное обслуживание фильтров </strong>и систем водоочистки для малого
               и среднего бизнеса в Москве и Подмосковье по выгодной цене. Быстрая и качественная замена картриджей в фильтрах, установка и ремонт
-              систем обратного осмоса. Работая с нами всё будет заебись.</p>
+              систем обратного осмоса.</p>
               <div className="horizontal-shape" style= {{marginTop:"4rem"}}></div>
               <h3 className="business__subtitle">Корпоративным клиентам мы предлагаем:</h3>
               <p className="about__paragraph with-point">Плановая замена картриджей в фильтрах</p>
@@ -148,7 +148,7 @@ const ForBusiness = () => {
                   <p className="card__text">• Фитнес-центры</p>
                   <p className="card__text">• Йога-студии</p>
                   <p className="card__text">• Бассейны</p>
-                  <p className="card__text">• Спа-спалоны</p>
+                  <p className="card__text">• SPA-салоны</p>
                </div>
            </div>
            <div className="call-btn" onClick = {() => setModalOpen(true)}>
@@ -439,7 +439,7 @@ const ForBusiness = () => {
 
           @media(hover:hover){
             .business__card:hover:after{
-              transform:scaleY(1.5);
+              transform:scaleY(1.45);
             }
             .call-btn:hover:after{
               opacity:0;

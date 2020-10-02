@@ -11,7 +11,7 @@ const MobileMenu = ({isMenuOpen, setMenuOpen}) => {
 
   return(
     <>
-      <div className="mobile-menu" onScroll={scrollHandler}>
+      <div className="mobile-menu" onWheel={scrollHandler}>
          {
          //<p className="mobile-menu__paragraph with-mb2">Рассчитайте стоимость ваших картриджей онлайн</p>
          //<div className="mobile-menu__btn btn-blue">Рассчитать</div>
