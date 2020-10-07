@@ -74,8 +74,7 @@ const HowToChooseFilter = () => {
 
       <CallToAction title="Выбрать фильтр под мойку"
                     text="Интернет-магазин фильтров для воды «Mos—filter» - предоставляет своим клиентам ассортимент фильтров для воды которые по нашему опыту доказали свою нажёжность и качество. "
-                    buttonText="Подобрать фильтр"
-                    link="/filters/atoll"
+                    buttonText="Задать вопрос"
       />
 
       <div className="horizontal-shape"></div>
