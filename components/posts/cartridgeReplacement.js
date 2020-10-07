@@ -46,7 +46,6 @@ const HowToChooseFilter = () => {
       <CallToAction title="Довериться специалистам"
                     text="Мы предоставляет своим клиентам профессиональную помощь по замене картриджей и обслуживанию фильтров с гарантией на срок 1 год."
                     buttonText="Задать вопрос"
-                    link="/"
       />
 
       <div className="horizontal-shape"></div>

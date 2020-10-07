@@ -16,7 +16,7 @@ const TopGoods = () => {
         <Good width="23.5%" margin="0 1.5% 1.3rem 0" img="/img/goods/601.png" categoryTitle="Комплект картриджей для"
         goodTitle="Барьер «Профи Стандарт»" price = {1600} id={601} index={24}/>
         <Good width="23.5%" margin="0 1.5% 1.3rem 0" img="/img/goods/401.png" categoryTitle="Комплект картриджей для"
-        goodTitle="Аквафор «Осмо 50 Классика»" price = {3950} id={401} index={25}/>
+        goodTitle="Аквафор «Осмо 50 Классика»" price = {2790} id={401} index={25}/>
         <Good width="23.5%" margin="0 1.5% 1.3rem 0" img="/img/goods/607.png" categoryTitle="Комплект картриджей для"
         goodTitle="Барьер «Осмо»" price = {3300} id={607} index={26}/>
         <Good width="23.5%" margin="0 1.5% 1.3rem 0" img="/img/goods/4.png" categoryTitle="Система обратного осмоса"

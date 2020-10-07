@@ -17,7 +17,7 @@ const SliderItem = ({background, transform, title, setModalOpen, setModalTitle, 
           left:0;
           right:0;
           bottom:0;
-          background:url(${background}) center / cover;
+          background:url(${background}) center /cover;
           transform:translateX(${transform}00%);
           cursor:pointer;
         }

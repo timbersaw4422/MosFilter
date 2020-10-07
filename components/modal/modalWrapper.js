@@ -61,7 +61,7 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, subtitle2,
     e.stopPropagation();
     if (name.length <2 || inputPhone.current.value.length < 16 || ( modalType===10 && !isEmail(inputEmail.current.value))) {
       alert.show('Корректно заполните все поля');
-      if (!isEmail(inputEmail.current.value) && inputEmail) inputEmail.current.style.border="1px solid tomato";
+      if (modalType ===10 && inputEmail && !isEmail(inputEmail.current.value)) inputEmail.current.style.border="1px solid tomato";
       if (inputName.current.value.length < 2) inputName.current.style.border="1px solid tomato";
       if (inputPhone.current.value.length < 16) inputPhone.current.parentNode.style.border = "1px solid tomato";
     }

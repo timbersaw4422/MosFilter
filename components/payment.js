@@ -24,8 +24,8 @@ const Payment = () => {
           <h3 className="payment__title" style={{fontSize:"20px"}}>Способы и сроки доставки:</h3>
           <p className="payment__paragraph with-point">Курьерская доставка в пределах МКАД. Оплата - 300 рублей. Осуществляется
           в течение 1-2 дней после совершения заказа. </p>
-          <p className="payment__paragraph with-point">Курьерская доставка за пределами МКАД. Оплата -  от 370 рублей.
-          Осуществляется в течение 1-2 дней после совершения заказа.. </p>
+          <p className="payment__paragraph with-point">Курьерская доставка за пределами МКАД. Оплата -  от 300 рублей.
+          Осуществляется в течение 1-2 дней после совершения заказа. </p>
           <p className="payment__paragraph with-point">Доставка Почтой России. Оплата рассчитывается по тарифам Почты России и осуществляется в
           зависимости от удалённости вашего города. </p>
           <div className="horizontal-shape" style={{width:"100%", height:"1px", background:"#DDDDDD", marginTop:"4.6rem"}}></div>

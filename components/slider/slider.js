@@ -176,9 +176,24 @@ const Slider = () => {
         }
       }
 
+      @media screen and (max-width:900px){
+        .slider-wrapper{
+          height:30rem;
+        }
+        .slider__arrow-left, .slider__arrow-right{
+          top:2rem;
+        }
+      }
+
       @media screen and (max-width:700px){
         .slider__bottom:after{
           display:none;
+        }
+        .slider-wrapper{
+          height:23rem;
+        }
+        .slider__arrow-left, .slider__arrow-right{
+          top:5.5rem;
         }
       }
 
@@ -194,6 +209,12 @@ const Slider = () => {
         }
         .slider__arrow-right{
           right:0;
+        }
+        .slider-wrapper{
+          height:36rem;
+        }
+        .slider__arrow-left, .slider__arrow-right{
+          top:0;
         }
       }
 

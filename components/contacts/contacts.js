@@ -52,12 +52,12 @@ const Contacts = () => {
 
             <div className="with-shape-block">
                 <p className="contacts__text" style={{marginTop:0}}><strong>Позвонить по телефону:</strong></p>
-                <p className="contacts__text bold" style={{marginBottom:0}}>+7 (495) 744 - 61 - 81</p>
+                <p className="contacts__text bold" style={{marginBottom:0}}><a href="tel:+74957446181" className="header__phone-title">+7 (495) 744 - 61 - 81</a></p>
             </div>
 
             <div className="with-shape-block">
                 <p className="contacts__text" style={{marginTop:0}}><strong>Написать в месседжер:</strong></p>
-                <p className="contacts__p">
+                <p className="contacts__p" onClick = {() => window.open("https://vk.com/away.php?to=https%3A%2F%2Ftlgg.ru%2F%40mos_filter&el=snippet", "_blank")}>
                   <img src="/img/contacts/telegram.png" alt="telegram"/>
                   <span>Telegram</span>
                 </p>
@@ -65,11 +65,11 @@ const Contacts = () => {
                   <img src="/img/contacts/whatsapp.png" alt="whatsapp"/>
                   <span>WhatsApp</span>
                 </p>
-                <p className="contacts__p">
+                <p className="contacts__p" onClick = {() => window.open("https://viber.click/79254950004", "_blank")}>
                   <img src="/img/contacts/viber.png" alt="viber"/>
                   <span>Viber</span>
                 </p>
-                <p className="contacts__p">
+                <p className="contacts__p" onClick = {() => window.open("https://www.instagram.com/mos_filter/", "_blank")}>
                   <img src="/img/contacts/instagram.png" alt="instagram"/>
                   <span>Instagram</span>
                 </p>
@@ -95,6 +95,7 @@ const Contacts = () => {
                       <div className="contacts-form__shape"></div>
                       <p className="contact-form__subtitle">Заполните и отправьте форму, наш специалист свяжется с
                       вами в течение 10 минут, и ответит на все ваши вопросы. </p>
+                      <p className="input-label">Ваше имя</p>
                       <input
                          ref={inputName}
                          type="text"
@@ -107,6 +108,7 @@ const Contacts = () => {
                          }}
                          value = {name}
                       />
+                      <p className="input-label">Ваш номер телефона</p>
                       <PhoneInput
                            ref = {inputPhone}
                            value={phone}
@@ -150,6 +152,13 @@ const Contacts = () => {
 
 
       <style>{`
+        .input-label{
+          margin-top:0;
+          margin-bottom:0.5rem;
+          color:#424242;
+          font-size:12px;
+        }
+
         .contacts-flex{
           display:flex;
           justify-content:space-between;
@@ -172,10 +181,15 @@ const Contacts = () => {
           margin-top:8rem;
         }
 
-        .contacts__text{
+        .contacts__text, .header__phone-title{
           font-size: 16px;
           line-height: 170%;
           color: #676767;
+          text-decoration:none;
+        }
+
+        .header__phone-title{
+          cursor:pointer;
         }
 
         .with-margin{
