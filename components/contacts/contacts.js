@@ -77,7 +77,7 @@ const Contacts = () => {
 
             <div className="with-shape-block">
                 <p className="contacts__text" style={{marginTop:0}}><strong>Написать на почту:</strong></p>
-                <p className="contacts__text bold" style={{marginBottom:0}}>info@mos-filter.ru</p>
+                <p className="contacts__text bold" style={{marginBottom:0}}><a href="mailto:info@mos-filter.ru">info@mos-filter.ru</a></p>
             </div>
 
             <div className="with-shape-block">
@@ -186,6 +186,11 @@ const Contacts = () => {
           font-size: 16px;
           line-height: 170%;
           color: #676767;
+          text-decoration:none;
+        }
+
+        .contacts__text a {
+          color: #1D1D1D;
           text-decoration:none;
         }
 
