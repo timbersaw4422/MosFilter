@@ -57,7 +57,7 @@ const Contacts = () => {
 
             <div className="with-shape-block">
                 <p className="contacts__text" style={{marginTop:0}}><strong>Написать в месседжер:</strong></p>
-                <p className="contacts__p" onClick = {() => window.open("https://vk.com/away.php?to=https%3A%2F%2Ftlgg.ru%2F%40mos_filter&el=snippet", "_blank")}>
+                <p className="contacts__p" onClick = {() => window.open("https://tlgg.ru/@mos_filter", "_blank")}>
                   <img src="/img/contacts/telegram.png" alt="telegram"/>
                   <span>Telegram</span>
                 </p>
@@ -156,7 +156,8 @@ const Contacts = () => {
           margin-top:0;
           margin-bottom:0.5rem;
           color:#424242;
-          font-size:12px;
+          font-size:14px;
+          text-align:left;
         }
 
         .contacts-flex{
