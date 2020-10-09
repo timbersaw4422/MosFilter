@@ -68,13 +68,14 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, subtitle2,
     else {
       sendBtn.current.style.opacity = "0.5";
       sendBtn.current.style.pointerEvents = "none";
-      
+
       sendMail(
         {name, phone, email:email || "", modal:modalType, payload:payload || "1"}
       ).then(data => {
         if(data.status === 0) message = <p style = {{textAlign:"center", color:"#424242", fontSize:"18px"}}>Что-то пошло не так.<br/>Попробуйте позже.</p>;
         setSuccess(true);
         setTimeout(() => setModalOpen(false), 2000);
+    
 
         if(data.status === 1 && modalType ===5 ) setTimeout(() => {
           clearCookie();

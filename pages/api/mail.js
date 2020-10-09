@@ -111,7 +111,7 @@ export default async function handler(req, res) {
 
   /////////////////
 
-  if (result.rejected.length === 0) res.status(200).json({"message":"Сообщение отправлено", status:1});
-  else res.status(400).json({"message":"Что- то пошло не так, попробуйте позже.",status:0});
+  await res.status(200).json({"message":"Сообщение отправлено", "status":1});
+
 
 }
