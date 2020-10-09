@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     }
   });
 
-  const body = req.body.body;
+  const body = await req.body.body;
   let result;
   /////////////////////  Дальше идут варианты модалок
 
