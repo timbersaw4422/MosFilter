@@ -116,7 +116,9 @@ const GoodMain = ({good}) => {
            <div className="horizontal-shape non-visible" style={{marginTop:"3rem", marginBottom:"3.4rem"}}></div>
 
            <div className="good-main__masters">
-             <div className="orange-round"></div>
+             <div className="good-main__emoji">
+                <img src="/img/master.png" alt="master"/>
+             </div>
              <div className="good-main__masters-about">
                  <p className="good-main__masters-title">Доверьте замену картриджей нашим специалистам</p>
                  <p className="good-main__masters-subtitle">Мастер доставит и поменяет вам картриджи</p>
@@ -312,12 +314,19 @@ const GoodMain = ({good}) => {
             align-items:center;
           }
 
-          .orange-round{
-            width:7.8rem;
-            height:7.8rem;
-            background: #F97B0F;
+          .good-main__emoji{
+            width:78px!important;
+            height:78px!important;
             border-radius:50%;
             margin-right:3rem;
+            border: 1px solid #D9D9D9;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+          }
+
+          .good-main__masters-about{
+            width:calc(100% - 10.8rem)
           }
 
           .good-main__masters-title{
@@ -468,7 +477,7 @@ const GoodMain = ({good}) => {
               max-width:none;
             }
             .good-main__masters{
-              display:none;
+              margin-top:5rem;
             }
             .mobile{
               display:block;
