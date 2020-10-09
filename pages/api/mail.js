@@ -121,10 +121,10 @@ const nodemailer = require('nodemailer');
 
 
 export default async function handler(req, res) {
-  let result;
   const address = "timbersaw442211@gmail.com";
+  const body = req.body;
 
-  let transporter = await nodemailer.createTransport({
+  let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'mos.filter.shop@gmail.com',
@@ -132,17 +132,21 @@ export default async function handler(req, res) {
     }
   });
 
-  const body = await req.body;
+  let options = {
+    from: "mos.filter.shop@gmail.com",
+    to: address,
+    subject: "Заказ звонка",
+    text: `${body.name} - заказ звонка. Номер телефона: ${body.phone}`
+  }
 
-  result = await transporter.sendMail({
-    "from": "mos.filter.shop@gmail.com",
-    "to": address,
-    "subject": "Заказ звонка",
-    "text": `${body.name} - заказ звонка. Номер телефона: ${body.phone}`
+
+  const result = await transporter.sendMail(options, (err, data) => {
+    if (err){
+      res.status(400).json({"message":"Что- то пошло не так, попробуйте позже.","status":0});
+    }
+    else {
+      res.status(200).json({"message":"Сообщение отправлено", "status":1});
+    }
   });
-
-
-  if (result.rejected.length === 0) res.status(200).json({"message":"Сообщение отправлено", "status":1});
-  else res.status(400).json({"message":"Что- то пошло не так, попробуйте позже.","status":0});
 
 }
