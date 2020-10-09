@@ -20,11 +20,10 @@ export default async function handler(req, res) {
 
   if (body.modal === 1) {
     result = await transporter.sendMail({
-      from: 'Mos-filter <mos.filter.shop@gmail.com>',
+      from: 'Mos-filter',
       to: address,
       subject: 'Заказ звонка',
-      text: `${body.name} - заказ звонка.
-      Номер телефона: ${body.phone}`
+      text: `${body.name} - заказ звонка. Номер телефона: ${body.phone}`
     });
   }
 
