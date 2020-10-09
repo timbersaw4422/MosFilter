@@ -14,6 +14,8 @@ const CategoryItem = ({text, bg, margin, link, bgStyle}) => {
       <h3 className="category__text">{text}</h3>
 
 
+
+
       <style jsx>{`
          .categoty__item{
            position:relative;
@@ -57,6 +59,12 @@ const CategoryItem = ({text, bg, margin, link, bgStyle}) => {
            }
            .categoty__item:hover{
              opacity:0.8;
+           }
+         }
+
+         @media screen and (max-width:1100px){
+           .categoty__item{
+             background-position:100% 50%;
            }
          }
 

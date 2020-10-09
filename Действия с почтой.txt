@@ -1,0 +1,5 @@
+Прежде всего, вы должны включить настройки, чтобы разрешить менее безопасные приложения для учетной записи gmail,
+которую вы используете. Вот ссылка: https://myaccount.google.com/lesssecureapps
+
+Во-вторых, разрешить доступ для "Display Unlock captch option" (разрешить доступ к вашему аккаунту Google).
+Вот ссылка: https://accounts.google.com/DisplayUnlockCaptcha
