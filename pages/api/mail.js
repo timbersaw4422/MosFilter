@@ -121,8 +121,8 @@ const nodemailer = require('nodemailer');
 
 
 export default async function handler(req, res) {
-
-  const address = 'timbersaw442211@gmail.com';
+  let result;
+  const address = "timbersaw442211@gmail.com";
 
   let transporter = await nodemailer.createTransport({
     service: 'gmail',
@@ -133,14 +133,12 @@ export default async function handler(req, res) {
   });
 
   const body = await req.body;
-  let result;
-
 
   result = await transporter.sendMail({
-    from: 'mos.filter.shop@gmail.com',
-    to: address,
-    subject: 'Заказ звонка',
-    text: `${body.name} - заказ звонка. Номер телефона: ${body.phone}`
+    "from": "mos.filter.shop@gmail.com",
+    "to": address,
+    "subject": "Заказ звонка",
+    "text": `${body.name} - заказ звонка. Номер телефона: ${body.phone}`
   });
 
 
