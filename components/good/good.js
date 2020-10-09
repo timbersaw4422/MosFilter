@@ -173,12 +173,20 @@ const Good = (props) =>{
            }
          }
 
+         @media screen and (max-width:900px){
+           .category-title{
+             height:4rem;
+           }
+         }
+
          @media screen and (max-width:600px){
            .good{
              width:48.5%;
              margin-right:1.5%;
            }
          }
+
+
 
       `}</style>
     </div>
