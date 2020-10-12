@@ -3,6 +3,7 @@ import {setGoodsCookie, getGoodsCookies} from "../../utils/utils";
 import { useAlert } from 'react-alert';
 import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 import Router from "next/router";
+import GoodSlider from "./goodSlider";
 
 const GoodMain = ({good}) => {
 
@@ -37,6 +38,8 @@ const GoodMain = ({good}) => {
 
   const [isBtnToCartVisible, setBtnToCartVisible] = useState(false);
 
+  const [bigImg, setBigImg] = useState(good.img);
+
   return(
     <>
       <p className="good-main__articul mobile">Артикул: {good.articul}</p>
@@ -44,12 +47,13 @@ const GoodMain = ({good}) => {
       <div className="good-page__main">
          <div className="good-main__imgs">
              <div className="good-main__big-img">
-                <img src={good.img} alt={good.title}/>
+                <img src={bigImg} alt={good.title}/>
              </div>
              <div className="good-main__small-imgs">
-                <div className="good-main__small-img"><img src={good.img} alt={good.title}/></div>
-                <div className="good-main__small-img"><img src={good.img} alt={good.title}/></div>
-                <div className="good-main__small-img"><img src={good.img} alt={good.title}/></div>
+                 <GoodSlider
+                     detailImgs = {good.detailImgs}
+                     detailImg1 = {good.img}
+                     setBigImg = {setBigImg} />
              </div>
          </div>
          <div className="good-main__description">
@@ -164,6 +168,7 @@ const GoodMain = ({good}) => {
            display:flex;
            align-items:center;
            margin-top:-1px;
+           flex-wrap:wrap;
          }
 
          .good-main__small-img{
@@ -251,7 +256,7 @@ const GoodMain = ({good}) => {
           }
 
           .good-main__btns{
-            margin-top:4rem;
+            margin-top:1.9rem;
             display:flex;
             justify-content:space-between;
             flex-wrap:wrap;
