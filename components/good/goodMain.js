@@ -50,10 +50,11 @@ const GoodMain = ({good}) => {
                 <img src={bigImg} alt={good.title}/>
              </div>
              <div className="good-main__small-imgs">
-                 <GoodSlider
+                 { goog.detailImg && <GoodSlider
                      detailImgs = {good.detailImgs}
                      detailImg1 = {good.img}
                      setBigImg = {setBigImg} />
+                  }
              </div>
          </div>
          <div className="good-main__description">

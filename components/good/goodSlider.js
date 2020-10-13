@@ -40,7 +40,6 @@ class GoodSlider extends React.Component{
          <div
            key={img}
            className="good-main__small-img"
-           // style={{width:"calc(100% / 3)", height:"15rem", background:bg}}
            style={{cursor:"pointer", height:"8rem", border: "1px solid #E3E3E3", borderLeft:"none", borderTop:"none"}}
          ><img onClick = {() => this.props.setBigImg(bg)}
          src={bg} style={{width:"70%", borderRadius:"50%", margin:"0 auto", cursor:"pointer"}} alt=""/></div>
@@ -49,13 +48,11 @@ class GoodSlider extends React.Component{
      detailImgs[0]=<div
        key={0}
        className="good-main__small-img"
-       // style={{width:"calc(100% / 3)", height:"15rem", background:bg}}
        style={{height:"8rem", border: "1px solid #E3E3E3", borderTop:"none"}}
      ><img onClick = {() => this.props.setBigImg(this.props.detailImg1)}
        src={this.props.detailImg1} style={{width:"70%", borderRadius:"50%", margin:"0 auto", cursor:"pointer"}} alt=""/></div>
 
     const settings = {
-      // dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 3,
@@ -63,18 +60,7 @@ class GoodSlider extends React.Component{
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
       autoplay:true,
-      autoplaySpeed:3000,
-      // responsive: [
-      //   {
-      //     breakpoint: 700,
-      //     settings: {
-      //       slidesToShow: 2,
-      //       slidesToScroll: 1,
-      //       infinite: true
-      //     }
-      //   },
-      //
-      // ]
+      autoplaySpeed:3000
     };
     return (
       <>
