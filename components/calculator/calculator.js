@@ -15,7 +15,7 @@ const Calculator = () => {
     if (option2 === "Проточный фильтр") type = 1; else type = 2;
     switch (option1){
       case "Atoll":{
-        if (type === 1) price += 1500; else price += 3000; break;
+        if (type === 1) price += 1500; else price += 3300; break;
       }
       case "Гейзер":{
         if (type === 1) price += 1200; else price += 3000; break;
@@ -40,10 +40,10 @@ const Calculator = () => {
     }
 
     if (option3 === "Меняет мастер"){
-      if (option4 === "В пределах МКАД") price += 1200; else price += 1300;
+      if (option4 === "В пределах МКАД") price += 1200; else price += 1400;
     }
     else {
-      if (option4 === "В пределах МКАД") price += 300; else price += 400;
+      if (option4 === "В пределах МКАД") price += 300; else price += 500;
     }
 
      return price;
