@@ -184,7 +184,7 @@ const Calculator = () => {
         .calculator__option{
           margin-top:0;
           font-weight: normal;
-          font-size: 12px;
+          font-size: 13px;
           line-height: 20px;
           color: #424242;
           height:4rem;
@@ -209,7 +209,7 @@ const Calculator = () => {
 
         .calculator__price{
           font-weight: 600;
-          font-size: 16px;
+          font-size: 17px;
           color: #4862D2;
         }
 
@@ -261,7 +261,7 @@ const Calculator = () => {
           position:relative;
           z-index:1;
           font-weight: 600;
-          font-size: 12px;
+          font-size: 13px;
           color: #FFFFFF;
         }
 

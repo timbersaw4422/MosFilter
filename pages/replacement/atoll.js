@@ -92,8 +92,8 @@ export default function replacementAtoll(){
                   </div>
                   <div className="price-block__right">
                       <p className="price-block__subtitle service-block-widthness">Стоимость услуги у нас</p>
-                      <p className="price-block__subtitle">850 <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className="price-block__economy">(Экономия - 400 рублей)</span></p>
+                      <p className="price-block__subtitle">990 <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="price-block__economy">(Экономия - 260 рублей)</span></p>
                   </div>
                   <div className="service-btns">
                     <div className="service-btn service-btn1"onClick = {() => setModalOpen(true)}><span>Заказать услугу</span></div>

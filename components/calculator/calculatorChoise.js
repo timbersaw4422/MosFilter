@@ -69,7 +69,7 @@ const CalculatorChoise = ({title, placeholder, options, setOption}) => {
 
           .choise__title{
             font-weight: 600;
-            font-size: 12px;
+            font-size: 13px;
             line-height: 16px;
             color: #424242;
             margin-top:0;
@@ -88,7 +88,7 @@ const CalculatorChoise = ({title, placeholder, options, setOption}) => {
           }
 
           .input__current-value{
-            font-size: 12px;
+            font-size: 13px;
             line-height: 16px;
             color: #424242;
           }
@@ -111,7 +111,6 @@ const CalculatorChoise = ({title, placeholder, options, setOption}) => {
           @media screen and (max-width:500px){
             .calculator__choise{
               margin-right:0;
-
             }
           }
 

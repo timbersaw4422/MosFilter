@@ -16,7 +16,7 @@ const ChoiseOption = ({text, id, changeHandler, activeId, setOption}) => {
             display:flex;
             align-items:center;
             padding-left:1.4rem;
-            font-size: 12px;
+            font-size: 13px;
             line-height: 16px;
             color: #424242;
             width:100%;

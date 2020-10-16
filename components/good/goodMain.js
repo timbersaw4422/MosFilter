@@ -340,13 +340,13 @@ const GoodMain = ({good}) => {
 
           .good-main__masters-title{
             font-weight: bold;
-            font-size: 11px;
+            font-size: 13px;
             line-height: 15px;
             color: #424242;
           }
 
           .good-main__masters-subtitle{
-            font-size: 10px;
+            font-size: 12px;
             line-height: 14px;
             color: #424242;
           }
