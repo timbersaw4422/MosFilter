@@ -1,11 +1,11 @@
 import ChoiseOption from "./option";
 import {useState} from "react";
 
-const CalculatorChoise = ({title, placeholder, options, setOption}) => {
+const CalculatorChoise = ({title, placeholder, options, setOption, initialOption1}) => {
 
   const [dropDownValue, setDropDownValue] = useState("");
   const [isDropDownOpen, setDropDownOpen] = useState(false);
-  const [activeId, setActiveId] = useState(1);
+  const [activeId, setActiveId] = useState(initialOption1 || 1);
 
   const arrowRotate = isDropDownOpen ? 180 : 0;
   const scaleOptions = isDropDownOpen ? 1 : 0;

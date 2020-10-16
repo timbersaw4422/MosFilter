@@ -2,9 +2,9 @@ import CalculatorChoise from "./calculatorChoise";
 import ModalWithAlertProvider from "../modal/modalWithAlertProvider";
 import {useState} from "react";
 
-const Calculator = () => {
+const Calculator = ({initialBrand, initialOption1}) => {
 
-  const [option1, setOption1] = useState("Atoll");
+  const [option1, setOption1] = useState(initialBrand);
   const [option2, setOption2] = useState("Проточный фильтр");
   const [option3, setOption3] = useState("Меняю самостоятельно");
   const [option4, setOption4] = useState("В пределах МКАД");
@@ -52,7 +52,7 @@ const Calculator = () => {
   const price = calculatePrice();
 
   const calculatorChoises = [
-    {id:1, title: "Выберите марку вашего фильтра", placeholder:"Atoll", setOption:setOption1,
+    {id:1, title: "Выберите марку вашего фильтра", placeholder:initialBrand, setOption:setOption1, initialOption1:initialOption1,
     options:[
       {id:1, text:"Atoll"},{id:2, text:"Гейзер"},{id:3, text:"Барьер"},{id:4, text:"Аквафор"},
       {id:5, text:"Platinum-wasser"},{id:6, text:"Затрудняюсь ответить"}
@@ -87,6 +87,7 @@ const Calculator = () => {
          <div className="calculator__main">
             <div className="calculator__left">
                {calculatorChoises.map(item => <CalculatorChoise
+                 initialOption1={item.initialOption1}
                  title = {item.title}
                  key = {item.id}
                  placeholder= {item.placeholder}
@@ -279,12 +280,21 @@ const Calculator = () => {
           }
         }
 
+        @media screen and (max-width:1280px){
+          .calculator__right{
+            padding-top:2.5rem;
+          }
+        }
+
         @media screen and (max-width:800px){
           .calculator__left{
             width:50%;
           }
           .calculator__right{
             width:50%;
+          }
+          .calculator__right{
+            padding-top:0;
           }
         }
 

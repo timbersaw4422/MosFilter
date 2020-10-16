@@ -55,7 +55,7 @@ export default function cartridgesAquaphor({data}){
 
                  <Catalog goods={data} />
                  <div className="placeholder"></div>
-                 <Calculator />
+                 <Calculator initialBrand={"Аквафор"} initialOption1={4}/>
                  <Advantages />
                  <div className="horizontal-shape"></div>
                  <AboutCartridgesAquaphor />

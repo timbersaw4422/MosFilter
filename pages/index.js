@@ -51,7 +51,7 @@ export default function Index(){
                 <WorkTime />
             </div>
             <div className="content-right">
-                <Calculator />
+                <Calculator initialBrand={"Atoll"}/>
             </div>
         </section>
 

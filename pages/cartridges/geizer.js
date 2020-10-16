@@ -55,7 +55,7 @@ export default function cartridgesGeizer({data}){
 
                  <Catalog goods={data} />
                  <div className="placeholder"></div>
-                 <Calculator />
+                 <Calculator initialBrand={"Гейзер"} initialOption1={2}/>
                  <Advantages />
                  <div className="horizontal-shape" style={{marginBottom:"5rem"}}></div>
                  <AboutCartridgesGeizer />

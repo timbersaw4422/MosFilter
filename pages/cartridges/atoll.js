@@ -55,7 +55,7 @@ export default function cartridgesAtoll({data}){
 
                  <Catalog goods={data} />
                  <div className="placeholder"></div>
-                 <Calculator />
+                 <Calculator initialBrand={"Atoll"}/>
                  <Advantages />
                  <div className="horizontal-shape"></div>
                  <AboutCartridgesAtoll />

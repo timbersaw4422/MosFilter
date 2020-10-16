@@ -55,7 +55,7 @@ export default function cartridgesPlatinumWasser({data}){
 
                  <Catalog goods={data} />
                  <div className="placeholder"></div>
-                 <Calculator />
+                 <Calculator initialBrand={"Platinum-wasser"} initialOption1={5}/>
                  <Advantages />
                  <div className="horizontal-shape"></div>
                  <AboutCartridgesPlatinumWasser />
