@@ -42,6 +42,7 @@ const CallBtn = () => {
            transition:0.3s;
            position:relative;
            cursor:pointer;
+           margin-right:2rem;
         }
 
         .call-btn:before, .call-btn:after{

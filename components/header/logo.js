@@ -27,6 +27,7 @@ const Logo = ({color, fill, marginTop}) => {
             cursor:pointer;
             display:flex;
             align-items:center;
+            flex-grow:1;
           }
           svg{
             margin-left:0.5rem;
@@ -36,17 +37,17 @@ const Logo = ({color, fill, marginTop}) => {
 
           .logo__title{
             margin:0 0;
-            font-size:26px;
+            font-size:30px;
             color:${color};
           }
 
           .logo__subtitle{
             text-transform:uppercase;
             margin-top:0px;
-            font-size:8px;
+            font-size:9px;
             color:${color};
             margin-top:-3px;
-            letter-spacing:0.8px;
+            letter-spacing:1.1px;
           }
 
           @media screen and (max-width:500px){
@@ -61,7 +62,6 @@ const Logo = ({color, fill, marginTop}) => {
 
             .logo{
               flex-direction:row-reverse;
-              flex-grow:1;
               text-align:left;
               justify-content:flex-end;
             }
