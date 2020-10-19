@@ -15,32 +15,29 @@ const Calculator = ({initialBrand, initialOption1}) => {
     if (option2 === "Проточный фильтр") type = 1; else type = 2;
     switch (option1){
       case "Atoll":{
-        if (type === 1) price += 1500; else price += 3300; break;
+        if (type === 1) price += 1500; else price += 850; break;
       }
       case "Гейзер":{
-        if (type === 1) price += 1200; else price += 3000; break;
+        if (type === 1) price += 2200; else price += 640; break;
       }
       case "Аквафор":{
-        if (type === 1) price += 1250; else price += 3800; break;
-      }
-      case "Аквафор":{
-        if (type === 1) price += 1600; else price += 3300; break;
+        if (type === 1) price += 1250; else price += 640; break;
       }
       case "Барьер":{
-        if (type === 1) price += 1600; else price += 3300; break;
+        if (type === 1) price += 1600; else price += 800; break;
       }
       case "Platinum-wasser":{
-        price += 3200;break;
+        if (type === 1) price += 1500; else price += 950; break;
       }
       case "Затрудняюсь ответить":{
-        price += 1200;break;
+        if (type === 1) price += 1500; else price += 800; break;
       }
 
       default:break;
     }
 
     if (option3 === "Меняет мастер"){
-      if (option4 === "В пределах МКАД") price += 1200; else price += 1400;
+      if (option4 === "В пределах МКАД") price += 1200; else price += 1500;
     }
     else {
       if (option4 === "В пределах МКАД") price += 300; else price += 500;
