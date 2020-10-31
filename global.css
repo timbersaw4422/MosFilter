@@ -168,6 +168,16 @@ html{
   padding-bottom:1.8rem;
 }
 
+.landing-wrapper{
+  width:95%;
+  max-width:1150px;
+  margin:0 auto;
+}
+
+.landing{
+  font-family: 'Montserrat', sans-serif;
+}
+
 @media (hover:hover){
 
   .service-btn:hover:after{
