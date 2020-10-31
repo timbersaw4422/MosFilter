@@ -1,4 +1,4 @@
-import LandingButton from "./LandingButton";
+import LandingButton from "./landingButton";
 
 const LandingHeader = ({name}) => {
   return(
