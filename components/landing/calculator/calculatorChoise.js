@@ -24,9 +24,10 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
         <p className="choise__title">{title}</p>
         <div className="choise__input">
           <span className="input__current-value">{dropDownValue || placeholder}</span>
-          <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.2118 4.856C3.24391 4.90041 3.28688 4.93672 3.337 4.96181C3.38713 4.98689 3.4429 5 3.49953 5C3.55615 5 3.61192 4.98689 3.66205 4.96181C3.71217 4.93672 3.75514 4.90041 3.78725 4.856L6.9375 0.522964C6.97396 0.472987 6.99534 0.414449 6.99932 0.353711C7.0033 0.292973 6.98972 0.232358 6.96007 0.178452C6.93041 0.124546 6.8858 0.0794107 6.8311 0.0479494C6.77639 0.0164882 6.71368 -9.54414e-05 6.64977 4.13189e-07H0.349279C0.285519 0.000251199 0.223037 0.0170481 0.168553 0.0485847C0.114069 0.0801213 0.069643 0.125204 0.0400537 0.178986C0.0104645 0.232767 -0.00316886 0.293212 0.000619828 0.35382C0.00440851 0.414428 0.0254759 0.472905 0.0615563 0.522964L3.2118 4.856Z" fill="#3F3F3F"/>
+          <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.04712 8.7408C5.09758 8.82074 5.1651 8.8861 5.24386 8.93125C5.32263 8.97641 5.41027 9 5.49925 9C5.58823 9 5.67588 8.97641 5.75464 8.93125C5.83341 8.8861 5.90093 8.82074 5.95139 8.7408L10.9018 0.941336C10.9591 0.851376 10.9927 0.746008 10.9989 0.63668C11.0052 0.527352 10.9839 0.418245 10.9372 0.321214C10.8906 0.224183 10.8205 0.142939 10.7346 0.086309C10.6486 0.0296788 10.5501 -0.000171795 10.4496 7.43741e-07H0.548867C0.448673 0.000452158 0.350487 0.0306866 0.264869 0.0874525C0.179251 0.144218 0.109439 0.225368 0.0629416 0.322174C0.0164442 0.418981 -0.00497963 0.527781 0.000974015 0.636876C0.00692766 0.74597 0.0400335 0.85123 0.0967313 0.941336L5.04712 8.7408Z" fill="#004990"/>
           </svg>
+
 
           <div className="choise__options">
 
@@ -51,12 +52,13 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
             margin-right:3rem;
             margin-bottom:3.7rem;
             position:relative;
+            width:45%;
           }
 
           .choise__options{
             position:absolute;
             width:100%;
-            top:6.8rem;
+            top:8.8rem;
             left:0;
             z-index:10;
             background: #FFFFFF;
@@ -76,10 +78,10 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
           }
 
           .choise__input{
-            height:4rem;
-            width:24rem;
+            height:6rem;
+            width:100%;
             background: #FFFFFF;
-            border: 1px solid #E3E3E3;
+            border: 1px solid #B7CCE0;
             display:flex;
             align-items:center;
             justify-content:space-between;
@@ -94,7 +96,7 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
           }
 
           .choise__options .choise__option:last-child{
-            bordeb-bottom:none;
+            border-bottom:none;
           }
 
           svg{
@@ -102,8 +104,8 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
             transition:0.3s;
           }
 
-          @media screen and (max-width:1280px){
-            .choise__input{
+          @media screen and (max-width:1067px){
+            .calculator__choise{
               width:100%;
             }
           }

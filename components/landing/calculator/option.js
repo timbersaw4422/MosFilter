@@ -20,7 +20,7 @@ const ChoiseOption = ({text, id, changeHandler, activeId, setOption}) => {
             line-height: 16px;
             color: #424242;
             width:100%;
-            height:4rem;
+            height:6rem;
             border-bottom:1px solid #E3E3E3;
           }
 

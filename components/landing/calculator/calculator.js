@@ -1,4 +1,5 @@
 import CalculatorChoise from "./calculatorChoise";
+import LandingButton from "../landingButton";
 import {useState} from "react";
 
 const Calculator = ({initialBrand, initialOption1}) => {
@@ -78,7 +79,7 @@ const Calculator = ({initialBrand, initialOption1}) => {
       <h2 className="calculator__caption">Онлайн-калькулятор</h2>
 
       <div className="calculator__wrapper">
-         <h3 className="calculator__text">Расчитайте стоимость картриджей для вашего фильтра</h3>
+         <h3 className="calculator__text">Расчитайте стоимость замены картриджей для вашего фильтра</h3>
          <div className="calculator__shape"></div>
          <div className="calculator__main">
             <div className="calculator__left">
@@ -96,12 +97,13 @@ const Calculator = ({initialBrand, initialOption1}) => {
             <div className="calculator__right">
                 <div className="calculator__option always-visible">
                   <span>Стоимость: </span>
-                  <span className="calculator__price">{price} <i style = {{fontSize:"15px", fontWeight:"400"}}className="fas fa-ruble-sign"></i></span>
-                </div>
-                <div className="call-btn" onClick = {() => setModalOpen(!isModalOpen)}>
-                   <span>Оформить заказ </span>
+                  <span className="calculator__price">{price} <i style = {{fontSize:"22px", fontWeight:"400"}}className="fas fa-ruble-sign"></i></span>
                 </div>
 
+                <LandingButton
+                    text="Заказать"
+                    css={{maxWidth:"250px", height:"50px", marginBottom:"0rem"}}
+                    />
             </div>
          </div>
       </div>
@@ -113,6 +115,7 @@ const Calculator = ({initialBrand, initialOption1}) => {
         .calculator{
           border-top:1px solid #E3E3E3;
           padding-top:2rem;
+          margin-bottom:18rem;
         }
         .calculator__main{
           display:flex;
@@ -134,19 +137,26 @@ const Calculator = ({initialBrand, initialOption1}) => {
           background: #F9FAFC;
           border: 1px solid #B7CCE0;
           box-shadow: 9px 10px 17px rgba(0, 0, 0, 0.03);
+          owefrlow:hidden;
         }
 
         .calculator__text{
           font-weight: 500;
           font-size: 22px;
           color: #626262;
+          margin-top:1.5rem;
+          margin-bottom:8rem;
+          position:relative;
         }
 
-        .calculator__shape{
-          width:24rem;
+        .calculator__text:after{
+          content:"";
+          position:absolute;
+          width:calc(100% + 6rem);
           height:1px;
-          background: #B4B4B4;
-          margin-bottom:3.5rem;
+          background: #B7CCE0;
+          top:6rem;
+          left:-3rem;
         }
 
         .calculator__left{
@@ -157,7 +167,7 @@ const Calculator = ({initialBrand, initialOption1}) => {
 
         .calculator__right{
           width:35%;
-          border-left:1px solid #DBDBDB;
+          border-left:1px solid #B7CCE0;
           padding-left:5rem;
         }
 
@@ -188,9 +198,9 @@ const Calculator = ({initialBrand, initialOption1}) => {
         }
 
         .calculator__price{
-          font-weight: 600;
-          font-size: 17px;
-          color: #4862D2;
+          font-weight: bold;
+          font-size: 24px;
+          color: #004990;
         }
 
         svg{
@@ -248,6 +258,10 @@ const Calculator = ({initialBrand, initialOption1}) => {
         .call-btn:active :before{
           background: linear-gradient(180deg, #191792 -32.22%, #6089F3 100%);
           box-shadow:none;
+        }
+
+        .always-visible{
+          margin-bottom:2rem;
         }
 
         @media (hover:hover){
