@@ -12,7 +12,7 @@ const LandingButton = ({text, css}) => {
           max-width:${css.maxWidth};
           height: ${css.height};
           margin-bottom:${css.marginBottom};
-          background: #FF652E;
+          background: ${css.background || "#FF652E"};
           color:#fff;
           display:flex;
           align-items:center;

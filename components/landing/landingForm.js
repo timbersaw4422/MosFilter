@@ -1,6 +1,6 @@
 import LandingButton from "./landingButton";
 
-const LandingForm = ({css}) => {
+const LandingForm = ({css, margin}) => {
   return(
     <>
       <form className="form" style={css}>
@@ -39,6 +39,7 @@ const LandingForm = ({css}) => {
             box-shadow: 14px 13px 26px rgba(0, 0, 0, 0.09);
             width:360px;
             padding:4rem 3rem 3rem 3rem;
+            margin: ${margin || '0'};
           }
 
           .title{

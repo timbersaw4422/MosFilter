@@ -3,6 +3,8 @@ import LandingAkcii from "../components/landing/landingAkcii";
 import LandingModelRow from "../components/landing/landingModelRow";
 import Calculator from "../components/landing/calculator/calculator";
 import LandingCatalog from "../components/landing/landingCatalog";
+import LandingServices from "../components/landing/landingServices";
+import LandingCallToAction from "../components/landing/landingCallToAction";
 import Head from "next/head";
 
 // export async function getServerSideProps(context) {
@@ -18,7 +20,7 @@ export default function Geizer(){
   return(
     <div className="landing" style={{background:"#F9FAFC"}}>
       <Head>
-        <title>Мос - фильтр | Главная</title>
+        <title>Мос - фильтр | Гейзер. Услуги</title>
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Описание страницы сайта." />
@@ -32,7 +34,9 @@ export default function Geizer(){
       <div className="landing-wrapper">
         <Calculator />
         <LandingCatalog />
+        <LandingServices />
       </div>
+      <LandingCallToAction />
 
 
    </div>
