@@ -5,6 +5,8 @@ import Calculator from "../components/landing/calculator/calculator";
 import LandingCatalog from "../components/landing/landingCatalog";
 import LandingServices from "../components/landing/landingServices";
 import LandingCallToAction from "../components/landing/landingCallToAction";
+import LandingReviews from "../components/landing/landingReviews";
+import LandingWorks from "../components/landing/landingWorks";
 import Head from "next/head";
 
 // export async function getServerSideProps(context) {
@@ -26,6 +28,7 @@ export default function Geizer(){
         <meta name="description" content="Описание страницы сайта." />
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossOrigin="anonymous"/>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       </Head>
 
       <LandingHeader name = "Гейзер"/>
@@ -37,6 +40,8 @@ export default function Geizer(){
         <LandingServices />
       </div>
       <LandingCallToAction />
+      <LandingReviews />
+      <LandingWorks />
 
 
    </div>

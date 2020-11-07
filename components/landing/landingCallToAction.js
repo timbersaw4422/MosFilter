@@ -23,6 +23,7 @@ const LandingCallToAction = () => {
         .call-to-action{
           background:#004990;
           margin-top:18rem;
+          margin-bottom:18rem;
         }
 
         .call-to-action__main{
@@ -63,6 +64,12 @@ const LandingCallToAction = () => {
           padding-left:3.8rem;
           border-left:1px solid #fff;
           width:35%;
+          color: #FFFFFF;
+        }
+
+        .info-worktime{
+          font-weight: 600;
+          font-size: 16px;
           color: #FFFFFF;
         }
         `}</style>
