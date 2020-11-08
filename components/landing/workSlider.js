@@ -80,7 +80,7 @@ class CustomArrows extends React.Component{
           }
 
           .wrapper{
-            height:50rem;
+            height:45rem;
           }
         `}</style>
       </>

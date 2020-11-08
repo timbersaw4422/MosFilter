@@ -1,0 +1,49 @@
+const LandingFooter = () => {
+  return(
+    <>
+      <div className="footer">
+        <div className="landing-wrapper">
+
+           <div className="footer__left">
+             <p className="footer__text">© 2012-2020 Сервисня служба «Мос — Фильтр».
+                Для жалоб и предложений директор: +7 (960) 480-60-07
+             </p>
+             <p className="footer__link"> Обработка персональных данных.</p>
+           </div>
+
+           <div className="footer__right">
+             <img src="/img/landing/logo.png" alt="Студия разработки Мануфактура" className="logo"/>
+           </div>
+
+        </div>
+      </div>
+
+      <style jsx>{`
+        .landing-wrapper{
+          padding:2.5rem 0;
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+        }
+
+        .footer__text{
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 150%;
+          color: #424242;
+          max-width:35rem;
+        }
+
+        .footer__link{
+          font-weight: normal;
+          font-size: 12px;
+          text-decoration-line: underline;
+          color: #004990;
+          cursor:pointer;
+        }
+      `}</style>
+    </>
+  )
+}
+
+export default LandingFooter;

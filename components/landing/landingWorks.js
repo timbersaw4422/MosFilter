@@ -24,6 +24,23 @@ const LandingWorks = () => {
         .landing-wrapper{
           border-top:1px solid #E3E3E3;
           padding-top:3.6rem;
+          z-index:10;
+        }
+
+        .works{
+          position:relative;
+          margin-bottom:18rem;
+        }
+
+        .works:after{
+          content:"";
+          position:absolute;
+          left:0;
+          bottom:0;
+          width:100%;
+          height:39rem;
+          background:#004990;
+          z-index:0;
         }
 
         .subtitle{
