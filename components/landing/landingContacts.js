@@ -1,4 +1,4 @@
-import LandingButton from "./LandingButton";
+﻿import LandingButton from "./landingButton";
 import Map from "../yandexMap";
 
 const LandingContacts = () => {
