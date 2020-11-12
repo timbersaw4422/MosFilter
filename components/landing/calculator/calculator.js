@@ -2,12 +2,19 @@ import CalculatorChoise from "./calculatorChoise";
 import LandingButton from "../landingButton";
 import {useState} from "react";
 
-const Calculator = ({initialBrand, initialOption1}) => {
+const Calculator = ({initialBrand, initialOption1, goods}) => {
 
-  const [option1, setOption1] = useState(initialBrand);
-  const [option2, setOption2] = useState("Проточный фильтр");
+  const [option1, setOption1] = useState(initialOption1);
+  const [option2, setOption2] = useState("В пределах МКАД");
   const [option3, setOption3] = useState("Меняю самостоятельно");
-  const [option4, setOption4] = useState("В пределах МКАД");
+  const [option4, setOption4] = useState("Оригинал");
+
+  const modelOptions = goods.map(good => {
+    return {
+      id:good.id, text:good.title
+    }
+  });
+  modelOptions.push({id:10000, text:"Другая модель"})
 
   const calculatePrice = () => {
     let price=0;
@@ -49,15 +56,12 @@ const Calculator = ({initialBrand, initialOption1}) => {
   const price = calculatePrice();
 
   const calculatorChoises = [
-    {id:1, title: "Выберите модель вашего фильтра", placeholder:initialBrand, setOption:setOption1, initialOption1:initialOption1,
-    options:[
-      {id:1, text:"Atoll"},{id:2, text:"Гейзер"},{id:3, text:"Барьер"},{id:4, text:"Аквафор"},
-      {id:5, text:"Platinum-wasser"},{id:6, text:"Затрудняюсь ответить"}
-    ]
+    {id:1, title: "Выберите модель вашего фильтра", placeholder:initialOption1, setOption:setOption1, initialOption1:initialOption1,
+    options:modelOptions, height:"30rem"
     },
-    {id:2, title: "Ваше местоположение", placeholder:"Проточный фильтр", setOption:setOption2,
+    {id:2, title: "Ваше местоположение", placeholder:"В пределах МКАД", setOption:setOption2,
     options:[
-      {id:1, text:"Проточный фильтр"},{id:2, text:"Обратный осмос"}
+      {id:1, text:"В пределах МКАД"},{id:2, text:"За пределами МКАД"}
     ]
     },
     {id:3, title: "Замена картриджей", placeholder:"Меняю самостоятельно", setOption:setOption3,
@@ -65,9 +69,9 @@ const Calculator = ({initialBrand, initialOption1}) => {
       {id:1, text:"Меняю самостоятельно"},{id:2, text:"Меняет мастер"}
     ]
     },
-    {id:4, title: "Количество фильтров",  placeholder:"В пределах МКАД", setOption:setOption4,
+    {id:4, title: "Картриджи",  placeholder:"Оригинал", setOption:setOption4,
     options:[
-      {id:1, text:"В пределах МКАД"},{id:2, text:"За пределами МКАД"}
+      {id:1, text:"Оригинал"},{id:2, text:"Аналоги"}
     ]
     }
   ];
@@ -90,6 +94,7 @@ const Calculator = ({initialBrand, initialOption1}) => {
                  placeholder= {item.placeholder}
                  options={item.options}
                  setOption = {item.setOption}
+                 height={item.height || null}
                  />) }
 
             </div>

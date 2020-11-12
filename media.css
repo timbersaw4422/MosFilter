@@ -23,7 +23,9 @@
 
   .header{
     margin-bottom:3.5rem;
+    
   }
+
 
   .header:before{
     display:block;

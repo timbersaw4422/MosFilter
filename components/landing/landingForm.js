@@ -1,6 +1,17 @@
+import DropDown from "../nextDropDown/nextDropDown";
+
 import LandingButton from "./landingButton";
 
-const LandingForm = ({css, margin}) => {
+const LandingForm = ({css, margin, goods}) => {
+
+  const dropDownOptions = goods.map(good => {
+    return {
+      id:good.id,
+      value:good.title
+    }
+  });
+  dropDownOptions.push({id:1000, value:"Другая модель"});
+
   return(
     <>
       <form className="form" style={css}>
@@ -10,12 +21,16 @@ const LandingForm = ({css, margin}) => {
 
         <input type="text" name="phone" placeholder="Контактный номер телефона"/>
 
-        <div className="dropdown">
-            <span>Модель фильтра</span>
-            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.2401 1.74001L7.0001 7.70001L12.7601 1.74001C12.9166 1.57757 13.0021 1.35962 12.9979 1.1341C12.9937 0.90859 12.9 0.693991 12.7376 0.537513C12.5752 0.381035 12.3572 0.295497 12.1317 0.299717C11.9062 0.303936 11.6916 0.397568 11.5351 0.560013L7.0001 5.25501L2.4601 0.560012C2.30362 0.397567 2.08903 0.303936 1.86351 0.299716C1.638 0.295496 1.42005 0.381034 1.2576 0.537512C1.09516 0.69399 1.00153 0.908589 0.997306 1.1341C0.993086 1.35961 1.07862 1.57757 1.2351 1.74001L1.2401 1.74001Z" fill="#8E8E8E"/>
-            </svg>
-        </div>
+        <DropDown
+          css={{
+            width:"100%",
+            height:"6rem",
+            margin:"0 0 2.5rem 0"
+          }}
+          placeholder="Модель фильтра"
+          options={dropDownOptions}
+          defaultId = {1}
+        />
 
         <div className="according">
           <div className="according__checkbox"></div>
@@ -40,6 +55,8 @@ const LandingForm = ({css, margin}) => {
             width:360px;
             padding:4rem 3rem 3rem 3rem;
             margin: ${margin || '0'};
+            position:relative;
+            z-index:10;
           }
 
           .title{
@@ -61,26 +78,12 @@ const LandingForm = ({css, margin}) => {
             font-size: 12px;
             color: #424242;
             padding:0 2rem;
+            font-family: Montserrat;
           }
 
           ::placeholder{
             color:#424242;
             font-family: 'Montserrat', sans-serif;
-          }
-
-          .dropdown{
-            height:6rem;
-            width:100%;
-            background: #F1F1F1;
-            margin-bottom: 2.5rem;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:2rem;
-            cursor:pointer;
-            font-weight: 500;
-            font-size: 12px;
-            color: #424242;
           }
 
           .according{

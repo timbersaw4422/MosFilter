@@ -1,17 +1,24 @@
 import LandingButton from "./landingButton";
 
-const LandingHeader = ({name}) => {
+const LandingHeader = ({name, setModalOpen, setModalType}) => {
+
+  const btnClickHandler = () => {
+    setModalOpen(true);
+    setModalType("QUIZ");
+  }
+
   return(
     <>
-
       <div className="header">
         <div className="landing-wrapper">
            <h1>Замена картриджей в фильтрах для воды «{name}»</h1>
-           <LandingButton
-               text="Расчитать стоимость замены"
-               css={{maxWidth:"320px", height:"60px", marginBottom:"10rem"}}
-               />
-           <div className="landing-shape"></div>
+           <div onClick = {btnClickHandler}>
+             <LandingButton
+                 text="Расчитать стоимость замены"
+                 css={{maxWidth:"320px", height:"60px", marginBottom:"10rem"}}
+                 />
+             <div className="landing-shape"></div>
+           </div>
         </div>
       </div>
 

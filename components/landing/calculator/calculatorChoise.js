@@ -1,7 +1,7 @@
 import ChoiseOption from "./option";
 import {useState} from "react";
 
-const CalculatorChoise = ({title, placeholder, options, setOption, initialOption1}) => {
+const CalculatorChoise = ({title, placeholder, options, setOption, initialOption1, height}) => {
 
   const [dropDownValue, setDropDownValue] = useState("");
   const [isDropDownOpen, setDropDownOpen] = useState(false);
@@ -58,7 +58,7 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
           .choise__options{
             position:absolute;
             width:100%;
-            top:8.8rem;
+            top:9rem;
             left:0;
             z-index:10;
             background: #FFFFFF;
@@ -67,6 +67,13 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
             transform:scaleY(${scaleOptions});
             transform-origin:top;
             transition:0.2s;
+            height:${height || "auto"};
+            overflow-y:${height ? "scroll" : "auto"};
+          }
+
+          .choise__filter-model{
+            height:30rem;
+            overflow-y:scroll;
           }
 
           .choise__title{
@@ -101,7 +108,6 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
 
           svg{
             transform:rotate(${arrowRotate}deg);
-            transition:0.3s;
           }
 
           @media screen and (max-width:1067px){
