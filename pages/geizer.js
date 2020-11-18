@@ -53,6 +53,12 @@ export default function Geizer({data}){
       break;
     }
 
+    case "JUST-NUMBER":{
+      modalMaxWidth = "480px";
+      modalContent = <GoodModal good={activeGood} startTranslate={1}/>;
+      break;
+    }
+
     default:break;
   }
 
@@ -72,7 +78,7 @@ export default function Geizer({data}){
       <LandingAkcii goods = {goods}/>
       <LandingModelRow />
       <div className="landing-wrapper">
-        <Calculator initialOption1={goods[0].title} goods={goods}/>
+        <Calculator initialOption1={goods[0].title} goods={goods} setModalOpen={setModalOpen} setModalType={setModalType}/>
         <LandingCatalog setModalOpen = {setModalOpen} setModalType = {setModalType} setActiveGood={setActiveGood} goods={goods}/>
         <LandingServices />
       </div>
@@ -80,7 +86,7 @@ export default function Geizer({data}){
       <LandingReviews />
       <LandingWorks />
       <LandingAbout />
-      <LandingContacts />
+      <LandingContacts setModalOpen={setModalOpen} setModalType={setModalType}/>
       <LandingFooter />
 
       {isModalOpen &&

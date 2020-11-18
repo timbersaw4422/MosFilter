@@ -1,10 +1,10 @@
 import {useState} from "react";
 import LandingButton from "./landingButton";
 
-const GoodModal = ({good}) => {
+const GoodModal = ({good, startTranslate = 0}) => {
 
   const steps = 3;
-  const [translate, setTranslate] = useState(0);
+  const [translate, setTranslate] = useState(startTranslate);
   const [policy, setPolicy] = useState(true);
 
   return(

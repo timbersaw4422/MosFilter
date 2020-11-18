@@ -1,7 +1,7 @@
 ﻿import LandingButton from "./landingButton";
 import Map from "../yandexMap";
 
-const LandingContacts = () => {
+const LandingContacts = ({setModalOpen, setModalType}) => {
 
   return(
     <>
@@ -42,6 +42,10 @@ const LandingContacts = () => {
                <LandingButton
                    text="Заказать обратный звонок"
                    css={{maxWidth:"100%", height:"60px", marginBottom:"0rem"}}
+                   clickHandler={() => {
+                     setModalType("JUST-NUMBER");
+                     setModalOpen(true);
+                   }}
                    />
 
 

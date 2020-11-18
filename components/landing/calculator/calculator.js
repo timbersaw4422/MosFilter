@@ -2,7 +2,7 @@ import CalculatorChoise from "./calculatorChoise";
 import LandingButton from "../landingButton";
 import {useState} from "react";
 
-const Calculator = ({initialBrand, initialOption1, goods}) => {
+const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModalOpen}) => {
 
   const [option1, setOption1] = useState(initialOption1);
   const [option2, setOption2] = useState("В пределах МКАД");
@@ -76,8 +76,6 @@ const Calculator = ({initialBrand, initialOption1, goods}) => {
     }
   ];
 
-  const [isModalOpen, setModalOpen] = useState(false);
-
   return(
     <div className="calculator">
       <h2 className="calculator__caption">Онлайн-калькулятор</h2>
@@ -108,6 +106,10 @@ const Calculator = ({initialBrand, initialOption1, goods}) => {
                 <LandingButton
                     text="Заказать"
                     css={{maxWidth:"250px", height:"50px", marginBottom:"0rem"}}
+                    clickHandler = {() => {
+                      setModalOpen(true);
+                      setModalType("JUST-NUMBER");
+                    }}
                     />
             </div>
          </div>

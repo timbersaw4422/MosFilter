@@ -1,5 +1,6 @@
 import SliderNav from "./sliderNav";
 import Arrow from "./arrow";
+import ReviewSlider from "./reviewSlider";
 
 const LandingReviews = () => {
   return(
@@ -16,59 +17,9 @@ const LandingReviews = () => {
 
           <p className="subtitle">Нам доверяют</p>
           <h2 className="title">Последние отзывы наших клиентов</h2>
-          <div className="review-page">
 
-             <div className="review">
-               <div className="review__img-and-name">
-                  <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
-                  <p className="review__name">Татьяна</p>
-               </div>
-               <p className="review__text">В данной фирме обслуживаюсь не первый год, ребята молодцы! Продолжайте в том же духе!</p>
-               <div className="review__btn">
-                  <span>Посмотреть снимок отзыва</span>
-                  <Arrow fill="#FF652E"/>
-               </div>
-             </div>
+          <ReviewSlider />
 
-             <div className="review">
-               <div className="review__img-and-name">
-                  <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
-                  <p className="review__name">Татьяна</p>
-               </div>
-               <p className="review__text">В данной фирме обслуживаюсь не первый год, ребята молодцы! Продолжайте в том же духе!</p>
-               <div className="review__btn">
-                  <span>Посмотреть снимок отзыва</span>
-                  <Arrow fill="#FF652E"/>
-               </div>
-             </div>
-
-             <div className="review">
-               <div className="review__img-and-name">
-                  <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
-                  <p className="review__name">Татьяна</p>
-               </div>
-               <p className="review__text">В данной фирме обслуживаюсь не первый год, ребята молодцы! Продолжайте в том же духе!</p>
-               <div className="review__btn">
-                  <span>Посмотреть снимок отзыва</span>
-                  <Arrow fill="#FF652E"/>
-               </div>
-             </div>
-
-             <div className="review">
-               <div className="review__img-and-name">
-                  <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
-                  <p className="review__name">Татьяна</p>
-               </div>
-               <p className="review__text">В данной фирме обслуживаюсь не первый год, ребята молодцы! Продолжайте в том же духе!</p>
-               <div className="review__btn">
-                  <span>Посмотреть снимок отзыва</span>
-                  <Arrow fill="#FF652E"/>
-               </div>
-             </div>
-
-          </div>
-
-          <SliderNav />
       </div>
     </div>
 

@@ -1,19 +1,29 @@
 import LandingGood from "./landingGood";
+import {useState} from "react";
 
 const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood}) => {
+
+  const [type, setType] = useState(3);
+  let displayedGoods;
+  if (type === 3) displayedGoods = goods;
+  else if (type === 1) displayedGoods = goods.filter(good => good.type==="проточный");
+  else displayedGoods = goods.filter(good => good.type === "осмос");
+
+
+
   return(
     <>
       <div className="landing-catalog">
          <h2 className="catalog__title"> Каталог картриджей</h2>
 
          <div className="catalog__tabs">
-             <div className="catalog__tab catalog__tab1">Для проточных фильтров</div>
-             <div className="catalog__tab catalog__tab2">Для систем обратного осмоса</div>
-             <div className="catalog__tab catalog__tab3">Все комплекты</div>
+             <div className="catalog__tab catalog__tab1" onClick = {() => setType(1)}>Для проточных фильтров</div>
+             <div className="catalog__tab catalog__tab2" onClick = {() => setType(2)}>Для систем обратного осмоса</div>
+             <div className="catalog__tab catalog__tab3" onClick = {() => setType(3)}>Все комплекты</div>
          </div>
 
          <div className="landing-goods">
-             {goods.map(good => <LandingGood
+             {displayedGoods.map(good => <LandingGood
                key={good.id}
                id={good.id}
                title={good.title}
@@ -79,6 +89,11 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood}) => {
 
         .catalog__tab3{
           width:25%;
+        }
+
+        .catalog__tab${type}{
+          background: #004990;
+          color:#fff;
         }
 
         .landing-goods{
