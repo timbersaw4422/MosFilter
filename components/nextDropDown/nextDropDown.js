@@ -4,7 +4,8 @@ import Option from "./dropDownOption";
 const DropDown = ({css,
                    placeholder = "Placeholder",
                    options = [{id:1, value:"option1"}],
-                   defaultId = 1
+                   defaultId = 1,
+                   callBack = null
                   }) => {
 
   const [isOpen, setOpen] = useState(false);
@@ -30,6 +31,7 @@ const DropDown = ({css,
                    setValue = {setValue}
                    activeId = {activeId}
                    setActiveId = {setActiveId}
+                   callBack = {callBack}
                 />)
             }
          </div>
@@ -69,6 +71,8 @@ const DropDown = ({css,
           transform-origin: top;
           height:200px;
           overflow-y:scroll;
+          z-index:50;
+          background:#fff;
         }
 
         .arrow{

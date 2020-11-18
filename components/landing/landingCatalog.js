@@ -1,6 +1,6 @@
 import LandingGood from "./landingGood";
 
-const LandingCatalog = () => {
+const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood}) => {
   return(
     <>
       <div className="landing-catalog">
@@ -13,12 +13,18 @@ const LandingCatalog = () => {
          </div>
 
          <div className="landing-goods">
-             <LandingGood />
-             <LandingGood />
-             <LandingGood />
-             <LandingGood />
-             <LandingGood />
-
+             {goods.map(good => <LandingGood
+               key={good.id}
+               id={good.id}
+               title={good.title}
+               subtitle={good.subtitle}
+               price={good.price}
+               img={good.img}
+               discount={good.discount}
+               setModalOpen={setModalOpen}
+               setModalType={setModalType}
+               setActiveGood={setActiveGood}
+               />)}
          </div>
 
 

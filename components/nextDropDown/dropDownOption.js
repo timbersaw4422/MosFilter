@@ -1,8 +1,9 @@
-const Option = ({value, setValue, id, setActiveId, activeId}) => {
+const Option = ({value, setValue, id, setActiveId, activeId, callBack}) => {
 
   const clickHandler = () => {
     setValue(value);
     setActiveId(id);
+    if (callBack) callBack(id);
   }
 
   const classes = ["option"];
@@ -24,6 +25,8 @@ const Option = ({value, setValue, id, setActiveId, activeId}) => {
           padding:0 20px;
           transition:0.2s;
           background:#fff;
+          z-index:50;
+          position:Relative;
         }
 
         .active-option{

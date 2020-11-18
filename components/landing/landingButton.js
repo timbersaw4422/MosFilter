@@ -1,7 +1,7 @@
-const LandingButton = ({text, css}) => {
+const LandingButton = ({text, css, clickHandler}) => {
   return(
     <>
-      <div className="button">
+      <div className="button" onClick={clickHandler}>
         <span>{text}</span>
       </div>
 
@@ -13,7 +13,8 @@ const LandingButton = ({text, css}) => {
           height: ${css.height};
           margin-bottom:${css.marginBottom};
           background: ${css.background || "#FF652E"};
-          color:#fff;
+          color:${css.color || "#fff"};
+          border:${css.border || "none"};
           display:flex;
           align-items:center;
           justify-content:center;
@@ -21,9 +22,10 @@ const LandingButton = ({text, css}) => {
           font-size: 12px;
           letter-spacing: 0.045em;
           text-transform: uppercase;
-          box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow:${css.boxShadow || "0px 4px 4px rgba(0, 0, 0, 0.25)"};
           cursor:pointer;
           position:relative;
+          margin:${css.margin || ""};
         }
 
         .button span{
@@ -34,7 +36,7 @@ const LandingButton = ({text, css}) => {
         .button:after{
           content:"";
           position:absolute;
-          background: linear-gradient(265.11deg, rgba(255, 255, 255, 0) 19.76%, rgba(255, 255, 255, 0.58) 53.19%, rgba(255, 255, 255, 0) 86.41%), #FF652E;
+          background: ${css.after || "linear-gradient(265.11deg, rgba(255, 255, 255, 0) 19.76%, rgba(255, 255, 255, 0.58) 53.19%, rgba(255, 255, 255, 0) 86.41%), #FF652E"};
           top:0;
           right: 0;
           bottom: 0;
@@ -47,6 +49,9 @@ const LandingButton = ({text, css}) => {
         @media(hover:hover){
           .button:hover:after{
             opacity:1;
+          }
+          .button:hover span{
+            color:${css.hoverColor || ""}
           }
         }
         `}</style>

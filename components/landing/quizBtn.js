@@ -1,4 +1,4 @@
-const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type}) => {
+const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border}) => {
   return(
     <>
        <div className="btn" onClick = {() => {
@@ -17,11 +17,14 @@ const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type}) => {
             padding:${css.padding};
             margin:${css.margin};
             height:4rem;
-            border: 2px solid #004990;
+            border: ${css.border || "2px solid #004990"};
             display:flex;
             align-items:center;
             justify-content:space-between;
             cursor:pointer;
+            position:relative;
+            z-index:1;
+            opacity:${policy ? "1" : "0.5"};
           }
 
           .btn span{

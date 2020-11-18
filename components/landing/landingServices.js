@@ -17,7 +17,8 @@ const LandingServices = () => {
               <p className="service__price">1600 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
               <LandingButton
                   text="Подробнее"
-                  css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990"}}
+                  css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990",
+                  after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990"}}
                   />
               <div className="service__ticket">Хит продаж</div>
             </figure>
@@ -33,7 +34,8 @@ const LandingServices = () => {
               <p className="service__price">1600 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
               <LandingButton
                   text="Подробнее"
-                  css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990"}}
+                  css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990",
+                  after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990"}}
                   />
             </figure>
 
@@ -48,7 +50,8 @@ const LandingServices = () => {
               <p className="service__price">1600 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
               <LandingButton
                   text="Подробнее"
-                  css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990"}}
+                  css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990",
+                  after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990"}}
                   />
             </figure>
         </div>
@@ -104,6 +107,7 @@ const LandingServices = () => {
           font-size: 16px;
           color: #424242;
           margin-top: 1rem;
+          height:50px;
         }
 
         .on-stock-title{

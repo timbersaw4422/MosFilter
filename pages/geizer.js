@@ -12,6 +12,7 @@ import LandingContacts from "../components/landing/landingContacts";
 import LandingFooter from "../components/landing/landingFooter";
 import Modal from "../components/landing/rModal/rModal";
 import Quiz from "../components/landing/quiz";
+import GoodModal from "../components/landing/goodModal.js";
 import {useState} from "react";
 import Head from "next/head";
 
@@ -23,13 +24,18 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default function Geizer(data){
+export default function Geizer({data}){
 
-  const goods = Object.keys(data.data).map(good => data.data[good]);
-  console.log(goods);
+  // const data = {data:{"1":{id:1, title:"Гейзер Какой то", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png",
+  //                     discount:10},
+  //                     "2":{id:2, title:"Гейзер Другой", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"},
+  //                     "3":{id:3, title:"Гейзер Третий", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"}}}
+
+  const goods = Object.keys(data).map(good => data[good]);
 
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState("QUIZ");
+  const [activeGood, setActiveGood] = useState(null);
 
   let modalContent;
   let modalMaxWidth;
@@ -37,7 +43,13 @@ export default function Geizer(data){
   switch (modalType){
     case "QUIZ":{
       modalMaxWidth = "1150px";
-      modalContent = <Quiz goods = {goods}/>;
+      modalContent = <Quiz setModalOpen={setModalOpen} goods = {goods}/>;
+      break;
+    }
+
+    case "GOOD/SERVICE":{
+      modalMaxWidth = "950px";
+      modalContent = <GoodModal good={activeGood}/>;
       break;
     }
 
@@ -61,7 +73,7 @@ export default function Geizer(data){
       <LandingModelRow />
       <div className="landing-wrapper">
         <Calculator initialOption1={goods[0].title} goods={goods}/>
-        <LandingCatalog />
+        <LandingCatalog setModalOpen = {setModalOpen} setModalType = {setModalType} setActiveGood={setActiveGood} goods={goods}/>
         <LandingServices />
       </div>
       <LandingCallToAction goods = {goods}/>

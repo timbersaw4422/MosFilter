@@ -1,22 +1,30 @@
 import LandingButton from "./landingButton.js";
 
-const LandingGood = () => {
+const LandingGood = (props) => {
+
+  const clickHandler = () => {
+    props.setModalOpen(true);
+    props.setModalType("GOOD/SERVICE");
+    props.setActiveGood({subtitle:props.subtitle, title:props.title, img:props.img, price:props.price});
+  }
+
   return(
     <>
-      <figure className="good">
-        <img src="/img/goods/301.png" alt="" className = "good__img"/>
-        <p className="good__subtitle">Комплект катриджей</p>
-        <h4 className="good__title">Гейзер «3»</h4>
+      <figure className="good" onClick={clickHandler}>
+        <img src={props.img} alt="" className = "good__img"/>
+        <p className="good__subtitle">{props.subtitle}</p>
+        <h4 className="good__title">{props.title}</h4>
         <div className="good__on-stock">
            <img src="/img/checkMark.png" alt="checkMark" className="on-stock-status"/>
            <span className="on-stock-title">Есть в наличии</span>
         </div>
-        <p className="good__price">1488 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
+        <p className="good__price">{props.price} &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
         <LandingButton
             text="Подробнее"
-            css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990"}}
+            css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990",
+            after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990"}}
             />
-        <div className="good__ticket">Акция -10%</div>
+        {props.discount && <div className="good__ticket">Акция -{props.discount}%</div>}
 
       </figure>
 

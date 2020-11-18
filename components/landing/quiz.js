@@ -3,23 +3,46 @@ import QuizBtn from "./quizBtn";
 import QuizRadio from "./quizRadio";
 import DropDown from "../nextDropDown/nextDropDown";
 
-const Quiz = ({goods}) => {
-
+const Quiz = ({goods, setModalOpen}) => {
+  let modelTitle=""; let radioTitle; let place;
   const steps = 6;
   const [activeStep, setActiveStep] = useState(0);
   const [checked, setChecked] = useState(true);
 
   const [quizData, setQuizData] = useState({
     policy:true,
-    activeModel:1,
+    activeModel:0,
     activeRadio:1,
     metro:"",
-    outOfMkad:false
+    outOfMkad:false,
+    phone:""
   });
+
+  for (let good of goods){
+    if (good.id === quizData.activeModel) modelTitle = good.title;
+  }
+
+  switch (quizData.activeRadio){
+    case 1:{radioTitle="Нужны картриджи и услуга профессиональной замены"; break;}
+    case 2:{radioTitle="Нужны только картриджи, замену произвожу самостоятельно"; break;}
+    case 3:{radioTitle="Нужна только услуга замены, картриджи уже куплены"; break;}
+    default:break;
+  }
+
+  place = quizData.outOfMkad ? "За пределами МКАД" : quizData.metro;
 
   const onChangeMetroInput = e => {
     const metro = e.target.value;
     setQuizData(prev => ({...prev, metro}))
+  }
+
+  const onChangePhoneInput = e => {
+    const phone = e.target.value;
+    setQuizData(prev => ({...prev, phone}))
+  }
+
+  const onChangeModelDropDown = (id) => {
+    setQuizData(prev => ({...prev, activeModel:id}));
   }
 
   const dropDownOptions = goods.map(good => {
@@ -86,6 +109,7 @@ const Quiz = ({goods}) => {
                      placeholder="Модель фильтра"
                      options={dropDownOptions}
                      defaultId = {1}
+                     callBack = {onChangeModelDropDown}
                    />
                </div>
                <div className="quiz__button-group">
@@ -103,7 +127,7 @@ const Quiz = ({goods}) => {
                      css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
                      text="Далее"
                      reverse={false}
-                     policy={quizData.policy}
+                     policy={quizData.activeModel}
                  />
                </div>
             </div>
@@ -152,7 +176,11 @@ const Quiz = ({goods}) => {
                     placeholder="Введите название станции"
                     className="quiz__metro-input"/>
                   <div className="outOfMkad">
-                    <input type="checkbox"/>
+                  <div className="policy-checkbox" onClick={() => setQuizData(prev => ({...prev, outOfMkad:!prev.outOfMkad}))}>
+                    <svg className="outOfMkad-checkbox__inner" width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.23882 7.05748L1.41653 4.223L0 5.63473L4.23387 9.88625L12.7359 1.41779L11.3243 0L4.23882 7.05748Z" fill="#004990"/>
+                    </svg>
+                  </div>
                     <p className="outOFMkad__title">Нахожусь за МКАД</p>
                   </div>
                </div>
@@ -171,12 +199,80 @@ const Quiz = ({goods}) => {
                      css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
                      text="Далее"
                      reverse={false}
+                     policy={quizData.outOfMkad || quizData.metro}
+                 />
+               </div>
+            </div>
+
+            <div className="quiz__step quiz__step4">
+               <h3 className="quiz__step-title" style={{marginBottom:"1.4rem"}}> 4. Детали заказа</h3>
+               <div className="quiz__details">
+                  <div className="details__shape"></div>
+                  <p className="details__text">• Модель фильтра: <span>{modelTitle}</span></p>
+                  <p className="details__text">• Вариант услуги: <span>{radioTitle}</span></p>
+                  <p className="details__text" style={{marginBottom:"4.7rem"}}>• Местоположение: <span>{place}</span></p>
+               </div>
+               <div className="quiz__button-group">
+                 <QuizBtn
+                     setActiveStep={setActiveStep}
+                     to = {3}
+                     css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
+                     text="Назад"
+                     reverse={true}
+                     policy={quizData.policy}
+                 />
+                 <QuizBtn
+                     setActiveStep={setActiveStep}
+                     to = {5}
+                     css={{width:"20.5rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 3rem", margin:"0"}}
+                     text="Оформить заказ"
+                     reverse={false}
                      policy={quizData.policy}
                  />
                </div>
             </div>
 
+            <div className="quiz__step quiz__step5">
+               <h3 className="quiz__step-title" style={{marginBottom:"4rem"}}> 5. Укажите свой номер телефона, наш мастер свяжется с вами через 5 минут</h3>
+               <input type="text" className="quiz__phone" onChange={onChangePhoneInput}/>
+               <div className="quiz__button-group">
+                 <QuizBtn
+                     setActiveStep={setActiveStep}
+                     to = {4}
+                     css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
+                     text="Назад"
+                     reverse={true}
+                     policy={quizData.policy}
+                 />
+                 <QuizBtn
+                     setActiveStep={setActiveStep}
+                     to = {6}
+                     css={{width:"20.5rem", background:"#FF652E", textColor:"#fff", arrowFill:"#fff", padding:"0 3rem", margin:"0",
+                           border:"1px solid #FF652E"}}
+                     text="Отправить заявку"
+                     reverse={false}
+                     policy={quizData.policy}
 
+                 />
+               </div>
+            </div>
+
+            <div className="quiz__step quiz__step6">
+               <h3 className="quiz__step-title" style={{margin:"8rem 0 3.5rem 0", textAlign:"center"}}>
+               Спасибо за заявку! Наш специалист уже спешит к телефону<br />Пожалуйста оставайтесь на связи
+               </h3>
+
+               <div onClick={() => setModalOpen(false)}>
+               <QuizBtn
+                   setActiveStep={setActiveStep}
+                   to = {6}
+                   css={{width:"23rem", background:"#fff", textColor:"#424242", arrowFill:"#004990", padding:"0 4rem", margin:"0 auto 5.3rem auto"}}
+                   text="Вернуться к сайту"
+                   reverse={false}
+                   policy={quizData.policy}
+               />
+               </div>
+            </div>
 
          </div>
 
@@ -190,7 +286,7 @@ const Quiz = ({goods}) => {
            border: 1px solid #B7CCE0;
          }
 
-         .quiz__step1, .quiz__step2, .quiz__step3{
+         .quiz__step1, .quiz__step2, .quiz__step3, .quiz__step4, .quiz__step5{
            padding:3.7rem 4.5rem 0 4.5rem;
          }
 
@@ -236,6 +332,7 @@ const Quiz = ({goods}) => {
          .quiz__step{
            height:38rem;
            width:10%;
+           position:Relative;
          }
 
           .quiz__step-title{
@@ -243,7 +340,6 @@ const Quiz = ({goods}) => {
             font-size: 16px;
             color: #505050;
             width:100%;
-            max-width:555px;
             line-height:150%;
           }
 
@@ -303,6 +399,10 @@ const Quiz = ({goods}) => {
             display:flex;
             align-items:center;
             justify-content:space-between;
+            position:absolute;
+            bottom:0;
+            width:calc(100% - 9rem);
+            bottom:4.5rem;
           }
 
           .quiz__variants{
@@ -352,6 +452,41 @@ const Quiz = ({goods}) => {
             font-size: 16px;
             color: #424242;
             margin:0 0 0 1.5rem;
+          }
+
+          .outOfMkad-checkbox__inner{
+            opacity:${quizData.outOfMkad ? "1" : "0"};
+          }
+
+          .details__shape{
+            width:100%;
+            max-width:388px;
+            height:1px;
+            background: #004990;
+            margin-bottom:4rem;
+          }
+
+          .details__text{
+            font-weight: 600;
+            font-size: 16px;
+            color: #424242;
+            margin-bottom:2.5rem;
+          }
+
+          .details__text span{
+            font-weight:400;
+          }
+
+          .quiz__phone{
+            outline:none;
+            border:none;
+            width:100%;
+            max-width:388px;
+            border-bottom:1px solid #004990;
+            padding:1rem 0;
+            font-weight: 500;
+            font-size: 16px;
+            color: #424242;
           }
 
          `}</style>
