@@ -55,7 +55,7 @@ export default function Geizer({data}){
 
     case "JUST-NUMBER":{
       modalMaxWidth = "480px";
-      modalContent = <GoodModal good={activeGood} startTranslate={1}/>;
+      modalContent = <GoodModal good={goods[0]} startTranslate={1}/>;
       break;
     }
 
