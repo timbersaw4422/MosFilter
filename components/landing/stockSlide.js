@@ -1,8 +1,8 @@
+import {useState} from "react";
+
 const StockSlide = (props) =>{
 
-  //исправить значок РУБЛЯ
-
-
+  const [fill, setFill] = useState("#004990");
 
   return(
     <>
@@ -12,14 +12,14 @@ const StockSlide = (props) =>{
                <p className="slide__title"><img src="/img/landing/stock-image.png" alt="Гейзер"/>{props.title}</p>
                <p className="slide__text">• Бесплатная доставка <br/> + Санация фильтра в подарок</p>
                <div className="old-and-new-price">
-                 <p className="new-price">Цена со скидкой <br/> <span>{props.newPrice} ₽</span></p>
-                 <p className="old-price">Старая цена <br/> <span>{props.oldPrice} ₽</span></p>
+                 <p className="new-price">Цена со скидкой <br/> <span>{props.newPrice} <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i></span></p>
+                 <p className="old-price">Старая цена <br/> <span>{props.oldPrice} <i style = {{fontSize:"15px"}}className="fas fa-ruble-sign"></i></span></p>
                </div>
 
-               <div className="slide__btn">
+               <div className="slide__btn" onMouseEnter={() => setFill("#fff")} onMouseLeave={() => setFill("#004990")}>
                   <span>Участвовать в акции</span>
                   <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M-6.11317e-07 5.08388L10.9071 5.08389L8.01315 8.17439L8.78624 9L13 4.5L8.78625 5.85296e-07L8.01315 0.825614L10.9071 3.91612L-5.09227e-07 3.91612L-6.11317e-07 5.08388Z" fill="#004990"/>
+                    <path d="M-6.11317e-07 5.08388L10.9071 5.08389L8.01315 8.17439L8.78624 9L13 4.5L8.78625 5.85296e-07L8.01315 0.825614L10.9071 3.91612L-5.09227e-07 3.91612L-6.11317e-07 5.08388Z" fill={fill}/>
                   </svg>
                </div>
            </div>
@@ -122,10 +122,30 @@ const StockSlide = (props) =>{
           line-height: 16px;
           color: #424242;
           cursor:pointer;
+          position:relative;
         }
 
         .slide__btn span{
           margin-right:2.6rem;
+          position:relative;
+          z-index:5;
+          transition:0.3s;
+        }
+
+        .slide__btn svg{
+          position:relative;
+          z-index:5;
+          transition:0.2s;
+        }
+
+        .slide__btn:after{
+          content:"";
+          position:absolute;
+          background:#004990;
+          top: 0;right: 0;bottom: 0;left:0;
+          z-index:0;
+          opacity:0;
+          transition:0.3s;
         }
 
         .slide__circle-outer{
@@ -177,6 +197,18 @@ const StockSlide = (props) =>{
           line-height: 88px;
           text-align: right;
           color: #DD2C2C;
+        }
+
+        @media(hover:hover){
+          .slide__btn:hover:after{
+            opacity:1;
+          }
+          .slide__btn:hover span{
+            color:#fff;
+          }
+          .slide__btn:hover svg{
+            transform:translateX(10px);
+          }
         }
       `}</style>
     </>

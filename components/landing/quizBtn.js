@@ -1,4 +1,12 @@
 const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border}) => {
+
+  const hoverBackground = css.background === "#fff" ? "#004990" : "#fff";
+  const hoverColor = css.textColor === "#424242" ? "#fff" : "#424242";
+  let hoverFill = css.arrowFill === "#004990" ? "#fff" : "#004990";
+  const transform = reverse ? "translateX(-10px) rotate(180deg)" : "translateX(10px)";
+
+  if (css.background === "#FF652E") hoverFill = "#FF652E";
+
   return(
     <>
        <div className="btn" onClick = {() => {
@@ -32,11 +40,45 @@ const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border}) 
             font-weight: 600;
             font-size: 12px;
             order:${reverse ? "2" : "1"};
+            position:relative;
+            z-index:5;
           }
 
           .btn svg{
             order:${reverse ? "1" : "2"};
             transform:${reverse ? "rotate(180deg)" : "none"};
+            position:relative;
+            z-index:5;
+            transition:0.2s;
+          }
+
+          .btn:after{
+            content:"";
+            position:absolute;
+            top: 0;right: 0;bottom: 0;left: 0;
+            background:${hoverBackground};
+            z-index:0;
+            opacity:0;
+            transition:0.3s;
+          }
+
+          @media(hover:hover){
+            .btn:hover:after{
+              opacity:${policy && "1"};
+            }
+
+            .btn:hover span{
+              color:${policy && hoverColor};
+            }
+
+            .btn:hover svg path{
+              fill: ${policy && hoverFill};
+            }
+
+            .btn:hover svg{
+              transform:${policy ? transform : "none"};
+
+            }
           }
         `}</style>
     </>

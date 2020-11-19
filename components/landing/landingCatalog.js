@@ -1,9 +1,8 @@
 import LandingGood from "./landingGood";
 import {useState} from "react";
 
-const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood}) => {
+const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type, setType}) => {
 
-  const [type, setType] = useState(3);
   let displayedGoods;
   if (type === 3) displayedGoods = goods;
   else if (type === 1) displayedGoods = goods.filter(good => good.type==="проточный");
@@ -75,6 +74,7 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood}) => {
           font-size: 18px;
           color: #004990;
           cursor:pointer;
+          position:relative;
         }
 
         .catalog__tab1{
@@ -96,11 +96,29 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood}) => {
           color:#fff;
         }
 
+        .catalog__tab:after{
+          content:"";
+          position:absolute;
+          bottom:0;
+          left:0;
+          height:2px;
+          width:100%;
+          background:#004990;
+          transition:0.3s;
+          transform:scaleX(0);
+        }
+
         .landing-goods{
           width:90%;
           display:flex;
           align-items:center;
           flex-wrap:wrap;
+        }
+
+        @media(hover:hover){
+          .catalog__tab:hover:after{
+            transform:scaleX(1);
+          }
         }
 
         `}</style>

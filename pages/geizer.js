@@ -37,6 +37,8 @@ export default function Geizer({data}){
   const [modalType, setModalType] = useState("QUIZ");
   const [activeGood, setActiveGood] = useState(null);
 
+  const [type, setType] = useState(3);
+
   let modalContent;
   let modalMaxWidth;
 
@@ -76,10 +78,16 @@ export default function Geizer({data}){
 
       <LandingHeader name = "Гейзер" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
       <LandingAkcii goods = {goods}/>
-      <LandingModelRow />
+      <LandingModelRow setType={setType}/>
       <div className="landing-wrapper">
         <Calculator initialOption1={goods[0].title} goods={goods} setModalOpen={setModalOpen} setModalType={setModalType}/>
-        <LandingCatalog setModalOpen = {setModalOpen} setModalType = {setModalType} setActiveGood={setActiveGood} goods={goods}/>
+        <LandingCatalog
+              setModalOpen = {setModalOpen}
+              setModalType = {setModalType}
+              setActiveGood={setActiveGood}
+              goods={goods}
+              type={type}
+              setType={setType}/>
         <LandingServices />
       </div>
       <LandingCallToAction goods = {goods}/>
