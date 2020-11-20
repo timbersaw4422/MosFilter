@@ -1,8 +1,11 @@
 import DropDown from "../nextDropDown/nextDropDown";
+import {useState} from "react";
 
 import LandingButton from "./landingButton";
 
 const LandingForm = ({css, margin, goods}) => {
+
+  const [policy, setPolicy] = useState(true);
 
   const dropDownOptions = goods.map(good => {
     return {
@@ -33,8 +36,16 @@ const LandingForm = ({css, margin, goods}) => {
         />
 
         <div className="according">
-          <div className="according__checkbox"></div>
-          <p className="according__text">Даю согласие на обработку данных </p>
+          <div className="policy-group">
+              <div className="policy-checkbox" onClick={() => setPolicy(prev => !prev)}>
+                {
+                  policy && <svg className="policy-checkbox__inner" width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.23882 7.05748L1.41653 4.223L0 5.63473L4.23387 9.88625L12.7359 1.41779L11.3243 0L4.23882 7.05748Z" fill="#004990"/>
+                  </svg>
+                }
+              </div>
+              <p className="policy">Даю согласие на обработку персональных данных</p>
+          </div>
         </div>
 
         <LandingButton
@@ -47,6 +58,29 @@ const LandingForm = ({css, margin, goods}) => {
 
 
       <style jsx>{`
+          .policy-group{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+          }
+
+          .policy-group input{
+            cursor:pointer;
+            margin-right:2rem;
+          }
+
+          .policy-checkbox{
+            height:20px;
+            width:20px;
+            cursor:pointer;
+            border: 2px solid #004990;
+            border-radius: 2px;
+            margin-right:20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+          }
+
           .form{
             background: #FFFFFF;
             border: 1px solid #B7CCE0;

@@ -1,21 +1,24 @@
-import {useState} from "react";
+import {useState, useRef} from "react";
+import PhoneInput from 'react-phone-number-input'
 import QuizBtn from "./quizBtn";
 import QuizRadio from "./quizRadio";
 import DropDown from "../nextDropDown/nextDropDown";
+import Loader from "./loader";
+import {sendMail} from "../../utils/mail";
 
 const Quiz = ({goods, setModalOpen}) => {
   let modelTitle=""; let radioTitle; let place;
   const steps = 6;
   const [activeStep, setActiveStep] = useState(0);
   const [checked, setChecked] = useState(true);
+  const [phoneInput, setPhoneInput] = useState();
 
   const [quizData, setQuizData] = useState({
     policy:true,
     activeModel:0,
     activeRadio:1,
     metro:"",
-    outOfMkad:false,
-    phone:""
+    outOfMkad:false
   });
 
   for (let good of goods){
@@ -52,6 +55,41 @@ const Quiz = ({goods, setModalOpen}) => {
     }
   });
   dropDownOptions.push({id:1000, value:"Другая модель"});
+
+  const calculatePrice = () => {
+    let price = 0;
+    goods.forEach(good =>{
+      if (good.id === quizData.activeModel) price+= good.price;
+    });
+
+    if (quizData.activeRadio === 1) price+=1200;
+    else if (quizData.activeRadio === 2) price += 300;
+    else {
+      price=1200;
+    }
+
+    if (quizData.outOfMkad === true) price += 300;
+
+    return price;
+  }
+
+  const inputPhone = useRef();
+  let isPhoneValid;
+  if (!inputPhone.current) isPhoneValid=false;
+  else if (inputPhone.current.value.length >= 16) isPhoneValid= true;
+
+  const [loading, setLoading] = useState(false);
+
+  const sendQuizMail = () => {
+    if (isPhoneValid){
+      setLoading(true);
+      sendMail(
+        {phone:phoneInput, model:modelTitle, service:radioTitle, place:place, modal:11, payload:"1", price:calculatePrice()}
+      ).then(() => {
+        setActiveStep(6);
+      });
+    }
+  }
 
   return(
     <>
@@ -175,13 +213,13 @@ const Quiz = ({goods, setModalOpen}) => {
                     onChange = {onChangeMetroInput}
                     placeholder="Введите название станции"
                     className="quiz__metro-input"/>
-                  <div className="outOfMkad">
-                  <div className="policy-checkbox" onClick={() => setQuizData(prev => ({...prev, outOfMkad:!prev.outOfMkad}))}>
+                  <div className="outOfMkad" onClick={() => setQuizData(prev => ({...prev, outOfMkad:!prev.outOfMkad}))}>
+                  <div className="policy-checkbox">
                     <svg className="outOfMkad-checkbox__inner" width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4.23882 7.05748L1.41653 4.223L0 5.63473L4.23387 9.88625L12.7359 1.41779L11.3243 0L4.23882 7.05748Z" fill="#004990"/>
                     </svg>
                   </div>
-                    <p className="outOFMkad__title">Нахожусь за МКАД</p>
+                    <p className="outOFMkad__title">Нахожусь за пределами МКАД</p>
                   </div>
                </div>
                <div className="quiz__button-group">
@@ -212,6 +250,7 @@ const Quiz = ({goods, setModalOpen}) => {
                   <p className="details__text">• Вариант услуги: <span>{radioTitle}</span></p>
                   <p className="details__text" style={{marginBottom:"4.7rem"}}>• Местоположение: <span>{place}</span></p>
                </div>
+               <p className="quiz__pice">Стоимость: &nbsp;<span>{calculatePrice()} <i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></span></p>
                <div className="quiz__button-group">
                  <QuizBtn
                      setActiveStep={setActiveStep}
@@ -234,7 +273,22 @@ const Quiz = ({goods, setModalOpen}) => {
 
             <div className="quiz__step quiz__step5">
                <h3 className="quiz__step-title" style={{marginBottom:"4rem"}}> 5. Укажите свой номер телефона, наш мастер свяжется с вами через 5 минут</h3>
-               <input type="text" className="quiz__phone" onChange={onChangePhoneInput}/>
+
+                <PhoneInput ref = {inputPhone}
+                  placeholder="Enter phone number"
+                  value={phoneInput}
+                  onChange={setPhoneInput}
+                  maxLength="16"
+                  international
+                  defaultCountry="RU"
+                  onChange = {
+                    () => {
+                      if (inputPhone.current.value.length <= 2 ) inputPhone.current.value = "+7";
+                      setPhoneInput(inputPhone.current.value);
+                    }
+                  }
+                  />
+
                <div className="quiz__button-group">
                  <QuizBtn
                      setActiveStep={setActiveStep}
@@ -244,16 +298,22 @@ const Quiz = ({goods, setModalOpen}) => {
                      reverse={true}
                      policy={quizData.policy}
                  />
-                 <QuizBtn
-                     setActiveStep={setActiveStep}
-                     to = {6}
-                     css={{width:"20.5rem", background:"#FF652E", textColor:"#fff", arrowFill:"#fff", padding:"0 3rem", margin:"0",
-                           border:"1px solid #FF652E"}}
-                     text="Отправить заявку"
-                     reverse={false}
-                     policy={quizData.policy}
+                 <div onClick={sendQuizMail} style={{position:"relative"}}>
+                   {
+                     loading ? <Loader />
+                             : <QuizBtn
+                                 setActiveStep={setActiveStep}
+                                 to = {5}
+                                 css={{width:"20.5rem", background:"#FF652E", textColor:"#fff", arrowFill:"#fff", padding:"0 3rem", margin:"0",
+                                       border:"1px solid #FF652E"}}
+                                 text="Отправить заявку"
+                                 reverse={false}
+                                 policy={isPhoneValid}
 
-                 />
+                             />
+                   }
+
+                 </div>
                </div>
             </div>
 
@@ -446,6 +506,7 @@ const Quiz = ({goods, setModalOpen}) => {
             display:flex;
             align-items:center;
             margin-bottom:6.3rem;
+            cursor:pointer;
           }
 
           .outOFMkad__title{
@@ -487,6 +548,21 @@ const Quiz = ({goods, setModalOpen}) => {
             font-weight: 500;
             font-size: 16px;
             color: #424242;
+          }
+
+          .quiz__pice{
+            position:absolute;
+            bottom:13rem;
+            right:4.5rem;
+            font-weight: 600;
+            font-size: 16px;
+            color: #424242;
+          }
+
+          .quiz__pice span{
+            font-size: 24px;
+            font-weight:bold;
+            color: #004990;
           }
 
          `}</style>

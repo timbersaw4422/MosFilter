@@ -108,6 +108,23 @@ export default async function handler(req, res) {
       break;
     }
 
+    //лэндинг квиз
+
+    case 11 : {
+      options = {
+        from: 'mos.filter.shop@gmail.com',
+        to: address,
+        subject: 'Квиз',
+        text: `${body.phone} - Прошел опрос на сайте
+        Модель фильтра: ${body.model}.
+        Услуга замены: ${body.service}.
+        Место: ${body.place}.
+        Цена: ${body.price}`
+
+      }
+      break;
+    }
+
 
     default:break;
   }
