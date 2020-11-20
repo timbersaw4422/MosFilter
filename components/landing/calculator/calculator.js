@@ -110,6 +110,7 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
                       setModalOpen(true);
                       setModalType("JUST-NUMBER");
                     }}
+                    valid={true}
                     />
             </div>
          </div>

@@ -1,11 +1,14 @@
 import DropDown from "../nextDropDown/nextDropDown";
-import {useState} from "react";
-
+import PhoneInput from 'react-phone-number-input'
+import {useState, useRef} from "react";
+import {sendMail} from "../../utils/mail";
+import Loader from "./loader";
 import LandingButton from "./landingButton";
 
 const LandingForm = ({css, margin, goods}) => {
 
   const [policy, setPolicy] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const dropDownOptions = goods.map(good => {
     return {
@@ -15,14 +18,61 @@ const LandingForm = ({css, margin, goods}) => {
   });
   dropDownOptions.push({id:1000, value:"Другая модель"});
 
+  const [phone, setPhone] = useState();
+  const [name, setName] = useState();
+  const [model, setModel] = useState();
+  const inputPhone = useRef();
+
+  const isFormValid = () => {
+    let valid = false;
+    if (inputPhone.current && inputPhone.current.value.length >= 16 && policy) valid=true;
+    return valid
+  }
+
+  const getModelTitle = () => {
+    let title;
+    goods.forEach(good =>{
+      if (good.id === model) title = good.title;
+    });
+    return title;
+  }
+
+  const clickHandler = () => {
+    if (isFormValid()) {
+      setLoading(true);
+      sendMail(
+        {name, phone, model:getModelTitle(), modal:12, payload:"1"}
+      ).then(() => {
+        setLoading(false);
+      });
+    }
+  }
+
+  const changeNameHandler = e => {
+    setName(e.target.value);
+  }
+
   return(
     <>
-      <form className="form" style={css}>
+      <form className="landing-form" style={css}>
         <h2 className="title">Оставить заявку на замену картриджей</h2>
 
-        <input type="text" name="name" placeholder="Ваше имя"/>
+        <input type="text" name="name" placeholder="Ваше имя" onChange = {changeNameHandler}/>
 
-        <input type="text" name="phone" placeholder="Контактный номер телефона"/>
+        <PhoneInput ref = {inputPhone}
+          placeholder="Enter phone number"
+          value={phone}
+          onChange={setPhone}
+          maxLength="16"
+          international
+          defaultCountry="RU"
+          onChange = {
+            () => {
+              if (inputPhone.current.value.length <= 2 ) inputPhone.current.value = "+7";
+              setPhone(inputPhone.current.value);
+            }
+          }
+          />
 
         <DropDown
           css={{
@@ -33,6 +83,7 @@ const LandingForm = ({css, margin, goods}) => {
           placeholder="Модель фильтра"
           options={dropDownOptions}
           defaultId = {1}
+          callBack={setModel}
         />
 
         <div className="according">
@@ -48,10 +99,17 @@ const LandingForm = ({css, margin, goods}) => {
           </div>
         </div>
 
-        <LandingButton
-            text="Отправить заявку"
-            css={{maxWidth:"100%", height:"60px", marginBottom:"0rem"}}
-            />
+        {
+          loading ? <Loader css={{margin:"0 auto"}}/>
+                  :
+                  <div style={{opacity:isFormValid() ? "1" : "0.5"}} onClick = {clickHandler}>
+                     <LandingButton
+                     text="Отправить заявку"
+                     css={{maxWidth:"100%", height:"60px", marginBottom:"0rem"}}
+                     />
+                 </div>
+        }
+
 
       </form>
 
@@ -81,7 +139,7 @@ const LandingForm = ({css, margin, goods}) => {
             justify-content:center;
           }
 
-          .form{
+          .landing-form{
             background: #FFFFFF;
             border: 1px solid #B7CCE0;
             box-sizing: border-box;
@@ -109,10 +167,10 @@ const LandingForm = ({css, margin, goods}) => {
             margin-bottom: 1.5rem;
             border:none;
             font-weight: 500;
-            font-size: 12px;
+            font-size: 13px;
             color: #424242;
             padding:0 2rem;
-            font-family: Montserrat;
+            font-family: 'Montserrat', sans-serif;
           }
 
           ::placeholder{

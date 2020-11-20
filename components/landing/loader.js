@@ -1,7 +1,7 @@
-const Loader = () => {
+const Loader = ({css}) => {
   return(
     <>
-    <div className="windows8">
+    <div className="windows8" style={{margin:css.margin || 0}}>
         <div className="wBall wBall_1">
         <div className="wInnerBall">
         </div>

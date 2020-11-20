@@ -56,7 +56,7 @@ const DropDown = ({css,
           z-index:10;
           background: #F1F1F1;
           font-weight: 500;
-          font-size: 12px;
+          font-size: 13px;
           color: #424242;
         }
 

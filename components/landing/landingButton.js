@@ -1,4 +1,5 @@
 const LandingButton = ({text, css, clickHandler}) => {
+
   return(
     <>
       <div className="button" onClick={clickHandler}>

@@ -120,7 +120,18 @@ export default async function handler(req, res) {
         Услуга замены: ${body.service}.
         Место: ${body.place}.
         Цена: ${body.price}`
+      }
+      break;
+    }
 
+    case 12 : {
+      options = {
+        from: 'mos.filter.shop@gmail.com',
+        to: address,
+        subject: 'Заявка на замену картриджей',
+        text: `Имя: ${body.name}
+        Телефон: ${body.phone}
+        Модель фильтра: ${body.model}.`
       }
       break;
     }
