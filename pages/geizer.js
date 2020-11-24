@@ -24,7 +24,9 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default function Geizer({data}){
+export default function Geizer(
+  {data}
+){
 
   // const data = {data:{"1":{id:1, title:"Гейзер Какой то", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png",
   //                     discount:10},
@@ -36,6 +38,7 @@ export default function Geizer({data}){
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState("QUIZ");
   const [activeGood, setActiveGood] = useState(null);
+  const [modalPayload, setModalPayload] = useState(null);
 
   const [type, setType] = useState(3);
 
@@ -51,13 +54,13 @@ export default function Geizer({data}){
 
     case "GOOD/SERVICE":{
       modalMaxWidth = "950px";
-      modalContent = <GoodModal good={activeGood}/>;
+      modalContent = <GoodModal good={activeGood} modalPayload={modalPayload}/>;
       break;
     }
 
     case "JUST-NUMBER":{
       modalMaxWidth = "480px";
-      modalContent = <GoodModal good={goods[0]} startTranslate={1}/>;
+      modalContent = <GoodModal good={goods[0]} startTranslate={1} modalPayload={modalPayload}/>;
       break;
     }
 
@@ -80,8 +83,15 @@ export default function Geizer({data}){
       <LandingAkcii goods = {goods}/>
       <LandingModelRow setType={setType}/>
       <div className="landing-wrapper">
-        <Calculator initialOption1={goods[0].title} goods={goods} setModalOpen={setModalOpen} setModalType={setModalType}/>
+        <Calculator
+            setModalPayload = {setModalPayload}
+            isOption4={false}
+            initialOption1={goods[0].title}
+            goods={goods}
+            setModalOpen={setModalOpen}
+            setModalType={setModalType}/>
         <LandingCatalog
+              setModalPayload = {setModalPayload}
               setModalOpen = {setModalOpen}
               setModalType = {setModalType}
               setActiveGood={setActiveGood}

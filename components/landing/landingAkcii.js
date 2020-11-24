@@ -156,6 +156,7 @@ const LandingAkcii = ({goods}) => {
             align-items:center;
             justify-content:center;
             cursor:pointer;
+            transition:0.2s;
           }
 
           .arrow-left{
@@ -166,6 +167,14 @@ const LandingAkcii = ({goods}) => {
           .arrow-right{
             background: #5388BB;
             box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.08);
+          }
+
+
+          @media(hover:hover){
+            .arrow-left:hover, .arrow-right:hover{
+              transform:scale(1.1);
+              z-index:10;
+            }
           }
       `}</style>
     </>

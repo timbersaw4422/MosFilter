@@ -1,11 +1,37 @@
-import {useState} from "react";
+import {useState, useRef} from "react";
 import LandingButton from "./landingButton";
+import PhoneInput from 'react-phone-number-input';
+import {sendMail} from "../../utils/mail";
+import Loader from "./loader";
 
-const GoodModal = ({good, startTranslate = 0}) => {
+const GoodModal = ({good, startTranslate = 0, modalPayload}) => {
 
   const steps = 3;
   const [translate, setTranslate] = useState(startTranslate);
   const [policy, setPolicy] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const [phone, setPhone] = useState();
+  const inputPhone = useRef();
+
+  console.log(modalPayload)
+
+  const isFormValid = () => {
+    let valid = false;
+    if (inputPhone.current && inputPhone.current.value.length >= 16 && policy) valid=true;
+    return valid
+  }
+
+  const submitHandler = () => {
+    if (isFormValid()) {
+      setLoading(true);
+      sendMail(
+        {phone, modal:modalPayload.modalType, payload:modalPayload}
+      ).then(() => {
+        setTranslate(2);
+      });
+    }
+  }
 
   return(
     <>
@@ -14,10 +40,13 @@ const GoodModal = ({good, startTranslate = 0}) => {
         <div className="modal-track">
 
           <div className="modal-step modal-step1">
+
             <div className="modal__left">
-              <div className="modal-left__background"></div>
-              <img src={good.img} alt={good.title}/>
+              <div className="modal__circle">
+                <img src={good.img} alt={good.title}/>
+              </div>
             </div>
+
             <div className="modal__right">
                <p className="good__subtitle">{good.subtitle}</p>
                <p className="good__title">{good.title}</p>
@@ -35,11 +64,16 @@ const GoodModal = ({good, startTranslate = 0}) => {
                        after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990"}}
                        clickHandler={() => setTranslate(1)}
                        />
+
                    <LandingButton
                        text="Заказать по телефону"
                        css={{maxWidth:"47%", height:"50px", marginBottom:"0rem", background:"#fff", color:"#004990",
                        border:"2px solid #004990", after:"#fff", hoverColor:"#424242"}}
+                       clickHandler = {
+                         () => window.open('tel:+74957446181')
+                       }
                        />
+
                </div>
             </div>
           </div>
@@ -47,13 +81,35 @@ const GoodModal = ({good, startTranslate = 0}) => {
           <div className="modal-step modal-step2">
              <h3 className="order-title">Оставить заявку</h3>
              <p className="order-text">Укажите ваш контактный номер телефона и <br/> мы свяжемся с вами в течение 5 минут</p>
-             <input type="text" className="input-phone"/>
-             <LandingButton
-                 text="Отправить"
-                 css={{maxWidth:"33rem", height:"60px", marginBottom:"3rem", background:"#004990",
-                 after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990", margin:"0 auto"}}
-                 clickHandler={() => setTranslate(1)}
-                 />
+
+             <PhoneInput ref = {inputPhone}
+               placeholder="Enter phone number"
+               value={phone}
+               onChange={setPhone}
+               maxLength="16"
+               international
+               defaultCountry="RU"
+               onChange = {
+                 () => {
+                   if (inputPhone.current.value.length <= 2 ) inputPhone.current.value = "+7";
+                   setPhone(inputPhone.current.value);
+                 }
+               }
+               />
+
+             {
+               loading ? <Loader color = "#004990" margin="7px auto"/>
+                       : <div style={{opacity:isFormValid() ? "1" : "0.5"}} onClick = {submitHandler}>
+                           <LandingButton
+                               text="Отправить"
+                               css={{maxWidth:"33rem", height:"60px", marginBottom:"3rem", background:"#004990",
+                               after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990", margin:"0 auto"}}
+                               clickHandler={submitHandler}
+                               />
+                          </div>
+             }
+
+
               <div className="policy-group">
                   <div className="policy-checkbox" onClick={() => setPolicy(prev => !prev)}>
                     {
@@ -66,6 +122,15 @@ const GoodModal = ({good, startTranslate = 0}) => {
               </div>
           </div>
 
+          <div className="modal-step modal-step3">
+            <img src="/img/landing/bell.png" alt="Заявка отправлена"/>
+            <p className="success">Спасибо! <br/>
+              Ваша заявка отправлена<br/>
+              Мы свяжемся с вами через 5 минут</p>
+          </div>
+
+
+
         </div>
 
       </div>
@@ -74,6 +139,16 @@ const GoodModal = ({good, startTranslate = 0}) => {
         .good-modal{
           width:100%;
           overflow:hidden;
+        }
+
+        .modal__circle{
+          width:200px;
+          height:200px;
+          border-radius:50%;
+          background:#fff;
+          display:flex;
+          align-items:center;
+          justify-content:center;
         }
 
         .modal-track{
@@ -101,24 +176,12 @@ const GoodModal = ({good, startTranslate = 0}) => {
         }
 
         .modal__left img {
-          width:60%;
+          width:70%;
           z-index:2;
         }
 
-        .modal-left__background{
-          height:500px;
-          width:500px;
-          background:transparent;
-          border:150px solid #fff;
-          position:absolute;
-          border-radius:50%;
-          z-index:1;
-          bottom:-250px;
-          left:-250px;
-        }
-
         .modal__right{
-          width:70%;
+          width:80%;
           height:100%;
           padding:4rem 8rem 4rem 4rem;
         }
@@ -224,6 +287,23 @@ const GoodModal = ({good, startTranslate = 0}) => {
           display:flex;
           align-items:center;
           justify-content:center;
+        }
+
+        .modal-step3{
+          text-align:center;
+          padding:4rem;
+          display:flex;
+          align-items:center;
+          flex-direction:column;
+          justify-content:center;
+        }
+
+        .success{
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 150%;
+          color: #424242;
+          margin-top:3rem;
         }
         `}</style>
     </>

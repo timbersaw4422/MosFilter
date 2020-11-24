@@ -16,12 +16,15 @@ const StockSlide = (props) =>{
                  <p className="old-price">Старая цена <br/> <span>{props.oldPrice} <i style = {{fontSize:"15px"}}className="fas fa-ruble-sign"></i></span></p>
                </div>
 
-               <div className="slide__btn" onMouseEnter={() => setFill("#fff")} onMouseLeave={() => setFill("#004990")}>
-                  <span>Участвовать в акции</span>
-                  <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M-6.11317e-07 5.08388L10.9071 5.08389L8.01315 8.17439L8.78624 9L13 4.5L8.78625 5.85296e-07L8.01315 0.825614L10.9071 3.91612L-5.09227e-07 3.91612L-6.11317e-07 5.08388Z" fill={fill}/>
-                  </svg>
-               </div>
+               <a href="tel:+74957446181" className="slide__btn-outer">
+                 <div className="slide__btn"
+                    onMouseEnter={() => setFill("#fff")} onMouseLeave={() => setFill("#004990")}>
+                    <span>Участвовать в акции</span>
+                    <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-6.11317e-07 5.08388L10.9071 5.08389L8.01315 8.17439L8.78624 9L13 4.5L8.78625 5.85296e-07L8.01315 0.825614L10.9071 3.91612L-5.09227e-07 3.91612L-6.11317e-07 5.08388Z" fill={fill}/>
+                    </svg>
+                 </div>
+               </a>
            </div>
 
            <div className="slide__circle-outer">
@@ -130,6 +133,11 @@ const StockSlide = (props) =>{
           position:relative;
           z-index:5;
           transition:0.3s;
+        }
+
+        .slide__btn-outer{
+          text-decoration:none;
+          display:block;
         }
 
         .slide__btn svg{

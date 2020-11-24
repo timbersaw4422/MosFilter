@@ -1,7 +1,7 @@
 import ChoiseOption from "./option";
 import {useState} from "react";
 
-const CalculatorChoise = ({title, placeholder, options, setOption, initialOption1, height}) => {
+const CalculatorChoise = ({title, placeholder, options, setOption, initialOption1, height, setActiveModel}) => {
 
   const [dropDownValue, setDropDownValue] = useState("");
   const [isDropDownOpen, setDropDownOpen] = useState(false);
@@ -38,6 +38,8 @@ const CalculatorChoise = ({title, placeholder, options, setOption, initialOption
                changeHandler={optionClickHandler}
                activeId={activeId}
                setOption= {setOption}
+               setActiveId={setActiveId}
+               setActiveModel={setActiveModel}
                />)}
 
           </div>

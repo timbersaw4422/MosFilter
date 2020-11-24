@@ -1,7 +1,7 @@
 import LandingGood from "./landingGood";
 import {useState} from "react";
 
-const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type, setType}) => {
+const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type, setType, setModalPayload}) => {
 
   let displayedGoods;
   if (type === 3) displayedGoods = goods;
@@ -33,6 +33,7 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type,
                setModalOpen={setModalOpen}
                setModalType={setModalType}
                setActiveGood={setActiveGood}
+               setModalPayload={setModalPayload}
                />)}
          </div>
 

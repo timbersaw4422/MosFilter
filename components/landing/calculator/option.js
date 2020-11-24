@@ -1,13 +1,15 @@
-const ChoiseOption = ({text, id, changeHandler, activeId, setOption}) => {
+const ChoiseOption = ({text, id, changeHandler, activeId, setOption, setActiveId, setActiveModel}) => {
 
   const classes = ["choise__option"];
   if (activeId === id) classes.push("active-option");
+
 
   return(
 
       <div className={classes.join(" ")} onClick = {() => {
         changeHandler(text, id);
         setOption(text);
+        if (setActiveModel) setActiveModel(id);
       }}>
         {text}
 

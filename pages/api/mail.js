@@ -136,6 +136,31 @@ export default async function handler(req, res) {
       break;
     }
 
+    case 13 : {
+      options = {
+        from: 'mos.filter.shop@gmail.com',
+        to: address,
+        subject: 'Заявка из калькулятора',
+        text: `Телефон: ${body.phone}
+        Картриджи: ${body.payload.title}
+        Тип услуги: ${body.payload.type}
+        Место: ${body.payload.place}
+        Цена: ${body.payload.price}.`
+      }
+      break;
+    }
+
+    case 14 : {
+      options = {
+        from: 'mos.filter.shop@gmail.com',
+        to: address,
+        subject: 'Заявка из каталога товаров',
+        text: `Телефон: ${body.phone}
+        Модель: ${body.payload.title}`
+      }
+      break;
+    }
+
 
     default:break;
   }

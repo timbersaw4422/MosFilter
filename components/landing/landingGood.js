@@ -5,6 +5,10 @@ const LandingGood = (props) => {
   const clickHandler = () => {
     props.setModalOpen(true);
     props.setModalType("GOOD/SERVICE");
+    props.setModalPayload({
+      modalType:14,
+      title:props.subtitle + " " +props.title
+    });
     props.setActiveGood({subtitle:props.subtitle, title:props.title, img:props.img, price:props.price});
   }
 

@@ -1,7 +1,7 @@
-const Loader = ({css}) => {
+const Loader = ({margin, color}) => {
   return(
     <>
-    <div className="windows8" style={{margin:css.margin || 0}}>
+    <div className="windows8" style={{margin:margin || 0}}>
         <div className="wBall wBall_1">
         <div className="wInnerBall">
         </div>
@@ -52,7 +52,7 @@ animation: orbit 7.15s infinite;
 position: absolute;
 width: 5px;
 height: 5px;
-background: #FF662E;
+background: ${color || "#FF662E"};
 left:0px;
 top:0px;
 -moz-border-radius: 5px;
