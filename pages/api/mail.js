@@ -161,6 +161,17 @@ export default async function handler(req, res) {
       break;
     }
 
+    case 15 : {
+      options = {
+        from: 'mos.filter.shop@gmail.com',
+        to: address,
+        subject: 'Заказ услуги',
+        text: `Телефон: ${body.phone}
+        Услуга: ${body.payload.title}`
+      }
+      break;
+    }
+
 
     default:break;
   }

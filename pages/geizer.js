@@ -38,6 +38,7 @@ export default function Geizer(
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState("QUIZ");
   const [activeGood, setActiveGood] = useState(null);
+  const [activeService, setActiveService] = useState(null);
   const [modalPayload, setModalPayload] = useState(null);
 
   const [type, setType] = useState(3);
@@ -52,9 +53,15 @@ export default function Geizer(
       break;
     }
 
-    case "GOOD/SERVICE":{
+    case "GOOD":{
       modalMaxWidth = "950px";
       modalContent = <GoodModal good={activeGood} modalPayload={modalPayload}/>;
+      break;
+    }
+
+    case "SERVICE":{
+      modalMaxWidth = "950px";
+      modalContent = <GoodModal good={activeGood} modalPayload={modalPayload} service={true}/>;
       break;
     }
 
@@ -84,12 +91,13 @@ export default function Geizer(
       <LandingModelRow setType={setType}/>
       <div className="landing-wrapper">
         <Calculator
-            setModalPayload = {setModalPayload}
-            isOption4={false}
-            initialOption1={goods[0].title}
-            goods={goods}
-            setModalOpen={setModalOpen}
-            setModalType={setModalType}/>
+              setModalPayload = {setModalPayload}
+              isOption4={false}
+              initialOption1={goods[0].title}
+              goods={goods}
+              setModalOpen={setModalOpen}
+              setModalType={setModalType}
+              />
         <LandingCatalog
               setModalPayload = {setModalPayload}
               setModalOpen = {setModalOpen}
@@ -97,8 +105,14 @@ export default function Geizer(
               setActiveGood={setActiveGood}
               goods={goods}
               type={type}
-              setType={setType}/>
-        <LandingServices />
+              setType={setType}
+              />
+        <LandingServices
+              setActiveService={setActiveService}
+              setModalOpen={setModalOpen}
+              setModalType={setModalType}
+              setModalPayload={setModalPayload}
+              />
       </div>
       <LandingCallToAction goods = {goods}/>
       <LandingReviews />

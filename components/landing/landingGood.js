@@ -4,7 +4,7 @@ const LandingGood = (props) => {
 
   const clickHandler = () => {
     props.setModalOpen(true);
-    props.setModalType("GOOD/SERVICE");
+    props.setModalType("GOOD");
     props.setModalPayload({
       modalType:14,
       title:props.subtitle + " " +props.title

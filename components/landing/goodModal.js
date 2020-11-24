@@ -4,7 +4,7 @@ import PhoneInput from 'react-phone-number-input';
 import {sendMail} from "../../utils/mail";
 import Loader from "./loader";
 
-const GoodModal = ({good, startTranslate = 0, modalPayload}) => {
+const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
 
   const steps = 3;
   const [translate, setTranslate] = useState(startTranslate);
@@ -13,8 +13,6 @@ const GoodModal = ({good, startTranslate = 0, modalPayload}) => {
 
   const [phone, setPhone] = useState();
   const inputPhone = useRef();
-
-  console.log(modalPayload)
 
   const isFormValid = () => {
     let valid = false;
@@ -43,18 +41,31 @@ const GoodModal = ({good, startTranslate = 0, modalPayload}) => {
 
             <div className="modal__left">
               <div className="modal__circle">
-                <img src={good.img} alt={good.title}/>
+                <img src={service ? "/img/landing/ratchet.png" : good.img} />
               </div>
             </div>
 
             <div className="modal__right">
-               <p className="good__subtitle">{good.subtitle}</p>
-               <p className="good__title">{good.title}</p>
+               <p className="good__subtitle">{service ? "Услуга" : good.subtitle}</p>
+               <p className="good__title">{service ? modalPayload.title : good.title}</p>
                <div className="good__shape"></div>
-               <p className="good__text">Гарантия:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>1 год</span></p>
-               <p className="good__text">Доставка:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Бесплатно в пределах МКАД</span></p>
-               <p className="good__text">Состав:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Полный комплект</span></p>
-               <p className="good__text">Стоимость:&nbsp;&nbsp;&nbsp;<span>{good.price} &nbsp;<i style = {{fontSize:"13px"}}className="fas fa-ruble-sign"></i></span></p>
+               <p className="good__text">
+                 <span className="good__text-first">Гарантия:</span>
+                 <span className="good__text-second">1 год</span></p>
+               <p className="good__text">
+                 <span className="good__text-first">{service ? "Выезд" : "Доставка"}</span>
+                 <span className="good__text-second">Бесплатно в пределах МКАД</span></p>
+               <p className="good__text">
+                 <span className="good__text-first">Состав:</span>
+                 <span className="good__text-second">{service ? <span>• Отключение фильтра <br />
+                                                                      • Санация фильтра <br />
+                                                                      • Установка картриджей <br/>
+                                                                      • Подключение фильтра
+                                                                      </span>
+                                                                : "Полный комплект"}</span></p>
+               <p className="good__text">
+                 <span className="good__text-first">Стоимость:</span>
+                 <span className="good__text-second">{service ? modalPayload.price : good.price} &nbsp;<i style = {{fontSize:"13px"}}className="fas fa-ruble-sign"></i></span></p>
                <div className="good__shape"></div>
 
                <div className="button-group">
@@ -104,7 +115,6 @@ const GoodModal = ({good, startTranslate = 0, modalPayload}) => {
                                text="Отправить"
                                css={{maxWidth:"33rem", height:"60px", marginBottom:"3rem", background:"#004990",
                                after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990", margin:"0 auto"}}
-                               clickHandler={submitHandler}
                                />
                           </div>
              }
@@ -153,7 +163,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload}) => {
 
         .modal-track{
           width:300%;
-          height:45rem;
+          height:${service ? "55rem" : "48rem"};
           transform:translateX(${-translate*100/steps}%);
           transition:0.5s;
           display:flex;
@@ -219,12 +229,19 @@ const GoodModal = ({good, startTranslate = 0, modalPayload}) => {
           font-size: 14px;
           letter-spacing: 0.045em;
           color: #424242;
+          display:flex;
         }
 
-        .good__text span{
+        .good__text-first{
           font-weight: 600;
           font-size: 14px;
           color: #004990;
+          width:120px;
+          padding-top:3px;
+        }
+
+        .good__text-second{
+          line-height:25px;
         }
 
         .button-group{

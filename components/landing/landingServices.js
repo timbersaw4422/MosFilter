@@ -1,12 +1,37 @@
 import LandingButton from "./landingButton";
 
-const LandingServices = () => {
+const LandingServices = ({setActiveService, setModalOpen, setModalType, setModalPayload}) => {
+
+  const serviceClickHandler = (type) => {
+    let service;
+    if (type === 1) service = {
+        title:"Замены картриджей",
+        price:1600
+    }
+    else if (type === 2) service = {
+        title:"Установка фильтра",
+        price:1600
+    }
+    else if (type === 3) service = {
+        title:"Ремонт фильтра",
+        price:1600
+    }
+    setActiveService(service);
+    setModalOpen(true);
+    setModalType("SERVICE");
+    setModalPayload({
+      modalType:15,
+      title:service.title,
+      price:service.price
+    })
+  }
+
   return(
     <>
       <div className="services">
         <h2 className="services__title">Услуги</h2>
         <div className="services__row">
-            <figure className="service">
+            <figure className="service" onClick = {() => serviceClickHandler(1)}>
               <img src="/img/landing/key.png" alt="" className = "service__img"/>
               <p className="service__subtitle">Услуга</p>
               <h4 className="service__title">Замены картриджей</h4>
@@ -15,15 +40,17 @@ const LandingServices = () => {
                  <span className="on-stock-title">Мастер свободен</span>
               </div>
               <p className="service__price">1600 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
+
               <LandingButton
                   text="Подробнее"
                   css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990",
                   after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990"}}
                   />
+
               <div className="service__ticket">Хит продаж</div>
             </figure>
 
-            <figure className="service">
+            <figure className="service" onClick = {() => serviceClickHandler(2)}>
               <img src="/img/landing/key.png" alt="" className = "service__img"/>
               <p className="service__subtitle">Услуга</p>
               <h4 className="service__title">Установки фильтра</h4>
@@ -39,7 +66,7 @@ const LandingServices = () => {
                   />
             </figure>
 
-            <figure className="service">
+            <figure className="service" onClick = {() => serviceClickHandler(3)}>
               <img src="/img/landing/key.png" alt="" className = "service__img"/>
               <p className="service__subtitle">Услуга</p>
               <h4 className="service__title">Ремонта фильтра</h4>
