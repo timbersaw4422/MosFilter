@@ -172,6 +172,16 @@ export default async function handler(req, res) {
       break;
     }
 
+    case 16 : {
+      options = {
+        from: 'mos.filter.shop@gmail.com',
+        to: address,
+        subject: 'Заказ обратного звонка ',
+        text: `Телефон: ${body.phone}`
+      }
+      break;
+    }
+
 
     default:break;
   }

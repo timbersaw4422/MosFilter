@@ -134,7 +134,7 @@ const AllReviews = () => {
                  onChoose={setActiveScreen}
                  setModalOpen={setModalOpen}
                  photo = "/img/reviews/review13.png"
-                 title = "Анатолий| Замена картриджей в фильтре Аквафор Кристалл Осмо"
+                 title = "Анатолий | Замена картриджей в фильтре Аквафор Кристалл Осмо"
                  text = "Заранее были проинформированы о времени приезда. Работа выполнена быстро, качественно. Всем рекомендуем!"/>
                   <ReviewItem
                   screenShot = "/img/reviews/screen14.png"
@@ -142,7 +142,7 @@ const AllReviews = () => {
                   setModalOpen={setModalOpen}
                   photo = "/img/reviews/review14.png"
                   title = "Даниил | Установка системы обратного осмоса Atoll A-550 Патриот"
-                  text = "Спасибо, всё отлично:) главное вы есть в вотсапе и приезжаете вовремя:) с фильтром, надеюст тоже всё в порядке"/>
+                  text = "Спасибо, всё отлично:) главное вы есть в вотсапе и приезжаете вовремя:) с фильтром, надеюсь тоже всё в порядке"/>
                   <ReviewItem
                   screenShot = "/img/reviews/screen15.png"
                   onChoose={setActiveScreen}

@@ -2,7 +2,7 @@ import SliderNav from "./sliderNav";
 import Arrow from "./arrow";
 import ReviewSlider from "./reviewSlider";
 
-const LandingReviews = () => {
+const LandingReviews = ({setModalOpen, setModalType, setModalPayload}) => {
   return(
     <>
     <div className="landing-reviews">
@@ -18,7 +18,7 @@ const LandingReviews = () => {
           <p className="subtitle">Нам доверяют</p>
           <h2 className="title">Последние отзывы наших клиентов</h2>
 
-          <ReviewSlider />
+          <ReviewSlider setModalOpen={setModalOpen} setModalType={setModalType} setModalPayload={setModalPayload}/>
 
       </div>
     </div>

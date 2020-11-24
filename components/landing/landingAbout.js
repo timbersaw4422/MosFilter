@@ -20,7 +20,7 @@ const LandingAbout = () => {
                 клиентов во всех районах Москвы и Подмосковья.
               </p>
 
-              <div className="whatsapp">
+              <div className="whatsapp" onClick = {() => window.open("https://wa.me/79325306046", "_blank")}>
                 <span>Написать в WhatsApp</span>
                 <Arrow fill="#FF652E"/>
               </div>

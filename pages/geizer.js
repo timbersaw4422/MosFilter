@@ -71,6 +71,12 @@ export default function Geizer(
       break;
     }
 
+    case "REVIEW":{
+      modalMaxWidth = "325px";
+      modalContent = <img src={`/img/reviews/screen${modalPayload}.png`} alt="Отзыв"/>;
+      break;
+    }
+
     default:break;
   }
 
@@ -115,10 +121,16 @@ export default function Geizer(
               />
       </div>
       <LandingCallToAction goods = {goods}/>
-      <LandingReviews />
+      <LandingReviews
+              setModalType={setModalType}
+              setModalOpen={setModalOpen}
+              setModalPayload={setModalPayload}/>
       <LandingWorks />
       <LandingAbout />
-      <LandingContacts setModalOpen={setModalOpen} setModalType={setModalType}/>
+      <LandingContacts
+              setModalOpen={setModalOpen}
+              setModalType={setModalType}
+              setModalPayload={setModalPayload}/>
       <LandingFooter />
 
       {isModalOpen &&

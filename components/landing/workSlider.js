@@ -6,12 +6,24 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
+      className={"arrow-left"}
       style={{ ...style, display: "flex", alignItems:"center", justifyContent:"center",
                height:"6rem", width:"6rem", position:"absolute", background:"#fff",
              bottom:"-10rem", right:"0rem", boxShadow:"8px 8px 15px rgba(0, 0, 0, 0.08)", cursor:"pointer"}}
       onClick={onClick}>
       <Arrow fill ="#004990"/>
+      <style jsx>{`
+        .arrow-left{
+          transition:0.2s;
+        }
+
+        @media (hover:hover){
+          .arrow-left:hover{
+            transform:scale(1.1);
+            z-index:10;
+          }
+        }
+        `}</style>
     </div>
   );
 }
@@ -20,13 +32,25 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
+      className={"arrow-left"}
       style={{ ...style, display: "flex", alignItems:"center", justifyContent:"center",
                height:"6rem", width:"6rem", position:"absolute", background:"#5388BB",
              bottom:"-10rem", right:"6rem", boxShadow:"8px 8px 15px rgba(0, 0, 0, 0.08)", cursor:"pointer"}}
       onClick={onClick}
     >
       <Arrow fill ="#fff" rotate="180deg"/>
+      <style jsx>{`
+        .arrow-left{
+          transition:0.2s;
+        }
+
+        @media (hover:hover){
+          .arrow-left:hover{
+            transform:scale(1.1);
+            z-index:10;
+          }
+        }
+        `}</style>
     </div>
   );
 }

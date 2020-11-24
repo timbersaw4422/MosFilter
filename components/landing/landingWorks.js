@@ -9,7 +9,8 @@ const LandingWorks = () => {
              <p className="subtitle">Галерея</p>
              <div className="title-and-instagram">
                 <h2 className="title">Работы наших мастеров</h2>
-                <div className="instagram"><span>Больше работ в нашем Instagram</span> <Arrow fill = "#FF652E"/></div>
+                <div className="instagram" onClick = {() => window.open("https://www.instagram.com/mos_filter/", "_blank")}>
+                   <span>Больше работ в нашем Instagram</span> <Arrow fill = "#FF652E"/></div>
              </div>
 
              <div className="slider">
