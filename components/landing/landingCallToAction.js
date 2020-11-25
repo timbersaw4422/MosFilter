@@ -6,7 +6,7 @@ const LandingCallToAction = ({goods}) => {
       <div className="call-to-action">
           <div className="landing-wrapper">
             <div className="call-to-action__main">
-               <LandingForm goods = {goods} margin = "0 0 0 auto" />
+               <LandingForm goods = {goods} margin = "0 0 0 auto" css={{}}/>
             </div>
             <div className="info">
                 <p className="info-caption">Режим работы</p>
@@ -71,6 +71,16 @@ const LandingCallToAction = ({goods}) => {
           font-weight: 600;
           font-size: 16px;
           color: #FFFFFF;
+        }
+
+        @media screen and (max-width:1150px){
+          .call-to-action{
+            margin-bottom:8rem;
+            margin-top:12rem;
+          }
+          .info{
+            padding-bottom:6rem;
+          }
         }
         `}</style>
     </>

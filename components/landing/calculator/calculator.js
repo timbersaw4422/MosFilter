@@ -295,6 +295,12 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
           }
         }
 
+        @media screen and (max-width:1150px){
+          .calculator{
+            margin-bottom:8rem;
+          }
+        }
+
         @media screen and (max-width:500px){
           .calculator__left{
             width:100%;

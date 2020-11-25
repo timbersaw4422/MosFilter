@@ -96,6 +96,13 @@ const LandingGood = (props) => {
           text-transform: uppercase;
         }
 
+        @media screen and (max-width:900px){
+          .good{
+            margin-right:0%;
+            width:48%;
+          }
+        }
+
         `}</style>
     </>
   )

@@ -122,6 +122,31 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type,
           }
         }
 
+        @media screen and (max-width:900px){
+          .catalog__tab{
+            width:100%;
+            margin-bottom:1.2rem;
+            border:1px solid #004990;
+          }
+          .catalog__tabs{
+            flex-wrap:wrap;
+            border:none;
+            background:transparent;
+            width:100%;
+          }
+          .landing-goods{
+            width:100%;
+            justify-content:space-between;
+          }
+        }
+
+        @media screen and (max-width:1150px){
+          .landing-catalog{
+            padding-bottom:5rem;
+          }
+        }
+
+
         `}</style>
     </>
   )

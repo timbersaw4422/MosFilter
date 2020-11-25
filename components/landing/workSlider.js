@@ -69,14 +69,21 @@ class CustomArrows extends React.Component{
       autoplaySpeed:5000,
       responsive: [
         {
-          breakpoint: 700,
+          breakpoint: 1000,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true
+          }
+        },
+        {
+          breakpoint: 800,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true
           }
         },
-
       ]
     };
     return (
@@ -105,6 +112,12 @@ class CustomArrows extends React.Component{
 
           .wrapper{
             height:45rem;
+          }
+
+          @media screen and (max-width:800px){
+            .wrapper{
+              height:50rem;
+            }
           }
         `}</style>
       </>

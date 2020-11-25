@@ -362,6 +362,18 @@ class CustomArrows extends React.Component{
           .review__btn span{
             margin-right:4.5rem;
           }
+
+          @media screen and (max-width:1150px){
+            .wrapper{
+              padding-bottom:12rem;
+            }
+          }
+
+          @media screen and (max-width:1000px){
+            .review{
+              width:100%;
+            }
+          }
         `}</style>
       </>
     );

@@ -141,6 +141,39 @@ const LandingAbout = () => {
           margin:0;
         }
 
+        @media screen and (max-width:1150px){
+          .about{
+            padding-bottom:8rem;
+          }
+        }
+
+        @media screen and (max-width:850px){
+          .subtitle-and-whatsapp{
+            flex-direction:column;
+            align-items:flex-start;
+            margin-bottom: 4rem;
+          }
+
+          .subtitle{
+            width:100%;
+            max-width:100%;
+            margin-bottom:4rem;
+          }
+
+          .advantages{
+            display:block;
+          }
+
+          .advantages__left, .advantages__right{
+            width:100%;
+          }
+
+          .advantages__left{
+            margin-bottom:4rem;
+          }
+
+        }
+
 
         `}</style>
     </>

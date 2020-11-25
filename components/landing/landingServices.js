@@ -32,7 +32,7 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
         <h2 className="services__title">Услуги</h2>
         <div className="services__row">
             <figure className="service" onClick = {() => serviceClickHandler(1)}>
-              <img src="/img/landing/key.png" alt="" className = "service__img"/>
+              <img src="/img/landing/ratchet.png" alt="" className = "service__img"/>
               <p className="service__subtitle">Услуга</p>
               <h4 className="service__title">Замены картриджей</h4>
               <div className="service__on-stock">
@@ -51,7 +51,7 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
             </figure>
 
             <figure className="service" onClick = {() => serviceClickHandler(2)}>
-              <img src="/img/landing/key.png" alt="" className = "service__img"/>
+              <img src="/img/landing/ratchet.png" alt="" className = "service__img"/>
               <p className="service__subtitle">Услуга</p>
               <h4 className="service__title">Установки фильтра</h4>
               <div className="service__on-stock">
@@ -67,7 +67,7 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
             </figure>
 
             <figure className="service" onClick = {() => serviceClickHandler(3)}>
-              <img src="/img/landing/key.png" alt="" className = "service__img"/>
+              <img src="/img/landing/ratchet.png" alt="" className = "service__img"/>
               <p className="service__subtitle">Услуга</p>
               <h4 className="service__title">Ремонта фильтра</h4>
               <div className="service__on-stock">
@@ -101,6 +101,7 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
         .services__row{
           display:flex;
           align-items:center;
+          flex-wrap:wrap;
           width:85%;
         }
 
@@ -118,9 +119,9 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
         }
 
         .service__img{
-          height:15rem;
+          width:100%;
           display:block;
-          margin:0 auto;
+          margin:20px auto 40px auto;
         }
 
         .service__subtitle{
@@ -165,6 +166,17 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
           font-size: 12px;
           color: #FFFFFF;
           text-transform: uppercase;
+        }
+
+        @media screen and (max-width:900px){
+          .service{
+            margin-right:0%;
+            width:48%;
+          }
+          .services__row{
+            width:100%;
+            justify-content:space-between;
+          }
         }
       `}</style>
     </>

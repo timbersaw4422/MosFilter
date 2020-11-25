@@ -8,7 +8,7 @@ const LandingModelRow = ({setType}) => {
      }, 500);
 
     if (id === 1) setType(1);
-    if (id === 2) setType(2); 
+    if (id === 2) setType(2);
   }
 
   return(
@@ -94,6 +94,12 @@ const LandingModelRow = ({setType}) => {
         @media(hover:hover){
           .card__background:hover .card__img{
             transform:scale(1.1);
+          }
+        }
+
+        @media screen and (max-width:1150px){
+          .model-row{
+            margin-bottom:8rem;
           }
         }
         `}</style>

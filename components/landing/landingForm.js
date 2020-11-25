@@ -5,7 +5,7 @@ import {sendMail} from "../../utils/mail";
 import Loader from "./loader";
 import LandingButton from "./landingButton";
 
-const LandingForm = ({css, margin, goods}) => {
+const LandingForm = ({css, margin, goods, media}) => {
 
   const [policy, setPolicy] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -55,7 +55,7 @@ const LandingForm = ({css, margin, goods}) => {
 
   return(
     <>
-      <form className="landing-form" style={css}>
+      <form className="landing-form">
         <div className="form__track">
           <div className="step1">
           <h2 className="title">Оставить заявку на замену картриджей</h2>
@@ -112,7 +112,7 @@ const LandingForm = ({css, margin, goods}) => {
                      <LandingButton
                      text="Отправить заявку"
                      css={{maxWidth:"100%", height:"60px", marginBottom:"0rem"}}
-                     
+
                      />
                  </div>
         }
@@ -136,8 +136,25 @@ const LandingForm = ({css, margin, goods}) => {
       <style jsx>{`
 
         .landing-form{
-          position:relative;
+          background: #FFFFFF;
+          border: 1px solid #B7CCE0;
+          box-sizing: border-box;
+          box-shadow: 14px 13px 26px rgba(0, 0, 0, 0.09);
+          width:360px;
+          padding:0;
+          margin: ${margin || '0'};
+          position:${css.position || "relative"};
+          top:${css.top || "none"};
+          right:${css.right || "none"};
           overflow:hidden;
+          z-index:10;
+        }
+
+        .form__track{
+          width:200%;
+          display:flex;
+          transition:0.3s;
+          transform:translateX(${translate}%)
         }
 
         .label{
@@ -160,13 +177,6 @@ const LandingForm = ({css, margin, goods}) => {
             display:flex;
             align-items:center;
             justify-content:center;
-          }
-
-          .form__track{
-            width:200%;
-            display:flex;
-            transition:0.3s;
-            transform:translateX(${translate}%)
           }
 
           .step1, .step2{
@@ -198,18 +208,6 @@ const LandingForm = ({css, margin, goods}) => {
             display:flex;
             align-items:center;
             justify-content:center;
-          }
-
-          .landing-form{
-            background: #FFFFFF;
-            border: 1px solid #B7CCE0;
-            box-sizing: border-box;
-            box-shadow: 14px 13px 26px rgba(0, 0, 0, 0.09);
-            width:360px;
-            padding:0;
-            margin: ${margin || '0'};
-            position:relative;
-            z-index:10;
           }
 
           .title{
@@ -255,6 +253,16 @@ const LandingForm = ({css, margin, goods}) => {
             margin-right:2.4rem;
             cursor:pointer;
           }
+
+          @media screen and (max-width:1150px){
+            .landing-form{
+              top:${media === 1 ? "14rem" : "none"};
+              left:${media === 1 ? "0" : "none"};
+              width:${media ===1 ? "100%" : "360px"}
+            }
+          }
+
+
         `}</style>
     </>
   )

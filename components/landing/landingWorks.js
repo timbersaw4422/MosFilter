@@ -75,6 +75,12 @@ const LandingWorks = () => {
           color: #FF652E;
           cursor:pointer;
         }
+
+        @media screen and (max-width:1150px){
+          .works{
+            margin-bottom:8rem;
+          }
+        }
       `}</style>
     </>
   )

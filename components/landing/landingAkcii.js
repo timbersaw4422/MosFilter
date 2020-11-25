@@ -47,7 +47,9 @@ const LandingAkcii = ({goods}) => {
                  </div>
                </div>
 
-               <LandingForm goods = {goods} css={{position:"absolute", top:"0", right:"0"}}/>
+               <LandingForm goods = {goods} css={{position:"absolute", top:"0", right:"0"}}
+                 media = {1}
+               />
             </div>
 
             <div className="stock__slider-main">
@@ -77,16 +79,24 @@ const LandingAkcii = ({goods}) => {
            margin-bottom:16rem;
          }
 
+         .landing-wrapper{
+           display:flex;
+           flex-direction:column;
+
+         }
+
          h2{
            font-weight: bold;
            font-size: 18px;
            color: #FFFFFF;
            margin-bottom:5.8rem;
+           order:1;
          }
 
          .stock-top{
            display:flex;
            position:relative;
+           order:2;
          }
 
          .stock__big-num{
@@ -131,6 +141,7 @@ const LandingAkcii = ({goods}) => {
             position:relative;
             overflow:hidden;
             z-index:1;
+            order:3;
           }
 
           .slider__track{
@@ -174,6 +185,32 @@ const LandingAkcii = ({goods}) => {
             .arrow-left:hover, .arrow-right:hover{
               transform:scale(1.1);
               z-index:10;
+            }
+          }
+
+          @media screen and (max-width:1150px){
+            .landing-wrapper{
+              height:140rem;
+            }
+            .slider-nav{
+              left:auto;
+              right:0;
+            }
+            .stock__slider-main{
+              order:2;
+            }
+            .stock-top{
+              order:3;
+              margin-top:2rem;
+            }
+            .stock{
+              background:#004990;
+            }
+            h2{
+              margin-bottom:1rem;
+            }
+            .stock{
+              margin-bottom:8rem;
             }
           }
       `}</style>

@@ -130,6 +130,12 @@ const LandingContacts = ({setModalOpen, setModalType, setModalPayload}) => {
           width:50%;
           height:61rem;
         }
+
+        @media screen and (max-width:1150px){
+          .contacts{
+            padding-top:8rem;
+          }
+        }
       `}</style>
     </>
   )

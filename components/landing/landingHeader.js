@@ -46,6 +46,12 @@ const LandingHeader = ({name, setModalOpen, setModalType}) => {
           height:2px;
           margin-bottom:412px;
         }
+
+        @media screen and (max-width:1150px){
+          .header{
+            padding-top:6rem;
+          }
+        }
       `}</style>
     </>
   )

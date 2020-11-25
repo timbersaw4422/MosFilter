@@ -45,6 +45,7 @@ const StockSlide = (props) =>{
           padding:9rem 0 10rem 9rem;
           background:#fff;
           position:relative;
+          overflow:hidden;
         }
 
         .slide-content{
@@ -216,6 +217,48 @@ const StockSlide = (props) =>{
           }
           .slide__btn:hover svg{
             transform:translateX(10px);
+          }
+        }
+
+        @media screen and (max-width:1150px){
+          .slide__img{
+            top:8rem;
+            right:15%;
+          }
+
+          .slide__discount{
+            right: 18%;
+            bottom:5rem;
+          }
+        }
+
+        @media screen and (max-width:1150px){
+          .slide__img{
+            right:5%;
+          }
+          .slide__discount{
+            right:8%;
+          }
+        }
+
+        @media screen and (max-width:750px){
+          .old-and-new-price{
+            margin-top:16.5rem;
+          }
+
+          .slide__img{
+            height:11rem;
+            width:auto;
+            left:2rem;
+            top:22rem;
+          }
+
+          .slide{
+            padding:2rem;
+          }
+
+          .slide__circle-outer{
+            left:10%;
           }
         }
       `}</style>
