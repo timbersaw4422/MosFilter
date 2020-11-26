@@ -301,6 +301,15 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
           }
         }
 
+        @media screen and (max-width:900px){
+          .calculator__text:after{
+            top:10rem;
+          }
+          .calculator__text{
+            margin-bottom:10rem;
+          }
+        }
+
         @media screen and (max-width:500px){
           .calculator__left{
             width:100%;

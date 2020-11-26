@@ -256,9 +256,15 @@ const LandingForm = ({css, margin, goods, media}) => {
 
           @media screen and (max-width:1150px){
             .landing-form{
-              top:${media === 1 ? "14rem" : "none"};
+              top:${media === 1 ? "12rem" : "none"};
               left:${media === 1 ? "0" : "none"};
-              width:${media ===1 ? "100%" : "360px"}
+              width:${media ===1 ? "100%" : "360px"};
+            }
+          }
+
+          @media screen and (max-width:700px){
+            .landing-form{
+              display:${media===2 ? "none" : "block"}
             }
           }
 

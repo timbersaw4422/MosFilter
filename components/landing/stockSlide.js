@@ -254,13 +254,45 @@ const StockSlide = (props) =>{
           }
 
           .slide{
-            padding:2rem;
+            padding:2rem 2rem 5rem 2rem;
           }
 
           .slide__circle-outer{
             left:10%;
           }
+          .slide__discount{
+            top:20rem;
+            left:18rem;
+            right:auto;
+          }
         }
+
+        @media screen and (max-width:410px){
+          .slide__title{
+            width:100%;
+          }
+          .slide__discount{
+            font-size:18px;
+            line-height:10px;
+            top:28rem;
+            left:20rem;
+          }
+          .slide__discount span{
+            font-size:35px;
+          }
+          .slide__text{
+            height:100px;
+          }
+          .slide__img{
+            top:28rem;
+          }
+        }
+
+        @media screen and (max-width:410px){
+
+        }
+
+
       `}</style>
     </>
   )

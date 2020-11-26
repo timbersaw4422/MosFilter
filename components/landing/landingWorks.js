@@ -56,7 +56,6 @@ const LandingWorks = () => {
           font-size: 30px;
           line-height: 37px;
           color: #424242;
-          margin-bottom:6rem;
         }
 
         .instagram, .title-and-instagram{
@@ -66,6 +65,7 @@ const LandingWorks = () => {
 
         .title-and-instagram{
           justify-content:space-between;
+          margin-bottom:6rem;
         }
 
         .instagram span{
@@ -79,6 +79,12 @@ const LandingWorks = () => {
         @media screen and (max-width:1150px){
           .works{
             margin-bottom:8rem;
+          }
+        }
+
+        @media screen and (max-width:800px){
+          .title-and-instagram{
+            display:block;
           }
         }
       `}</style>

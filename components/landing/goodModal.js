@@ -70,6 +70,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
 
                <div className="button-group">
                    <LandingButton
+                       adaptive850={true}
                        text="Заказать в один клик"
                        css={{maxWidth:"47%", height:"50px", marginBottom:"0rem", background:"#004990",
                        after:"#fff", hoverColor:"#424242", boxShadow:"none", border:"2px solid #004990"}}
@@ -77,6 +78,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
                        />
 
                    <LandingButton
+                       adaptive850={true}
                        text="Заказать по телефону"
                        css={{maxWidth:"47%", height:"50px", marginBottom:"0rem", background:"#fff", color:"#004990",
                        border:"2px solid #004990", after:"#fff", hoverColor:"#424242"}}
@@ -321,6 +323,40 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
           line-height: 150%;
           color: #424242;
           margin-top:3rem;
+        }
+
+        @media screen and (max-width:850px){
+          .modal__right{
+            width:60%;
+          }
+          .modal__left{
+            width:40%;
+          }
+          .button-group{
+            flex-direction:column;
+            height:12rem;
+          }
+          .modal-track{
+            height:${service ? "62rem" : "56rem"};
+          }
+        }
+
+        @media screen and (max-width:750px){
+          .modal-step1{
+            flex-direction:column;
+          }
+          .modal__left, .modal__right{
+            width:100%;
+          }
+          .modal__left{
+            height:30rem;
+          }
+          .modal-track{
+            height:${service ? "83rem" : "78rem"};
+          }
+          .modal__right{
+            padding:1rem;
+          }
         }
         `}</style>
     </>

@@ -1,4 +1,4 @@
-const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border}) => {
+const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border, nonAdaptive}) => {
 
   const hoverBackground = css.background === "#fff" ? "#004990" : "#fff";
   const hoverColor = css.textColor === "#424242" ? "#fff" : "#424242";
@@ -77,7 +77,12 @@ const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border}) 
 
             .btn:hover svg{
               transform:${policy ? transform : "none"};
+            }
+          }
 
+          @media screen and (max-width:400px){
+            .btn{
+              width:${nonAdaptive ? "" : "100%"};
             }
           }
         `}</style>

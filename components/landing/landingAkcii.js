@@ -201,7 +201,7 @@ const LandingAkcii = ({goods}) => {
             }
             .stock-top{
               order:3;
-              margin-top:2rem;
+              margin-top:4rem;
             }
             .stock{
               background:#004990;
@@ -213,6 +213,20 @@ const LandingAkcii = ({goods}) => {
               margin-bottom:8rem;
             }
           }
+
+          @media screen and (max-width:650px){
+            .stock__title-and-description{
+              display:none;
+            }
+          }
+
+          @media screen and (max-width:410px){
+            .landing-wrapper{
+              height:150rem;
+            }
+          }
+
+
       `}</style>
     </>
   )

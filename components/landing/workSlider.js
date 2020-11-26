@@ -84,6 +84,14 @@ class CustomArrows extends React.Component{
             infinite: true
           }
         },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true
+          }
+        }
       ]
     };
     return (
@@ -106,9 +114,6 @@ class CustomArrows extends React.Component{
         </div>
 
         <style jsx>{`
-          img{
-            width:25%;
-          }
 
           .wrapper{
             height:45rem;
@@ -117,6 +122,30 @@ class CustomArrows extends React.Component{
           @media screen and (max-width:800px){
             .wrapper{
               height:50rem;
+            }
+          }
+
+          @media screen and (max-width:600px){
+            .wrapper{
+              height:68rem;
+            }
+          }
+
+          @media screen and (max-width:500px){
+            .wrapper{
+              height:58rem;
+            }
+          }
+
+          @media screen and (max-width:400px){
+            .wrapper{
+              height:50rem;
+            }
+          }
+
+          @media screen and (max-width:360px){
+            .wrapper{
+              height:45rem;
             }
           }
         `}</style>

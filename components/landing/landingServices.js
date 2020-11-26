@@ -178,6 +178,12 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
             justify-content:space-between;
           }
         }
+
+        @media screen and (max-width:600px){
+          .service{
+            width:100%;
+          }
+        }
       `}</style>
     </>
   )

@@ -41,6 +41,23 @@ const LandingFooter = () => {
           color: #004990;
           cursor:pointer;
         }
+
+        @media screen and (max-width:600px){
+          .landing-wrapper{
+            flex-direction:column;
+          }
+          .footer__left{
+            padding-bottom:5rem;
+            width:100%;
+            background: #F8F8F8;
+          }
+          .footer__text{
+            max-width:100%;
+          }
+          .footer__right{
+            padding-top:2.6rem;
+          }
+        }
       `}</style>
     </>
   )

@@ -1,4 +1,4 @@
-const LandingButton = ({text, css, clickHandler}) => {
+const LandingButton = ({text, css, clickHandler, adaptive850}) => {
 
   return(
     <>
@@ -53,6 +53,12 @@ const LandingButton = ({text, css, clickHandler}) => {
           }
           .button:hover span{
             color:${css.hoverColor || ""}
+          }
+        }
+
+        @media screen and (max-width:850px){
+          .button{
+            max-width:${adaptive850 ? "100%" : ""};
           }
         }
         `}</style>

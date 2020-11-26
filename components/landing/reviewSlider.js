@@ -110,7 +110,7 @@ class CustomArrows extends React.Component{
                  <div className="review" onClick={() => this.clickHandler(2)}>
                    <div className="review__img-and-name">
                       <img src="/img/reviews/review2.png" alt="review" className="review__img"/>
-                      <p className="review__name">Шевченко Наталья</p>
+                      <p className="review__name">Наталья</p>
                    </div>
                    <p className="review__text">Спасибо огромное мастеру Ивану за отличную работу по замене картриджей фильтра, за его внимательное...</p>
                    <div className="review__btn">
@@ -206,7 +206,7 @@ class CustomArrows extends React.Component{
                  <div className="review" onClick={() => this.clickHandler(9)}>
                    <div className="review__img-and-name">
                       <img src="/img/reviews/review9.png" alt="review" className="review__img"/>
-                      <p className="review__name">Елена Викторона</p>
+                      <p className="review__name">Елена</p>
                    </div>
                    <p className="review__text">Здравствуйте. Всё прошло быстро и безболезненно, как врач и обещал. Мы с моим краником и фильтрами ...</p>
                    <div className="review__btn">
@@ -232,7 +232,7 @@ class CustomArrows extends React.Component{
                       <img src="/img/reviews/review11.png" alt="review" className="review__img"/>
                       <p className="review__name">Эльвира</p>
                    </div>
-                   <p className="review__text">Работа мастера без нареканий, вода хороша, ничего не течёт разьяснения по промывке фильтры ясные и всё прошло успешно! Спасибо!</p>
+                   <p className="review__text">Работа мастера без нареканий, вода хороша, ничего не течёт разьяснения по промывке фильтры ясные...</p>
                    <div className="review__btn">
                       <span>Посмотреть снимок отзыва</span>
                       <Arrow fill="#FF652E"/>
@@ -244,7 +244,7 @@ class CustomArrows extends React.Component{
                       <img src="/img/reviews/review12.png" alt="review" className="review__img"/>
                       <p className="review__name">Елена</p>
                    </div>
-                   <p className="review__text">Добрый день! Сегодня нам заменили фильтры Аквафор Трио. Всё понравилось, будем обращаться в следующий раз только к вам...</p>
+                   <p className="review__text">Добрый день! Сегодня нам заменили фильтры Аквафор Трио. Всё понравилось...</p>
                    <div className="review__btn">
                       <span>Посмотреть снимок отзыва</span>
                       <Arrow fill="#FF652E"/>
@@ -372,6 +372,18 @@ class CustomArrows extends React.Component{
           @media screen and (max-width:1000px){
             .review{
               width:100%;
+            }
+          }
+
+          @media screen and (max-width:550px){
+            .review__text{
+              height:150px;
+            }
+          }
+
+          @media screen and (max-width:450px){
+            .review{
+              padding:3rem 3rem 5rem 3rem;
             }
           }
         `}</style>

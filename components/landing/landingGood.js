@@ -103,6 +103,13 @@ const LandingGood = (props) => {
           }
         }
 
+        @media screen and (max-width:600px){
+          .good{
+            width:100%;
+          }
+        }
+
+
         `}</style>
     </>
   )

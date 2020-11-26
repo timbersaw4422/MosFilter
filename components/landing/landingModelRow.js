@@ -21,7 +21,7 @@ const LandingModelRow = ({setType}) => {
            <p className="subtitle">Обслуживаем модели любого года производства</p>
 
            <div className="row">
-             <div className="card" onClick={() => clickHandler(1)}>
+             <div className="card card1" onClick={() => clickHandler(1)}>
                <div className="card__background">
                  <img src="/img/landing/geizer1.png" alt="Проточные фильтры Гейзер" className="card__img"/>
                </div>
@@ -100,6 +100,18 @@ const LandingModelRow = ({setType}) => {
         @media screen and (max-width:1150px){
           .model-row{
             margin-bottom:8rem;
+          }
+        }
+
+        @media screen and (max-width:650px){
+          .row{
+            flex-direction:column;
+          }
+          .card{
+            width:100%;
+          }
+          .card1{
+            margin-bottom:4rem;
           }
         }
         `}</style>

@@ -56,7 +56,7 @@ const LandingContacts = ({setModalOpen, setModalType, setModalPayload}) => {
            </div>
 
            <div className="contacts__right">
-             <Map height="61rem"/>
+             <Map height="61rem" adaptiveHeight="30rem"/>
            </div>
 
 
@@ -136,6 +136,20 @@ const LandingContacts = ({setModalOpen, setModalType, setModalPayload}) => {
             padding-top:8rem;
           }
         }
+
+        @media screen and (max-width:800px){
+          .landing-wrapper{
+            flex-direction:column;
+          }
+          .contacts__left, .contacts__right{
+            width:100%;
+          }
+          .contacts__left{
+            margin-bottom:4rem;
+          }
+        }
+
+
       `}</style>
     </>
   )

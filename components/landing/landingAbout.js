@@ -172,6 +172,14 @@ const LandingAbout = () => {
             margin-bottom:4rem;
           }
 
+          .advantages__right{
+            height:auto;
+          }
+
+          .advantage{
+            margin-bottom:4rem;
+          }
+
         }
 
 

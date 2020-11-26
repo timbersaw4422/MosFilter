@@ -6,7 +6,8 @@ const LandingCallToAction = ({goods}) => {
       <div className="call-to-action">
           <div className="landing-wrapper">
             <div className="call-to-action__main">
-               <LandingForm goods = {goods} margin = "0 0 0 auto" css={{}}/>
+               <LandingForm goods = {goods} margin = "0 0 0 auto" css={{}} media={2}/>
+               <p className="info-subtitle2">В пределах МКАД выезд мастера на замену осуществляется бесплатно</p>
             </div>
             <div className="info">
                 <p className="info-caption">Режим работы</p>
@@ -29,7 +30,25 @@ const LandingCallToAction = ({goods}) => {
         .call-to-action__main{
           background:url(/img/landing/call-to-action.png) center / cover;
           position:relative;
-          transform:translateY(-7rem)
+          transform:translateY(-7rem);
+        }
+
+        .info-subtitle2{
+          position:absolute;
+          bottom:-2rem;
+          left:0;
+          width:100%;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          padding:2rem ;
+          color: #FFFFFF;
+          background:#FF652E;
+          display:none;
+        }
+
+        .info-subtitle2:after{
+
         }
 
         .info{
@@ -82,6 +101,23 @@ const LandingCallToAction = ({goods}) => {
             padding-bottom:6rem;
           }
         }
+
+        @media screen and (max-width:700px){
+          .call-to-action__main{
+            height:45rem;
+          }
+          .info-subtitle{
+            display:none;
+          }
+          .info-title{
+            width:100%;
+          }
+          .info-subtitle2{
+            display:block;
+          }
+        }
+
+
         `}</style>
     </>
   )
