@@ -9,7 +9,7 @@ function SampleNextArrow(props) {
       className={"arrow-left"}
       style={{ ...style, display: "flex", alignItems:"center", justifyContent:"center",
                height:"6rem", width:"6rem", position:"absolute", background:"#fff",
-             bottom:"-6rem", right:"1.5rem", boxShadow:"8px 8px 15px rgba(0, 0, 0, 0.08)", cursor:"pointer"}}
+             bottom:"-6rem", right:"3rem", boxShadow:"8px 8px 15px rgba(0, 0, 0, 0.08)", cursor:"pointer"}}
       onClick={onClick}>
       <Arrow fill ="#004990"/>
 
@@ -36,7 +36,7 @@ function SamplePrevArrow(props) {
       className={"arrow-right"}
       style={{ ...style, display: "flex", alignItems:"center", justifyContent:"center",
                height:"6rem", width:"6rem", position:"absolute", background:"#5388BB",
-             bottom:"-6rem", right:"7.5rem", boxShadow:"8px 8px 15px rgba(0, 0, 0, 0.08)", cursor:"pointer"}}
+             bottom:"-6rem", right:"9rem", boxShadow:"8px 8px 15px rgba(0, 0, 0, 0.08)", cursor:"pointer"}}
       onClick={onClick}
     >
       <Arrow fill ="#fff" rotate="180deg"/>
@@ -311,7 +311,7 @@ class CustomArrows extends React.Component{
             flex-wrap:wrap;
             position:relative;
             z-index:10;
-            padding:0 1.5rem;
+            padding:0 3rem;
           }
 
           .review{

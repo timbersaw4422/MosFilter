@@ -166,6 +166,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
         .modal-track{
           width:300%;
           height:${service ? "55rem" : "48rem"};
+          height:${translate === 1 || translate===2 ? "48rem" : ""};
           transform:translateX(${-translate*100/steps}%);
           transition:0.5s;
           display:flex;
@@ -338,6 +339,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
           }
           .modal-track{
             height:${service ? "62rem" : "56rem"};
+            height:${translate === 1 || translate===2 ? "48rem" : ""};
           }
         }
 
@@ -353,9 +355,14 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
           }
           .modal-track{
             height:${service ? "83rem" : "78rem"};
+            height:${translate === 1 || translate===2 ? "48rem" : ""};
           }
           .modal__right{
             padding:1rem;
+          }
+          .modal__circle{
+            width:150px;
+            height:150px;
           }
         }
         `}</style>

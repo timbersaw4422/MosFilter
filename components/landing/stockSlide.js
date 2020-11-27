@@ -42,7 +42,7 @@ const StockSlide = (props) =>{
         .slide{
           width:20%;
           font-size: 40px;
-          padding:9rem 0 10rem 9rem;
+          padding:9rem 0 12rem 9rem;
           background:#fff;
           position:relative;
           overflow:hidden;

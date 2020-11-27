@@ -4,6 +4,10 @@ const LandingButton = ({text, css, clickHandler, adaptive850}) => {
     <>
       <div className="button" onClick={clickHandler}>
         <span>{text}</span>
+        {!css.after && <svg className="arrow" width="8" height="12" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1.55714 12.7368L8 6.49729L1.55714 0.257754C1.38154 0.0882492 1.14593 -0.00440973 0.902146 0.000161116C0.658364 0.00473197 0.426378 0.106158 0.257223 0.282127C0.088068 0.458097 -0.00439933 0.694194 0.000162084 0.938481C0.0047235 1.18277 0.10594 1.41523 0.281546 1.58474L5.35692 6.49729L0.281546 11.4153C0.10594 11.5848 0.00472303 11.8172 0.000161597 12.0615C-0.00439984 12.3058 0.0880675 12.5419 0.257223 12.7179C0.426377 12.8938 0.658363 12.9953 0.902146 12.9998C1.14593 13.0044 1.38154 12.9118 1.55714 12.7422L1.55714 12.7368Z" fill="white"/>
+                      </svg>
+         }
       </div>
 
 
@@ -27,6 +31,12 @@ const LandingButton = ({text, css, clickHandler, adaptive850}) => {
           cursor:pointer;
           position:relative;
           margin:${css.margin || ""};
+          transition:0.2s;
+        }
+
+        .arrow{
+          margin-left:1.5rem;
+          transition:0.1s;
         }
 
         .button span{
@@ -37,7 +47,7 @@ const LandingButton = ({text, css, clickHandler, adaptive850}) => {
         .button:after{
           content:"";
           position:absolute;
-          background: ${css.after || "linear-gradient(265.11deg, rgba(255, 255, 255, 0) 19.76%, rgba(255, 255, 255, 0.58) 53.19%, rgba(255, 255, 255, 0) 86.41%), #FF652E"};
+          background: ${css.after || "transparent"};
           top:0;
           right: 0;
           bottom: 0;
@@ -48,12 +58,20 @@ const LandingButton = ({text, css, clickHandler, adaptive850}) => {
         }
 
         @media(hover:hover){
+          .button:hover{
+            border-radius:${css.after ? "0" : "5px"};
+          }
           .button:hover:after{
             opacity:1;
+            border-radius:${css.after ? "0" : "5px"};
           }
           .button:hover span{
             color:${css.hoverColor || ""}
           }
+          .button:hover .arrow{
+            transform:translateX(7px);
+          }
+
         }
 
         @media screen and (max-width:850px){

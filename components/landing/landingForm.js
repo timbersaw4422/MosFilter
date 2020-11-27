@@ -108,7 +108,7 @@ const LandingForm = ({css, margin, goods, media}) => {
         {
           loading ? <Loader margin="0 auto"/>
                   :
-                  <div style={{opacity:isFormValid() ? "1" : "0.5"}} onClick = {clickHandler}>
+                  <div  onClick = {clickHandler}>
                      <LandingButton
                      text="Отправить заявку"
                      css={{maxWidth:"100%", height:"60px", marginBottom:"0rem"}}
