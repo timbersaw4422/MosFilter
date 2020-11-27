@@ -63,7 +63,7 @@ class CustomArrows extends React.Component{
       // dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
@@ -119,31 +119,37 @@ class CustomArrows extends React.Component{
                    </div>
                  </div>
 
-                 <div className="review" onClick={() => this.clickHandler(3)}>
-                   <div className="review__img-and-name">
-                      <img src="/img/reviews/review3.png" alt="review" className="review__img"/>
-                      <p className="review__name">Татьяна</p>
-                   </div>
-                   <p className="review__text">Спасибо огромное за установку фильтра. Вы настоящий профессионал своего дела...</p>
-                   <div className="review__btn">
-                      <span>Посмотреть снимок отзыва</span>
-                      <Arrow fill="#FF652E"/>
-                   </div>
-                 </div>
-
-                 <div className="review" onClick={() => this.clickHandler(4)}>
-                   <div className="review__img-and-name">
-                      <img src="/img/reviews/review4.png" alt="review" className="review__img"/>
-                      <p className="review__name">Ольга</p>
-                   </div>
-                   <p className="review__text">Я довольна Вашей работой! Спасибо! Вас рекомендую своим знакомым. Вода — это жизнь!</p>
-                   <div className="review__btn">
-                      <span>Посмотреть снимок отзыва</span>
-                      <Arrow fill="#FF652E"/>
-                   </div>
-                 </div>
-
               </div>
+            </div>
+
+            <div>
+              <div className="review-page">
+
+            <div className="review" onClick={() => this.clickHandler(3)}>
+              <div className="review__img-and-name">
+                 <img src="/img/reviews/review3.png" alt="review" className="review__img"/>
+                 <p className="review__name">Татьяна</p>
+              </div>
+              <p className="review__text">Спасибо огромное за установку фильтра. Вы настоящий профессионал своего дела...</p>
+              <div className="review__btn">
+                 <span>Посмотреть снимок отзыва</span>
+                 <Arrow fill="#FF652E"/>
+              </div>
+            </div>
+
+            <div className="review" onClick={() => this.clickHandler(4)}>
+              <div className="review__img-and-name">
+                 <img src="/img/reviews/review4.png" alt="review" className="review__img"/>
+                 <p className="review__name">Ольга</p>
+              </div>
+              <p className="review__text">Я довольна Вашей работой! Спасибо! Вас рекомендую своим знакомым. Вода — это жизнь!</p>
+              <div className="review__btn">
+                 <span>Посмотреть снимок отзыва</span>
+                 <Arrow fill="#FF652E"/>
+              </div>
+            </div>
+
+            </div>
             </div>
 
             <div>
@@ -173,30 +179,35 @@ class CustomArrows extends React.Component{
                    </div>
                  </div>
 
-                 <div className="review" onClick={() => this.clickHandler(7)}>
-                   <div className="review__img-and-name">
-                      <img src="/img/reviews/review7.png" alt="review" className="review__img"/>
-                      <p className="review__name">Ольга</p>
-                   </div>
-                   <p className="review__text">Хочется поблагодарить Ивана за установку фильтра, теперь пьём чистую воду! Всё было сделано быстро ...</p>
-                   <div className="review__btn">
-                      <span>Посмотреть снимок отзыва</span>
-                      <Arrow fill="#FF652E"/>
-                   </div>
-                 </div>
+              </div>
+            </div>
 
-                 <div className="review" onClick={() => this.clickHandler(8)}>
-                   <div className="review__img-and-name">
-                      <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
-                      <p className="review__name">Евгения</p>
-                   </div>
-                   <p className="review__text">Здравствуйте! Мастером очень довольна, уже не в первый раз он нам меняет фильтр, никаких нареканий ...</p>
-                   <div className="review__btn">
-                      <span>Посмотреть снимок отзыва</span>
-                      <Arrow fill="#FF652E"/>
-                   </div>
-                 </div>
+            <div>
+              <div className="review-page">
+                <div className="review" onClick={() => this.clickHandler(7)}>
+                  <div className="review__img-and-name">
+                     <img src="/img/reviews/review7.png" alt="review" className="review__img"/>
+                     <p className="review__name">Ольга</p>
+                  </div>
+                  <p className="review__text">Хочется поблагодарить Ивана за установку фильтра, теперь пьём чистую воду! Всё было сделано быстро ...</p>
+                  <div className="review__btn">
+                     <span>Посмотреть снимок отзыва</span>
+                     <Arrow fill="#FF652E"/>
+                  </div>
+                </div>
 
+
+                <div className="review" onClick={() => this.clickHandler(8)}>
+                  <div className="review__img-and-name">
+                     <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
+                     <p className="review__name">Евгения</p>
+                  </div>
+                  <p className="review__text">Здравствуйте! Мастером очень довольна, уже не в первый раз он нам меняет фильтр, никаких нареканий ...</p>
+                  <div className="review__btn">
+                     <span>Посмотреть снимок отзыва</span>
+                     <Arrow fill="#FF652E"/>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -227,30 +238,34 @@ class CustomArrows extends React.Component{
                    </div>
                  </div>
 
-                 <div className="review" onClick={() => this.clickHandler(11)}>
-                   <div className="review__img-and-name">
-                      <img src="/img/reviews/review11.png" alt="review" className="review__img"/>
-                      <p className="review__name">Эльвира</p>
-                   </div>
-                   <p className="review__text">Работа мастера без нареканий, вода хороша, ничего не течёт разьяснения по промывке фильтры ясные...</p>
-                   <div className="review__btn">
-                      <span>Посмотреть снимок отзыва</span>
-                      <Arrow fill="#FF652E"/>
-                   </div>
-                 </div>
+              </div>
+            </div>
 
-                 <div className="review" onClick={() => this.clickHandler(12)}>
-                   <div className="review__img-and-name">
-                      <img src="/img/reviews/review12.png" alt="review" className="review__img"/>
-                      <p className="review__name">Елена</p>
-                   </div>
-                   <p className="review__text">Добрый день! Сегодня нам заменили фильтры Аквафор Трио. Всё понравилось...</p>
-                   <div className="review__btn">
-                      <span>Посмотреть снимок отзыва</span>
-                      <Arrow fill="#FF652E"/>
-                   </div>
-                 </div>
+            <div>
+              <div className="review-page">
+                <div className="review" onClick={() => this.clickHandler(11)}>
+                  <div className="review__img-and-name">
+                     <img src="/img/reviews/review11.png" alt="review" className="review__img"/>
+                     <p className="review__name">Эльвира</p>
+                  </div>
+                  <p className="review__text">Работа мастера без нареканий, вода хороша, ничего не течёт разьяснения по промывке фильтры ясные...</p>
+                  <div className="review__btn">
+                     <span>Посмотреть снимок отзыва</span>
+                     <Arrow fill="#FF652E"/>
+                  </div>
+                </div>
 
+                <div className="review" onClick={() => this.clickHandler(12)}>
+                  <div className="review__img-and-name">
+                     <img src="/img/reviews/review12.png" alt="review" className="review__img"/>
+                     <p className="review__name">Елена</p>
+                  </div>
+                  <p className="review__text">Добрый день! Сегодня нам заменили фильтры Аквафор Трио. Всё понравилось...</p>
+                  <div className="review__btn">
+                     <span>Посмотреть снимок отзыва</span>
+                     <Arrow fill="#FF652E"/>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -281,18 +296,22 @@ class CustomArrows extends React.Component{
                    </div>
                  </div>
 
-                 <div className="review" onClick={() => this.clickHandler(15)}>
-                   <div className="review__img-and-name">
-                      <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
-                      <p className="review__name">Инна</p>
-                   </div>
-                   <p className="review__text">Добрый вечер, Иван! Да, всё прекрасно! Спасибо на работу..</p>
-                   <div className="review__btn">
-                      <span>Посмотреть снимок отзыва</span>
-                      <Arrow fill="#FF652E"/>
-                   </div>
-                 </div>
+              </div>
+            </div>
 
+            <div>
+              <div className="review-page">
+                <div className="review" onClick={() => this.clickHandler(15)}>
+                  <div className="review__img-and-name">
+                     <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
+                     <p className="review__name">Инна</p>
+                  </div>
+                  <p className="review__text">Добрый вечер, Иван! Да, всё прекрасно! Спасибо на работу..</p>
+                  <div className="review__btn">
+                     <span>Посмотреть снимок отзыва</span>
+                     <Arrow fill="#FF652E"/>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -312,6 +331,7 @@ class CustomArrows extends React.Component{
             position:relative;
             z-index:10;
             padding:0 3rem;
+            flex-direction:column;
           }
 
           .review{
@@ -319,7 +339,7 @@ class CustomArrows extends React.Component{
             box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.08);
             padding:5rem 8rem 7rem 5rem;
             margin-bottom:6rem;
-            width:47.5%;
+            width:100%;
           }
 
           .review__img-and-name{
