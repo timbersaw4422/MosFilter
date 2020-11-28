@@ -16,22 +16,22 @@ import GoodModal from "../components/landing/goodModal.js";
 import {useState} from "react";
 import Head from "next/head";
 
-// export async function getServerSideProps(context) {
-//   const res = await fetch('https://mosfilt.firebaseio.com/goods.json?orderBy="categoryId"&equalTo=3');
-//   const data = await res.json();
-//   return {
-//     props: {data}
-//   }
-// }
+export async function getServerSideProps(context) {
+  const res = await fetch('https://mosfilt.firebaseio.com/goods.json?orderBy="categoryId"&equalTo=3');
+  const data = await res.json();
+  return {
+    props: {data}
+  }
+}
 
 export default function Geizer(
-  // {data}
+  {data}
 ){
 
-  const data = {"1":{id:1, title:"Гейзер Какой то", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png",
-                      discount:10},
-                      "2":{id:2, title:"Гейзер Другой", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"},
-                      "3":{id:3, title:"Гейзер Третий", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"}}
+  // const data = {"1":{id:1, title:"Гейзер Какой то", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png",
+  //                     discount:10},
+  //                     "2":{id:2, title:"Гейзер Другой", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"},
+  //                     "3":{id:3, title:"Гейзер Третий", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"}}
 
   const goods = Object.keys(data).map(good => data[good]);
 
