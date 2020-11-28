@@ -9,7 +9,8 @@ const LandingGood = (props) => {
       modalType:14,
       title:props.subtitle + " " +props.title
     });
-    props.setActiveGood({subtitle:props.subtitle, title:props.title, img:props.img, price:props.price});
+    props.setActiveGood({subtitle:props.subtitle, title:props.title, img:props.img, price:props.price,
+    forLanding:props.forLanding});
   }
 
   return(

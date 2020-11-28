@@ -8,8 +8,6 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type,
   else if (type === 1) displayedGoods = goods.filter(good => good.type==="проточный");
   else displayedGoods = goods.filter(good => good.type === "осмос");
 
-  console.log(type)
-
   return(
     <>
       <div className="landing-catalog">
@@ -29,6 +27,7 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type,
                subtitle={good.subtitle}
                price={good.price}
                img={good.img}
+               forLanding={good.forLanding}
                discount={good.discount}
                setModalOpen={setModalOpen}
                setModalType={setModalType}

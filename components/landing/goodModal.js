@@ -31,6 +31,9 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
     }
   }
 
+  const sostav = good.forLanding.split("+").map(str => <span>{str}<br/></span>)
+  console.log(sostav)
+
   return(
     <>
       <div className="good-modal">
@@ -55,14 +58,15 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
                <p className="good__text">
                  <span className="good__text-first">{service ? "Выезд" : "Доставка"}</span>
                  <span className="good__text-second">Бесплатно в пределах МКАД</span></p>
-               <p className="good__text">
+               <p className="good__text ololo">
                  <span className="good__text-first">Состав:</span>
                  <span className="good__text-second">{service ? <span>• Отключение фильтра <br />
                                                                       • Санация фильтра <br />
                                                                       • Установка картриджей <br/>
                                                                       • Подключение фильтра
                                                                       </span>
-                                                                : "Полный комплект"}</span></p>
+                                                                : <span>{sostav}
+                                                                 </span>}</span></p>
                <p className="good__text">
                  <span className="good__text-first">Стоимость:</span>
                  <span className="good__text-second">{service ? modalPayload.price : good.price} &nbsp;<i style = {{fontSize:"13px"}}className="fas fa-ruble-sign"></i></span></p>
@@ -163,9 +167,13 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
           justify-content:center;
         }
 
+        .ololo{
+          height:14rem;
+        }
+
         .modal-track{
           width:300%;
-          height:${service ? "55rem" : "48rem"};
+          height:${service ? "55rem" : "60rem"};
           height:${translate === 1 || translate===2 ? "48rem" : ""};
           transform:translateX(${-translate*100/steps}%);
           transition:0.5s;
