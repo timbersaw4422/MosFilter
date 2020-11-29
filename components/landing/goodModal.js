@@ -31,7 +31,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
     }
   }
 
-  const sostav = good.forLanding.split("+").map(str => <span>{str}<br/></span>)
+  const sostav = good.forLanding.split("+").map(str => <span key={Math.random()}>{"• " + str}<br/></span>)
   console.log(sostav)
 
   return(
