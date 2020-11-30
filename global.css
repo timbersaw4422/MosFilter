@@ -1,4 +1,4 @@
-.content-wrapper{
+﻿.content-wrapper{
   width:95%;
   margin:0 auto;
   max-width:1200px;
@@ -28,6 +28,14 @@ html{
   outline: 0;
   outline: none;
 }
+
+input, input:before, input:after {
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+     }
 
 @font-face {
   font-family: 'Geometria Medium';
