@@ -495,6 +495,7 @@ const Quiz = ({goods, setModalOpen}) => {
             font-weight: 500;
             font-size: 16px;
             color: #505050;
+            background:transparent;
           }
 
           .quiz__metro-input::placeholder{

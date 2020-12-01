@@ -208,13 +208,14 @@ const LandingNav = () => {
           display:none;
           position:relative;
           z-index:99;
-          margin-right:-20px;
+          transform:translateX(20px);
         }
 
         .nav{
           padding:2rem 0;
           position:relative;
           z-index:98;
+          overflow:hidden;
         }
 
         .landing-wrapper{
