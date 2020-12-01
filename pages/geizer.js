@@ -13,6 +13,7 @@ import LandingFooter from "../components/landing/landingFooter";
 import Modal from "../components/landing/rModal/rModal";
 import Quiz from "../components/landing/quiz";
 import GoodModal from "../components/landing/goodModal.js";
+import LandingNav from "../components/landing/landingNav";
 import {useState} from "react";
 import Head from "next/head";
 
@@ -92,6 +93,7 @@ export default function Geizer(
         <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       </Head>
 
+      <LandingNav />
       <LandingHeader name = "Гейзер" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
       <LandingAkcii goods = {goods}/>
       <LandingModelRow setType={setType}/>

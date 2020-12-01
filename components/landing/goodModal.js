@@ -31,7 +31,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
     }
   }
 
-  const sostav = good.forLanding.split("+").map(str => <span key={Math.random()}>{"• " + str}<br/></span>)
+  const sostav = good.forLanding ? good.forLanding.split("+").map(str => <span key={Math.random()}>{"• " + str}<br/></span>) : null;
 
   return(
     <>
@@ -172,7 +172,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
 
         .modal-track{
           width:300%;
-          height:${service ? "55rem" : "60rem"};
+          height:${service ? "60rem" : "60rem"};
           height:${translate === 1 || translate===2 ? "48rem" : ""};
           transform:translateX(${-translate*100/steps}%);
           transition:0.5s;
@@ -345,7 +345,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
             height:12rem;
           }
           .modal-track{
-            height:${service ? "62rem" : "56rem"};
+            height:${service ? "66rem" : "66rem"};
             height:${translate === 1 || translate===2 ? "48rem" : ""};
           }
         }
@@ -361,7 +361,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
             height:30rem;
           }
           .modal-track{
-            height:${service ? "83rem" : "78rem"};
+            height:${service ? "83rem" : "80rem"};
             height:${translate === 1 || translate===2 ? "48rem" : ""};
           }
           .modal__right{

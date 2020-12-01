@@ -1,9 +1,9 @@
 import Router from "next/router";
 
-const LogoWithoutH1 = ({color, fill, marginTop, justifyContent}) => {
+const LogoWithoutH1 = ({color, fill, marginTop, justifyContent, isClickHandler}) => {
 
   const clickHandler = () => {
-    Router.push("/").then(() => window.scrollTo (0, 0));
+    if (! isClickHandler === "no" ) Router.push("/").then(() => window.scrollTo (0, 0));
   }
 
   return(

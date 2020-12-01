@@ -1,4 +1,4 @@
-const LandingButton = ({text, css, clickHandler, adaptive850}) => {
+const LandingButton = ({text, css, clickHandler, adaptive850, display1000}) => {
 
   return(
     <>
@@ -26,7 +26,7 @@ const LandingButton = ({text, css, clickHandler, adaptive850}) => {
           font-weight: bold;
           font-size: 12px;
           letter-spacing: 0.045em;
-          text-transform: uppercase;
+          text-transform: ${css.textTransform || "uppercase"};
           box-shadow:${css.boxShadow || "0px 4px 4px rgba(0, 0, 0, 0.25)"};
           cursor:pointer;
           position:relative;
@@ -74,11 +74,18 @@ const LandingButton = ({text, css, clickHandler, adaptive850}) => {
 
         }
 
+        @media screen and (max-width:1000px){
+          .button{
+            display:${display1000 || ""};
+          }
+        }
+
         @media screen and (max-width:850px){
           .button{
             max-width:${adaptive850 ? "100%" : ""};
           }
         }
+
         `}</style>
     </>
   )
