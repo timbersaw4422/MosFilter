@@ -10,8 +10,9 @@ const QuizRadio = ({id, activeRadio}) => {
 
        <style jsx>{`
          .quiz__radiobutton{
-           width:15px;
-           height:15px;
+           width:15px!important;
+           height:15px!important;
+           min-width:15px;
            border: 2px solid #004990;
            border-radius:50%;
            margin-right:1.2rem;

@@ -14,7 +14,7 @@ const LandingNav = () => {
       <div className="nav">
         <div className="landing-wrapper">
            <div className="logo">
-              <Logo fill = "#0F4C81" color ="#424242" isClickHandler="no"/>
+              <Logo fill = "#0F4C81" color ="#424242" isClickHandler="no" zIndex="99"/>
            </div>
 
            <ul className="links">
@@ -208,6 +208,7 @@ const LandingNav = () => {
           display:none;
           position:relative;
           z-index:99;
+          margin-right:-20px;
         }
 
         .nav{
@@ -280,7 +281,7 @@ const LandingNav = () => {
 
         @media(hover:hover){
           .link:hover{
-            font-weight: bold;
+
             color: #004990;
           }
         }

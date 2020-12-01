@@ -1,6 +1,6 @@
 import Router from "next/router";
 
-const LogoWithoutH1 = ({color, fill, marginTop, justifyContent, isClickHandler}) => {
+const LogoWithoutH1 = ({color, fill, marginTop, justifyContent, isClickHandler, zIndex}) => {
 
   const clickHandler = () => {
     if (! isClickHandler === "no" ) Router.push("/").then(() => window.scrollTo (0, 0));
@@ -42,6 +42,8 @@ const LogoWithoutH1 = ({color, fill, marginTop, justifyContent, isClickHandler})
             font-family: 'Geometria Medium';
             margin-top:${marginTop || 0};
             cursor:pointer;
+            position:relative;
+            z-index:${zIndex || ""};
           }
           svg{
             margin-left:0.5rem;
