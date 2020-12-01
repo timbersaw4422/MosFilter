@@ -62,7 +62,7 @@ export default function Geizer(
 
     case "SERVICE":{
       modalMaxWidth = "950px";
-      modalContent = <GoodModal good={activeGood} modalPayload={modalPayload} service={true}/>;
+      modalContent = <GoodModal good={goods[0]} modalPayload={modalPayload} service={true}/>;
       break;
     }
 

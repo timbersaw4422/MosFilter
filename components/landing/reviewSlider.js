@@ -71,7 +71,7 @@ class CustomArrows extends React.Component{
       autoplaySpeed:5000,
       responsive: [
         {
-          breakpoint: 700,
+          breakpoint: 900,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -112,7 +112,7 @@ class CustomArrows extends React.Component{
                       <img src="/img/reviews/review2.png" alt="review" className="review__img"/>
                       <p className="review__name">Наталья</p>
                    </div>
-                   <p className="review__text">Спасибо огромное мастеру Ивану за отличную работу по замене картриджей фильтра, за его внимательное...</p>
+                   <p className="review__text">Спасибо огромное мастеру Ивану за отличную работу по замене картриджей фильтра...</p>
                    <div className="review__btn">
                       <span>Посмотреть снимок отзыва</span>
                       <Arrow fill="#FF652E"/>
@@ -189,7 +189,7 @@ class CustomArrows extends React.Component{
                      <img src="/img/reviews/review7.png" alt="review" className="review__img"/>
                      <p className="review__name">Ольга</p>
                   </div>
-                  <p className="review__text">Хочется поблагодарить Ивана за установку фильтра, теперь пьём чистую воду! Всё было сделано быстро ...</p>
+                  <p className="review__text">Хочется поблагодарить Ивана за установку фильтра, теперь пьём чистую воду...</p>
                   <div className="review__btn">
                      <span>Посмотреть снимок отзыва</span>
                      <Arrow fill="#FF652E"/>
@@ -202,7 +202,7 @@ class CustomArrows extends React.Component{
                      <img src="/img/reviews/review15.png" alt="review" className="review__img"/>
                      <p className="review__name">Евгения</p>
                   </div>
-                  <p className="review__text">Здравствуйте! Мастером очень довольна, уже не в первый раз он нам меняет фильтр, никаких нареканий ...</p>
+                  <p className="review__text">Здравствуйте! Мастером очень довольна, уже не в первый раз он нам меняет фильтр ...</p>
                   <div className="review__btn">
                      <span>Посмотреть снимок отзыва</span>
                      <Arrow fill="#FF652E"/>
@@ -231,7 +231,7 @@ class CustomArrows extends React.Component{
                       <img src="/img/reviews/review10.png" alt="review" className="review__img"/>
                       <p className="review__name">Наталья</p>
                    </div>
-                   <p className="review__text">Мне всё понравилось, получилось быстро и качественно. Приятно, что взяли надо мной шефство и готовы напоминать о замене...</p>
+                   <p className="review__text">Мне всё понравилось, получилось быстро и качественно. Приятно, что взяли надо мной шефство...</p>
                    <div className="review__btn">
                       <span>Посмотреть снимок отзыва</span>
                       <Arrow fill="#FF652E"/>
@@ -277,7 +277,7 @@ class CustomArrows extends React.Component{
                       <img src="/img/reviews/review13.png" alt="review" className="review__img"/>
                       <p className="review__name">Анатолий</p>
                    </div>
-                   <p className="review__text">Заранее были проинформированы о времени приезда. Работа выполнена быстро, качественно. Всем рекомендуем!</p>
+                   <p className="review__text">Заранее были проинформированы о времени приезда. Работа выполнена быстро, качественно</p>
                    <div className="review__btn">
                       <span>Посмотреть снимок отзыва</span>
                       <Arrow fill="#FF652E"/>
@@ -399,13 +399,14 @@ class CustomArrows extends React.Component{
             .review__text{
               height:150px;
             }
-          }
-
-          @media screen and (max-width:450px){
+            .review-page{
+              padding:0 2rem;
+            }
             .review{
-              padding:3rem 3rem 5rem 3rem;
+              padding:2rem 2rem 5rem 2rem;
             }
           }
+
         `}</style>
       </>
     );
