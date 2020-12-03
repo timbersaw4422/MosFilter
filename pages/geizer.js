@@ -35,6 +35,8 @@ export default function Geizer(
   //                     "3":{id:3, title:"Гейзер Третий", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"}}
 
   const goods = Object.keys(data).map(good => data[good]);
+  const catalogGoods = [...goods];
+  for (let i = 1; i <=4 ; i++ ) goods.pop();
 
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState("QUIZ");
@@ -81,6 +83,11 @@ export default function Geizer(
     default:break;
   }
 
+  const stocks = [
+    {id:1, subtitle:"Комплект картриджей", title:"Гейзер «Престиж»", oldPrice:3600, newPrice:2790, img:"/img/landing/geizer-stock1.png", discount:"-15%"},
+    {id:2, subtitle:"Комплект картриджей", title:"Гейзер «Био»", oldPrice:2550, newPrice:2200, img:"/img/landing/geizer-stock2.png", discount:"-15%"},
+  ];
+
   return(
     <div className="landing" style={{background:"#F9FAFC"}}>
       <Head>
@@ -95,7 +102,7 @@ export default function Geizer(
 
       <LandingNav />
       <LandingHeader name = "Гейзер" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
-      <LandingAkcii goods = {goods}/>
+      <LandingAkcii goods = {goods} stocks={stocks}/>
       <LandingModelRow setType={setType}/>
       <div className="landing-wrapper">
         <Calculator
@@ -111,7 +118,7 @@ export default function Geizer(
               setModalOpen = {setModalOpen}
               setModalType = {setModalType}
               setActiveGood={setActiveGood}
-              goods={goods}
+              goods={catalogGoods}
               type={type}
               setType={setType}
               />

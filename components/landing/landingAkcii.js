@@ -3,12 +3,8 @@ import LandingForm from  "./landingForm";
 import StockSlide from "./stockSlide";
 import Arrow from "./arrow";
 
-const LandingAkcii = ({goods}) => {
+const LandingAkcii = ({goods, stocks}) => {
 
-  const stocks = [
-    {id:1, subtitle:"Комплект картриджей", title:"Гейзер «Престиж»", oldPrice:3600, newPrice:2790, img:"/img/landing/geizer-stock1.png", discount:"-15%"},
-    {id:2, subtitle:"Комплект картриджей", title:"Гейзер «Био»", oldPrice:2550, newPrice:2200, img:"/img/landing/geizer-stock2.png", discount:"-15%"},
-  ];
   const stocksCount = stocks.length;
 
   const [activeSlide, setActiveSlide] = useState(1);
