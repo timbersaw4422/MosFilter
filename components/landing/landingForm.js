@@ -61,7 +61,7 @@ const LandingForm = ({css, margin, goods, media}) => {
           <h2 className="title">Оставить заявку на замену картриджей</h2>
 
           <p className="label">Ваше имя</p>
-          <input type="text" name="name" onChange = {changeNameHandler}/>
+          <input type="text" name="name" placeholder="Введите имя" onChange = {changeNameHandler}/>
 
           <p className="label">Номер телефона</p>
           <PhoneInput ref = {inputPhone}
@@ -230,6 +230,10 @@ const LandingForm = ({css, margin, goods, media}) => {
             color: #424242;
             padding:0 2rem;
             font-family: 'Montserrat', sans-serif;
+          }
+
+          input::placeholder{
+            color:#424242;
           }
 
           .according{

@@ -16,6 +16,7 @@ export async function getServerSideProps(ctx) {
 }
 
 export default function MyApp({ Component, pageProps, isLoaderShowed }) {
+
   return (
     <>
       {
@@ -29,28 +30,3 @@ export default function MyApp({ Component, pageProps, isLoaderShowed }) {
     </>
   )
 }
-
-// export default class MyApp extends Component{
-//   state={
-//     loader:false
-//   }
-//
-//   componentDidMount(){
-//     if (!sessionStorage.getItem("isLoadingShowed")) this.setState({loader:true})
-//   }
-//
-//   render(){
-//     return (
-//       <>
-//         {
-//           this.state.loader ? <Preloader /> : null
-//         }
-//         <NextNprogress
-//           color="#4862D2"
-//           height="3"
-//         />
-//         <this.props.Component {...this.props.pageProps} />
-//       </>
-//     )
-//   }
-// }
