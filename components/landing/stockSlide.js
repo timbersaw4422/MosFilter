@@ -186,6 +186,8 @@ const StockSlide = (props) =>{
           width:22.6rem;
           top:15rem;
           right:41.6rem;
+          height:200px;
+          width:auto;
         }
 
         .slide__discount{
