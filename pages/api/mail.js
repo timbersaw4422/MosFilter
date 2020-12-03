@@ -129,9 +129,9 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заявка на замену картриджей',
-        text: `Имя: ${body.name}
+        text: `Имя: ${body.name || "Не указано"}
         Телефон: ${body.phone}
-        Модель фильтра: ${body.model}.`
+        Модель фильтра: ${body.model || "Не указана"}.`
       }
       break;
     }
