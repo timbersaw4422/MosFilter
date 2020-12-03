@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-const LandingModelRow = ({setType}) => {
+const LandingModelRow = ({setType, imgs, bottom}) => {
 
   const clickHandler = (id) => {
     $('html, body').animate({
@@ -23,13 +23,13 @@ const LandingModelRow = ({setType}) => {
            <div className="row">
              <div className="card card1" onClick={() => clickHandler(1)}>
                <div className="card__background">
-                 <img src="/img/landing/geizer1.png" alt="Проточные фильтры Гейзер" className="card__img"/>
+                 <img src={imgs[0]} alt="Проточные фильтры Гейзер" className="card__img"/>
                </div>
                <div className="card__title">Стационарные фильтры</div>
              </div>
              <div className="card" onClick={() => clickHandler(2)}>
                <div className="card__background">
-                 <img src="/img/landing/geizer2.png" alt="Системы обратного осмоса Гейзер" className="card__img"/>
+                 <img src={imgs[1]} alt="Системы обратного осмоса Гейзер" className="card__img"/>
                </div>
                <div className="card__title">Системы обратного осмоса</div>
              </div>
@@ -79,9 +79,10 @@ const LandingModelRow = ({setType}) => {
 
         .card__img{
           position:absolute;
-          bottom:0;
+          bottom:${bottom || "0"};
           right:5rem;
           transition:0.3s;
+          height:150px;
         }
 
         .card__title{

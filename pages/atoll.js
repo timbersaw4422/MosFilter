@@ -85,6 +85,8 @@ export default function Atoll(
     {id:1, subtitle:"Комплект картриджей", title:"Atoll A550 | 560 STD", oldPrice:3900, newPrice:3300, img:"/img/landing/atoll-stock1.png", discount:"-15%"}
   ];
 
+  const modelRowImgs=["/img/landing/atoll1.png", "/img/landing/atoll2.png"];
+
   return(
     <div className="landing" style={{background:"#F9FAFC"}}>
       <Head>
@@ -100,7 +102,7 @@ export default function Atoll(
       <LandingNav />
       <LandingHeader name = "Атолл" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
       <LandingAkcii goods = {goods} stocks={stocks}/>
-      <LandingModelRow setType={setType}/>
+      <LandingModelRow setType={setType} imgs = {modelRowImgs} bottom="-30px"/>
       <div className="landing-wrapper">
         <Calculator
               setModalPayload = {setModalPayload}

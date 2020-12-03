@@ -88,6 +88,8 @@ export default function Geizer(
     {id:2, subtitle:"Комплект картриджей", title:"Гейзер «Био»", oldPrice:2550, newPrice:2200, img:"/img/landing/geizer-stock2.png", discount:"-15%"},
   ];
 
+  const modelRowImgs=["/img/landing/geizer1.png", "/img/landing/geizer2.png"];
+
   return(
     <div className="landing" style={{background:"#F9FAFC"}}>
       <Head>
@@ -103,7 +105,7 @@ export default function Geizer(
       <LandingNav />
       <LandingHeader name = "Гейзер" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
       <LandingAkcii goods = {goods} stocks={stocks}/>
-      <LandingModelRow setType={setType}/>
+      <LandingModelRow setType={setType} imgs={modelRowImgs}/>
       <div className="landing-wrapper">
         <Calculator
               setModalPayload = {setModalPayload}
