@@ -5,6 +5,7 @@ import {Component} from "react";
 import Cookies from "js-cookie";
 import cookies from 'next-cookies';
 
+import '../normalize.css';
 import '../global.css';
 import "../media.css";
 

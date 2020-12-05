@@ -69,7 +69,7 @@ const DropDown = ({css,
           transition:0.2s;
           transform:scaleY(${isOpen ? "100%" : "0"});
           transform-origin: top;
-          height:200px;
+          height:150px;
           overflow-y:scroll;
           z-index:50;
           background:#fff;

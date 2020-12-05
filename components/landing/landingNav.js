@@ -166,7 +166,6 @@ const LandingNav = () => {
           background:#fff;
           z-index:98;
           transition:0.3s;
-          display:none;
           overflow-y:scroll;
         }
 
