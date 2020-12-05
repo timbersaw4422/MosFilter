@@ -180,6 +180,10 @@ const LandingAbout = () => {
             margin-bottom:4rem;
           }
 
+          .advantages__left{
+            height:300px;
+          }
+
         }
 
 

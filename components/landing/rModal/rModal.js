@@ -90,6 +90,10 @@ const Modal = ({children,
         z-index:101;
       }
 
+      .modal::-webkit-scrollbar {
+  width:0px;
+}
+
       .modal-cross{
         position:absolute;
         top:5px;
