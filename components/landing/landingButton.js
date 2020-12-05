@@ -1,4 +1,4 @@
-const LandingButton = ({text, css, clickHandler, adaptive850, display1000, phonelink}) => {
+const LandingButton = ({text, css, clickHandler, adaptive850, display1000, phonelink, adaptiveMargin}) => {
 
   return(
     <>
@@ -84,6 +84,13 @@ const LandingButton = ({text, css, clickHandler, adaptive850, display1000, phone
         @media screen and (max-width:850px){
           .button{
             max-width:${adaptive850 ? "100%" : ""};
+          }
+        }
+
+        @media screen and (max-width:600px){
+          .button{
+            margin-left:${adaptiveMargin ? "auto" : ""};
+            margin-right:${adaptiveMargin ? "auto" : ""};
           }
         }
 

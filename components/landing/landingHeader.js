@@ -14,6 +14,7 @@ const LandingHeader = ({name, setModalOpen, setModalType}) => {
            <h1>Замена картриджей в фильтрах для воды «{name}»</h1>
            <div onClick = {btnClickHandler}>
              <LandingButton
+                 adaptiveMargin={true}
                  text="Расчитать стоимость замены"
                  css={{maxWidth:"320px", height:"60px", marginBottom:"10rem"}}
                  />
@@ -50,6 +51,12 @@ const LandingHeader = ({name, setModalOpen, setModalType}) => {
         @media screen and (max-width:1150px){
           .header{
             padding-top:6rem;
+          }
+        }
+
+        @media screen and (max-width:600px){
+          h1{
+            text-align:Center;
           }
         }
       `}</style>

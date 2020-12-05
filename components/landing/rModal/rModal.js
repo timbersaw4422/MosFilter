@@ -97,10 +97,6 @@ const Modal = ({children,
         cursor:pointer;
       }
 
-      .modal::-webkit-scrollbar {
-        width:0px;
-      }
-
       .animate-overlay{
         -webkit-animation: opacityOverlayIn ${overlaySpeed}ms linear forwards;
         animation: opacityOverlayIn ${overlaySpeed}ms linear forwards;
@@ -141,6 +137,17 @@ const Modal = ({children,
         from{opacity:1;transform:translateY(0px)}
         to{opacity:0; transform:translateY(50px)}
       }
+
+      @media screen and (max-width:800px){
+        .modal{
+          max-height:90vh;
+        }
+        .modal-overlay{
+          align-items:flex-end;
+        }
+
+      }
+
 
     `}</style>
     </>
