@@ -1,4 +1,4 @@
-const LandingButton = ({text, css, clickHandler, adaptive850, display1000}) => {
+const LandingButton = ({text, css, clickHandler, adaptive850, display1000, phonelink}) => {
 
   return(
     <>
@@ -32,6 +32,7 @@ const LandingButton = ({text, css, clickHandler, adaptive850, display1000}) => {
           position:relative;
           margin:${css.margin || ""};
           transition:0.2s;
+          padding:${phonelink ? "0 2rem" : ""}
         }
 
         .arrow{

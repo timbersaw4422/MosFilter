@@ -5,7 +5,7 @@ const LandingFooter = () => {
         <div className="landing-wrapper">
 
            <div className="footer__left">
-             <p className="footer__text">© 2012-2020 Сервисня служба «Мос — Фильтр».
+             <p className="footer__text">© 2012-2020 Сервисная служба «Мос — Фильтр».
                 Для жалоб и предложений директор: +7 (495) 744-61-81
              </p>
              <p className="footer__link"> Обработка персональных данных.</p>

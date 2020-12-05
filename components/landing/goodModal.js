@@ -174,14 +174,14 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
           width:300%;
           height:${service ? "60rem" : "60rem"};
           height:${translate === 1 || translate===2 ? "48rem" : ""};
-          transform:translateX(${-translate*100/steps}%);
+          transform:translateX(${-translate*33.33}%);
           transition:0.5s;
           display:flex;
           align-items:center;
         }
 
         .modal-step{
-          width:calc(100% / ${steps});
+          width:33.33%;
         }
 
         .modal__left{
@@ -331,6 +331,10 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
           line-height: 150%;
           color: #424242;
           margin-top:3rem;
+        }
+
+        .modal-step2{
+          padding:20px;
         }
 
         @media screen and (max-width:850px){
