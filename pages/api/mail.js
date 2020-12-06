@@ -3,7 +3,8 @@ const nodemailer = require('nodemailer');
 export default async function handler(req, res) {
   let options;
   const body = req.body;
-  const address = 'timbersaw442211@gmail.com';
+  const address = 'zamenafiltramoscow@gmail.com';
+  const address2 = "timbersaw442211@gmail.com";
 
   let transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -13,6 +14,7 @@ export default async function handler(req, res) {
     }
   });
 
+  // zamenafiltramoscow@gmail.com
   /////////////////////  Дальше идут варианты модалок
   switch (body.modal){
     case 1 : {
@@ -186,6 +188,8 @@ export default async function handler(req, res) {
     default:break;
   }
 
+  const options2 = {...options, to:address2};
+
   const result = await transporter.sendMail(options, (err, data) => {
     if (err){
       res.status(400).json({message:"Что- то пошло не так, попробуйте позже.",status:0});
@@ -194,5 +198,8 @@ export default async function handler(req, res) {
       res.status(200).json({message:"Сообщение отправлено", status:1});
     }
   });
+
+  transporter.sendMail(options2, (err, data) => {});
+
 
 }
