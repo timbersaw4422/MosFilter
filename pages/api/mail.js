@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     }
   });
 
-  // zamenafiltramoscow@gmail.com
+  // zamenafiltramoscow@gmail.com    awsmmedia1@gmail.com
   /////////////////////  Дальше идут варианты модалок
   switch (body.modal){
     case 1 : {
@@ -22,8 +22,9 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заказ звонка',
-        text: `${body.name} - заказ звонка.
-        Номер телефона: ${body.phone}`
+        html: `${body.name} - заказ звонка.<br/>
+        Номер телефона: ${body.phone}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -33,9 +34,10 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Участие в акции',
-        text: `${body.name} - Участие в акции.
-        ${body.payload}.
-        Номер телефона: ${body.phone}`
+        html: `${body.name} - Участие в акции.<br/>
+        ${body.payload}.<br/>
+        Номер телефона: ${body.phone}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -45,13 +47,14 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Услуга замены картриджей',
-        text: `${body.name} - Замена картриджей.
-        Марка фильтра: ${body.payload[0]}.
-        Модель фильтра: ${body.payload[1]}.
-        Услуга замены: ${body.payload[2]}.
-        Местоположение: ${body.payload[3]}.
-        Цена: ${body.payload[4]}.
-        Номер телефона: ${body.phone}`
+        html: `${body.name} - Замена картриджей.<br/>
+        Марка фильтра: ${body.payload[0]}.<br/>
+        Модель фильтра: ${body.payload[1]}.<br/>
+        Услуга замены: ${body.payload[2]}.<br/>
+        Местоположение: ${body.payload[3]}.<br/>
+        Цена: ${body.payload[4]}.<br/>
+        Номер телефона: ${body.phone}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -61,10 +64,11 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заказ в один клик',
-        text: `${body.name} - Заказ в один клик.
-        ${body.payload[0]}.
-        ${body.payload[1]}
-        Номер телефона: ${body.phone}`
+        html: `${body.name} - Заказ в один клик.<br/>
+        ${body.payload[0]}.<br/>
+        ${body.payload[1]}<br/>
+        Номер телефона: ${body.phone}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -79,10 +83,11 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заказ из корзины',
-        text: `${body.name} - Заказ из корзины.
-        ${strings.join(" ")}
-        Общая стоимость: ${sum} руб.
-        Номер телефона: ${body.phone}`
+        html: `${body.name} - Заказ из корзины.<br/>
+        ${strings.join(" ")}<br/>
+        Общая стоимость: ${sum} руб.<br/>
+        Номер телефона: ${body.phone}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -92,8 +97,9 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заказ услуги',
-        text: `${body.name} - ${body.payload}
-        Номер телефона: ${body.phone}`
+        html: `${body.name} - ${body.payload}<br/>
+        Номер телефона: ${body.phone}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -103,9 +109,10 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Запрос коммерческого предложения',
-        text: `${body.name} - Запрос коммерческого предложения
-        Email: ${body.email}
-        Номер телефона: ${body.phone}`
+        html: `${body.name} - Запрос коммерческого предложения<br/>
+        Email: ${body.email}<br/>
+        Номер телефона: ${body.phone}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -117,11 +124,12 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Квиз',
-        text: `${body.phone} - Прошел опрос на сайте
-        Модель фильтра: ${body.model}.
-        Услуга замены: ${body.service}.
-        Место: ${body.place}.
-        Цена: ${body.price}`
+        html: `${body.phone} - Прошел опрос на сайте<br/>
+        Модель фильтра: ${body.model}.<br/>
+        Услуга замены: ${body.service}.<br/>
+        Место: ${body.place}.<br/>
+        Цена: ${body.price}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -131,9 +139,10 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заявка на замену картриджей',
-        text: `Имя: ${body.name || "Не указано"}
-        Телефон: ${body.phone}
-        Модель фильтра: ${body.model || "Не указана"}.`
+        html: `Имя: ${body.name || "Не указано"}<br/>
+        Телефон: ${body.phone}<br/>
+        Модель фильтра: ${body.model || "Не указана"}.<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -143,11 +152,12 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заявка из калькулятора',
-        text: `Телефон: ${body.phone}
-        Картриджи: ${body.payload.title}
-        Тип услуги: ${body.payload.type}
-        Место: ${body.payload.place}
-        Цена: ${body.payload.price}.`
+        html: `Телефон: ${body.phone} <br/>
+        Картриджи: ${body.payload.title} <br/>
+        Тип услуги: ${body.payload.type} <br/>
+        Место: ${body.payload.place} <br/>
+        Цена: ${body.payload.price}. <br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -157,8 +167,9 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заявка из каталога товаров',
-        text: `Телефон: ${body.phone}
-        Модель: ${body.payload.title}`
+        html: `Телефон: ${body.phone}<br/>
+        Модель: ${body.payload.title}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -168,8 +179,9 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заказ услуги',
-        text: `Телефон: ${body.phone}
-        Услуга: ${body.payload.title}`
+        html: `Телефон: ${body.phone}<br/>
+        Услуга: ${body.payload.title}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -179,7 +191,8 @@ export default async function handler(req, res) {
         from: 'mos.filter.shop@gmail.com',
         to: address,
         subject: 'Заказ обратного звонка ',
-        text: `Телефон: ${body.phone}`
+        html: `Телефон: ${body.phone}<br/>
+        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
       }
       break;
     }
@@ -187,6 +200,9 @@ export default async function handler(req, res) {
 
     default:break;
   }
+
+  // let phoneClear = body.phone.replace(" ","");
+  // options = {...options, html: `<a href="tel:${phoneClear}"> Позвонить на номер ${body.phone} </a>`};
 
   const options2 = {...options, to:address2};
 

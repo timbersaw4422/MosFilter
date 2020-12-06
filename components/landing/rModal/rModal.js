@@ -144,7 +144,7 @@ const Modal = ({children,
 
       @media screen and (max-width:800px){
         .modal{
-          max-height:90vh;
+          max-height:90%;
         }
         .modal-overlay{
           align-items:flex-end;
