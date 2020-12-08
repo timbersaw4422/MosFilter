@@ -65,6 +65,7 @@ const LandingGood = (props) => {
           font-size: 16px;
           color: #424242;
           margin-top: 1rem;
+          height:4rem;
         }
 
         .on-stock-title{

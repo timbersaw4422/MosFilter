@@ -34,7 +34,11 @@ export default function Atoll(
   //                     "2":{id:2, title:"Гейзер Другой", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"},
   //                     "3":{id:3, title:"Гейзер Третий", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"}}
 
-  const goods = Object.keys(data).map(good => data[good]);
+  let goods = Object.keys(data).map(good => data[good]);
+  const catalogGoods = [...goods];
+  goods = goods.filter(good =>{
+    return (good.id !== 201 && good.id !== 202 && good.id !== 204)
+  });
 
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState("QUIZ");
@@ -117,7 +121,7 @@ export default function Atoll(
               setModalOpen = {setModalOpen}
               setModalType = {setModalType}
               setActiveGood={setActiveGood}
-              goods={goods}
+              goods={catalogGoods}
               type={type}
               setType={setType}
               />

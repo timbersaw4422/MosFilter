@@ -80,15 +80,15 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
                        clickHandler={() => setTranslate(1)}
                        />
 
+                   <a className="phone-link" href="tel:+74957446181">
                    <LandingButton
+                       phonelink={true}
                        adaptive850={true}
                        text="Заказать по телефону"
-                       css={{maxWidth:"47%", height:"50px", marginBottom:"0rem", background:"#fff", color:"#004990",
+                       css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#fff", color:"#004990",
                        border:"2px solid #004990", after:"#fff", hoverColor:"#424242"}}
-                       clickHandler = {
-                         () => window.open('tel:+74957446181')
-                       }
                        />
+                    </a>
 
                </div>
             </div>
@@ -151,6 +151,12 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
       </div>
 
       <style jsx>{`
+        .phone-link{
+          display:block;
+          text-decoration:none;
+          width:47%;
+        }
+
         .good-modal{
           width:100%;
           overflow:hidden;
@@ -351,6 +357,9 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
           .modal-track{
             height:${service ? "66rem" : "66rem"};
             height:${translate === 1 || translate===2 ? "48rem" : ""};
+          }
+          .phone-link{
+            width:100%;
           }
         }
 
