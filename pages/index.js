@@ -1,4 +1,4 @@
-import Head from "next/head";
+﻿import Head from "next/head";
 import Header from "../components/header/header";
 import MainNav from "../components/mainNav/mainNav";
 import AsideNav from "../components/asideNav/asideNav";
@@ -24,6 +24,7 @@ export default function Index(){
      <div className="content-wrapper">
 
         <Head>
+          <meta name="google-site-verification" content="jmLe-LuXQbN156ErOF-45UxlJxbqChpXSD-m2_CKD6M" />
           <title>Мос - фильтр | Главная</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
