@@ -88,7 +88,8 @@ export default function Geizer(
   const stocks = [
     {id:1, subtitle:"Комплект картриджей", title:"Гейзер «Престиж»", oldPrice:3600, newPrice:2790, img:"/img/landing/geizer-stock1.png", discount:"-15%"},
     {id:2, subtitle:"Комплект картриджей", title:"Гейзер «Био»", oldPrice:2550, newPrice:2200, img:"/img/landing/geizer-stock2.png", discount:"-15%"},
-    {id:3, subtitle:"Комплект картриджей", title:"Atoll A550 | 560 STD", oldPrice:3900, newPrice:3300, img:"/img/landing/atoll-stock1.png", discount:"-15%"}
+    {id:3, subtitle:"Комплект картриджей", title:"Atoll A550 | 560 STD", oldPrice:3900, newPrice:3300, img:"/img/landing/atoll-stock1.png", discount:"-15%"},
+    {id:4, subtitle:"Комплект картриджей", title:"Барьер «Осмо»", oldPrice:4100, newPrice:3300, img:"/img/landing/barier-stock1.png", discount:"-20%"}
   ];
 
   return(
@@ -103,7 +104,7 @@ export default function Geizer(
         <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       </Head>
 
-      <LandingNav />
+      <LandingNav deleteCatalogAndServices={true}/>
       <LandingHeader name = "" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
       <LandingAkcii goods = {goods} stocks={stocks}/>
       <ServicesModelRow />

@@ -3,7 +3,7 @@ import LandingButton from "./landingButton";
 import $ from "jquery";
 import {useState} from "react";
 
-const LandingNav = () => {
+const LandingNav = ({deleteCatalogAndServices}) => {
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const burgerClassNames = ["ham", "hamRotate", "ham4"];
@@ -23,16 +23,20 @@ const LandingNav = () => {
                     scrollTop: $(".calculator").offset().top  // класс объекта к которому приезжаем
                 }, 500);
              }}>Калькулятор</li>
+             { !deleteCatalogAndServices &&
              <li className="link" onClick = {() => {
                $('html, body').animate({
                     scrollTop: $(".landing-catalog").offset().top  // класс объекта к которому приезжаем
                 }, 500);
              }}>Каталог</li>
+             }
+             { !deleteCatalogAndServices &&
              <li className="link" onClick = {() => {
                $('html, body').animate({
                     scrollTop: $(".services").offset().top  // класс объекта к которому приезжаем
                 }, 700);
              }}>Услуги</li>
+           }
              <li className="link" onClick = {() => {
                $('html, body').animate({
                     scrollTop: $(".landing-reviews").offset().top  // класс объекта к которому приезжаем
