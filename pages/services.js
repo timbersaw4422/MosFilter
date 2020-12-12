@@ -116,7 +116,7 @@ export default function Geizer(
               setModalType={setModalType}
               />
       </div>
-      <HowToCalculate />
+      <HowToCalculate setModalOpen = {setModalOpen} setModalType = {setModalType}/>
       <LandingCallToAction goods = {goods}/>
       <LandingReviews
               setModalType={setModalType}
