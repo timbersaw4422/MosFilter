@@ -126,6 +126,7 @@ export default async function handler(req, res) {
         subject: 'Квиз',
         html: `${body.phone} - Прошел опрос на сайте<br/>
         Модель фильтра: ${body.model}.<br/>
+        Тип фильтра: ${body.typeOfFilter || body.model} <br/>
         Услуга замены: ${body.service}.<br/>
         Место: ${body.place}.<br/>
         Цена: ${body.price}<br/>
@@ -154,6 +155,7 @@ export default async function handler(req, res) {
         subject: 'Заявка из калькулятора',
         html: `Телефон: ${body.phone} <br/>
         Картриджи: ${body.payload.title} <br/>
+        Тип картриджей: ${body.payload.typeOfFilter || body.payload.title}<br/>
         Тип услуги: ${body.payload.type} <br/>
         Место: ${body.payload.place} <br/>
         Цена: ${body.payload.price}. <br/>

@@ -1,4 +1,4 @@
-{
+﻿{
   "fullgoods" : {
     "1" : {
       "articul" : "crt-904420",
@@ -940,7 +940,7 @@
       "img" : "/img/goods/206.png",
       "logoImg" : "/img/logos/atoll.png",
       "longDesc" : "Описание",
-      "price" : 1500,
+      "price" : 2150,
       "subtitle" : "Комплект предфильтров для",
       "title" : "Atoll A-550 | 560 STD",
       "type":"осмос",

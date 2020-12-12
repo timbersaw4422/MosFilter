@@ -7,7 +7,7 @@ import Loader from "./loader";
 import {sendMail} from "../../utils/mail";
 
 const Quiz = ({goods, setModalOpen}) => {
-  let modelTitle=""; let radioTitle; let place;
+  let modelTitle=""; let radioTitle; let place; let typeTitle;
   const steps = 6;
   const [activeStep, setActiveStep] = useState(0);
   const [checked, setChecked] = useState(true);
@@ -18,12 +18,9 @@ const Quiz = ({goods, setModalOpen}) => {
     activeModel:0,
     activeRadio:1,
     metro:"",
-    outOfMkad:false
+    outOfMkad:false,
+    activeRadioType:1
   });
-
-  for (let good of goods){
-    if (good.id === quizData.activeModel) modelTitle = good.title;
-  }
 
   switch (quizData.activeRadio){
     case 1:{radioTitle="Нужны картриджи и услуга профессиональной замены"; break;}
@@ -48,19 +45,48 @@ const Quiz = ({goods, setModalOpen}) => {
     setQuizData(prev => ({...prev, activeModel:id}));
   }
 
-  const dropDownOptions = goods.map(good => {
-    return {
-      id:good.id,
-      value:good.title
-    }
-  });
-  // dropDownOptions.push({id:10000, value:"Другая модель"});
+  const dropDownOptions = [{id:1, value:"Atoll"},{id:2, value:"Гейзер"},{id:3, value:"Барьер"}, {id:4, value:"Аквафор"}, {id:5, value:"Platinum-wasser"},
+  {id:6, value:"Другая марка"}];
+
+  const dropDownOptions2 = [{id:1, value:"Проточный фильтр"}, {id:2, value:"Обратный осмос"}];
 
   const calculatePrice = () => {
     let price = 0;
-    goods.forEach(good =>{
-      if (good.id === quizData.activeModel) price+= good.price;
-    });
+    let type;
+    if (quizData.activeRadioType === 1) type = 1; else type=2;
+    switch (quizData.activeModel){
+      case 1:{
+        price += type === 1 ? 1500 : 850;
+        modelTitle="Атолл";
+        break;
+      }
+      case 2:{
+        price += type === 1 ? 2200 : 640;
+        modelTitle="Гейзер";
+        break;
+      }
+      case 3:{
+        price += type === 1 ? 1600 : 800;
+        modelTitle="Барьер";
+        break;
+      }
+      case 4:{
+        price += type === 1 ? 1250 : 640;
+        modelTitle="Аквафор";
+        break;
+      }
+      case 5:{
+        price += type === 1 ? 1500 : 950;
+        modelTitle="Platinum-wasser";
+        break;
+      }
+      case 6:{
+        price += type === 1 ? 1300 : 2800;
+        modelTitle="Не знаю марку";
+        break;
+      }
+      default:break;
+    }
 
     if (quizData.activeRadio === 1) price+=1200;
     else if (quizData.activeRadio === 2) price += 300;
@@ -73,6 +99,37 @@ const Quiz = ({goods, setModalOpen}) => {
     return price;
   }
 
+  switch (quizData.activeModel){
+    case 1:{
+      modelTitle="Атолл";
+      break;
+    }
+    case 2:{
+      modelTitle="Гейзер";
+      break;
+    }
+    case 3:{
+      modelTitle="Барьер";
+      break;
+    }
+    case 4:{
+      modelTitle="Аквафор";
+      break;
+    }
+    case 5:{
+      modelTitle="Platinum-wasser";
+      break;
+    }
+    case 6:{
+      modelTitle="Не знаю марку";
+      break;
+    }
+    default:break;
+  }
+
+  if (quizData.activeRadioType === 1) typeTitle = "Проточный фильтр";
+  else typeTitle = "Обратный осмос";
+
   const inputPhone = useRef();
   let isPhoneValid;
   if (!inputPhone.current) isPhoneValid=false;
@@ -84,9 +141,9 @@ const Quiz = ({goods, setModalOpen}) => {
     if (isPhoneValid){
       setLoading(true);
       sendMail(
-        {phone:phoneInput, model:modelTitle, service:radioTitle, place:place, modal:11, payload:"1", price:calculatePrice()}
+        {phone:phoneInput, model:modelTitle, typeOfFilter:typeTitle, service:radioTitle, place:place, modal:11, payload:"1", price:calculatePrice()}
       ).then(() => {
-        setActiveStep(6);
+        setActiveStep(7);
       });
     }
   }
@@ -112,7 +169,7 @@ const Quiz = ({goods, setModalOpen}) => {
 
             <div className="quiz__step quiz__step0">
                <h3 className="quiz__step-title" style={{margin:"0 auto 4rem auto", paddingTop:"8rem", textAlign:"center"}}>
-               Внимательно ответьте на 3 коротких вопроса и получите точную стоимость замены картриджей на вашем фильтре</h3>
+               Внимательно ответьте на 4 коротких вопроса и узнайте стоимость замены картриджей на вашем фильтре</h3>
                <div style = {{opacity:quizData.policy ? "1" : "0.5"}}>
                <QuizBtn
                    setActiveStep={setActiveStep}
@@ -136,7 +193,7 @@ const Quiz = ({goods, setModalOpen}) => {
             </div>
 
             <div className="quiz__step quiz__step1">
-               <h3 className="quiz__step-title" style={{marginBottom:"2.4rem"}}> 1. Выберите модель вашего фильтра</h3>
+               <h3 className="quiz__step-title" style={{marginBottom:"2.4rem"}}> 1. Выберите марку вашего фильтра</h3>
                <div className="quiz__filter-models">
                    <DropDown
                      css={{
@@ -145,7 +202,7 @@ const Quiz = ({goods, setModalOpen}) => {
                        height:"6rem",
                        margin:"0 0 2.5rem 0"
                      }}
-                     placeholder="Модель фильтра"
+                     placeholder="Марка фильтра"
                      options={dropDownOptions}
                      defaultId = {1}
                      callBack = {onChangeModelDropDown}
@@ -172,7 +229,37 @@ const Quiz = ({goods, setModalOpen}) => {
             </div>
 
             <div className="quiz__step quiz__step2">
-               <h3 className="quiz__step-title" style={{marginBottom:"3.9rem"}}> 2. Укажите вариант предоставления услуг</h3>
+               <h3 className="quiz__step-title" style={{marginBottom:"2.4rem"}}> 2. Выберите тип вашего фильтра</h3>
+               <div className="quiz__variant" onClick = {() => setQuizData(prev => ({...prev, activeRadioType:1}))}>
+                 <QuizRadio id={1} activeRadio = {quizData.activeRadioType} setQuizData={setQuizData}/>
+                 <span>Проточный фильр</span>
+               </div>
+               <div className="quiz__variant" onClick = {() => setQuizData(prev => ({...prev, activeRadioType:2}))}>
+                 <QuizRadio id={2} activeRadio = {quizData.activeRadioType} setQuizData={setQuizData}/>
+                 <span>Обратный осмос</span>
+               </div>
+               <div className="quiz__button-group">
+                 <QuizBtn
+                     setActiveStep={setActiveStep}
+                     to = {1}
+                     css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
+                     text="Назад"
+                     reverse={true}
+                     policy={quizData.policy}
+                 />
+                 <QuizBtn
+                     setActiveStep={setActiveStep}
+                     to = {3}
+                     css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
+                     text="Далее"
+                     reverse={false}
+                     policy={quizData.activeModel}
+                 />
+               </div>
+            </div>
+
+            <div className="quiz__step quiz__step3">
+               <h3 className="quiz__step-title" style={{marginBottom:"3.9rem"}}> 3. Укажите вариант предоставления услуг</h3>
                <div className="quiz__variants">
                  <div className="quiz__variant" onClick = {() => setQuizData(prev => ({...prev, activeRadio:1}))}>
                    <QuizRadio id={1} activeRadio = {quizData.activeRadio} setQuizData={setQuizData}/>
@@ -190,7 +277,7 @@ const Quiz = ({goods, setModalOpen}) => {
                <div className="quiz__button-group">
                  <QuizBtn
                      setActiveStep={setActiveStep}
-                     to = {1}
+                     to = {2}
                      css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
                      text="Назад"
                      reverse={true}
@@ -198,7 +285,7 @@ const Quiz = ({goods, setModalOpen}) => {
                  />
                  <QuizBtn
                      setActiveStep={setActiveStep}
-                     to = {3}
+                     to = {4}
                      css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
                      text="Далее"
                      reverse={false}
@@ -207,8 +294,8 @@ const Quiz = ({goods, setModalOpen}) => {
                </div>
             </div>
 
-            <div className="quiz__step quiz__step3">
-               <h3 className="quiz__step-title" style={{marginBottom:"3.9rem"}}> 3. Укажите ближайшую к вам станицию метро</h3>
+            <div className="quiz__step quiz__step4">
+               <h3 className="quiz__step-title" style={{marginBottom:"3.9rem"}}> 4. Укажите ближайшую к вам станицию метро</h3>
                <div className="quiz__metro">
                   <input type="text"
                     onChange = {onChangeMetroInput}
@@ -226,35 +313,6 @@ const Quiz = ({goods, setModalOpen}) => {
                <div className="quiz__button-group">
                  <QuizBtn
                      setActiveStep={setActiveStep}
-                     to = {2}
-                     css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
-                     text="Назад"
-                     reverse={true}
-                     policy={quizData.policy}
-                 />
-                 <QuizBtn
-                     setActiveStep={setActiveStep}
-                     to = {4}
-                     css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
-                     text="Далее"
-                     reverse={false}
-                     policy={quizData.outOfMkad || quizData.metro}
-                 />
-               </div>
-            </div>
-
-            <div className="quiz__step quiz__step4">
-               <h3 className="quiz__step-title" style={{marginBottom:"1.4rem"}}> 4. Детали заказа</h3>
-               <div className="quiz__details">
-                  <div className="details__shape"></div>
-                  <p className="details__text">• Модель фильтра: <span>{modelTitle}</span></p>
-                  <p className="details__text">• Вариант услуги: <span>{radioTitle}</span></p>
-                  <p className="details__text" style={{marginBottom:"4.7rem"}}>• Местоположение: <span>{place}</span></p>
-               </div>
-               <p className="quiz__pice">Стоимость: &nbsp;<span>{calculatePrice()} <i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></span></p>
-               <div className="quiz__button-group">
-                 <QuizBtn
-                     setActiveStep={setActiveStep}
                      to = {3}
                      css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
                      text="Назад"
@@ -264,6 +322,36 @@ const Quiz = ({goods, setModalOpen}) => {
                  <QuizBtn
                      setActiveStep={setActiveStep}
                      to = {5}
+                     css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
+                     text="Далее"
+                     reverse={false}
+                     policy={quizData.outOfMkad || quizData.metro}
+                 />
+               </div>
+            </div>
+
+            <div className="quiz__step quiz__step5">
+               <h3 className="quiz__step-title" style={{marginBottom:"1.4rem"}}> 5. Детали заказа</h3>
+               <div className="quiz__details">
+                  <div className="details__shape"></div>
+                  <p className="details__text">• Марка фильтра: <span>{modelTitle}</span></p>
+                  <p className="details__text">• Тип фильтра: <span>{typeTitle}</span></p>
+                  <p className="details__text">• Вариант услуги: <span>{radioTitle}</span></p>
+                  <p className="details__text" style={{marginBottom:"4.7rem"}}>• Местоположение: <span>{place}</span></p>
+               </div>
+               <p className="quiz__pice">Стоимость: &nbsp;<span>{calculatePrice()} <i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></span></p>
+               <div className="quiz__button-group">
+                 <QuizBtn
+                     setActiveStep={setActiveStep}
+                     to = {4}
+                     css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
+                     text="Назад"
+                     reverse={true}
+                     policy={quizData.policy}
+                 />
+                 <QuizBtn
+                     setActiveStep={setActiveStep}
+                     to = {6}
                      css={{width:"20.5rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 3rem", margin:"0"}}
                      text="Оформить заказ"
                      reverse={false}
@@ -272,8 +360,8 @@ const Quiz = ({goods, setModalOpen}) => {
                </div>
             </div>
 
-            <div className="quiz__step quiz__step5">
-               <h3 className="quiz__step-title" style={{marginBottom:"4rem"}}> 5. Укажите свой номер телефона, наш мастер свяжется с вами через 5 минут</h3>
+            <div className="quiz__step quiz__step6">
+               <h3 className="quiz__step-title" style={{marginBottom:"4rem"}}> 6. Укажите свой номер телефона, наш мастер свяжется с вами через 5 минут</h3>
 
                 <PhoneInput ref = {inputPhone}
                   placeholder="Enter phone number"
@@ -293,7 +381,7 @@ const Quiz = ({goods, setModalOpen}) => {
                <div className="quiz__button-group">
                  <QuizBtn
                      setActiveStep={setActiveStep}
-                     to = {4}
+                     to = {5}
                      css={{width:"13rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 2rem", margin:"0"}}
                      text="Назад"
                      reverse={true}
@@ -304,7 +392,7 @@ const Quiz = ({goods, setModalOpen}) => {
                      loading ? <Loader margin="0 auto"/>
                              : <QuizBtn
                                  setActiveStep={setActiveStep}
-                                 to = {5}
+                                 to = {7}
                                  css={{width:"20.5rem", background:"#FF652E", textColor:"#fff", arrowFill:"#fff", padding:"0 3rem", margin:"0",
                                        border:"1px solid #FF652E"}}
                                  text="Отправить заявку"
@@ -318,7 +406,7 @@ const Quiz = ({goods, setModalOpen}) => {
                </div>
             </div>
 
-            <div className="quiz__step quiz__step6">
+            <div className="quiz__step quiz__step7">
                <h3 className="quiz__step-title" style={{margin:"8rem 0 3.5rem 0", textAlign:"center"}}>
                Спасибо за заявку! Наш специалист уже спешит к телефону<br />Пожалуйста оставайтесь на связи
                </h3>
@@ -326,7 +414,7 @@ const Quiz = ({goods, setModalOpen}) => {
                <div className="btn-wrap" onClick={() => setModalOpen(false)}>
                <QuizBtn
                    setActiveStep={setActiveStep}
-                   to = {6}
+                   to = {7}
                    css={{width:"23rem", background:"#fff", textColor:"#424242", arrowFill:"#004990", padding:"0 4rem", margin:"0 auto 5.3rem auto"}}
                    text="Вернуться к сайту"
                    reverse={false}
@@ -348,7 +436,7 @@ const Quiz = ({goods, setModalOpen}) => {
            border: 1px solid #B7CCE0;
          }
 
-         .quiz__step1, .quiz__step2, .quiz__step3, .quiz__step4, .quiz__step5{
+         .quiz__step1, .quiz__step2, .quiz__step3, .quiz__step4, .quiz__step5, .quiz__step6{
            padding:3.7rem 4.5rem 0 4.5rem;
          }
 
@@ -527,7 +615,7 @@ const Quiz = ({goods, setModalOpen}) => {
             max-width:388px;
             height:1px;
             background: #004990;
-            margin-bottom:4rem;
+            margin-bottom:2rem;
           }
 
           .details__text{
@@ -575,7 +663,7 @@ const Quiz = ({goods, setModalOpen}) => {
           }
 
           @media screen and (max-width:600px){
-            .quiz__step1, .quiz__step2, .quiz__step3, .quiz__step4, .quiz__step5{
+            .quiz__step1, .quiz__step2, .quiz__step3, .quiz__step4, .quiz__step5, .quiz__step6{
               padding:1rem 1rem 0 1rem;
             }
             .quiz__button-group{

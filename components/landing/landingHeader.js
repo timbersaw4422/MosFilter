@@ -11,7 +11,7 @@ const LandingHeader = ({name, setModalOpen, setModalType}) => {
     <>
       <div className="header">
         <div className="landing-wrapper">
-           <h1>Замена картриджей в фильтрах для воды «{name}»</h1>
+           <h1>Замена картриджей в фильтрах для воды {name}</h1>
            <div onClick = {btnClickHandler}>
              <LandingButton
                  adaptiveMargin={true}

@@ -30,7 +30,7 @@ const Calculator = ({initialBrand, initialOption1}) => {
         if (type === 1) price += 1500; else price += 950; break;
       }
       case "Затрудняюсь ответить":{
-        if (type === 1) price += 1500; else price += 800; break;
+        if (type === 1) price += 1300; else price += 2800; break;
       }
 
       default:break;
@@ -40,7 +40,7 @@ const Calculator = ({initialBrand, initialOption1}) => {
       if (option4 === "В пределах МКАД") price += 1200; else price += 1500;
     }
     else {
-      if (option4 === "В пределах МКАД") price += 300; else price += 500;
+      if (option4 === "В пределах МКАД") price += 300; else price += 600;
     }
 
      return price;

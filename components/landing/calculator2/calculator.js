@@ -2,39 +2,52 @@ import CalculatorChoise from "./calculatorChoise";
 import LandingButton from "../landingButton";
 import {useState} from "react";
 
-const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModalOpen, isOption4, setModalPayload}) => {
+const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModalOpen, setModalPayload}) => {
 
-  const [option1, setOption1] = useState(initialOption1);
-  const [option2, setOption2] = useState("В пределах МКАД");
+  const [option1, setOption1] = useState("Atoll");
+  const [option2, setOption2] = useState("Проточный фильтр");
   const [option3, setOption3] = useState("Меняю самостоятельно");
-  const [option4, setOption4] = useState("Оригинал");
+  const [option4, setOption4] = useState("В пределах МКАД");
   const [activeModel, setActiveModel] = useState(goods[0].id);
 
-  const modelOptions = goods.map(good => {
-    return {
-      id:good.id, text:good.title
-    }
-  });
+  const options1 = [
+    {id:1, text:"Atoll"},{id:2, text:"Гейзер"},{id:3, text:"Барьер"}, {id:4, text:"Аквафор"}, {id:5, text:"Platinum-wasser"},
+    {id:6, text:"Другая марка"}
+  ]
   // modelOptions.push({id:10000, text:"Другая модель"});
 
   const calculatePrice = () => {
     let price=0;
     let type;
+    if (option2 === "Проточный фильтр") type = 1; else type = 2;
+    switch (option1){
+      case "Atoll":{
+        if (type === 1) price += 1500; else price += 850; break;
+      }
+      case "Гейзер":{
+        if (type === 1) price += 2200; else price += 640; break;
+      }
+      case "Аквафор":{
+        if (type === 1) price += 1250; else price += 640; break;
+      }
+      case "Барьер":{
+        if (type === 1) price += 1600; else price += 800; break;
+      }
+      case "Platinum-wasser":{
+        if (type === 1) price += 1500; else price += 950; break;
+      }
+      case "Другая марка":{
+        if (type === 1) price += 1300; else price += 2800; break;
+      }
 
-    goods.forEach(good =>{
-      if (good.id === activeModel) price += good.price;
-    });
-
-    // добавить для варианта другая модель
-    //if (activeModel === 10000) price +=
-
-    if (option2 === "В пределах МКАД") type = 1; else type = 2;
+      default:break;
+    }
 
     if (option3 === "Меняет мастер"){
-      if (type === 1) price += 1200; else price += 1500;
+      if (option4 === "В пределах МКАД") price += 1200; else price += 1500;
     }
     else {
-      if (type === 1) price += 300; else price += 500;
+      if (option4 === "В пределах МКАД") price += 300; else price += 600;
     }
 
      return price;
@@ -43,26 +56,26 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
   const price = calculatePrice();
 
   const calculatorChoises = [
-    {id:1, title: "Выберите модель вашего фильтра", placeholder:initialOption1, setOption:setOption1, initialOption1:initialOption1,
-    options:modelOptions, height:"30rem", setActiveModel:setActiveModel
+    {id:1, title: "Выберите марку вашего фильтра", placeholder:"Atoll", setOption:setOption1, initialOption1:initialOption1,
+    options:options1, height:"30rem", setActiveModel:setActiveModel
     },
-    {id:2, title: "Ваше местоположение", placeholder:"В пределах МКАД", setOption:setOption2, setActiveModel:null,
+    {id:2, title: "Выберите тип вашего фильтра", placeholder:"Проточный фильтр", setOption:setOption2, setActiveModel:null,
     options:[
-      {id:1, text:"В пределах МКАД"},{id:2, text:"За пределами МКАД"}
+      {id:1, text:"Проточный фильтр"},{id:2, text:"Обратный осмос"}
     ]
     },
     {id:3, title: "Замена картриджей", placeholder:"Меняю самостоятельно", setOption:setOption3, setActiveModel:null,
     options:[
       {id:1, text:"Меняю самостоятельно"},{id:2, text:"Меняет мастер"}
     ]
-    }
+  },
+  {id:4, title: "Местоположение", placeholder:"В пределах МКАД", setOption:setOption4, setActiveModel:null,
+  options:[
+    {id:1, text:"В пределах МКАД"},{id:2, text:"За пределами МКАД"}
+  ]
+  }
   ];
 
-  if (isOption4) calculatorChoises.push({id:4, title: "Картриджи",  placeholder:"Оригинал", setOption:setOption4,
-    options:[
-      {id:1, text:"Оригинал"},{id:2, text:"Аналоги"}
-    ]
-  });
 
   return(
     <div className="calculator">
@@ -101,7 +114,8 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
                       setModalPayload({
                         modalType:13,
                         title:option1,
-                        place:option2,
+                        typeOfFilter:option2,
+                        place:option4,
                         type:option3,
                         price
                       });
