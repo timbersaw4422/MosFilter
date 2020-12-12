@@ -81,7 +81,7 @@ const Quiz = ({goods, setModalOpen}) => {
         break;
       }
       case 6:{
-        price += type === 1 ? 1300 : 2800;
+        price += type === 1 ? 1300 : 1450;
         modelTitle="Не знаю марку";
         break;
       }

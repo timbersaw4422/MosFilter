@@ -30,7 +30,7 @@ const Calculator = ({initialBrand, initialOption1}) => {
         if (type === 1) price += 1500; else price += 950; break;
       }
       case "Затрудняюсь ответить":{
-        if (type === 1) price += 1300; else price += 2800; break;
+        if (type === 1) price += 1300; else price += 1450; break;
       }
 
       default:break;
