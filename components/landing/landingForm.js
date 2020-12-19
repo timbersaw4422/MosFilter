@@ -147,7 +147,7 @@ const LandingForm = ({css, margin, goods, media}) => {
           top:${css.top || "none"};
           right:${css.right || "none"};
           overflow:hidden;
-          z-index:10;
+          z-index:20;
         }
 
         .form__track{

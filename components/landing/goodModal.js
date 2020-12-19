@@ -346,6 +346,10 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
         @media screen and (max-width:850px){
           .modal__right{
             width:60%;
+            padding:4rem;
+          }
+          .ololo{
+            height:20rem;
           }
           .modal__left{
             width:40%;
@@ -355,7 +359,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
             height:12rem;
           }
           .modal-track{
-            height:${service ? "66rem" : "66rem"};
+            height:72rem;
             height:${translate === 1 || translate===2 ? "48rem" : ""};
           }
           .phone-link{
@@ -374,7 +378,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
             height:30rem;
           }
           .modal-track{
-            height:${service ? "83rem" : "80rem"};
+            height:${service ? "90rem" : "87rem"};
             height:${translate === 1 || translate===2 ? "48rem" : ""};
           }
           .modal__right{

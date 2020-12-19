@@ -90,9 +90,21 @@ const Modal = ({children,
         z-index:101;
       }
 
+
+
       .modal::-webkit-scrollbar {
-  width:0px;
-}
+      width:4px;
+      height: 8px;
+      background-color: #fff;
+      }
+
+      .modal::-webkit-scrollbar-thumb {
+      background-color: #004990;
+      }
+
+      .modal::-webkit-scrollbar-thumb:hover {
+      background-color: #253861;
+      }
 
       .modal-cross{
         position:absolute;
