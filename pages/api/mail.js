@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         subject: 'Заказ звонка',
         html: `${body.name} - заказ звонка.<br/>
         Номер телефона: ${body.phone}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         html: `${body.name} - Участие в акции.<br/>
         ${body.payload}.<br/>
         Номер телефона: ${body.phone}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -54,7 +54,7 @@ export default async function handler(req, res) {
         Местоположение: ${body.payload[3]}.<br/>
         Цена: ${body.payload[4]}.<br/>
         Номер телефона: ${body.phone}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -68,7 +68,7 @@ export default async function handler(req, res) {
         ${body.payload[0]}.<br/>
         ${body.payload[1]}<br/>
         Номер телефона: ${body.phone}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -87,7 +87,7 @@ export default async function handler(req, res) {
         ${strings.join(" ")}<br/>
         Общая стоимость: ${sum} руб.<br/>
         Номер телефона: ${body.phone}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -99,7 +99,7 @@ export default async function handler(req, res) {
         subject: 'Заказ услуги',
         html: `${body.name} - ${body.payload}<br/>
         Номер телефона: ${body.phone}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -112,7 +112,7 @@ export default async function handler(req, res) {
         html: `${body.name} - Запрос коммерческого предложения<br/>
         Email: ${body.email}<br/>
         Номер телефона: ${body.phone}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -130,7 +130,7 @@ export default async function handler(req, res) {
         Услуга замены: ${body.service}.<br/>
         Место: ${body.place}.<br/>
         Цена: ${body.price}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -143,7 +143,7 @@ export default async function handler(req, res) {
         html: `Имя: ${body.name || "Не указано"}<br/>
         Телефон: ${body.phone}<br/>
         Модель фильтра: ${body.model || "Не указана"}.<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -159,7 +159,7 @@ export default async function handler(req, res) {
         Тип услуги: ${body.payload.type} <br/>
         Место: ${body.payload.place} <br/>
         Цена: ${body.payload.price}. <br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -171,7 +171,7 @@ export default async function handler(req, res) {
         subject: 'Заявка из каталога товаров',
         html: `Телефон: ${body.phone}<br/>
         Модель: ${body.payload.title}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -183,7 +183,7 @@ export default async function handler(req, res) {
         subject: 'Заказ услуги',
         html: `Телефон: ${body.phone}<br/>
         Услуга: ${body.payload.title}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -194,7 +194,7 @@ export default async function handler(req, res) {
         to: address,
         subject: 'Заказ обратного звонка ',
         html: `Телефон: ${body.phone}<br/>
-        <a href="tel:${body.phone}"> Позвонить на номер ${body.phone} </a>`
+        <a href="tel:${body.phone}">  ${body.phone} </a>`
       }
       break;
     }
@@ -204,7 +204,7 @@ export default async function handler(req, res) {
   }
 
   // let phoneClear = body.phone.replace(" ","");
-  // options = {...options, html: `<a href="tel:${phoneClear}"> Позвонить на номер ${body.phone} </a>`};
+  // options = {...options, html: `<a href="tel:${phoneClear}">  ${body.phone} </a>`};
 
   const options2 = {...options, to:address2};
 
