@@ -26,7 +26,7 @@ export default function MyApp({ Component, pageProps, isLoaderShowed }) {
      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-     ym(55721440, "init", {
+     ym(70667698, "init", {
           clickmap:true,
           trackLinks:true,
           accurateTrackBounce:true,
