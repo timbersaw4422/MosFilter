@@ -16,8 +16,15 @@ import BrandSlider from "../components/brandSlider/brandsSlider";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Preloader from "../components/preloader";
+import {useEffect} from "react";
+import ym from 'react-yandex-metrika';
 
 export default function Index(){
+
+  useEffect(() => {
+    ym('hit', '/');
+  }, []);
+
   return(
     <>
      <div className="content-wrapper">
