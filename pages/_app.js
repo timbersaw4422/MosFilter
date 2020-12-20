@@ -5,8 +5,8 @@ import {Component} from "react";
 import Cookies from "js-cookie";
 import cookies from 'next-cookies';
 import {useEffect} from "react";
+import {initAnalytics} from "../analytics/analytics";
 
-import { YMInitializer } from 'react-yandex-metrika';
 import '../normalize.css';
 import '../global.css';
 import "../media.css";
@@ -19,11 +19,11 @@ export async function getServerSideProps(ctx) {
 }
 
 export default function MyApp({ Component, pageProps, isLoaderShowed }) {
-
   // <--Метрика-->
-
-  <YMInitializer accounts={[70667698]} options={{webvisor: true}}/>
-
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+  
   // <--Метрика-->
 
   return (

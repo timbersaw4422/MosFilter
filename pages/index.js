@@ -17,7 +17,6 @@ import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Preloader from "../components/preloader";
 import {useEffect} from "react";
-import ym from 'react-yandex-metrika';
 
 export default function Index(){
 
@@ -32,7 +31,7 @@ export default function Index(){
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Компания «Мос - Фильтр» занимается продажей и заменой картриджей и фильтров для фильтров воды, а также их установкой и ремонтом." />
           <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" as="style"
-          onload="this.rel='stylesheet'" media="all"
+          onLoad="this.rel='stylesheet'" media="all"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
           crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
