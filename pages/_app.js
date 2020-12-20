@@ -4,8 +4,6 @@ import Preloader from "../components/preloader";
 import {Component} from "react";
 import Cookies from "js-cookie";
 import cookies from 'next-cookies';
-import {useEffect} from "react";
-import {initAnalytics} from "../analytics/analytics";
 
 import '../normalize.css';
 import '../global.css';
@@ -19,12 +17,6 @@ export async function getServerSideProps(ctx) {
 }
 
 export default function MyApp({ Component, pageProps, isLoaderShowed }) {
-  // <--Метрика-->
-  useEffect(() => {
-    initAnalytics();
-  }, []);
-  
-  // <--Метрика-->
 
   return (
     <>
