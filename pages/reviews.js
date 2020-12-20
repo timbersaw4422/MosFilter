@@ -8,15 +8,9 @@ import Footer from "../components/footer/footer";
 import Path from "../components/path";
 import AllReviews from "../components/reviews/allReviews";
 import BrandSlider from "../components/brandSlider/brandsSlider";
-import {useEffect} from "react";
-import {initAnalytics} from "../analytics/analytics";
-import {useRouter} from "next/router";
 
 export default function Reviews(){
-  const router = useRouter();
-  useEffect(() => {
-    initAnalytics(router.route);
-  });
+
   return(
     <>
      <div className="content-wrapper">

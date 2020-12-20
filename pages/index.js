@@ -16,16 +16,8 @@ import BrandSlider from "../components/brandSlider/brandsSlider";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Preloader from "../components/preloader";
-import {useEffect} from "react";
-import {initAnalytics} from "../analytics/analytics";
-import {useRouter} from "next/router";
 
 export default function Index(){
-  
-  const router = useRouter();
-  useEffect(() => {
-    initAnalytics(router.route);
-  });
 
   return(
     <>

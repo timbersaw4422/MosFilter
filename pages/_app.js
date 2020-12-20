@@ -9,6 +9,9 @@ import '../normalize.css';
 import '../global.css';
 import "../media.css";
 
+import Router from "next/router";
+import withYM from "next-ym";
+
 export async function getServerSideProps(ctx) {
   let { isLoaderShowed } = cookies(ctx);
   return {
@@ -16,7 +19,7 @@ export async function getServerSideProps(ctx) {
   }
 }
 
-export default function MyApp({ Component, pageProps, isLoaderShowed }) {
+const MyApp = ({ Component, pageProps, isLoaderShowed }) => {
 
   return (
     <>
@@ -31,3 +34,5 @@ export default function MyApp({ Component, pageProps, isLoaderShowed }) {
     </>
   )
 }
+
+export default withYM("70667698", Router)(MyApp)

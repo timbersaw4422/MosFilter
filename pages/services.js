@@ -15,9 +15,7 @@ import LandingNav from "../components/landing/landingNav";
 import HowToCalculate from "../components/landing/howToCalculate";
 import {useState} from "react";
 import Head from "next/head";
-import {useEffect} from "react";
-import {initAnalytics} from "../analytics/analytics";
-import {useRouter} from "next/router";
+
 
 export async function getServerSideProps(context) {
   const res = await fetch('https://mosfilt.firebaseio.com/goods.json?orderBy="categoryId"&equalTo=3');
@@ -30,11 +28,6 @@ export async function getServerSideProps(context) {
 export default function Geizer(
   {data}
 ){
-
-  const router = useRouter();
-  useEffect(() => {
-    initAnalytics(router.route);
-  });
 
   // const data = {"1":{id:1, title:"Гейзер Какой то", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png",
   //                     discount:10},
