@@ -7,8 +7,16 @@ import Footer from "../components/footer/footer";
 import Path from "../components/path";
 import ContactsTop from "../components/contacts/contactsTop";
 import Contacts from "../components/contacts/contacts";
+import {useEffect} from "react";
+import {initAnalytics} from "../analytics/analytics";
+import {useRouter} from "next/router";
 
 export default function contactsPage(){
+
+  const router = useRouter();
+  useEffect(() => {
+    initAnalytics(router.route);
+  });
 
   return(
     <>

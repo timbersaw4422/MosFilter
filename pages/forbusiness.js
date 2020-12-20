@@ -8,8 +8,17 @@ import Path from "../components/path";
 import ForBusiness from "../components/forbusiness/forbusiness";
 import BrandSlider from "../components/brandSlider/brandsSlider";
 import Contacts from "../components/contacts/contacts";
+import {useEffect} from "react";
+import {initAnalytics} from "../analytics/analytics";
+import {useRouter} from "next/router";
 
 export default function forBusiness(){
+
+  const router = useRouter();
+  useEffect(() => {
+    initAnalytics(router.route);
+  });
+  
   return(
     <>
      <div className="content-wrapper">

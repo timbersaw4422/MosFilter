@@ -7,8 +7,17 @@ import Footer from "../components/footer/footer";
 import Path from "../components/path";
 import Payment from "../components/payment";
 import Contacts from "../components/contacts/contacts";
+import {useEffect} from "react";
+import {initAnalytics} from "../analytics/analytics";
+import {useRouter} from "next/router";
 
 export default function AboutPayment(){
+
+  const router = useRouter();
+  useEffect(() => {
+    initAnalytics(router.route);
+  });
+
   return(
     <>
      <div className="content-wrapper">

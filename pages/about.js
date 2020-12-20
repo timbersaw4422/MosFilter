@@ -8,8 +8,16 @@ import Footer from "../components/footer/footer";
 import Path from "../components/path";
 import AboutInner from "../components/about/about";
 import Last2Rewiews from "../components/reviews/last2Reviews";
+import {useEffect} from "react";
+import {initAnalytics} from "../analytics/analytics";
+import {useRouter} from "next/router";
 
 export default function About(){
+
+  const router = useRouter();
+  useEffect(() => {
+    initAnalytics(router.route);
+  });
   return(
     <>
      <div className="content-wrapper">

@@ -6,8 +6,17 @@ import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Path from "../components/path";
 import Posts from "../components/posts/posts";
+import {useEffect} from "react";
+import {initAnalytics} from "../analytics/analytics";
+import {useRouter} from "next/router";
 
 export default function postsPage(){
+
+  const router = useRouter();
+  useEffect(() => {
+    initAnalytics(router.route);
+  });
+
   return(
     <>
      <div className="content-wrapper">
