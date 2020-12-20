@@ -7,7 +7,7 @@ const LandingCallToAction = ({goods}) => {
           <div className="landing-wrapper">
             <div className="call-to-action__main">
                <LandingForm goods = {goods} margin = "0 0 0 auto" css={{}} media={2}/>
-               <p className="info-subtitle2">В пределах МКАД выезд мастера на замену осуществляется бесплатно</p>
+               <p className="info-subtitle2"><span>В пределах МКАД выезд мастера на замену осуществляется бесплатно</span></p>
             </div>
             <div className="info">
                 <p className="info-caption">Режим работы</p>
@@ -47,8 +47,10 @@ const LandingCallToAction = ({goods}) => {
           display:none;
         }
 
-        .info-subtitle2:after{
-
+        .info-subtitle2 span{
+          display:block;
+          padding-left:13px;
+          border-left:1px solid #fff;
         }
 
         .info{
@@ -116,6 +118,8 @@ const LandingCallToAction = ({goods}) => {
             display:block;
           }
         }
+
+
 
 
         `}</style>

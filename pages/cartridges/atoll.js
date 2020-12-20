@@ -53,7 +53,7 @@ export default function cartridgesAtoll({data}){
                  </div>
                  <h2 className="filters__title">Комплекты картриджей Atoll</h2>
 
-                 <Catalog goods={data} />
+                 <Catalog goods={data} brand="Atoll"/>
                  <div className="placeholder"></div>
                  <Calculator initialBrand={"Atoll"}/>
                  <Advantages />

@@ -53,7 +53,7 @@ export default function cartridgesGeizer({data}){
                  </div>
                  <h2 className="filters__title">Комплекты картриджей Гейзер</h2>
 
-                 <Catalog goods={data} />
+                 <Catalog goods={data} brand="Geizer"/>
                  <div className="placeholder"></div>
                  <Calculator initialBrand={"Гейзер"} initialOption1={2}/>
                  <Advantages />

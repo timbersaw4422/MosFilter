@@ -1,11 +1,24 @@
 import Good from "../good/good";
 
-const Catalog = ({goods}) => {
+const Catalog = ({goods, brand}) => {
 
   const goodsArray = [];
 
   for (let id in goods){
     goodsArray.push(goods[id])
+  }
+
+  if (brand==="Atoll") {
+    goodsArray.pop();
+    goodsArray.pop();
+    goodsArray.pop()
+  }
+
+  if (brand==="Geizer") {
+    goodsArray.pop();
+    goodsArray.pop();
+    goodsArray.pop();
+    goodsArray.pop();
   }
 
   const goodsToHtml = goodsArray.map((good, index) => {

@@ -28,7 +28,7 @@ export default function Index(){
           <title>Мос - фильтр | Главная</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <meta name="description" content="Компания «Мос - Фильтр» занимается продажей и заменой картриджей для фильтров воды, а также их установкой и ремонтом. Мы работаем по данному направлению с 2012 года за время своего существования обслужили более 30 000 клиентов во всех районах Москвы и Подмосковья." />        
+          <meta name="description" content="Компания «Мос - Фильтр» занимается продажей и заменой картриджей и фильтров для фильтров воды, а также их установкой и ремонтом." />        
           <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" as="style"
           onload="this.rel='stylesheet'" media="all"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
