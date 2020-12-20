@@ -115,6 +115,16 @@ const LandingModelRow = ({setType, imgs, bottom}) => {
             margin-bottom:4rem;
           }
         }
+
+        @media screen and (max-width:500px){
+          .subtitle{
+            margin-bottom:4rem;
+          }
+          .title{
+            font-size:24px;
+          }
+        }
+
         `}</style>
     </>
   )

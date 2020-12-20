@@ -182,6 +182,7 @@ const LandingForm = ({css, margin, goods, media}) => {
           .step1, .step2{
             width:50%;
             padding:4rem 3rem 3rem 3rem;
+            background:#fff;
           }
 
           .step2{
@@ -216,7 +217,6 @@ const LandingForm = ({css, margin, goods, media}) => {
             line-height: 22px;
             color: #424242;
             margin:0 0 2rem 0;
-            max-width:20rem;
           }
 
           input{
@@ -269,6 +269,12 @@ const LandingForm = ({css, margin, goods, media}) => {
           @media screen and (max-width:700px){
             .landing-form{
               display:${media===2 ? "none" : "block"}
+            }
+          }
+
+          @media screen and (max-width:500px){
+            .step1, .step2{
+              padding:3rem 2rem;
             }
           }
 

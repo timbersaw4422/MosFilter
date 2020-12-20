@@ -218,7 +218,7 @@ const LandingAkcii = ({goods, stocks}) => {
 
           @media screen and (max-width:410px){
             .landing-wrapper{
-              height:150rem;
+              height:135rem;
             }
           }
 

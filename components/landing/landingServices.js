@@ -184,6 +184,14 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
             width:100%;
           }
         }
+
+        @media screen and (max-width:500px){
+          .services__title{
+            padding-top:8rem;
+            font-size:24px;
+            margin-bottom:4rem;
+          }
+        }
       `}</style>
     </>
   )

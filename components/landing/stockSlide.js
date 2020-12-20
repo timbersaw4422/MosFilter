@@ -269,6 +269,16 @@ const StockSlide = (props) =>{
           }
         }
 
+        @media screen and (max-width:500px){
+          .slide__subtitle{
+            font-size:18px;
+            margin:2rem 0 1.7rem 0;
+          }
+          .slide__text{
+            font-size:16px;
+          }
+        }
+
         @media screen and (max-width:410px){
           .slide__title{
             width:100%;
@@ -276,25 +286,20 @@ const StockSlide = (props) =>{
           .slide__discount{
             font-size:18px;
             line-height:10px;
-            top:28rem;
+            top:21rem;
             left:20rem;
           }
           .slide__discount span{
             font-size:35px;
           }
-          .slide__text{
-            height:100px;
-          }
           .slide__img{
-            top:28rem;
+            top:21rem;
+          }
+          .old-and-new-price{
+            margin-top:14.5rem;
+            margin-bottom:2rem;
           }
         }
-
-        @media screen and (max-width:410px){
-
-        }
-
-
       `}</style>
     </>
   )

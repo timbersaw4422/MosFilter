@@ -12,6 +12,7 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type,
     <>
       <div className="landing-catalog">
          <h2 className="catalog__title"> Каталог картриджей</h2>
+         <p className="catalog__subtitle">Выберите необходимую категорию</p>
 
          <div className="catalog__tabs">
              <div className="catalog__tab catalog__tab1" onClick = {() => setType(1)}>Для проточных фильтров</div>
@@ -54,6 +55,15 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type,
           margin-top:0;
           border-top:1px solid #E3E3E3;
           margin-bottom:6rem;
+        }
+
+        .catalog__subtitle{
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          color: #424242;
+          margin-bottom: 4rem;
+          display:none;
         }
 
         .catalog__tabs{
@@ -121,6 +131,12 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type,
           }
         }
 
+        @media screen and (max-width:1150px){
+          .landing-catalog{
+            padding-bottom:5rem;
+          }
+        }
+
         @media screen and (max-width:900px){
           .catalog__tab{
             width:100%;
@@ -139,12 +155,19 @@ const LandingCatalog = ({goods, setModalOpen, setModalType, setActiveGood, type,
           }
         }
 
-        @media screen and (max-width:1150px){
-          .landing-catalog{
-            padding-bottom:5rem;
+        @media screen and (max-width:500px){
+          .catalog__title{
+            padding-top:8rem;
+            margin-bottom:1.5rem;
+            font-size:24px;
+          }
+          .catalog__subtitle{
+            display:block;
+          }
+          .catalog__tabs{
+            margin-bottom:1.8rem;
           }
         }
-
 
         `}</style>
     </>

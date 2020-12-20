@@ -347,7 +347,11 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
             overflow:hidden;
           }
           .calculator__caption{
-            display:none;
+            font-size:24px;
+            margin-top:6rem;
+          }
+          .calculator__text{
+            font-size:18px;
           }
 
         }
