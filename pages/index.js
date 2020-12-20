@@ -21,10 +21,6 @@ import ym from 'react-yandex-metrika';
 
 export default function Index(){
 
-  useEffect(() => {
-    ym('hit', '/');
-  }, []);
-
   return(
     <>
      <div className="content-wrapper">
