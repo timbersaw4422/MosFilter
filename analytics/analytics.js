@@ -14,3 +14,7 @@ export function initAnalytics(route){
 
    window.ym(70667698, 'hit', route);
 }
+
+export function reachGoal(stringId){
+  if (window.yaCounter70667698) window.yaCounter70667698.reachGoal(stringId);
+}

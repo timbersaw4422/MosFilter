@@ -180,7 +180,7 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, subtitle2,
                      <div className="privacy-policy">
                        <input type="checkbox" className="privacy-policy__checkbox" checked={checked} onChange= {checkboxHandler}/>
                        <p className="privacy-policy__text">Даю свою разрешение на  обработку персональных данных согласно
-                            <span> политике конфиденциальности</span></p>
+                            <span onClick={() => window.open("https://mos-filter.ru/policy.html" , '_blank')}> политике конфиденциальности</span></p>
                      </div>
                   </div>
             :
