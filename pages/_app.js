@@ -4,6 +4,7 @@ import Preloader from "../components/preloader";
 import {Component} from "react";
 import Cookies from "js-cookie";
 import cookies from 'next-cookies';
+import Head from "next/head";
 
 import '../normalize.css';
 import '../global.css';
@@ -23,6 +24,9 @@ const MyApp = ({ Component, pageProps, isLoaderShowed }) => {
 
   return (
     <>
+      <Head>
+        <meta name="description" content="Компания «Мос - Фильтр» занимается продажей, заменой, установкой и ремонтом картриджей и фильтров для воды в Москве" />
+      </Head>
       {
         !isLoaderShowed ? <Preloader /> :null
       }
