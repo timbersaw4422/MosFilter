@@ -217,7 +217,7 @@ export default async function handler(req, res) {
     }
   });
 
-  transporter.sendMail(options2, (err, data) => {});
+  // transporter.sendMail(options2, (err, data) => {});
 
 
 }
