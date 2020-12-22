@@ -10,9 +10,9 @@ import '../normalize.css';
 import '../global.css';
 import "../media.css";
 
-// import Router from "next/router";
-// import withYM from "next-ym";
-import { YMInitializer } from 'react-yandex-metrika';
+import Router from "next/router";
+import withYM from "next-ym";
+// import { YMInitializer } from 'react-yandex-metrika';
 
 export async function getServerSideProps(ctx) {
   let { isLoaderShowed } = cookies(ctx);
@@ -30,13 +30,16 @@ const MyApp = ({ Component, pageProps, isLoaderShowed }) => {
         <meta name="keywords" content="Мос - Фильтр, картриджи для воды, фильтры для воды, Атолл, Гейзер" />
       </Head>
 
-      <YMInitializer accounts={[70667698]}
-      options={{
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-      }}/>
+      {
+        // <YMInitializer accounts={[70667698]}
+        // options={{
+        //   clickmap:true,
+        //   trackLinks:true,
+        //   accurateTrackBounce:true,
+        //   webvisor:true
+        // }}/>
+      }
+
 
       {
         !isLoaderShowed ? <Preloader /> :null
@@ -50,5 +53,4 @@ const MyApp = ({ Component, pageProps, isLoaderShowed }) => {
   )
 }
 
-// export default withYM("70667698", Router)(MyApp)
-export default MyApp
+export default withYM("70667698", Router)(MyApp)

@@ -9,7 +9,6 @@ import Link from "next/link";
 import Catalog from "../../components/catalog/catalog";
 import AboutFiltersAtoll from "../../components/aboutBrands/aboutFiltersAtoll";
 
-
 export async function getServerSideProps(context) {
   const res = await fetch('https://mosfilt.firebaseio.com/goods.json?orderBy="categoryId"&equalTo=0');
   const data = await res.json();
