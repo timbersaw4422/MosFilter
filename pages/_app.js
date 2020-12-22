@@ -26,6 +26,7 @@ const MyApp = ({ Component, pageProps, isLoaderShowed }) => {
     <>
       <Head>
         <meta name="description" content="Компания «Мос - Фильтр» занимается продажей, заменой, установкой и ремонтом картриджей и фильтров для воды в Москве" />
+        <meta name="keywords" content="Мос - Фильтр, картриджи для воды, фильтры для воды, Атолл, Гейзер" />
       </Head>
       {
         !isLoaderShowed ? <Preloader /> :null
