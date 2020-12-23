@@ -96,7 +96,7 @@ export default function Geizer(
   return(
     <div className="landing" style={{background:"#F9FAFC"}}>
       <Head>
-        <title>Мос - фильтр | Гейзер. Услуги</title>
+        <title>Покупка, замена, установка картриджей для фильтров Гейзер в Москве</title>
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>

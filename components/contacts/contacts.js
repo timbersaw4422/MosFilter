@@ -126,7 +126,7 @@ const Contacts = () => {
                              }
                            }/>
                       <div className="submit-btn" ref = {sendBtn} onClick = {sendHandler}>
-                         <span>Написать</span>
+                         <span>Отправить</span>
                       </div>
                       <div className="privacy-policy">
                         <input type="checkbox" className="privacy-policy__checkbox" checked={checked} onChange= {checkboxHandler} />

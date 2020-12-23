@@ -25,7 +25,7 @@ export default function Index(){
 
         <Head>
           <meta name="google-site-verification" content="jmLe-LuXQbN156ErOF-45UxlJxbqChpXSD-m2_CKD6M" />
-          <title>Мос - фильтр | Главная</title>
+          <title>Покупка, замена, установка картриджей и фильтров для воды в Москве по низким ценам.</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" as="style"

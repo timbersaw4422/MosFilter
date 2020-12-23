@@ -3,13 +3,15 @@ import MainNavBtn from "./mainNavBtn";
 const MainNav = ({activeLink}) => {
   return(
     <section className="main-nav">
-       <MainNavBtn activeLink = {activeLink} width="14%" text="Главная" link="/"/>
-       <MainNavBtn activeLink = {activeLink} width="14%" text="О компании" link="/about"/>
-       <MainNavBtn activeLink = {activeLink} width="14%" text="Отзывы" link="/reviews"/>
-       <MainNavBtn activeLink = {activeLink} width="14%" text="Для бизнеса" link="/forbusiness"/>
-       <MainNavBtn activeLink = {activeLink} width="14%" text="Оплата и доставка" link="/payment"/>
-       <MainNavBtn activeLink = {activeLink} width="14%" text="Статьи" link="/posts"/>
-       <MainNavBtn activeLink = {activeLink} width="14%" text="Контакты" margin="none" link="/contacts"/>
+       <MainNavBtn activeLink = {activeLink} width="16.6%" text="Главная" link="/"/>
+       <MainNavBtn activeLink = {activeLink} width="16.6%" text="О компании" link="/about"/>
+       <MainNavBtn activeLink = {activeLink} width="16.6%" text="Отзывы" link="/reviews"/>
+       {
+        // <MainNavBtn activeLink = {activeLink} width="14%" text="Для бизнеса" link="/forbusiness"/>
+       }
+       <MainNavBtn activeLink = {activeLink} width="16.6%" text="Оплата и доставка" link="/payment"/>
+       <MainNavBtn activeLink = {activeLink} width="16.6%" text="Статьи" link="/posts"/>
+       <MainNavBtn activeLink = {activeLink} width="16.6%" text="Контакты" margin="none" link="/contacts"/>
 
 
        <style jsx>{`

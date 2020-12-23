@@ -26,6 +26,8 @@ const MyApp = ({ Component, pageProps, isLoaderShowed }) => {
   return (
     <>
       <Head>
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
         <meta name="description" content="Компания «Мос - Фильтр» занимается продажей, заменой, установкой и ремонтом картриджей и фильтров для воды в Москве" />
         <meta name="keywords" content="Мос - Фильтр, картриджи для воды, фильтры для воды, Атолл, Гейзер" />
       </Head>

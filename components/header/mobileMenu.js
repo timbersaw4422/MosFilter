@@ -33,7 +33,9 @@ const MobileMenu = ({isMenuOpen, setMenuOpen}) => {
            <Link href="/"><a className="mobile-menu__link">Главная</a></Link>
            <Link href="/about"><a className="mobile-menu__link">О компании</a></Link>
            <Link href="/reviews"><a className="mobile-menu__link">Отзывы</a></Link>
-           <Link href="/forbusiness"><a className="mobile-menu__link">Для бизнеса</a></Link>
+           {
+            // <Link href="/forbusiness"><a className="mobile-menu__link">Для бизнеса</a></Link>
+           }
            <Link href="/payment"><a className="mobile-menu__link">Оплата и доставка</a></Link>
            <Link href="/posts"><a className="mobile-menu__link">Статьи</a></Link>
            <Link href="/contacts"><a className="mobile-menu__link">Контакты</a></Link>
