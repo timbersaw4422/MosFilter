@@ -1,1 +1,4 @@
+Disallow: /cart
+Disallow: /aquaphor
+Disallow: /osmofilter
 Sitemap: https://mos-filter.ru/sitemap.xml
