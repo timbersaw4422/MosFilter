@@ -9,8 +9,8 @@ const GoToQuiz = () => {
   return(
     <>
       <div className="go-to-quiz">
-        <h2>Замена картриджей на фильтрах для воды любых марок в Москве от 990 <i style = {{fontSize:"25px"}}className="fas fa-ruble-sign"></i> </h2>
-        <p>Помогаем сэкономить своим клиентам до 30% на покупке картриджей</p>
+        <h2>Замена картриджей на фильтрах<br/> для воды любых марок <br/>в Москве от 990 <i style = {{fontSize:"25px"}}className="fas fa-ruble-sign"></i> </h2>
+        <p>Помогаем сэкономить своим клиентам <br/>до 30% на покупке картриджей</p>
         <div className="btn" onClick = {() => setModalOpen(true)}>
            <span>Рассчитать стоимость замены</span>
         </div>
@@ -54,7 +54,6 @@ const GoToQuiz = () => {
           font-size: 30px;
           line-height: 41px;
           color: #424242;
-          max-width:550px;
           margin-bottom:20px;
         }
 
@@ -63,7 +62,6 @@ const GoToQuiz = () => {
           font-size: 18px;
           line-height: 150%;
           color: #424242;
-          max-width:390px;
           margin-top:0;
           margin-bottom:3.6rem;
         }
@@ -133,6 +131,9 @@ const GoToQuiz = () => {
           }
           h2{
             font-size:28px;
+          }
+          br{
+            display:none;
           }
         }
         `}</style>
