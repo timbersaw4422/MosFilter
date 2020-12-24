@@ -22,7 +22,7 @@ const WhatsApp = ({marginTop}) =>{
           font-size: 16px;
           line-height: 22px;
           color: #424242;
-          margin-bottom:5rem;
+          margin-bottom:4rem;
         }
 
         .whatsapp__btn{

@@ -55,7 +55,7 @@ export default function Geizer(
   switch (modalType){
     case "QUIZ":{
       modalMaxWidth = "1150px";
-      modalContent = <Quiz setModalOpen={setModalOpen} goods = {goods}/>;
+      modalContent = <Quiz setModalOpen={setModalOpen}/>;
       break;
     }
 
@@ -96,7 +96,7 @@ export default function Geizer(
   return(
     <div className="landing" style={{background:"#F9FAFC"}}>
       <Head>
-        <title>Мос - фильтр | Услуги</title>
+        <title>Мос - Фильтр | Покупка, замена, установка картриджей для фильтров в Москве</title>
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" as="style"

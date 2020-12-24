@@ -6,7 +6,7 @@ import DropDown from "../nextDropDown/nextDropDown";
 import Loader from "./loader";
 import {sendMail} from "../../utils/mail";
 
-const Quiz = ({goods, setModalOpen}) => {
+const Quiz = ({setModalOpen}) => {
   let modelTitle=""; let radioTitle; let place; let typeTitle;
   const steps = 6;
   const [activeStep, setActiveStep] = useState(0);

@@ -16,6 +16,7 @@ import BrandSlider from "../components/brandSlider/brandsSlider";
 import WhatsApp from "../components/whatsApp";
 import Footer from "../components/footer/footer";
 import Preloader from "../components/preloader";
+import GoToQuiz from "../components/goToQuiz";
 
 export default function Index(){
 
@@ -25,7 +26,7 @@ export default function Index(){
 
         <Head>
           <meta name="google-site-verification" content="jmLe-LuXQbN156ErOF-45UxlJxbqChpXSD-m2_CKD6M" />
-          <title>Покупка, замена, установка картриджей и фильтров для воды в Москве по низким ценам.</title>
+          <title>Мос - Фильтр | Покупка, замена, установка картриджей и фильтров для воды в Москве по низким ценам.</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" as="style"
@@ -42,8 +43,10 @@ export default function Index(){
         <section className="content-block">
             <div className="content-left visible-content">
                 <AsideNav />
+                <WhatsApp />
             </div>
             <div className="content-right">
+                <GoToQuiz />
                 <Slider />
                 <Advantages />
             </div>

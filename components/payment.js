@@ -10,7 +10,7 @@ const Payment = () => {
     <div className="payment">
       <div className="payment-left">
           <h2 className="payment__title">«Мос — фильтр»  |  Оплата и доставка</h2>
-          <p className="payment__subtitle">Для удобства клиентов, на сайте <strong>mos-filter.shop </strong>реализованы следующие
+          <p className="payment__subtitle">Для удобства клиентов, на сайте <strong>mos-filter.ru </strong>реализованы следующие
              варианты получения заказов и их оплаты:</p>
           <div className="horizontal-shape" style={{width:"100%", height:"1px", background:"#DDDDDD"}}></div>
 
