@@ -28,6 +28,7 @@ export async function getServerSideProps(context) {
 export default function Atoll(
   {data}
 ){
+  const globalBrand="Atoll";
 
   // const data = {"1":{id:1, title:"Гейзер Какой то", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png",
   //                     discount:10},
@@ -54,25 +55,25 @@ export default function Atoll(
   switch (modalType){
     case "QUIZ":{
       modalMaxWidth = "1150px";
-      modalContent = <Quiz setModalOpen={setModalOpen} goods = {goods}/>;
+      modalContent = <Quiz setModalOpen={setModalOpen} goods = {goods} globalBrand={globalBrand}/>;
       break;
     }
 
     case "GOOD":{
       modalMaxWidth = "950px";
-      modalContent = <GoodModal good={activeGood} modalPayload={modalPayload}/>;
+      modalContent = <GoodModal good={activeGood} modalPayload={modalPayload} globalBrand={globalBrand}/>;
       break;
     }
 
     case "SERVICE":{
       modalMaxWidth = "950px";
-      modalContent = <GoodModal good={goods[0]} modalPayload={modalPayload} service={true}/>;
+      modalContent = <GoodModal good={goods[0]} modalPayload={modalPayload} service={true} globalBrand={globalBrand}/>;
       break;
     }
 
     case "JUST-NUMBER":{
       modalMaxWidth = "480px";
-      modalContent = <GoodModal good={goods[0]} startTranslate={1} modalPayload={modalPayload}/>;
+      modalContent = <GoodModal good={goods[0]} startTranslate={1} modalPayload={modalPayload} globalBrand={globalBrand}/>;
       break;
     }
 
@@ -104,7 +105,7 @@ export default function Atoll(
 
       <LandingNav />
       <LandingHeader name = "Атолл" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
-      <LandingAkcii goods = {goods} stocks={stocks}/>
+      <LandingAkcii goods = {goods} stocks={stocks} globalBrand={globalBrand}/>
       <LandingModelRow setType={setType} imgs = {modelRowImgs} bottom="-30px"/>
       <div className="landing-wrapper">
         <Calculator
@@ -131,7 +132,7 @@ export default function Atoll(
               setModalPayload={setModalPayload}
               />
       </div>
-      <LandingCallToAction goods = {goods}/>
+      <LandingCallToAction goods = {goods} globalBrand={globalBrand}/>
       <LandingReviews
               setModalType={setModalType}
               setModalOpen={setModalOpen}
@@ -141,7 +142,7 @@ export default function Atoll(
       <LandingContacts
               setModalOpen={setModalOpen}
               setModalType={setModalType}
-              setModalPayload={setModalPayload}/>
+              setModalPayload={setModalPayload}/>          
       <LandingFooter />
 
       {isModalOpen &&

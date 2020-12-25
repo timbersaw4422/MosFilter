@@ -1,12 +1,12 @@
 import LandingForm from  "./landingForm";
 
-const LandingCallToAction = ({goods}) => {
+const LandingCallToAction = ({goods, globalBrand}) => {
   return(
     <>
       <div className="call-to-action">
           <div className="landing-wrapper">
             <div className="call-to-action__main">
-               <LandingForm goods = {goods} margin = "0 0 0 auto" css={{}} media={2}/>
+               <LandingForm goods = {goods} margin = "0 0 0 auto" css={{}} media={2} globalBrand={globalBrand}/>
                <p className="info-subtitle2"><span>В пределах МКАД выезд мастера на замену осуществляется бесплатно</span></p>
             </div>
             <div className="info">

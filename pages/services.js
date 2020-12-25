@@ -29,6 +29,8 @@ export default function Geizer(
   {data}
 ){
 
+  const globalBrand = "Others";
+
   // const data = {"1":{id:1, title:"Гейзер Какой то", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png",
   //                     discount:10},
   //                     "2":{id:2, title:"Гейзер Другой", subtitle:"Комплект картриджей", price:1488, img:"/img/landing/geizer-stock1.png"},
@@ -55,25 +57,13 @@ export default function Geizer(
   switch (modalType){
     case "QUIZ":{
       modalMaxWidth = "1150px";
-      modalContent = <Quiz setModalOpen={setModalOpen}/>;
-      break;
-    }
-
-    case "GOOD":{
-      modalMaxWidth = "950px";
-      modalContent = <GoodModal good={activeGood} modalPayload={modalPayload}/>;
-      break;
-    }
-
-    case "SERVICE":{
-      modalMaxWidth = "950px";
-      modalContent = <GoodModal good={goods[0]} modalPayload={modalPayload} service={true}/>;
+      modalContent = <Quiz setModalOpen={setModalOpen} globalBrand={globalBrand}/>;
       break;
     }
 
     case "JUST-NUMBER":{
       modalMaxWidth = "480px";
-      modalContent = <GoodModal good={goods[0]} startTranslate={1} modalPayload={modalPayload}/>;
+      modalContent = <GoodModal good={goods[0]} startTranslate={1} modalPayload={modalPayload} globalBrand={globalBrand}/>;
       break;
     }
 
@@ -96,7 +86,7 @@ export default function Geizer(
   return(
     <div className="landing" style={{background:"#F9FAFC"}}>
       <Head>
-        <title>Мос - Фильтр | Покупка, замена, установка картриджей для фильтров в Москве</title>
+        <title>Мос - Фильтр | Покупка, замена, установка картриджей для фильтров для воды в Москве</title>
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" as="style"
@@ -109,7 +99,7 @@ export default function Geizer(
 
       <LandingNav deleteCatalogAndServices={true}/>
       <LandingHeader name = "" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
-      <LandingAkcii goods = {goods} stocks={stocks}/>
+      <LandingAkcii goods = {goods} stocks={stocks} globalBrand={globalBrand}/>
       <ServicesModelRow />
       <div className="landing-wrapper">
         <Calculator
@@ -121,7 +111,7 @@ export default function Geizer(
               />
       </div>
       <HowToCalculate setModalOpen = {setModalOpen} setModalType = {setModalType}/>
-      <LandingCallToAction goods = {goods}/>
+      <LandingCallToAction goods = {goods} globalBrand={globalBrand}/>
       <LandingReviews
               setModalType={setModalType}
               setModalOpen={setModalOpen}

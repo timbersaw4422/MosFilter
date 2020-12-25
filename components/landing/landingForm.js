@@ -4,8 +4,9 @@ import {useState, useRef} from "react";
 import {sendMail} from "../../utils/mail";
 import Loader from "./loader";
 import LandingButton from "./landingButton";
+import {reachGoal} from "../../analytics/analytics";
 
-const LandingForm = ({css, margin, goods, media}) => {
+const LandingForm = ({css, margin, goods, media, globalBrand}) => {
 
   const [policy, setPolicy] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -46,6 +47,13 @@ const LandingForm = ({css, margin, goods, media}) => {
       ).then(() => {
         setTranslate(-50);
       });
+
+      if (globalBrand){
+        if (globalBrand === "Atoll") reachGoal("orderAtoll");
+        else if (globalBrand === "Geizer") reachGoal("orderGeizer");
+        else reachGoal("orderOthers");
+      }
+      
     }
   }
 

@@ -3,8 +3,9 @@ import LandingButton from "./landingButton";
 import PhoneInput from 'react-phone-number-input';
 import {sendMail} from "../../utils/mail";
 import Loader from "./loader";
+import {reachGoal} from "../../analytics/analytics";
 
-const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
+const GoodModal = ({good, startTranslate = 0, modalPayload, service, globalBrand}) => {
 
   const steps = 3;
   const [translate, setTranslate] = useState(startTranslate);
@@ -28,6 +29,12 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service}) => {
       ).then(() => {
         setTranslate(2);
       });
+
+      if (globalBrand){
+        if (globalBrand === "Atoll") reachGoal("orderAtoll");
+        else if (globalBrand === "Geizer") reachGoal("orderGeizer");
+        else reachGoal("orderOthers");
+      }
     }
   }
 

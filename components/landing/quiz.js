@@ -5,8 +5,9 @@ import QuizRadio from "./quizRadio";
 import DropDown from "../nextDropDown/nextDropDown";
 import Loader from "./loader";
 import {sendMail} from "../../utils/mail";
+import {reachGoal} from "../../analytics/analytics";
 
-const Quiz = ({goods, setModalOpen}) => {
+const Quiz = ({goods, setModalOpen, globalBrand}) => {
   let modelTitle=""; let radioTitle; let place;
   const steps = 6;
   const [activeStep, setActiveStep] = useState(0);
@@ -88,6 +89,12 @@ const Quiz = ({goods, setModalOpen}) => {
       ).then(() => {
         setActiveStep(6);
       });
+
+      if (globalBrand){
+        if (globalBrand === "Atoll") reachGoal("orderAtoll");
+        else if (globalBrand === "Geizer") reachGoal("orderGeizer");
+        else reachGoal("orderOthers");
+      } 
     }
   }
 

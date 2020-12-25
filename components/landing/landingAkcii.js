@@ -3,7 +3,7 @@ import LandingForm from  "./landingForm";
 import StockSlide from "./stockSlide";
 import Arrow from "./arrow";
 
-const LandingAkcii = ({goods, stocks}) => {
+const LandingAkcii = ({goods, stocks, globalBrand}) => {
 
   const stocksCount = stocks.length;
 
@@ -45,6 +45,7 @@ const LandingAkcii = ({goods, stocks}) => {
 
                <LandingForm goods = {goods} css={{position:"absolute", top:"0", right:"0"}}
                  media = {1}
+                 globalBrand={globalBrand}
                />
             </div>
 
