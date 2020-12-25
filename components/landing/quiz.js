@@ -90,11 +90,11 @@ const Quiz = ({goods, setModalOpen, globalBrand}) => {
         setActiveStep(6);
       });
 
-      if (globalBrand){
+      if (globalBrand !== undefined){
         if (globalBrand === "Atoll") reachGoal("orderAtoll");
         else if (globalBrand === "Geizer") reachGoal("orderGeizer");
         else reachGoal("orderOthers");
-      } 
+      }
     }
   }
 

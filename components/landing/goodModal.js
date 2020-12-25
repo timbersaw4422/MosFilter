@@ -30,7 +30,7 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service, globalBrand
         setTranslate(2);
       });
 
-      if (globalBrand){
+      if (globalBrand !== undefined){
         if (globalBrand === "Atoll") reachGoal("orderAtoll");
         else if (globalBrand === "Geizer") reachGoal("orderGeizer");
         else reachGoal("orderOthers");
