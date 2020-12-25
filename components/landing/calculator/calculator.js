@@ -1,6 +1,6 @@
 import CalculatorChoise from "./calculatorChoise";
 import LandingButton from "../landingButton";
-import {useState} from "react";
+import {useState, useRef} from "react";
 import {reachGoal} from "../../../analytics/analytics";
 
 const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModalOpen, isOption4, setModalPayload, globalBrand}) => {
@@ -16,6 +16,12 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
       id:good.id, text:good.title
     }
   });
+
+  let isCLickedOnCalculator = useRef(false);
+  const calculatorClickHandler = () => {
+    if (!isCLickedOnCalculator.current) reachGoal(`clickCalculator${globalBrand}`);
+    isCLickedOnCalculator.current = true;
+  }
   // modelOptions.push({id:10000, text:"Другая модель"});
 
   const calculatePrice = () => {
@@ -73,7 +79,7 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
          <h3 className="calculator__text">Расчитайте стоимость замены картриджей для вашего фильтра</h3>
          <div className="calculator__shape"></div>
          <div className="calculator__main">
-            <div className="calculator__left" onClick={() => reachGoal(`clickCalculator${globalBrand}`)}>
+            <div className="calculator__left" onClick={calculatorClickHandler}>
                {calculatorChoises.map(item => <CalculatorChoise
                  initialOption1={item.initialOption1}
                  title = {item.title}

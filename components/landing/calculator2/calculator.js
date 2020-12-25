@@ -1,6 +1,6 @@
 import CalculatorChoise from "./calculatorChoise";
 import LandingButton from "../landingButton";
-import {useState} from "react";
+import {useState, useRef} from "react";
 import {reachGoal} from "../../../analytics/analytics";
 
 const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModalOpen, setModalPayload, globalBrand}) => {
@@ -10,6 +10,12 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
   const [option3, setOption3] = useState("Меняю самостоятельно");
   const [option4, setOption4] = useState("В пределах МКАД");
   const [activeModel, setActiveModel] = useState(goods[0].id);
+
+  let isCLickedOnCalculator = useRef(false);
+  const calculatorClickHandler = () => {
+    if (!isCLickedOnCalculator.current) reachGoal(`clickCalculator${globalBrand}`);
+    isCLickedOnCalculator.current = true;
+  }
 
   const options1 = [
     {id:1, text:"Atoll"},{id:2, text:"Гейзер"},{id:3, text:"Барьер"}, {id:4, text:"Аквафор"}, {id:5, text:"Platinum-wasser"},
@@ -86,7 +92,7 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
          <h3 className="calculator__text">Расчитайте стоимость замены картриджей для вашего фильтра</h3>
          <div className="calculator__shape"></div>
          <div className="calculator__main">
-            <div className="calculator__left" onClick={() => reachGoal(`clickCalculator${globalBrand}`)}>
+            <div className="calculator__left" onClick={calculatorClickHandler}>
                {calculatorChoises.map(item => <CalculatorChoise
                  initialOption1={item.initialOption1}
                  title = {item.title}
