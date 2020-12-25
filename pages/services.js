@@ -97,7 +97,7 @@ export default function Geizer(
         <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       </Head>
 
-      <LandingNav deleteCatalogAndServices={true}/>
+      <LandingNav deleteCatalogAndServices={true} globalBrand={globalBrand}/>
       <LandingHeader name = "" setModalOpen = {setModalOpen} setModalType = {setModalType} globalBrand={globalBrand}/>
       <LandingAkcii goods = {goods} stocks={stocks} globalBrand={globalBrand}/>
       <ServicesModelRow />
@@ -108,6 +108,7 @@ export default function Geizer(
               goods={goods}
               setModalOpen={setModalOpen}
               setModalType={setModalType}
+              globalBrand={globalBrand}
               />
       </div>
       <HowToCalculate setModalOpen = {setModalOpen} setModalType = {setModalType}/>

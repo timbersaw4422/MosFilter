@@ -49,9 +49,8 @@ const LandingForm = ({css, margin, goods, media, globalBrand}) => {
       });
 
       if (globalBrand !== undefined){
-        if (globalBrand === "Atoll") reachGoal("orderAtoll");
-        else if (globalBrand === "Geizer") reachGoal("orderGeizer");
-        else reachGoal("orderOthers");
+        reachGoal(`order${globalBrand}`);
+        reachGoal(`orderFromForm${globalBrand}`);
       }
 
     }

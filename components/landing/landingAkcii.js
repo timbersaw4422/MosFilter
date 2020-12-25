@@ -1,9 +1,17 @@
-import {useState} from "react";
+import {useState, useRef} from "react";
 import LandingForm from  "./landingForm";
 import StockSlide from "./stockSlide";
 import Arrow from "./arrow";
+import {reachGoal} from "../../analytics/analytics";
 
 const LandingAkcii = ({goods, stocks, globalBrand}) => {
+
+  let isSliderMoved = useRef(false);
+
+  const sliderMoveHandler = () => {
+    if (!isSliderMoved.current) reachGoal(`viewStocks${globalBrand}`);
+    isSliderMoved.current = true;
+  }
 
   const stocksCount = stocks.length;
 
@@ -34,7 +42,7 @@ const LandingAkcii = ({goods, stocks, globalBrand}) => {
                  <p className="stock__description">Успейте принять участие</p>
                </div>
 
-               <div className="slider-nav">
+               <div className="slider-nav" onClick = {sliderMoveHandler}>
                  <div className="arrow-left" onClick = {() => arrowClickHandler("-")}>
                    <Arrow fill ="#004990" rotate="180deg"/>
                  </div>
@@ -60,6 +68,7 @@ const LandingAkcii = ({goods, stocks, globalBrand}) => {
                       newPrice={stock.newPrice}
                       img={stock.img}
                       discount={stock.discount}
+                      globalBrand={globalBrand}
                     />
                   )}
                </div>

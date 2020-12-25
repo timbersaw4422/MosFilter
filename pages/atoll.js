@@ -103,7 +103,7 @@ export default function Atoll(
         <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       </Head>
 
-      <LandingNav />
+      <LandingNav globalBrand={globalBrand}/>
       <LandingHeader name = "Атолл" setModalOpen = {setModalOpen} setModalType = {setModalType} globalBrand={globalBrand}/>
       <LandingAkcii goods = {goods} stocks={stocks} globalBrand={globalBrand}/>
       <LandingModelRow setType={setType} imgs = {modelRowImgs} bottom="-30px"/>
@@ -115,6 +115,7 @@ export default function Atoll(
               goods={goods}
               setModalOpen={setModalOpen}
               setModalType={setModalType}
+              globalBrand={globalBrand}
               />
         <LandingCatalog
               setModalPayload = {setModalPayload}

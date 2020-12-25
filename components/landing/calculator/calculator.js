@@ -1,8 +1,9 @@
 import CalculatorChoise from "./calculatorChoise";
 import LandingButton from "../landingButton";
 import {useState} from "react";
+import {reachGoal} from "../../../analytics/analytics";
 
-const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModalOpen, isOption4, setModalPayload}) => {
+const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModalOpen, isOption4, setModalPayload, globalBrand}) => {
 
   const [option1, setOption1] = useState(initialOption1);
   const [option2, setOption2] = useState("В пределах МКАД");
@@ -72,7 +73,7 @@ const Calculator = ({initialBrand, initialOption1, goods, setModalType, setModal
          <h3 className="calculator__text">Расчитайте стоимость замены картриджей для вашего фильтра</h3>
          <div className="calculator__shape"></div>
          <div className="calculator__main">
-            <div className="calculator__left">
+            <div className="calculator__left" onClick={() => reachGoal(`clickCalculator${globalBrand}`)}>
                {calculatorChoises.map(item => <CalculatorChoise
                  initialOption1={item.initialOption1}
                  title = {item.title}

@@ -2,8 +2,9 @@ import Logo from "../header/logoWithoutH1";
 import LandingButton from "./landingButton";
 import $ from "jquery";
 import {useState} from "react";
+import {reachGoal} from "../../analytics/analytics";
 
-const LandingNav = ({deleteCatalogAndServices}) => {
+const LandingNav = ({deleteCatalogAndServices, globalBrand}) => {
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const burgerClassNames = ["ham", "hamRotate", "ham4"];
@@ -49,7 +50,7 @@ const LandingNav = ({deleteCatalogAndServices}) => {
              }}>Контакты</li>
            </ul>
 
-           <a className="phone-link" href="tel:+74957446181">
+           <a className="phone-link" href="tel:+74957446181" onClick={() => reachGoal(`freeCallBtn${globalBrand}`)}>
            <LandingButton
                adaptive850={true}
                text="Бесплатный звонок"

@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {reachGoal} from "../../analytics/analytics";
 
 const StockSlide = (props) =>{
 
@@ -16,7 +17,7 @@ const StockSlide = (props) =>{
                  <p className="old-price">Старая цена <br/> <span>{props.oldPrice} <i style = {{fontSize:"15px"}}className="fas fa-ruble-sign"></i></span></p>
                </div>
 
-               <a href="tel:+74957446181" className="slide__btn-outer">
+               <a href="tel:+74957446181" className="slide__btn-outer" onClick={() => reachGoal(`clickStock${props.globalBrand}`)}>
                  <div className="slide__btn"
                     onMouseEnter={() => setFill("#fff")} onMouseLeave={() => setFill("#004990")}>
                     <span>Участвовать в акции</span>
