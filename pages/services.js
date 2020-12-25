@@ -98,7 +98,7 @@ export default function Geizer(
       </Head>
 
       <LandingNav deleteCatalogAndServices={true}/>
-      <LandingHeader name = "" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
+      <LandingHeader name = "" setModalOpen = {setModalOpen} setModalType = {setModalType} globalBrand={globalBrand}/>
       <LandingAkcii goods = {goods} stocks={stocks} globalBrand={globalBrand}/>
       <ServicesModelRow />
       <div className="landing-wrapper">

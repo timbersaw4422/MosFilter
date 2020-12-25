@@ -1,4 +1,4 @@
-const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border, nonAdaptive}) => {
+const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border, nonAdaptive, clickHandler}) => {
 
   const hoverBackground = css.background === "#fff" ? "#004990" : "#fff";
   const hoverColor = css.textColor === "#424242" ? "#fff" : "#424242";
@@ -11,6 +11,7 @@ const QuizBtn = ({text, to, setActiveStep, css, reverse, policy, type, border, n
     <>
        <div className="btn" onClick = {() => {
          if (policy) setActiveStep(to);
+         if (clickHandler) clickHandler();
        }}>
           <span>{text}</span>
           <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">

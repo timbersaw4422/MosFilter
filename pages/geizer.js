@@ -106,7 +106,7 @@ export default function Geizer(
       </Head>
 
       <LandingNav />
-      <LandingHeader name = "Гейзер" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
+      <LandingHeader name = "Гейзер" setModalOpen = {setModalOpen} setModalType = {setModalType} globalBrand={globalBrand}/>
       <LandingAkcii goods = {goods} stocks={stocks} globalBrand={globalBrand}/>
       <LandingModelRow setType={setType} imgs={modelRowImgs}/>
       <div className="landing-wrapper">

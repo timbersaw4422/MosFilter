@@ -91,9 +91,8 @@ const Quiz = ({goods, setModalOpen, globalBrand}) => {
       });
 
       if (globalBrand !== undefined){
-        if (globalBrand === "Atoll") reachGoal("orderAtoll");
-        else if (globalBrand === "Geizer") reachGoal("orderGeizer");
-        else reachGoal("orderOthers");
+        reachGoal(`order${globalBrand}`);
+        reachGoal(`orderFromQuiz${globalBrand}`);
       }
     }
   }
@@ -268,14 +267,17 @@ const Quiz = ({goods, setModalOpen, globalBrand}) => {
                      reverse={true}
                      policy={quizData.policy}
                  />
-                 <QuizBtn
-                     setActiveStep={setActiveStep}
-                     to = {5}
-                     css={{width:"20.5rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 3rem", margin:"0"}}
-                     text="Оформить заказ"
-                     reverse={false}
-                     policy={quizData.policy}
-                 />
+
+                  <QuizBtn
+                       setActiveStep={setActiveStep}
+                       to = {5}
+                       css={{width:"20.5rem", background:"#004990", textColor:"#fff", arrowFill:"#fff", padding:"0 3rem", margin:"0"}}
+                       text="Оформить заказ"
+                       reverse={false}
+                       policy={quizData.policy}
+                       clickHandler={() => reachGoal(`goToQuizPhone${globalBrand}`)}
+                   />
+
                </div>
             </div>
 

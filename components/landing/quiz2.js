@@ -148,9 +148,8 @@ const Quiz = ({setModalOpen, globalBrand}) => {
       });
 
       if (globalBrand !== undefined){
-        if (globalBrand === "Atoll") reachGoal("orderAtoll");
-        else if (globalBrand === "Geizer") reachGoal("orderGeizer");
-        else reachGoal("orderOthers");
+        reachGoal(`order${globalBrand}`);
+        reachGoal(`orderFromQuiz${globalBrand}`);
       }
     }
   }
@@ -363,6 +362,7 @@ const Quiz = ({setModalOpen, globalBrand}) => {
                      text="Оформить заказ"
                      reverse={false}
                      policy={quizData.policy}
+                     clickHandler={() => reachGoal(`goToQuizPhone${globalBrand}`)}
                  />
                </div>
             </div>

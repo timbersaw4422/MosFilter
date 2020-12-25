@@ -104,7 +104,7 @@ export default function Atoll(
       </Head>
 
       <LandingNav />
-      <LandingHeader name = "Атолл" setModalOpen = {setModalOpen} setModalType = {setModalType}/>
+      <LandingHeader name = "Атолл" setModalOpen = {setModalOpen} setModalType = {setModalType} globalBrand={globalBrand}/>
       <LandingAkcii goods = {goods} stocks={stocks} globalBrand={globalBrand}/>
       <LandingModelRow setType={setType} imgs = {modelRowImgs} bottom="-30px"/>
       <div className="landing-wrapper">
@@ -142,7 +142,7 @@ export default function Atoll(
       <LandingContacts
               setModalOpen={setModalOpen}
               setModalType={setModalType}
-              setModalPayload={setModalPayload}/>          
+              setModalPayload={setModalPayload}/>
       <LandingFooter />
 
       {isModalOpen &&

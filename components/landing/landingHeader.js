@@ -1,10 +1,12 @@
 import LandingButton from "./landingButton";
+import {reachGoal} from "../../analytics/analytics";
 
-const LandingHeader = ({name, setModalOpen, setModalType}) => {
+const LandingHeader = ({name, setModalOpen, setModalType, globalBrand}) => {
 
   const btnClickHandler = () => {
     setModalOpen(true);
     setModalType("QUIZ");
+    reachGoal(`openQuiz${globalBrand}`);
   }
 
   return(
