@@ -1,12 +1,12 @@
-import LandingButton from "./landingButton";
+﻿import LandingButton from "./landingButton";
 
-const LandingServices = ({setActiveService, setModalOpen, setModalType, setModalPayload}) => {
+const LandingServices = ({setActiveService, setModalOpen, setModalType, setModalPayload, brand}) => {
 
   const serviceClickHandler = (type) => {
     let service;
     if (type === 1) service = {
         title:"Замены картриджей",
-        price:850
+        price:900
     }
     else if (type === 2) service = {
         title:"Установка фильтра",
@@ -39,7 +39,7 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
                  <img src="/img/checkMark.png" alt="checkMark" className="on-stock-status"/>
                  <span className="on-stock-title">Мастер свободен</span>
               </div>
-              <p className="service__price">850 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
+              <p className="service__price">900 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
 
               <LandingButton
                   text="Подробнее"

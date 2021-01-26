@@ -1,4 +1,4 @@
-import LandingHeader from "../components/landing/landingHeader";
+﻿import LandingHeader from "../components/landing/landingHeader";
 import LandingAkcii from "../components/landing/landingAkcii";
 import LandingModelRow from "../components/landing/landingModelRow";
 import Calculator from "../components/landing/calculator/calculator";
@@ -127,6 +127,7 @@ export default function Atoll(
               setType={setType}
               />
         <LandingServices
+              brand={"atoll"}
               setActiveService={setActiveService}
               setModalOpen={setModalOpen}
               setModalType={setModalType}
