@@ -9,7 +9,7 @@ const GoToQuiz = () => {
   return(
     <>
       <div className="go-to-quiz">
-        <h2>Замена картриджей на фильтрах<br/> для воды любых марок <br/>в Москве от 990 <i style = {{fontSize:"25px"}}className="fas fa-ruble-sign"></i> </h2>
+        <h2>Замена картриджей на фильтрах<br/> для воды любых марок <br/>в Москве от 850 <i style = {{fontSize:"25px"}}className="fas fa-ruble-sign"></i> </h2>
         <p>Помогаем сэкономить своим клиентам <br/>до 30% на покупке картриджей</p>
         <div className="btn" onClick = {() => setModalOpen(true)}>
            <span>Рассчитать стоимость замены</span>
