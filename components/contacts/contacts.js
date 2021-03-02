@@ -61,7 +61,7 @@ const Contacts = () => {
                   <img src="/img/contacts/telegram.png" alt="telegram"/>
                   <span>Telegram</span>
                 </p>
-                <p className="contacts__p" onClick = {() => window.open("https://wa.me/79325306046", "_blank")}>
+                <p className="contacts__p" onClick = {() => window.open("https://wa.me/79254950004", "_blank")}>
                   <img src="/img/contacts/whatsapp.png" alt="whatsapp"/>
                   <span>WhatsApp</span>
                 </p>

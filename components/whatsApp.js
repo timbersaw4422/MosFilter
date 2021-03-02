@@ -1,7 +1,7 @@
 const WhatsApp = ({marginTop}) =>{
 
   const clickHandler = () => {
-    window.open("https://wa.me/79325306046", "_blank");
+    window.open("https://wa.me/79254950004", "_blank");
   }
 
   return(

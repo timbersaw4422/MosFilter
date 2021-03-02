@@ -93,7 +93,7 @@ const Footer = () => {
                <div className="footer__info-block">
                  <p className="footer__title adaptive-padding">Задать вопрос</p>
                  <a href="#" className="footer__text footer-link with-pb" onClick={() => {
-                   window.open("https://wa.me/79325306046", "_blank");
+                   window.open("https://wa.me/79254950004", "_blank");
                  }}>WhatsApp</a>
                </div>
              </div>
