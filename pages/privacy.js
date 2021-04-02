@@ -15,7 +15,7 @@ export default function postsPage(){
      <div className="content-wrapper">
 
         <Head>
-          <title>Мос - фильтр | Статьи</title>
+          <title>Мос - фильтр | Политика конфиденциальности</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -118,7 +118,7 @@ export default function postsPage(){
                  <br/>
                  8.2. В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены ее новой версией.
                  <br/>
-                 8.3. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу <a href="https://mos-filter.ru/policy">https://mos-filter.ru/policy</a>
+                 8.3. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу <a href="https://mos-filter.ru/privacy">https://mos-filter.ru/policy</a>
             </div>
             <div className="horizontal-shape" style={{ marginBottom: 50 }}></div>
             <Link href="/"><a className="post-body__back-link">

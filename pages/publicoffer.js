@@ -13,7 +13,7 @@ export default function postsPage(){
      <div className="content-wrapper">
 
         <Head>
-          <title>Мос - фильтр | Статьи</title>
+          <title>Мос - фильтр | Публичная оферта</title>
           <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
