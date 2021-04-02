@@ -16,6 +16,7 @@ import GoodModal from "../components/landing/goodModal.js";
 import LandingNav from "../components/landing/landingNav";
 import {useState} from "react";
 import Head from "next/head";
+import PriceList from "../components/landing/priceList";
 
 export async function getServerSideProps(context) {
   const res = await fetch('https://mosfilt.firebaseio.com/goods.json?orderBy="categoryId"&equalTo=2');
@@ -80,6 +81,12 @@ export default function Atoll(
     case "REVIEW":{
       modalMaxWidth = "325px";
       modalContent = <img src={`/img/reviews/screen${modalPayload}.png`} alt="Отзыв"/>;
+      break;
+    }
+
+    case "PRICE":{
+      modalMaxWidth = "800px";
+      modalContent = <PriceList />;
       break;
     }
 

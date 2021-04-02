@@ -14,6 +14,7 @@ const LandingButton = ({text, css, clickHandler, adaptive850, display1000, phone
       <style jsx>{`
         .button{
           width: 100%;
+          min-width:${css.maxWidth};
           max-width:${css.maxWidth};
           height: ${css.height};
           margin-bottom:${css.marginBottom};

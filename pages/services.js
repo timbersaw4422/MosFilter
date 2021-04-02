@@ -15,6 +15,7 @@ import LandingNav from "../components/landing/landingNav";
 import HowToCalculate from "../components/landing/howToCalculate";
 import {useState} from "react";
 import Head from "next/head";
+import PriceList from "../components/landing/priceList";
 
 
 export async function getServerSideProps(context) {
@@ -73,6 +74,12 @@ export default function Geizer(
       break;
     }
 
+    case "PRICE":{
+      modalMaxWidth = "800px";
+      modalContent = <PriceList />;
+      break;
+    }
+
     default:break;
   }
 
@@ -90,7 +97,7 @@ export default function Geizer(
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" as="style"
-        onload="this.rel='stylesheet'" media="all"
+        onLoad="this.rel='stylesheet'" media="all"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
         crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
