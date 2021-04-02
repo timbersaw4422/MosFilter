@@ -5,6 +5,7 @@ import PhoneInput from 'react-phone-number-input';
 import { useAlert } from 'react-alert';
 import {clearCookie} from "../../utils/utils";
 import {isEmail} from "../../utils/isEmail";
+import Link from "next/link"
 
 const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, subtitle2, data, img, setCartCount, setModalOpen}) => {
 
@@ -180,7 +181,9 @@ const ModalWrapper = ({modalOpen, title, modalType, height, subtitle, subtitle2,
                      <div className="privacy-policy">
                        <input type="checkbox" className="privacy-policy__checkbox" checked={checked} onChange= {checkboxHandler}/>
                        <p className="privacy-policy__text">Даю свою разрешение на  обработку персональных данных согласно
-                            <span onClick={() => window.open("https://mos-filter.ru/policy.html" , '_blank')}> политике конфиденциальности</span></p>
+                          <Link href="/privacy"><span> политике конфиденциальности</span>
+                          </Link>
+                          </p>
                      </div>
                   </div>
             :

@@ -38,6 +38,7 @@ const MobileMenu = ({isMenuOpen, setMenuOpen}) => {
            }
            <Link href="/payment"><a className="mobile-menu__link">Оплата и доставка</a></Link>
            <Link href="/posts"><a className="mobile-menu__link">Статьи</a></Link>
+           <Link href="/info"><a className="mobile-menu__link">Правовая информация</a></Link>
            <Link href="/contacts"><a className="mobile-menu__link">Контакты</a></Link>
          </div>
          <p className="mobile-menu__shape" style={{marginTop:"3rem"}}></p>

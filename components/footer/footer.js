@@ -86,7 +86,10 @@ const Footer = () => {
              <div className="footer__info-block">
                <Link href="/about"><a className="footer__text footer-link">О компании</a></Link>
                <Link href="/reviews"><a className="footer__text footer-link">Отзывы</a></Link>
-               <Link href="/forbusiness"><a className="footer__text footer-link">Для бизнеса</a></Link>
+               <Link href="/info"><a className="footer__text footer-link">Правовая информация</a></Link>
+               {
+               // <Link href="/forbusiness"><a className="footer__text footer-link">Для бизнеса</a></Link>
+               }
                <Link href="/payment"><a className="footer__text footer-link">Оплата и доставка</a></Link>
                <Link href="/posts"><a className="footer__text footer-link">Статьи</a></Link>
                <Link href="/contacts"><a className="footer__text footer-link">Контакты</a></Link>

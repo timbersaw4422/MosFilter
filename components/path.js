@@ -15,6 +15,9 @@ const Path = ({category}) => {
     case "payment": caption = "Оплата и доставка";break;
     case "posts": caption = "Статьи";break;
     case "contacts": caption = "Контакты";break;
+    case "info": caption = "Правовая информация";break;
+    case "privacy": caption = "Политика конфиденциальности";break;
+    case "publicoffer": caption = "Публичная оферта";break;
     default:break;
   }
 
