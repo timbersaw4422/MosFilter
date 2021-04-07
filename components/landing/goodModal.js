@@ -4,6 +4,7 @@ import PhoneInput from 'react-phone-number-input';
 import {sendMail} from "../../utils/mail";
 import Loader from "./loader";
 import {reachGoal} from "../../analytics/analytics";
+import Link from 'next/link'
 
 const GoodModal = ({good, startTranslate = 0, modalPayload, service, globalBrand}) => {
 
@@ -140,7 +141,9 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service, globalBrand
                       </svg>
                     }
                   </div>
-                  <p className="policy">Даю свою разрешение на  обработку персональных <br/>данных согласно <span>политике конфиденциальности</span></p>
+                  <p className="policy">Даю свою разрешение на  обработку персональных <br/>данных согласно
+                    <Link href="/privacy"><span> политике конфиденциальности</span></Link>
+                  </p>
               </div>
           </div>
 
@@ -327,6 +330,11 @@ const GoodModal = ({good, startTranslate = 0, modalPayload, service, globalBrand
           display:flex;
           align-items:center;
           justify-content:center;
+        }
+
+        .policy span{
+          cursor:pointer;
+          color: #4862D2;
         }
 
         .modal-step3{

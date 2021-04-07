@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const LandingFooter = () => {
   return(
     <>
@@ -8,7 +10,10 @@ const LandingFooter = () => {
              <p className="footer__text">© 2012-2020 Сервисная служба «Мос — Фильтр».
                 Для жалоб и предложений директор: +7 (495) 744-61-81
              </p>
-             <p className="footer__link"> Политика конфиденциальности</p>
+             <div className="info">
+               <Link href='/privacy'><a className="footer__link"> Политика конфиденциальности</a></Link>
+               <Link href='/publicoffer'><a className="footer__link footer__link-orange"> Публичная оферта</a></Link>
+             </div>
            </div>
 
            <div className="footer__right">
@@ -40,6 +45,16 @@ const LandingFooter = () => {
           text-decoration-line: underline;
           color: #004990;
           cursor:pointer;
+        }
+
+        .footer__link-orange{
+          margin-left:10px;
+          color:#FF652E;
+        }
+
+        .info{
+          display:flex;
+          align-items:center;
         }
 
         @media screen and (max-width:600px){

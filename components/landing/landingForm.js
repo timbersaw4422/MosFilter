@@ -5,6 +5,7 @@ import {sendMail} from "../../utils/mail";
 import Loader from "./loader";
 import LandingButton from "./landingButton";
 import {reachGoal} from "../../analytics/analytics";
+import Link from 'next/link';
 
 const LandingForm = ({css, margin, goods, media, globalBrand}) => {
 
@@ -108,7 +109,7 @@ const LandingForm = ({css, margin, goods, media, globalBrand}) => {
                     </svg>
                   }
                 </div>
-                <p className="policy">Даю согласие на обработку персональных данных</p>
+                <p className="policy">Даю согласие на обработку персональных данных согласно <Link href="/privacy"><span> политике конфиденциальности</span></Link></p>
             </div>
           </div>
 
@@ -216,6 +217,11 @@ const LandingForm = ({css, margin, goods, media, globalBrand}) => {
             display:flex;
             align-items:center;
             justify-content:center;
+          }
+
+          .policy span{
+            color:#004990;
+            cursor:pointer;
           }
 
           .title{

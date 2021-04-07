@@ -94,7 +94,7 @@ export default function Atoll(
   }
 
   const stocks = [
-    {id:1, subtitle:"Комплект картриджей", title:"Atoll A550 | 560 STD", oldPrice:3900, newPrice:3300, img:"/img/landing/atoll-stock1.png", discount:"-15%"}
+    {id:1, subtitle:"Комплект картриджей", title:"Atoll A550 | 560 STD", oldPrice:4200, newPrice:3500, img:"/img/landing/atoll-stock1.png", discount:"-15%"}
   ];
 
   const modelRowImgs=["/img/landing/atoll1.png", "/img/landing/atoll2.png"];
