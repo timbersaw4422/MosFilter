@@ -86,12 +86,12 @@ export default function installationtAtoll(){
                 <div className="service-price-block">
                   <div className="price-block__left">
                       <p className="price-block__title service-block-widthness">Средняя цена по Москве</p>
-                      <p className="price-block__title with-line-through">2200 <i style = {{fontSize:"15px"}}className="fas fa-ruble-sign"></i></p>
+                      <p className="price-block__title with-line-through">2000 <i style = {{fontSize:"15px"}}className="fas fa-ruble-sign"></i></p>
                   </div>
                   <div className="price-block__right">
                       <p className="price-block__subtitle service-block-widthness">Стоимость услуги у нас</p>
-                      <p className="price-block__subtitle">1500 <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className="price-block__economy">(Экономия - 700 рублей)</span></p>
+                      <p className="price-block__subtitle">1150 <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="price-block__economy">(Экономия - 850 рублей)</span></p>
                   </div>
                   <div className="service-btns">
                     <div className="service-btn service-btn1"onClick = {() => setModalOpen(true)}><span>Заказать услугу</span></div>

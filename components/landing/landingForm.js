@@ -131,7 +131,7 @@ const LandingForm = ({css, margin, goods, media, globalBrand}) => {
            <img src="/img/landing/bell.png" alt="Заявка отправлена"/>
            <p className="success">Спасибо! <br/>
              Ваша заявка отправлена<br/>
-             Мы свяжемся с вами через 5 минут</p>
+             Дождитесь звонка специалиста</p>
         </div>
 
 

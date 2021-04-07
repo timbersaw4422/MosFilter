@@ -13,7 +13,7 @@ const LandingCallToAction = ({goods, globalBrand}) => {
                 <p className="info-caption">Режим работы</p>
                 <div className="info-flex">
                   <p className="info-title">Работаем по всей Москве и ближайшему подмосковью</p>
-                  <p className="info-subtitle">В пределах МКАД выезд мастера на замену осуществляется бесплатно</p>
+                  <p className="info-subtitle">При замене картриджей бесплатная дезинфекция фильтра в подарок</p>
                 </div>
                 <p className="info-worktime">Ежедневно с 10:00 до 20:00</p>
             </div>

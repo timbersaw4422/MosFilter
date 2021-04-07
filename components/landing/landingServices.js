@@ -6,15 +6,15 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
     let service;
     if (type === 1) service = {
         title:"Замены картриджей",
-        price:900
+        price:850
     }
     else if (type === 2) service = {
         title:"Установка фильтра",
-        price:1500
+        price:1150
     }
     else if (type === 3) service = {
         title:"Ремонт фильтра",
-        price:1200
+        price:1150
     }
     setActiveService(service);
     setModalOpen(true);
@@ -39,7 +39,7 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
                  <img src="/img/checkMark.png" alt="checkMark" className="on-stock-status"/>
                  <span className="on-stock-title">Мастер свободен</span>
               </div>
-              <p className="service__price">900 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
+              <p className="service__price">850 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
 
               <LandingButton
                   text="Подробнее"
@@ -58,7 +58,7 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
                  <img src="/img/checkMark.png" alt="checkMark" className="on-stock-status"/>
                  <span className="on-stock-title">Мастер свободен</span>
               </div>
-              <p className="service__price">1500 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
+              <p className="service__price">1150 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
               <LandingButton
                   text="Подробнее"
                   css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990",
@@ -74,7 +74,7 @@ const LandingServices = ({setActiveService, setModalOpen, setModalType, setModal
                  <img src="/img/checkMark.png" alt="checkMark" className="on-stock-status"/>
                  <span className="on-stock-title">Мастер свободен</span>
               </div>
-              <p className="service__price">1200 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
+              <p className="service__price">1150 &nbsp;<i style = {{fontSize:"20px"}}className="fas fa-ruble-sign"></i></p>
               <LandingButton
                   text="Подробнее"
                   css={{maxWidth:"100%", height:"50px", marginBottom:"0rem", background:"#004990",

@@ -87,8 +87,8 @@ export default function repairOthers(){
                   </div>
                   <div className="price-block__right">
                       <p className="price-block__subtitle service-block-widthness">Стоимость услуги у нас</p>
-                      <p className="price-block__subtitle">1200 <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className="price-block__economy">(Экономия - 300 рублей)</span></p>
+                      <p className="price-block__subtitle">1150 <i style = {{fontSize:"21px"}}className="fas fa-ruble-sign"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="price-block__economy">(Экономия - 350 рублей)</span></p>
                   </div>
                   <div className="service-btns">
                     <div className="service-btn service-btn1"onClick = {() => setModalOpen(true)}><span>Заказать услугу</span></div>
