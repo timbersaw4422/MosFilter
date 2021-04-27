@@ -15,10 +15,11 @@ const LandingFooter = () => {
                <Link href='/publicoffer'><a className="footer__link footer__link-orange"> Публичная оферта</a></Link>
              </div>
            </div>
-
-           <div className="footer__right">
-             <img src="/img/landing/logo.png" alt="Студия разработки Мануфактура" className="logo"/>
-           </div>
+           {
+             // <div className="footer__right">
+             //   <img src="/img/landing/logo.png" alt="Студия разработки Мануфактура" className="logo"/>
+             // </div>
+           }
 
         </div>
       </div>

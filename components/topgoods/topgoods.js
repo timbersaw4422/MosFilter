@@ -6,7 +6,7 @@ const TopGoods = () => {
       <h2 className="title">Хиты продаж</h2>
       <div className="goods-wrapper">
         <Good width="23.5%" margin="0 1.5% 1.3rem 0" img="/img/goods/201.png" categoryTitle="Комплект картриджей для"
-        goodTitle="Atoll A-550 | 560 STD" price = {3300} id={201} index={20}/>
+        goodTitle="Atoll A-550 | 560 STD" price = {3500} id={201} index={20}/>
         <Good width="23.5%" margin="0 1.5% 1.3rem 0" img="/img/goods/301.png" categoryTitle="Комплект картриджей для"
         goodTitle="Гейзер «Био»" price = {2200} id={301} index={21}/>
         <Good width="23.5%" margin="0 1.5% 1.3rem 0" img="/img/goods/307.png" categoryTitle="Комплект картриджей для"
