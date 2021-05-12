@@ -20,7 +20,7 @@
     "next-cookies": "^2.0.3",
     "next-ym": "^2.3.5",
     "nextjs-progressbar": "0.0.5",
-    "nodemailer": "^6.4.11",
+    "nodemailer": "^6.4.16",
     "react": "16.13.1",
     "react-alert": "^7.0.2",
     "react-alert-template-basic": "^1.0.0",
