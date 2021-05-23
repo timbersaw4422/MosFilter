@@ -74,7 +74,7 @@ const Footer = () => {
               <div className="footer__adaptive-show">
                  <p>Подписаться на новости</p>
                  <SubscribeInput />
-                 <span>2020 © Все права защищены. «Мос — фильтр» Магазин фильтров для воды. </span>
+                 <span>2021 © Все права защищены. «Мос — фильтр» Магазин фильтров для воды. </span>
               </div>
             </div>
          </div>
@@ -136,7 +136,7 @@ const Footer = () => {
       </div>
       <div className="footer__manufactory">
         <div className="footer__manufactory-inner">
-            <p style={{marginRight:"2rem"}}>2020 © Все права защищены. «Мос — фильтр» Магазин фильтров для воды. </p>
+            <p style={{marginRight:"2rem"}}>2021 © Все права защищены. «Мос — фильтр» Магазин фильтров для воды. </p>
             {
               // <img src="/img/manufactory-logo.png" alt="manufactory"/>
             }
